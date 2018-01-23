@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/personal/personal"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F7CE2C",
+    "navigationBarTitleText": "高招智愿",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#919191",
+    "selectedColor": "#252628",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/tabbar_home@3x.png",
+        "selectedIconPath": "images/icon/tabbar_home-selected@3x.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "images/icon/tabbar_user@3x.png",
+        "selectedIconPath": "images/icon/tabbar_user-selected@3x.png"
+      }
+    ]
+  }
+}
