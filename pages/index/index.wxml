@@ -1,13 +1,30 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <!-- 首页顶部轮播 -->
+  <swiper class='main-swiper' indicator-dots="{{mainSwiper.indicatorDots}}"
+    autoplay="{{mainSwiper.autoplay}}" interval="{{mainSwiper.interval}}" duration="{{mainSwiper.duration}}" circular="{{mainSwiper.circular}}" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff">
+    <block wx:for="{{mainSwiper.imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 首页入口 -->
+  <view class='entrance'>
+    <block wx:for="{{entranceList}}">
+      <navigator class='entrance-tiem'>
+        <image src="{{item.imgUrl}}"/>
+        <view class='entrance-name'>{{item.name}}</view>
+      </navigator>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    <!-- 首页顶部轮播 -->
+  <swiper class='school-swiper' indicator-dots="{{schoolSwiper.indicatorDots}}"
+    autoplay="{{schoolSwiper.autoplay}}" interval="{{schoolSwiper.interval}}" duration="{{schoolSwiper.duration}}" circular="{{schoolSwiper.circular}}" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff">
+    <block wx:for="{{schoolSwiper.imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
 </view>

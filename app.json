@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/personal/personal"
   ],
   "window": {
@@ -21,8 +20,8 @@
         "selectedIconPath": "images/icon/tabbar_home-selected@3x.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志",
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
         "iconPath": "images/icon/tabbar_user@3x.png",
         "selectedIconPath": "images/icon/tabbar_user-selected@3x.png"
       }

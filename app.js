@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    imgUrl:"http://pic.suiyiyun.cn/597331"
   }
 })
