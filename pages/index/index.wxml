@@ -1,9 +1,9 @@
-<!--index.wxml-->
+<!--首页-->
 <view class="container">
   <!-- 首页顶部轮播 -->
   <swiper class='main-swiper' indicator-dots="{{mainSwiper.indicatorDots}}"
     autoplay="{{mainSwiper.autoplay}}" interval="{{mainSwiper.interval}}" duration="{{mainSwiper.duration}}" circular="{{mainSwiper.circular}}" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff">
-    <block wx:for="{{mainSwiper.imgUrls}}">
+    <block wx:for="{{mainSwiper.imgUrls}}" wx:key="{{mainSwiper.imgUrls}}">
       <swiper-item>
         <image src="{{item}}" class="slide-image"/>
       </swiper-item>
@@ -11,18 +11,18 @@
   </swiper>
   <!-- 首页入口 -->
   <view class='entrance'>
-    <block wx:for="{{entranceList}}">
-      <navigator class='entrance-tiem'>
+    <block wx:for="{{entranceList}}" wx:key="{{entranceList.name}}">
+      <navigator class='entrance-tiem' >
         <image src="{{item.imgUrl}}"/>
         <view class='entrance-name'>{{item.name}}</view>
       </navigator>
     </block>
   </view>
-    <!-- 首页顶部轮播 -->
+    <!-- 首页学校轮播 -->
   <swiper class='school-swiper' indicator-dots="{{schoolSwiper.indicatorDots}}"
     autoplay="{{schoolSwiper.autoplay}}" interval="{{schoolSwiper.interval}}" duration="{{schoolSwiper.duration}}" circular="{{schoolSwiper.circular}}" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff">
-    <block wx:for="{{schoolSwiper.imgUrls}}">
-      <swiper-item>
+    <block wx:for="{{schoolSwiper.imgUrls}}" wx:key="{{schoolSwiper.imgUrls}}">
+      <swiper-item >
         <image src="{{item}}" class="slide-image"/>
       </swiper-item>
     </block>

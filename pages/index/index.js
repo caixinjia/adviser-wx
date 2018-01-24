@@ -6,8 +6,8 @@ Page({
   data: {
     mainSwiper:{
       imgUrls: [
-        app.globalData.imgUrl+'/swiper/会员招募@2x.png',
-        app.globalData.imgUrl+'/swiper/怀梦想 致远方@2x.png',
+        app.globalData.imgUrl+"/swiper/会员招募@2x.png",
+        app.globalData.imgUrl+"/swiper/怀梦想 致远方@2x.png",
       ],
       indicatorDots: true,
       autoplay: true,

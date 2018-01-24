@@ -26,8 +26,14 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/personal/personal"
+				}
+			]
 		}
 	}
 }

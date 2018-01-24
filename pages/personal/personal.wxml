@@ -1,2 +1,8 @@
-<!--pages/personal/personal.wxml-->
-<text>pages/personal/personal.wxml</text>
+<!--个人中心-->
+<view class="container">
+    <view class="personal-container">
+        <view class='personal-title'>
+            <image class='vip-img' src='{{vipImg}}'></image>
+        </view>
+    </view>
+</view>

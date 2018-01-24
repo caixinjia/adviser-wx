@@ -1,11 +1,13 @@
 // pages/personal/personal.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    vipImg: app.globalData.imgUrl + "/icon/VIP标识@3x.png",
   },
 
   /**
