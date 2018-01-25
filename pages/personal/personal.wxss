@@ -1,8 +1,29 @@
 /* pages/personal/personal.wxss */
-.personal-container{
+
+.personal-container {
   padding: 20rpx 20rpx;
 }
-.vip-img{
+
+.personal-title {
+  display: flex;
+}
+
+.personal-title view:first-child {
+  flex: 1;
+}
+
+.vip-img {
   height: 78rpx;
   width: 186rpx;
+}
+
+.remind-img {
+  height: 64rpx;
+  width: 104rpx;
+  margin-top: 14rpx;
+}
+
+.user-info {
+  height: 710rpx;
+  background: url("http://pic.suiyiyun.cn/597331/background/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83%E8%83%8C%E6%99%AF%E5%9B%BE@3x.png");
 }

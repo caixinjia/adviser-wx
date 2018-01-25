@@ -8,6 +8,7 @@ Page({
    */
   data: {
     vipImg: app.globalData.imgUrl + "/icon/VIP标识@3x.png",
+    remindImg: app.globalData.imgUrl + "/icon/系统消息@3x.png",
   },
 
   /**

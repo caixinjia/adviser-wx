@@ -1,8 +1,17 @@
 <!--个人中心-->
 <view class="container">
-    <view class="personal-container">
-        <view class='personal-title'>
-            <image class='vip-img' src='{{vipImg}}'></image>
-        </view>
+  <view class="personal-container">
+    <!-- 个人中心头部 -->
+    <view class='personal-title'>
+      <view>
+        <image class='vip-img' src='{{vipImg}}'></image>
+      </view>
+      <view>
+        <image class='remind-img' src='{{remindImg}}'></image>
+      </view>
     </view>
+    <!-- 个人中心详情 -->
+    <view class='user-info'>
+    </view>
+  </view>
 </view>
