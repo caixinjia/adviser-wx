@@ -6,8 +6,8 @@ Page({
   data: {
     mainSwiper:{
       imgUrls: [
-        app.globalData.imgUrl+"/swiper/会员招募@2x.png",
-        app.globalData.imgUrl+"/swiper/怀梦想 致远方@2x.png",
+        app.globalData.imgUrl+"/swiper/huiyuanzhaomu@2x.png",
+        app.globalData.imgUrl+"/swiper/huaimengxiang@2x.png",
       ],
       indicatorDots: true,
       autoplay: true,
@@ -18,35 +18,35 @@ Page({
     entranceList:[
       {
         name:"院校信息",
-        imgUrl: app.globalData.imgUrl +"/icon/院校信息@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/yuanxiao@2x.png"
       },
       {
         name: "专业信息",
-        imgUrl: app.globalData.imgUrl +"/icon/专业信息@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/zhuanye@2x.png"
       },
       {
         name: "历届录取信息",
-        imgUrl: app.globalData.imgUrl +"/icon/历届录取信息@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/luquxinxi@2x.png"
       },
       {
         name: "心理测试",
-        imgUrl: app.globalData.imgUrl +"/icon/心理测试@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/xinliceshi@2x.png"
       },
       {
         name: "志愿设计",
-        imgUrl: app.globalData.imgUrl +"/icon/志愿设计@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/zhiyuansheji@2x.png"
       },
       {
         name: "专家咨询",
-        imgUrl: app.globalData.imgUrl +"/icon/专家咨询@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/zhuanjia@2x.png"
       },
     ],
     schoolSwiper: {
       imgUrls: [
-        app.globalData.imgUrl +"/swiper/学校-厦大@2x.png",
-        app.globalData.imgUrl +"/swiper/学校-福大@2x.png",
-        app.globalData.imgUrl +"/swiper/学校-师大@2x.png",
-        app.globalData.imgUrl +"/swiper/学校-农大@2x.png",
+        app.globalData.imgUrl +"/swiper/xiada@2x.png",
+        app.globalData.imgUrl +"/swiper/fuda@2x.png",
+        app.globalData.imgUrl +"/swiper/shida@2x.png",
+        app.globalData.imgUrl +"/swiper/nongda@2x.png",
       ],
       indicatorDots: true,
       autoplay: true,

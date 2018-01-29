@@ -1,6 +1,6 @@
 <!--个人中心-->
-<view class="container">
-  <view class="personal-container">
+<view class='container'>
+  <view class='personal-container'>
     <!-- 个人中心头部 -->
     <view class='personal-title'>
       <view>
@@ -10,8 +10,15 @@
         <image class='remind-img' src='{{remindImg}}'></image>
       </view>
     </view>
+    <!-- 个人中心头像 -->
+    <view class='user-img'>
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
     <!-- 个人中心详情 -->
     <view class='user-info'>
+      <text>{{userName}}</text>
+      <text>{{userPhone}}</text>
+      <text class='expiring-date'>会员有效期至{{expiringDate}}</text>
     </view>
   </view>
 </view>

@@ -7,15 +7,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    vipImg: app.globalData.imgUrl + "/icon/VIP标识@3x.png",
-    remindImg: app.globalData.imgUrl + "/icon/系统消息@3x.png",
+    vipImg: app.globalData.imgUrl + "/icon/vip@3x.png",
+    remindImg: app.globalData.imgUrl + "/icon/xitongxiaoxi@3x.png",
+    userName:'蔡鑫佳',
+    userPhone:'188-888-8888',
+    expiringDate:'2018年09月01日',
+    userInfo:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
+    console.log(app.globalData.userInfo)
   },
 
   /**
