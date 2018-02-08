@@ -23,7 +23,6 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-              console.log(res)
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -36,7 +35,10 @@ App({
     })
   },
   globalData: {
+    AppID:'wx8e5b52999b5be030',
+    AppSecret: 'a9fedfba71feea3b1d56dc2cf48f2c48',
     userInfo: null,
-    imgUrl:"http://47.98.40.188/chuxian/webPage/images"
+    imgUrl:"https://fjgz360.cn/chuxian/webPage/images",
+    api:'https://fjgz360.cn/chuxian'
   }
 })

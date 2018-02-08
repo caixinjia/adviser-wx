@@ -6,8 +6,8 @@ Page({
   data: {
     mainSwiper:{
       imgUrls: [
-        app.globalData.imgUrl+"/swiper/huiyuanzhaomu@2x.png",
-        app.globalData.imgUrl+"/swiper/huaimengxiang@2x.png",
+        app.globalData.imgUrl+"/swiper/banner@3x.png",
+        app.globalData.imgUrl+"/swiper/banner@3x.png",
       ],
       indicatorDots: true,
       autoplay: true,
@@ -18,41 +18,43 @@ Page({
     entranceList:[
       {
         name:"院校信息",
-        imgUrl: app.globalData.imgUrl +"/icon/yuanxiao@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/yuanxiao@3x.png"
       },
       {
         name: "专业信息",
-        imgUrl: app.globalData.imgUrl +"/icon/zhuanye@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/zhuanye@3x.png"
       },
       {
         name: "历届录取信息",
-        imgUrl: app.globalData.imgUrl +"/icon/luquxinxi@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/luquxinxi@3x.png"
       },
       {
         name: "心理测试",
-        imgUrl: app.globalData.imgUrl +"/icon/xinliceshi@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/xinliceshi@3x.png"
       },
       {
         name: "志愿设计",
-        imgUrl: app.globalData.imgUrl +"/icon/zhiyuansheji@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/zhiyuansheji@3x.png"
       },
       {
         name: "专家咨询",
-        imgUrl: app.globalData.imgUrl +"/icon/zhuanjia@2x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/zhuanjia@3x.png"
       },
     ],
     schoolSwiper: {
       imgUrls: [
-        app.globalData.imgUrl +"/swiper/xiada@2x.png",
-        app.globalData.imgUrl +"/swiper/fuda@2x.png",
-        app.globalData.imgUrl +"/swiper/shida@2x.png",
-        app.globalData.imgUrl +"/swiper/nongda@2x.png",
+        app.globalData.imgUrl +"/swiper/xiada@3x.png",
+        app.globalData.imgUrl +"/swiper/fuda@3x.png",
+        app.globalData.imgUrl +"/swiper/shida@3x.png",
+        app.globalData.imgUrl +"/swiper/nongda@3x.png",
       ],
       indicatorDots: true,
-      autoplay: true,
+      autoplay: false,
       interval: 5000,
       duration: 1000,
       circular: true,
+      previousMargin:'65rpx',
+      nextMargin: '65rpx'
     },
   },
   //事件处理函数

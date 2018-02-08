@@ -23,10 +23,16 @@
 .entrance-name{
   font-size: 28rpx;
 }
+.footer{
+  height: 360rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/swiper/remenyuanxiao@3x.png") no-repeat center top;
+  background-size: 544rpx;
+}
 .school-swiper{
-  height: 356rpx;
+  padding-top: 60rpx;
+  height: 300rpx;
 }
 .school-swiper .slide-image{
-  width: 100%;
-  height: 356rpx;
+  width: 620rpx;
+  height: 300rpx;
 }
