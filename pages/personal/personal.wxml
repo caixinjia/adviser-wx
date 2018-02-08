@@ -20,5 +20,51 @@
       <text>{{userPhone}}</text>
       <text class='expiring-date'>会员有效期至{{expiringDate}}</text>
     </view>
+    <!-- 个人中心成绩排名 -->
+    <view class='user-data'>
+      <view class='user-score'>
+        <text class='data-title'>高考成绩</text>
+        <view>
+          <view class='score-detail'>
+            <view class='score-number'>666</view>
+          </view>
+        </view>
+      </view>
+      <view class='user-ranking'>
+        <text class='data-title'>全省排名</text>
+        <view>
+          <view class='ranking-detail'>
+            <view class='ranking-number'>123</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 个人中心地区学校学科信息 -->
+    <view class='userInfo'>
+      <view>
+        <image src='{{addressImg}}'></image>
+        <view>福建省厦门市湖里区</view>
+        <image class='right-img' src='{{rightImg}}'></image>
+      </view>
+            <view>
+        <image src='{{schoolImg}}'></image>
+        <view>厦门双十中学</view>
+        <image class='right-img' src='{{rightImg}}'></image>
+      </view>
+            <view>
+        <image src='{{wenliImg}}'></image>
+        <view>理科</view>
+        <image class='right-img' src='{{rightImg}}'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 入口 -->
+  <view class='entrance'>
+      <block wx:for='{{entrances}}' wx:key='{{entranceList.name}}'>
+      <navigator class='entrance-tiem'>
+        <image src='{{item.img}}' />
+        <view class='entrance-name'>{{item.name}}</view>
+      </navigator>
+    </block>
   </view>
 </view>

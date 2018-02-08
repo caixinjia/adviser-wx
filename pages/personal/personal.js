@@ -13,6 +13,28 @@ Page({
     userPhone:'188-888-8888',
     expiringDate:'2018年09月01日',
     userInfo:'',
+    addressImg: app.globalData.imgUrl + "/icon/address@3x.png",
+    schoolImg: app.globalData.imgUrl + "/icon/school@3x.png",
+    wenliImg: app.globalData.imgUrl + "/icon/wenli@3x.png",
+    rightImg: app.globalData.imgUrl + "/icon/right@3x.png",
+    entrances:[
+      {
+        img: app.globalData.imgUrl + "/icon/wodeyuyue@3x.png",
+        name:'我的预约'
+      },
+      {
+        img: app.globalData.imgUrl + "/icon/wodetiwen@3x.png",
+        name: '我的提问'
+      },
+      {
+        img: app.globalData.imgUrl + "/icon/wodezhiyuan@3x.png",
+        name: '我的志愿'
+      },
+      {
+        img: app.globalData.imgUrl + "/icon/wodeceshi@3x.png",
+        name: '我的测试'
+      }
+    ]
   },
 
   /**
