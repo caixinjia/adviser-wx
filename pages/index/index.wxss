@@ -1,0 +1,38 @@
+/**index.wxss**/
+.main-swiper {
+  height: 280rpx;
+}
+.main-swiper .slide-image{
+  width: 100%;
+  height: 280rpx;
+}
+.entrance{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30rpx 0;
+}
+.entrance-tiem{
+  text-align: center;
+  width: 33.3%;
+  padding: 30rpx 0;
+}
+.entrance-tiem image{
+  width: 112rpx;
+  height: 96rpx;
+}
+.entrance-name{
+  font-size: 28rpx;
+}
+.footer{
+  height: 360rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/swiper/remenyuanxiao@3x.png") no-repeat center top;
+  background-size: 544rpx;
+}
+.school-swiper{
+  padding-top: 60rpx;
+  height: 300rpx;
+}
+.school-swiper .slide-image{
+  width: 620rpx;
+  height: 300rpx;
+}

@@ -1,0 +1,56 @@
+/* pages/personal/personal.wxss */
+
+.personal-container {
+  position: relative;
+  margin: 20rpx 20rpx;
+  height: 788rpx;
+  background: url("http://47.98.40.188/chuxian/webPage/images/background/gerenzhongxin@3x.png");
+  background-size: 100%;
+}
+
+.personal-title {
+  display: flex;
+}
+
+.personal-title view:first-child {
+  flex: 1;
+}
+
+.vip-img {
+  height: 78rpx;
+  width: 186rpx;
+}
+
+.remind-img {
+  height: 64rpx;
+  width: 104rpx;
+  margin-top: 14rpx;
+}
+.user-img{
+  position: absolute;
+  top: 0;
+  left: 266rpx;
+}
+.user-img image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.user-info {
+  margin-top: 122rpx;
+}
+
+.user-info text {
+  height: 56rpx;
+  display: block;
+  text-align: center;
+  font-size: 40rpx;
+  color: #252628;
+  letter-spacing: 0;
+}
+
+.user-info text.expiring-date {
+  opacity: 0.5;
+  font-size: 28rpx;
+  color: #6a7088;
+}
