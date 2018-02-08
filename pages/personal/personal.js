@@ -9,7 +9,7 @@ Page({
   data: {
     vipImg: app.globalData.imgUrl + "/icon/vip@3x.png",
     remindImg: app.globalData.imgUrl + "/icon/xitongxiaoxi@3x.png",
-    userName:'蔡鑫佳',
+    userName:'游客',
     userPhone:'188-888-8888',
     expiringDate:'2018年09月01日',
     userInfo:'',
@@ -20,7 +20,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userInfo: app.globalData.userInfo
+      userInfo: app.globalData.userInfo,
+      userName: app.globalData.userInfo.nickName
     })
     console.log(app.globalData.userInfo)
   },

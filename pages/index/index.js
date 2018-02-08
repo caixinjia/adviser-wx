@@ -48,7 +48,7 @@ Page({
         app.globalData.imgUrl +"/swiper/shida@3x.png",
         app.globalData.imgUrl +"/swiper/nongda@3x.png",
       ],
-      indicatorDots: true,
+      indicatorDots: false,
       autoplay: false,
       interval: 5000,
       duration: 1000,
