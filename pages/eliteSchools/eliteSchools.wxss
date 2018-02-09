@@ -1,0 +1,71 @@
+/* pages/eliteSchools/eliteSchools.wxss */
+
+.container {
+  margin: 20rpx 25rpx;
+}
+
+.select-form {
+  width: 700rpx;
+  height: 318rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/zhiyuansheji_shang@3x.png") no-repeat top,
+                url("https://fjgz360.cn/chuxian/webPage/images/background/zhiyuansheji_xia@3x.png") no-repeat bottom;
+  background-size: 100%;
+}
+
+.wenli {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/ceshi_title@3x.png") no-repeat center;
+  background-size: 276rpx;
+  width: 276rpx;
+  height: 56rpx;
+  margin: 16rpx auto;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 56rpx;
+  color: #f7ce2c;
+  letter-spacing: 0;
+}
+
+.user-data {
+  display: flex;
+  width: 700rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/zhiyuansheji_zhong@3x.png") no-repeat center;
+  background-size:  700rpx 120rpx;
+}
+
+.user-data>view {
+  flex: 1;
+  text-align: center;
+}
+
+.user-data>view>view {
+  margin-top: 8rpx;
+  height: 80rpx;
+}
+
+.user-data .data-title {
+  font-size: 20rpx;
+  color: #6a7088;
+  height: 28rpx;
+}
+
+.score-detail .score-number {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 150rpx;
+  font-size: 40rpx;
+  color: #252628;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/gaokaochengji@3x.png") no-repeat center;
+  background-size: 150rpx;
+  margin: 0 auto;
+}
+
+.ranking-detail  .ranking-number {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 150rpx;
+  font-size: 40rpx;
+  color: #252628;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/quanshengpaiming@3x.png") no-repeat center;
+  background-size: 150rpx;
+  margin: 0 auto;
+}

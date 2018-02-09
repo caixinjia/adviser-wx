@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/wishDesignList/wishDesignList",
+    "pages/eliteSchools/eliteSchools"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -26,13 +26,24 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "个人中心",
 					"pathName": "pages/personal/personal",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "志愿设计功能列表",
+					"pathName": "pages/wishDesignList/wishDesignList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "上名校",
+					"pathName": "pages/eliteSchools/eliteSchools"
 				}
 			]
 		}

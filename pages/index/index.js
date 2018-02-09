@@ -34,7 +34,8 @@ Page({
       },
       {
         name: "志愿设计",
-        imgUrl: app.globalData.imgUrl +"/icon/zhiyuansheji@3x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/zhiyuansheji@3x.png",
+        url:'/pages/wishDesignList/wishDesignList'
       },
       {
         name: "专家咨询",

@@ -11,12 +11,12 @@
   flex-wrap: wrap;
   padding: 30rpx 0;
 }
-.entrance-tiem{
+.entrance-item{
   text-align: center;
   width: 33.3%;
   padding: 30rpx 0;
 }
-.entrance-tiem image{
+.entrance-item image{
   width: 112rpx;
   height: 96rpx;
 }

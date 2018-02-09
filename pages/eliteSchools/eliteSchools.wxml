@@ -1,0 +1,24 @@
+<!--pages/eliteSchools/eliteSchools.wxml-->
+<view class='container'>
+  <view class='select-form'>
+    <view class='wenli'>理工类</view>
+    <view class='user-data'>
+      <view class='user-score'>
+        <text class='data-title'>高考成绩</text>
+        <view>
+          <view class='score-detail'>
+            <view class='score-number'>666</view>
+          </view>
+        </view>
+      </view>
+      <view class='user-ranking'>
+        <text class='data-title'>全省排名</text>
+        <view>
+          <view class='ranking-detail'>
+            <view class='ranking-number'>123</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
