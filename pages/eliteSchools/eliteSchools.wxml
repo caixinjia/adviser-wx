@@ -1,6 +1,13 @@
 <!--pages/eliteSchools/eliteSchools.wxml-->
 <view class='container'>
   <view class='select-form'>
+    <!-- 背景 -->
+    <view class='background'>
+      <image src='https://fjgz360.cn/chuxian/webPage/images/background/zhiyuansheji_shang@3x.png'></image>
+      <image src='https://fjgz360.cn/chuxian/webPage/images/background/zhiyuansheji_zhong@3x.png'></image>
+      <image src='https://fjgz360.cn/chuxian/webPage/images/background/zhiyuansheji_xia@3x.png'></image>
+    </view>
+    <!-- 个人信息 -->
     <view class='wenli'>理工类</view>
     <view class='user-data'>
       <view class='user-score'>
@@ -19,6 +26,10 @@
           </view>
         </view>
       </view>
+    </view>
+    <!-- 按钮 -->
+    <view class='search-btn' bindtap="search">
+      生成我的名校清单
     </view>
   </view>
 </view>
