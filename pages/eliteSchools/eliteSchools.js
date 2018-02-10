@@ -6,20 +6,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    score:666,
+    ranking:12300,
+    schoolList:[],
+    img985:app.globalData.imgUrl+'/icon/985@3x.png',
+    img211: app.globalData.imgUrl + '/icon/211@3x.png',
+    imgdouble: app.globalData.imgUrl + '/icon/shuangyiliu@3x.png',
   },
   search: function () {
-    console.log(111)
+    wx.showLoading({
+      title:'生成中',
+      mask:true
+    })
+    const that = this;
     wx.request({
-      method:'GET',
+      method:'POST',
       url: app.globalData.api + '/loadMySchool',
       data: {
-        subjectType: '1002',
-        ranking: 12300,
+        subjectType: 2,
+        ranking: that.data.ranking,
         recruitBatch:''
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded;charset=gbk',
       },
       success: function (res) {
         console.log(res)
+        that.setData({ schoolList: res.data})
+        wx.hideLoading()
       }
     })
   },

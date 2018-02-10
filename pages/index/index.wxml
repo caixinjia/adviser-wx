@@ -12,7 +12,7 @@
   <!-- 首页入口 -->
   <view class='entrance'>
     <block wx:for='{{entranceList}}' wx:key='{{entranceList.name}}'>
-      <navigator class='entrance-item' url='{{item.url}}'>
+      <navigator class='entrance-item' url='{{item.url}}' bindtap="noOpen">
         <image src='{{item.imgUrl}}' />
         <view class='entrance-name'>{{item.name}}</view>
       </navigator>

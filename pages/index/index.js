@@ -18,28 +18,34 @@ Page({
     entranceList:[
       {
         name:"院校信息",
-        imgUrl: app.globalData.imgUrl +"/icon/yuanxiao@3x.png"
+        imgUrl: app.globalData.imgUrl +"/icon/yuanxiao@3x.png",
+        isOpen:false
       },
       {
         name: "专业信息",
-        imgUrl: app.globalData.imgUrl +"/icon/zhuanye@3x.png"
+        imgUrl: app.globalData.imgUrl + "/icon/zhuanye@3x.png",
+        isOpen: false
       },
       {
         name: "历届录取信息",
-        imgUrl: app.globalData.imgUrl +"/icon/luquxinxi@3x.png"
+        imgUrl: app.globalData.imgUrl + "/icon/luquxinxi@3x.png",
+        isOpen: false
       },
       {
         name: "心理测试",
-        imgUrl: app.globalData.imgUrl +"/icon/xinliceshi@3x.png"
+        imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
+        isOpen: false
       },
       {
         name: "志愿设计",
         imgUrl: app.globalData.imgUrl +"/icon/zhiyuansheji@3x.png",
-        url:'/pages/wishDesignList/wishDesignList'
+        url: '/pages/wishDesignList/wishDesignList',
+        isOpen: true
       },
       {
         name: "专家咨询",
-        imgUrl: app.globalData.imgUrl +"/icon/zhuanjia@3x.png"
+        imgUrl: app.globalData.imgUrl + "/icon/zhuanjia@3x.png",
+        isOpen: false
       },
     ],
     schoolSwiper: {
@@ -58,10 +64,11 @@ Page({
       nextMargin: '65rpx'
     },
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  // 未开放功能
+  noOpen:function(){
+    wx.showToast({
+      title: '功能暂未开放',
+      duration: 2000
     })
   },
   onLoad: function () {
