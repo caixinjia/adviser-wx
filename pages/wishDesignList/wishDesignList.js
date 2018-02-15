@@ -14,7 +14,7 @@ Page({
         vipFlag: false
       },
       {
-        link: '',
+        link: '/pages/goSchools/goSchools',
         imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/2@3x.png",
         vipFlag: false
       },

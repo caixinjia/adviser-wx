@@ -1,4 +1,4 @@
-// pages/eliteSchools/eliteSchools.js
+// pages/goSchools/goSchools.js
 const app = getApp()
 Page({
 
@@ -8,7 +8,8 @@ Page({
   data: {
     score: '',
     ranking: 1230,
-    subjectType: 2,//1文史类，2理工类
+    subjectType:2,//1文史类，2理工类
+    batch: '101', //101:提前批102:本一批103:本二批104：高职(专科)批
     schoolList: [],
     img985: app.globalData.imgUrl + '/icon/985@3x.png',
     img211: app.globalData.imgUrl + '/icon/211@3x.png',
@@ -26,8 +27,8 @@ Page({
       data: {
         subjectType: that.data.subjectType,
         ranking: that.data.ranking,
-        recruitBatch: '',
-        endRow: 100 //默认显示100行
+        recruitBatch: that.data.batch,
+        endRow:100 //默认显示100行
       },
       success: function (res) {
         if (res.data != '\r\n') {
@@ -44,14 +45,28 @@ Page({
     })
     wx.hideLoading()
   },
-  // 改变排名
-  changeRank: function (event) {
+  // 改变批次
+  changeBatch: function (event) {
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
     this.setData({
-      ranking: event.detail.value
+      batch: event.target.dataset.id
+    })
+    setTimeout(function(){
+      wx.hideLoading()
+    },500)
+    
+  },
+  // 改变排名
+  changeRank:function(event){
+    this.setData({
+      ranking:event.detail.value
     })
   },
   //改变文理科
-  changeWenli(event) {
+  changeWenli(event){
     wx.showLoading({
       title: '加载中',
       mask: true

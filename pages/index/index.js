@@ -4,22 +4,22 @@ const app = getApp()
 
 Page({
   data: {
-    mainSwiper:{
+    mainSwiper: {
       imgUrls: [
-        app.globalData.imgUrl+"/swiper/banner@3x.png",
-        app.globalData.imgUrl+"/swiper/banner@3x.png",
+        app.globalData.imgUrl + "/swiper/banner@3x.png",
+        app.globalData.imgUrl + "/swiper/banner@3x.png",
       ],
       indicatorDots: true,
       autoplay: true,
       interval: 5000,
       duration: 1000,
-      circular:true,
+      circular: true,
     },
-    entranceList:[
+    entranceList: [
       {
-        name:"院校信息",
-        imgUrl: app.globalData.imgUrl +"/icon/yuanxiao@3x.png",
-        isOpen:false
+        name: "院校信息",
+        imgUrl: app.globalData.imgUrl + "/icon/yuanxiao@3x.png",
+        isOpen: false
       },
       {
         name: "专业信息",
@@ -38,7 +38,7 @@ Page({
       },
       {
         name: "志愿设计",
-        imgUrl: app.globalData.imgUrl +"/icon/zhiyuansheji@3x.png",
+        imgUrl: app.globalData.imgUrl + "/icon/zhiyuansheji@3x.png",
         url: '/pages/wishDesignList/wishDesignList',
         isOpen: true
       },
@@ -50,34 +50,44 @@ Page({
     ],
     schoolSwiper: {
       imgUrls: [
-        app.globalData.imgUrl +"/swiper/xiada@3x.png",
-        app.globalData.imgUrl +"/swiper/fuda@3x.png",
-        app.globalData.imgUrl +"/swiper/shida@3x.png",
-        app.globalData.imgUrl +"/swiper/nongda@3x.png",
+        app.globalData.imgUrl + "/swiper/xiada@3x.png",
+        app.globalData.imgUrl + "/swiper/fuda@3x.png",
+        app.globalData.imgUrl + "/swiper/shida@3x.png",
+        app.globalData.imgUrl + "/swiper/nongda@3x.png",
       ],
       indicatorDots: false,
       autoplay: false,
       interval: 5000,
       duration: 1000,
       circular: true,
-      previousMargin:'65rpx',
+      previousMargin: '65rpx',
       nextMargin: '65rpx'
     },
   },
   // 未开放功能
-  noOpen:function(){
+  noOpen: function () {
     wx.showToast({
       title: '功能暂未开放',
+      icon: 'none',
       duration: 2000
     })
   },
   onLoad: function () {
+    wx.request({
+      url: app.globalData.api + '/loadBmInfo',
+      data: {
+        bmGroupName:'SUBJECT_TYPE'
+      },
+      success: function (res) {
+        console.log(res)
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -99,7 +109,7 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/personal/personal",
     "pages/wishDesignList/wishDesignList",
-    "pages/eliteSchools/eliteSchools"
+    "pages/eliteSchools/eliteSchools",
+    "pages/goSchools/goSchools"
   ],
   "window": {
     "backgroundTextStyle": "light",

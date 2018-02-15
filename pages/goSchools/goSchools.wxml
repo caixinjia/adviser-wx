@@ -1,4 +1,4 @@
-<!--pages/eliteSchools/eliteSchools.wxml-->
+<!--pages/goSchools/goSchools.wxml-->
 <view class='container'>
   <view class='select-form'>
     <!-- 背景 -->
@@ -34,42 +34,32 @@
         </view>
       </view>
     </view>
+    <view class='batch-list'>
+      <view class='batch-title'>录取批次</view>
+      <view class="batch-item {{batch==101?'on':''}}" data-id="101" bindtap="changeBatch">提前批</view>
+      <view class="batch-item {{batch==102?'on':''}}" data-id="102" bindtap="changeBatch">本一批</view>
+      <view class="batch-item {{batch==103?'on':''}}" data-id="103" bindtap="changeBatch">本二批</view>
+    </view>
     <!-- 按钮 -->
     <view class='search-btn' bindtap="search">
-      生成我的名校清单
+      生成我的高校清单
     </view>
   </view>
   <!-- 学校列表 -->
   <view>
     <block wx:for='{{schoolList}}' wx:key='{{item.RECRUIT_ID}}'>
       <view class='school-item'>
+        <!-- 序号 -->
+        <view class='school-index'>
+        {{index+1}}
+        </view>
         <!-- 学校属性 -->
-        <view class='school-title'>
-          <view class='grade'>{{item.SCHOOL_GRADE}}</view>
-          <view class='type'>
-            <image wx:if='{{item.IS_985==1}}' src='{{img985}}' class='img985'></image>
-            <image wx:if='{{item.IS_211==1}}' src='{{img211}}' class='img211'></image>
-            <image wx:if='{{item.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
-          </view>
-          <view class='area'>
-            <view class='province'>{{item.PROVINCE}}</view>|
-            <view class='city'>{{item.CITY}}</view>
-          </view>
+        <view class='school-score'>
+        2017年录取最低分：
         </view>
         <!-- 学校名称 -->
         <view class='school-name'>
           {{item.RECRUIT_NAME}}
-        </view>
-        <!-- 排名 -->
-        <view class='school-info'>
-          <view class='school-ranking'>
-            <text>国内排名</text>
-            <text>{{item.SCHOOL_RANKING}}</text>
-          </view>
-          <view class='school-rate'>
-            <text>同排名往年录取率</text>
-            <text>{{item.ACCEPTANCE_RATE}}%</text>
-          </view>
         </view>
       </view>
     </block>
