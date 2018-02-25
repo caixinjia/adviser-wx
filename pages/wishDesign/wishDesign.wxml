@@ -1,4 +1,4 @@
-<!--pages/goSchools/goSchools.wxml-->
+<!--pages/wishDesign/wishDesign.wxml-->
 <view class='container'>
   <view class='select-form'>
     <!-- 背景 -->
@@ -58,8 +58,8 @@
             <image wx:if='{{item.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
           </view>
           <view class='area'>
-            <view class='province'>{{item.PROVINCE}}</view>|
-            <view class='city'>{{item.CITY}}</view>
+            <view class='province'>{{item.SCHOOL_PROVINCE_TEXT}}</view>|
+            <view class='city'>{{item.SCHOOL_CITY_TEXT}}</view>
           </view>
         </view>
         <!-- 学校名称 -->

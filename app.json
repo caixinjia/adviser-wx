@@ -4,7 +4,8 @@
     "pages/personal/personal",
     "pages/wishDesignList/wishDesignList",
     "pages/eliteSchools/eliteSchools",
-    "pages/goSchools/goSchools"
+    "pages/goSchools/goSchools",
+    "pages/wishDesign/wishDesign"
   ],
   "window": {
     "backgroundTextStyle": "light",

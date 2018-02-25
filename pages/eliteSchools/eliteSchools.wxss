@@ -204,10 +204,19 @@ page {
 .school-info .school-rate {
   margin-right: 20rpx;
   flex: 1;
+  display: flex;
 }
 
 .school-info text:first-child {
   margin-right: 20rpx;
+}
+
+.school-rate text:first-child {
+  width: 224rpx;
+}
+
+.school-rate text:last-child {
+  flex: 1;
 }
 
 .rank-input input {
@@ -219,6 +228,7 @@ page {
   background: url("https://fjgz360.cn/chuxian/webPage/images/icon/quanshengpaiming@3x.png") no-repeat center;
   background-size: 150rpx;
 }
+
 .wenli-list {
   position: absolute;
   top: 36rpx;
