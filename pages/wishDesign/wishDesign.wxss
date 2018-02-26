@@ -1,4 +1,5 @@
 /* pages/wishDesign/wishDesign.wxss */
+
 page {
   min-height: 100%;
   background: #f4f4f4;
@@ -335,9 +336,9 @@ page {
   left: 100rpx;
   display: flex;
   width: 572rpx;
-    padding-right: 58rpx;
-  box-sizing:  border-box;
-    background: url("https://fjgz360.cn/chuxian/webPage/images/icon/right@3x.png") no-repeat right;
+  padding-right: 58rpx;
+  box-sizing: border-box;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/right@3x.png") no-repeat right;
   background-size: 32rpx;
 }
 
@@ -356,27 +357,27 @@ page {
   width: 572rpx;
   height: 44rpx;
   padding-right: 58rpx;
-  box-sizing:  border-box;
-    background: url("https://fjgz360.cn/chuxian/webPage/images/icon/right@3x.png") no-repeat right;
+  box-sizing: border-box;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/right@3x.png") no-repeat right;
   background-size: 32rpx;
   overflow: hidden;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
-.intention-subject .intention-item{
-background: rgba(247,206,44,0.10);
-border: 2rpx solid #F7CE2C;
-border-radius: 56rpx;
-font-size:24rpx;
-margin-left:10rpx;
-height:40rpx;
-line-height:40rpx;
-color:#f7ce2c;
-text-align:center;
-padding: 0 20rpx;
-
-
+.intention-subject .intention-item {
+  background: rgba(247, 206, 44, 0.10);
+  border: 2rpx solid #f7ce2c;
+  border-radius: 56rpx;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #f7ce2c;
+  text-align: center;
+  padding: 0 20rpx;
 }
+
 /* 专业选择 */
 
 .mask {
@@ -387,6 +388,7 @@ padding: 0 20rpx;
   top: 0;
   left: 0;
   display: none;
+  z-index: 10000；;
 }
 
 .mask.open {
@@ -436,12 +438,13 @@ padding: 0 20rpx;
   height: 528rpx;
   width: 630rpx;
   padding: 12rpx 40rpx;
-
 }
-.scroll-list{
+
+.scroll-list {
   display: flex;
   flex-wrap: wrap;
 }
+
 .subject-list .subject-item {
   background: rgba(247, 206, 44, 0.1);
   border-radius: 36rpx;
@@ -451,9 +454,10 @@ padding: 0 20rpx;
   height: 50rpx;
   line-height: 50rpx;
   padding: 0 20rpx;
-  margin-bottom: 30rpx; 
+  margin-bottom: 30rpx;
   margin-right: 30rpx;
 }
-.subject-list .subject-item.on{
-  border: 1rpx solid #F7CE2C;
+
+.subject-list .subject-item.on {
+  border: 1rpx solid #f7ce2c;
 }
