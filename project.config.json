@@ -26,18 +26,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
 					"name": "个人中心",
 					"pathName": "pages/personal/personal",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "志愿设计功能列表",
-					"pathName": "pages/wishDesignList/wishDesignList",
 					"query": ""
 				},
 				{
@@ -50,6 +44,12 @@
 					"id": -1,
 					"name": "上什么学校",
 					"pathName": "pages/goSchools/goSchools",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "本科志愿设计",
+					"pathName": "pages/wishDesign/wishDesign",
 					"query": ""
 				}
 			]

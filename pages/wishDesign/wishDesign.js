@@ -14,7 +14,10 @@ Page({
     img985: app.globalData.imgUrl + '/icon/985@3x.png',
     img211: app.globalData.imgUrl + '/icon/211@3x.png',
     imgdouble: app.globalData.imgUrl + '/icon/shuangyiliu@3x.png',
-    editFlag: true
+    editFlag: true,
+    imgchongji: app.globalData.imgUrl + '/icon/icon-chongji@3x.png',
+    imgbaodi: app.globalData.imgUrl + '/icon/icon-baodi@3x.png',
+    imgqiuwen: app.globalData.imgUrl + '/icon/icon-qiuwen@3x.png',
   },
   search: function () {
     wx.showLoading({

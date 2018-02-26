@@ -51,20 +51,30 @@
       <view class='school-item'>
         <!-- 学校属性 -->
         <view class='school-title'>
-          <view class='grade'>{{item.SCHOOL_GRADE}}</view>
+          <view class='grade' wx:if="{{item.SCHOOL_GRADE}}">{{item.SCHOOL_GRADE}} | {{item.SCHOOL_NATURE}}</view>
           <view class='type'>
             <image wx:if='{{item.IS_985==1}}' src='{{img985}}' class='img985'></image>
             <image wx:if='{{item.IS_211==1}}' src='{{img211}}' class='img211'></image>
             <image wx:if='{{item.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
           </view>
-          <view class='area'>
+          <view class='area' wx:if="{{item.SCHOOL_PROVINCE_TEXT}}">
             <view class='province'>{{item.SCHOOL_PROVINCE_TEXT}}</view>|
             <view class='city'>{{item.SCHOOL_CITY_TEXT}}</view>
           </view>
         </view>
+        <!-- 同排名往年录取 -->
+        <view class='school-rate'>
+          同排名往年录取率：{{item.ACCEPTANCE_RATE}}%
+        </view>
         <!-- 学校名称 -->
         <view class='school-name'>
           {{item.RECRUIT_NAME}}
+        </view>
+        <!-- 推荐分类 -->
+        <view class='recommend-type'>
+          <image wx:if='{{item.RECOMMEND_TYPE==0}}' src='{{imgchongji}}'></image>
+          <image wx:elif='{{item.RECOMMEND_TYPE==1}}' src='{{imgqiuwen}}'></image>
+          <image wx:elif='{{item.RECOMMEND_TYPE==2}}' src='{{imgbaodi}}'></image>
         </view>
         <!-- 排名 -->
         <view class='school-info'>
@@ -72,9 +82,9 @@
             <text>国内排名</text>
             <text>{{item.SCHOOL_RANKING}}</text>
           </view>
-          <view class='school-rate'>
-            <text>同排名往年录取率</text>
-            <text>{{item.ACCEPTANCE_RATE}}%</text>
+          <view class='school-manage'>
+            <text>主管部门：</text>
+            <text>{{item.SCHOOL_MANAGE?item.SCHOOL_MANAGE:'   '}}</text>
           </view>
         </view>
       </view>

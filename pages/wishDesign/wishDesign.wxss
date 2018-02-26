@@ -105,7 +105,9 @@ page {
   text-align: center;
   line-height: 60rpx;
 }
+
 .school-item {
+  position: relative;
   background: #fff;
   height: 250rpx;
   width: 700rpx;
@@ -181,7 +183,7 @@ page {
   color: #252628;
   height: 72rpx;
   line-height: 72rpx;
-  margin: 54rpx 20rpx 0 20rpx;
+  margin: 0rpx 20rpx 0 20rpx;
   text-align: center;
 }
 
@@ -200,20 +202,21 @@ page {
   flex: 1;
 }
 
-.school-info .school-rate {
+.school-info .school-manage {
   margin-right: 20rpx;
-  flex: 1;
   display: flex;
 }
 
 .school-info text:first-child {
   margin-right: 20rpx;
 }
-.school-rate text:first-child{
-  width: 224rpx;
+
+.school-manage text:first-child {
+  margin-right: 0;
 }
-.school-rate text:last-child{
-  flex: 1;
+
+.school-manage text:last-child {
+  min-width: 84rpx;
 }
 
 .batch-list {
@@ -280,4 +283,23 @@ page {
 .wenli-list .wenli-item.on {
   color: #fff;
   background: #f7ce2c;
+}
+
+.school-rate {
+  opacity: 0.7;
+  font-size: 24rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  color: #5b6369;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.recommend-type{
+  position: absolute;
+  top: 50rpx;
+  right: 26rpx;
+}
+.recommend-type image{
+  width: 120rpx;
+  height: 120rpx;
 }
