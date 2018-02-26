@@ -39,6 +39,7 @@ App({
     AppSecret: 'a9fedfba71feea3b1d56dc2cf48f2c48',
     userInfo: null,
     imgUrl:"https://fjgz360.cn/chuxian/webPage/images",
-    api:'https://fjgz360.cn/chuxian'
+    api:'https://fjgz360.cn/chuxian',
+    areaList:[]
   }
 })

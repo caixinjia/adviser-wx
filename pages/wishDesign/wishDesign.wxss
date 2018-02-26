@@ -1,5 +1,4 @@
 /* pages/wishDesign/wishDesign.wxss */
-
 page {
   min-height: 100%;
   background: #f4f4f4;
@@ -21,7 +20,7 @@ page {
 
 .select-form .background>image:nth-child(2) {
   width: 750rpx;
-  height: 226rpx;
+  height: 358rpx;
   display: block;
 }
 
@@ -294,12 +293,167 @@ page {
   text-align: center;
   margin-top: 20rpx;
 }
-.recommend-type{
+
+.recommend-type {
   position: absolute;
   top: 50rpx;
   right: 26rpx;
 }
-.recommend-type image{
+
+.recommend-type image {
   width: 120rpx;
   height: 120rpx;
+}
+
+.priority-item {
+  position: absolute;
+  width: 146rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  bottom: 16rpx;
+  font-size: 28rpx;
+  color: #252628;
+}
+
+.priority-item.on {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/youxianji@3x.png") no-repeat center;
+  background-size: 146rpx;
+}
+
+.priority-school {
+  left: 54rpx;
+}
+
+.priority-subject {
+  right: 54rpx;
+}
+
+.intention-area {
+  position: absolute;
+  top: 344rpx;
+  left: 100rpx;
+  display: flex;
+  width: 572rpx;
+    padding-right: 58rpx;
+  box-sizing:  border-box;
+    background: url("https://fjgz360.cn/chuxian/webPage/images/icon/right@3x.png") no-repeat right;
+  background-size: 32rpx;
+}
+
+.intention-title {
+  font-size: 20rpx;
+  color: #6a7088;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.intention-subject {
+  position: absolute;
+  top: 410rpx;
+  left: 100rpx;
+  display: flex;
+  width: 572rpx;
+  height: 44rpx;
+  padding-right: 58rpx;
+  box-sizing:  border-box;
+    background: url("https://fjgz360.cn/chuxian/webPage/images/icon/right@3x.png") no-repeat right;
+  background-size: 32rpx;
+  overflow: hidden;
+  flex-wrap:wrap;
+}
+
+.intention-subject .intention-item{
+background: rgba(247,206,44,0.10);
+border: 2rpx solid #F7CE2C;
+border-radius: 56rpx;
+font-size:24rpx;
+margin-left:10rpx;
+height:40rpx;
+line-height:40rpx;
+color:#f7ce2c;
+text-align:center;
+padding: 0 20rpx;
+
+
+}
+/* 专业选择 */
+
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.mask.open {
+  display: block;
+}
+
+.subject-list {
+  width: 710rpx;
+  height: 646rpx;
+  background: #fff;
+  position: fixed;
+  border-radius: 10rpx;
+  bottom: 0;
+  margin: 20rpx;
+}
+
+.list-title {
+  display: flex;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+}
+
+.list-title image {
+  width: 74rpx;
+  height: 74rpx;
+}
+
+.list-title text {
+  font-size: 36rpx;
+  color: #93969c;
+  text-align: center;
+  line-height: 74rpx;
+  flex: 1;
+}
+
+.list-title .list-close {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/dialog-close@3x.png") no-repeat center;
+  background-size: 74rpx;
+}
+
+.list-title .list-submit {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/dialog-submit@3x.png") no-repeat center;
+  background-size: 74rpx;
+}
+
+.subject-list .list {
+  height: 528rpx;
+  width: 630rpx;
+  padding: 12rpx 40rpx;
+
+}
+.scroll-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.subject-list .subject-item {
+  background: rgba(247, 206, 44, 0.1);
+  border-radius: 36rpx;
+  border: 1rpx solid rgba(247, 206, 44, 0.1);
+  font-size: 32rpx;
+  color: #f7ce2c;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 20rpx;
+  margin-bottom: 30rpx; 
+  margin-right: 30rpx;
+}
+.subject-list .subject-item.on{
+  border: 1rpx solid #F7CE2C;
 }
