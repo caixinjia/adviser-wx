@@ -26,7 +26,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -51,6 +51,18 @@
 					"name": "本科志愿设计",
 					"pathName": "pages/wishDesign/wishDesign",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "学校专业",
+					"pathName": "pages/schoolSubject/schoolSubject",
+					"query": "data={\"recruitId\":\"47\",\"subjectType\":2,\"ranking\":1230,\"recruitBatch\":\"101\",\"priority\":0}"
 				}
 			]
 		}

@@ -342,6 +342,42 @@ page {
   background-size: 32rpx;
 }
 
+.intention-province {
+  background: rgba(247, 206, 44, 0.10);
+  border: 2rpx solid #f7ce2c;
+  border-radius: 56rpx;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #f7ce2c;
+  text-align: center;
+  padding: 0 20rpx;
+  max-width: 136rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.intention-city {
+  background: rgba(247, 206, 44, 0.10);
+  border: 2rpx solid #f7ce2c;
+  border-radius: 56rpx;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  margin-bottom: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #f7ce2c;
+  text-align: center;
+  padding: 0 20rpx;
+    max-width: 136rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .intention-title {
   font-size: 20rpx;
   color: #6a7088;

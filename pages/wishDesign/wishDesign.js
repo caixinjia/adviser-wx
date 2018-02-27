@@ -21,7 +21,11 @@ Page({
     imgqiuwen: app.globalData.imgUrl + '/icon/icon-qiuwen@3x.png',
     subjectList: [],//专业列表
     dialogIsOpen: false,
-    selectedSubject: []
+    selectedSubject: [],
+    region: [],
+    customItem: '全部',
+    province: '',
+    city: ''
   },
   search: function () {
     wx.showLoading({
@@ -29,6 +33,7 @@ Page({
       mask: true
     })
     let that = this;
+    // 获取所选专业
     let list = that.data.subjectList;
     let selectedList = [];
     for (let i in list) {
@@ -36,14 +41,47 @@ Page({
         selectedList.push(list[i].id);
       }
     }
+    // 获取所选城市
+    let areaList = app.globalData.areaList;
+    console.log(areaList)
+    let province = '';
+    let city = '';
+    if (that.data.region[0] != '全部') {
+      for (let i in areaList) {
+        if (areaList[i].NAME == that.data.region[0] && areaList[i].LEVEL == '1') {
+          that.setData({
+            province: areaList[i].CODE
+          })
+          break;
+        }
+      }
+    } else {
+      that.setData({
+        province: ''
+      })
+    }
+    if (that.data.region[1] != '全部') {
+      for (let i in areaList) {
+        if (areaList[i].NAME == that.data.region[1] && areaList[i].LEVEL == '2') {
+          that.setData({
+            city: areaList[i].CODE
+          })
+          break;
+        }
+      }
+    } else {
+      that.setData({
+        city: ''
+      })
+    }
     wx.request({
       url: app.globalData.api + '/volunteerDesign',
       data: {
         subjectType: that.data.subjectType,
         ranking: that.data.ranking,
         recruitBatch: that.data.batch,
-        // intentionProvince:'430000',
-        // intentionCity:'430100',
+        intentionProvince: that.data.province,
+        intentionCity: that.data.city,
         priority: that.data.priority, //0-学校优先；1-专业优先
         intentionSubject: selectedList.join(',')
       },
@@ -141,11 +179,34 @@ Page({
       dialogIsOpen: false
     })
   },
+  // 改变省市区
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e)
+    this.setData({
+      region: e.detail.value
+    })
+  },
+  // 跳转到所选学校专业列表
+  toSchoolSubject(event){
+    let data = {
+      recruitId: event.currentTarget.dataset.id,
+      subjectType: this.data.subjectType,
+      ranking: this.data.ranking,
+      recruitBatch: this.data.batch,
+      priority: this.data.priority,
+      intentionSubject: this.data.intentionSubject,
+    }
+    console.log(data)
+    wx.navigateTo({
+      url: '/pages/schoolSubject/schoolSubject?data=' + JSON.stringify(data)
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let that = this;
+    // 获取专业列表
     wx.request({
       url: app.globalData.api + '/loadBmInfo',
       data: {
@@ -168,6 +229,7 @@ Page({
         })
       }
     })
+    // 获取地址列表
     wx.request({
       url: app.globalData.api + '/loadAreaList',
       data: {

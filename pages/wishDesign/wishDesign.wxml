@@ -42,14 +42,19 @@
       <view class="batch-item {{batch==103?'on':''}}" data-id="103" bindtap="changeBatch">本二批</view>
     </view>
     <!-- 意向城市 -->
+          <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
     <view class='intention-area'>
       <view class='intention-title'>意向城市</view>
+      <view wx:if="{{!region[0]||region[0]=='全部'}}" class='intention-province'>不限</view>
+      <view wx:if="{{region[0]&&region[0]!='全部'}}"class='intention-province'>{{region[0]}}</view>
+      <view wx:if="{{region[1]&&region[1]!='全部'}}"class='intention-city'>{{region[1]}}</view>
     </view>
+      </picker>
     <!-- 意向专业 -->
     <view class='intention-subject' bindtap='openDialog'>
       <view class='intention-title'>意向专业</view>
       <block wx:for="{{subjectList}}" wx:key="{{index}}">
-       <view class='intention-item' wx:if="{{item.selected}}">{{item.name}}</view>
+        <view class='intention-item' wx:if="{{item.selected}}">{{item.name}}</view>
       </block>
     </view>
     <!-- 优先级 -->
@@ -63,7 +68,7 @@
   <!-- 学校列表 -->
   <view>
     <block wx:for='{{schoolList}}' wx:key='{{item.RECRUIT_ID}}'>
-      <view class='school-item'>
+      <view class='school-item' data-id='{{item.RECRUIT_ID}}' bindtap='toSchoolSubject'>
         <!-- 学校属性 -->
         <view class='school-title'>
           <view class='grade' wx:if="{{item.SCHOOL_GRADE}}">{{item.SCHOOL_GRADE}} | {{item.SCHOOL_NATURE}}</view>
@@ -106,21 +111,21 @@
     </block>
   </view>
   <!-- 专业选择 -->
-  <view class="mask {{dialogIsOpen?'open':''}}" >
+  <view class="mask {{dialogIsOpen?'open':''}}">
     <view class="subject-list">
-        <view class='list-title'>
-            <image class='list-close' bindtap='closeDialog'></image>
-            <text>意向专业（多选）</text>
-            <image class='list-submit' bindtap='submitSubject'></image>
-        </view>
-        <scroll-view class='list' scroll-y>
+      <view class='list-title'>
+        <image class='list-close' bindtap='closeDialog'></image>
+        <text>意向专业（多选）</text>
+        <image class='list-submit' bindtap='submitSubject'></image>
+      </view>
+      <scroll-view class='list' scroll-y>
         <view class='scroll-list'>
-         <block wx:for="{{selectedSubject}}" wx:key="{{index}}" >
-              <view data-id='{{index}}' class="subject-item {{item.selected?'on':''}}" bindtap='clickSubject'>{{item.name}}</view>
-            </block>
+          <block wx:for="{{selectedSubject}}" wx:key="{{index}}">
+            <view data-id='{{index}}' class="subject-item {{item.selected?'on':''}}" bindtap='clickSubject'>{{item.name}}</view>
+          </block>
         </view>
-           
-        </scroll-view>
+
+      </scroll-view>
     </view>
   </view>
 </view>

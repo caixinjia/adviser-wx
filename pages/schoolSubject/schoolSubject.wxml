@@ -1,0 +1,18 @@
+<!--pages/schoolSubject/schoolSubject.wxml-->
+<view class='container'>
+  <block wx:for='{{result}}' wx:key='{{index}}'>
+  
+    <view class='subject-item'>
+    <image class='selectSubject' src='{{imgNo}}'></image>
+      <view class='subject-name'>
+        {{item.SUBJECT_NAME}}
+      </view>
+      <view class='subject-data'>
+        <view>学科排名：</view>
+        <view>同排名录取率：{{item.ACCEPTANCE_RATE}}%</view>
+        <view>录取计划：{{item.ADMISSION_PLAN}}</view>
+        <view>扩招数：{{item.EXPANSION_COUNT}}</view>
+      </view>
+    </view>
+  </block>
+</view>
