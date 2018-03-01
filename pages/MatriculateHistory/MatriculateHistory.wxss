@@ -1,0 +1,104 @@
+/* pages/MatriculateHistory/MatriculateHistory.wxss */
+
+page {
+  min-height: 100%;
+  background: #f4f4f4;
+}
+
+.search-bar {
+  background: #f7ce2c;
+  height: 90rpx;
+  display: flex;
+}
+
+.search-bar input {
+  background: #fff;
+  border-radius: 98rpx;
+  width: 520rpx;
+  height: 60rpx;
+  margin: 16rpx 20rpx 14rpx 20rpx;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+}
+
+.search-bar .filter-btn {
+  font-size: 28rpx;
+  color: #fff;
+  flex: 1;
+  margin-top: 26rpx;
+  padding-left: 62rpx;
+  border-left: 2rpx solid #fff;
+  height: 40rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/shaixuan@3x.png") no-repeat left 26rpx center;
+  background-size: 32rpx;
+}
+
+.result-item {
+  border-radius: 3.56px;
+  height: 444rpx;
+}
+
+.result-item .result-title {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #252628;
+  margin: 20rpx 22rpx 0 26rpx;
+  background-image: linear-gradient(-180deg, #fff9b8 0%, #fff082 100%);
+  box-shadow: 0 -1rpx 3rpx 0 rgba(0, 0, 0, 0.15);
+  border-radius: 3rpx 3rpx 10rpx 10rpx;
+  display: flex;
+}
+.result-item .result-title .school-name{
+  width: 30%;
+  margin-left: 34rpx;
+
+}
+.result-item .result-title .subject-name{
+  width: 70%;
+  margin-right: 38rpx;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.result-container{
+  height: 364rpx;
+  margin: 0 39rpx 0 41rpx;
+  padding: 0 25rpx;
+  background: #FFFFFF;
+border-radius: 7rpx;
+}
+
+
+.result-container .container-header{
+  opacity: 0.7;
+font-size: 24rpx;
+color: #5B6369;
+display: flex;
+height: 57rpx;
+border-bottom: 2rpx dashed #D2D9E1;
+}
+.result-container .container-header view{
+  width: 20%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.result-container .container-info{
+  height: 61rpx;
+  line-height: 61rpx;
+  font-size:28rpx;
+  color: #252628;
+  display: flex;
+}
+.result-container .container-info .info-year{
+  
+  opacity: 0.7;
+font-size: 24rpx;
+color: #5B6369;
+}
+.result-container .container-info view{
+  width: 20%;
+  text-align: center;
+}

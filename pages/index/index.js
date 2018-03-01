@@ -28,8 +28,9 @@ Page({
       },
       {
         name: "历届录取信息",
-        imgUrl: app.globalData.imgUrl + "/icon/luquxinxi@3x.png",
-        isOpen: false
+        imgUrl: app.globalData.imgUrl + "/icon/luquxinxi@3x.png", 
+        url: '/pages/MatriculateHistory/MatriculateHistory',
+        isOpen: true
       },
       {
         name: "心理测试",

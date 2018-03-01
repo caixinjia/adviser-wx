@@ -26,24 +26,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
 					"name": "个人中心",
 					"pathName": "pages/personal/personal",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "上名校",
-					"pathName": "pages/eliteSchools/eliteSchools",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "上什么学校",
-					"pathName": "pages/goSchools/goSchools",
 					"query": ""
 				},
 				{
@@ -63,6 +51,12 @@
 					"name": "学校专业",
 					"pathName": "pages/schoolSubject/schoolSubject",
 					"query": "data={\"recruitId\":\"47\",\"subjectType\":2,\"ranking\":1230,\"recruitBatch\":\"101\",\"priority\":0}"
+				},
+				{
+					"id": -1,
+					"name": "历届录取信息",
+					"pathName": "pages/MatriculateHistory/MatriculateHistory",
+					"query": ""
 				}
 			]
 		}
