@@ -32,7 +32,7 @@ Page({
         ranking: that.data.queryData.ranking,
         recruitBatch: that.data.queryData.recruitBatch,
         priority: that.data.queryData.priority,
-        intentionSubject: that.data.queryData.intentionSubject,
+        intentionSubject: that.data.queryData.intentionSubject.join(','),
       },
       success: function (res) {
         that.setData({

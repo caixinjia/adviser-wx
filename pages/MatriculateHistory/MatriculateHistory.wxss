@@ -1,7 +1,6 @@
 /* pages/MatriculateHistory/MatriculateHistory.wxss */
 
 page {
-  min-height: 100%;
   background: #f4f4f4;
 }
 
@@ -9,6 +8,10 @@ page {
   background: #f7ce2c;
   height: 90rpx;
   display: flex;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index: 0; 
 }
 
 .search-bar input {
@@ -32,7 +35,11 @@ page {
   background: url("https://fjgz360.cn/chuxian/webPage/images/icon/shaixuan@3x.png") no-repeat left 26rpx center;
   background-size: 32rpx;
 }
-
+.result-list{
+  position: relative;
+  z-index: -1;
+  margin-top: 110rpx;
+}
 .result-item {
   border-radius: 3.56px;
   height: 444rpx;
@@ -101,4 +108,19 @@ color: #5B6369;
 .result-container .container-info view{
   width: 20%;
   text-align: center;
+}
+/* 筛选 */
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 10000；;
+}
+
+.mask.open {
+  display: block;
 }

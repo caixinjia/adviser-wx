@@ -1,11 +1,11 @@
 <!--pages/MatriculateHistory/MatriculateHistory.wxml-->
 <view class='container'>
   <view class='search-bar'>
-    <input placeholder-style="color:#D2D9E1" confirm-type="search" placeholder="请输入院校名称，支持模糊搜索" />
+    <input placeholder-style="color:#D2D9E1" confirm-type="search" placeholder="请输入院校名称，支持模糊搜索" data-typeId='1' value='{{searchSchoolName}}' bindinput='changeSearch' bindconfirm='search' />
     <view class='filter-btn'>筛选</view>
   </view>
-  <view class='result-list' wx:for='{{result}}' wx:key='{{index}}'>
-    <view class='result-item'>
+  <view class='result-list'>
+    <view class='result-item' wx:for='{{result}}' wx:key='{{index}}'>
       <view class='result-title'>
         <view class='school-name'>{{item.RECRUIT_NAME}}</view>
         <view class='subject-name'>{{item.SUBJECT_NAME}}</view>
@@ -25,28 +25,28 @@
           <view>{{item.LAST_1_MAX?item.LAST_1_MAX:'-'}}</view>
           <view>{{item.LAST_1_MIN?item.LAST_1_MIN:'-'}}</view>
         </view>
-         <view class='container-info'>
+        <view class='container-info'>
           <view class='info-year'>2016</view>
           <view>{{item.LAST_2_COUNT?item.LAST_2_COUNT:'-'}}</view>
           <view>{{item.LAST_2_AVG?item.LAST_2_AVG:'-'}}</view>
           <view>{{item.LAST_2_MAX?item.LAST_2_MAX:'-'}}</view>
           <view>{{item.LAST_2_MIN?item.LAST_2_MIN:'-'}}</view>
         </view>
-         <view class='container-info'>
+        <view class='container-info'>
           <view class='info-year'>2015</view>
           <view>{{item.LAST_3_COUNT?item.LAST_3_COUNT:'-'}}</view>
           <view>{{item.LAST_3_AVG?item.LAST_3_AVG:'-'}}</view>
           <view>{{item.LAST_3_MAX?item.LAST_3_MAX:'-'}}</view>
           <view>{{item.LAST_3_MIN?item.LAST_3_MIN:'-'}}</view>
         </view>
-         <view class='container-info'>
+        <view class='container-info'>
           <view class='info-year'>2014</view>
           <view>{{item.LAST_4_COUNT?item.LAST_4_COUNT:'-'}}</view>
           <view>{{item.LAST_4_AVG?item.LAST_4_AVG:'-'}}</view>
           <view>{{item.LAST_4_MAX?item.LAST_4_MAX:'-'}}</view>
           <view>{{item.LAST_4_MIN?item.LAST_4_MIN:'-'}}</view>
         </view>
-         <view class='container-info'>
+        <view class='container-info'>
           <view class='info-year'>2013</view>
           <view>{{item.LAST_5_COUNT?item.LAST_5_COUNT:'-'}}</view>
           <view>{{item.LAST_5_AVG?item.LAST_5_AVG:'-'}}</view>
@@ -55,5 +55,9 @@
         </view>
       </view>
     </view>
+  </view>
+  <!-- 筛选 -->
+  <view class="mask {{filterIsOpen?'open':''}}">
+
   </view>
 </view>

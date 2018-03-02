@@ -22,6 +22,7 @@ Page({
     subjectList: [],//专业列表
     dialogIsOpen: false,
     selectedSubject: [],
+    selectedSubjectArray:[],
     region: [],
     customItem: '全部',
     province: '',
@@ -87,14 +88,14 @@ Page({
       },
       success: function (res) {
         if (res.data != '\r\n') {
-          that.setData({ schoolList: res.data })
+          that.setData({ schoolList: res.data, selectedSubjectArray: selectedList})
         } else {
           wx.showToast({
             title: '暂无数据',
             icon: 'none',
             duration: 2000
           })
-          that.setData({ schoolList: [] })
+          that.setData({ schoolList: [] ,})
         }
       }
     })
@@ -194,7 +195,7 @@ Page({
       ranking: this.data.ranking,
       recruitBatch: this.data.batch,
       priority: this.data.priority,
-      intentionSubject: this.data.intentionSubject,
+      intentionSubject: this.data.selectedSubjectArray,
     }
     console.log(data)
     wx.navigateTo({
