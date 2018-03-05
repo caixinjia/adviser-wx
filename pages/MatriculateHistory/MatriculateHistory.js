@@ -7,8 +7,11 @@ Page({
    */
   data: {
     searchSchoolName: '',
+    searchSubjectName: '',
+    subjectType: '',
+    recruitBatch: '',
     result: [],
-    filterIsOpen:false
+    filterIsOpen: false
   },
 
   /**
@@ -18,7 +21,7 @@ Page({
 
   },
   // 搜索
-  search(){
+  search() {
     wx.showLoading({
       title: '加载中',
       mask: true
@@ -27,11 +30,10 @@ Page({
     wx.request({
       url: app.globalData.api + '/loadHistoryScoreList',
       data: {
-        subjectType: '2',
-        // recruitBatch: '102',
-        // subjectClass: '10012',
+        subjectType: that.data.subjectType,
+        recruitBatch: that.data.recruitBatch,
         schoolName: that.data.searchSchoolName,
-        // subjectName: '电子',
+        subjectName: that.data.searchSubjectName,
         endRow: 100
       },
       success: function (res) {
@@ -47,23 +49,56 @@ Page({
         }
       }
     })
-    wx.hideLoading()
+    wx.hideLoading();
+    this.hideFilter();
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 1000
+    })
   },
   // 改变搜索条件
   changeSearch(event) {
-    console.log(event)
     switch (event.currentTarget.dataset.typeid) {
       case "1":
         this.setData({
           searchSchoolName: event.detail.value
         }); break;
+      case "2":
+        this.setData({
+          searchSubjectName: event.detail.value
+        }); break;
+      case "3":
+        this.setData({
+          subjectType: event.currentTarget.dataset.id
+        }); break;
+      case "4":
+        this.setData({
+          recruitBatch: event.currentTarget.dataset.id
+        }); break;
     }
   },
-  showFilter(){
+  showFilter() {
     this.setData({
       filterIsOpen: true
     });
   },
+  hideFilter() {
+    this.setData({
+      filterIsOpen: false
+    });
+  },
+  noBubble() {
+    console.log('阻止冒泡')
+  },
+  resetFilter() {
+    this.setData({
+      searchSchoolName: '',
+      searchSubjectName: '',
+      subjectType: '',
+      recruitBatch: '',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

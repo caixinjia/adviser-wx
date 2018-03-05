@@ -57,7 +57,30 @@
     </view>
   </view>
   <!-- 筛选 -->
-  <view class="mask {{filterIsOpen?'open':''}}">
-
+  <view class="mask {{filterIsOpen?'open':''}}" bindtap='hideFilter'>
+    <view class='filter-dialog' catchtap='noBubble'>
+      <input placeholder-style="color:#B5B5B5" confirm-type="done" placeholder="请输入专业名称" data-typeId='2' value='{{searchSubjectName}}' bindinput='changeSearch' />
+      <view class='subject-type'>
+        <view class='filter-title'>文理分类</view>
+        <view class='filter-options'>
+          <view class="{{subjectType==''?'on':''}}" data-typeId='3' data-id='' bindtap='changeSearch'>不限</view>
+          <view class="{{subjectType=='1'?'on':''}}" data-typeId='3' data-id='1' bindtap='changeSearch'>文史类</view>
+          <view class="{{subjectType=='2'?'on':''}}" data-typeId='3' data-id='2' bindtap='changeSearch'>理工类</view>
+        </view>
+      </view>
+      <view class='recruit-batch'>
+        <view class='filter-title'>录取批次</view>
+        <view class='filter-options'>
+          <view class="{{recruitBatch==''?'on':''}}" data-typeId='4' data-id='' bindtap='changeSearch'>不限</view>
+          <view class="{{recruitBatch=='101'?'on':''}}" data-typeId='4' data-id='101' bindtap='changeSearch'>提前批</view>
+          <view class="{{recruitBatch=='102'?'on':''}}" data-typeId='4' data-id='102' bindtap='changeSearch'>本一批</view>
+          <view class="{{recruitBatch=='103'?'on':''}}" data-typeId='4' data-id='103' bindtap='changeSearch'>本二批</view>
+        </view>
+      </view>
+      <view class='filter-btns'>
+      <view class='reset-btn' bindtap='resetFilter'>重置</view>
+      <view class='search-btn' bindtap='search'>完成</view>
+      </view>
+    </view>
   </view>
 </view>

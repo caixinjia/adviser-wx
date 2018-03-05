@@ -8,10 +8,10 @@ page {
   background: #f7ce2c;
   height: 90rpx;
   display: flex;
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index: 0; 
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 0;
 }
 
 .search-bar input {
@@ -35,11 +35,13 @@ page {
   background: url("https://fjgz360.cn/chuxian/webPage/images/icon/shaixuan@3x.png") no-repeat left 26rpx center;
   background-size: 32rpx;
 }
-.result-list{
+
+.result-list {
   position: relative;
   z-index: -1;
   margin-top: 110rpx;
 }
+
 .result-item {
   border-radius: 3.56px;
   height: 444rpx;
@@ -56,65 +58,70 @@ page {
   border-radius: 3rpx 3rpx 10rpx 10rpx;
   display: flex;
 }
-.result-item .result-title .school-name{
+
+.result-item .result-title .school-name {
   width: 30%;
   margin-left: 34rpx;
-
 }
-.result-item .result-title .subject-name{
+
+.result-item .result-title .subject-name {
   width: 70%;
   margin-right: 38rpx;
   text-align: right;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
 }
-.result-container{
+
+.result-container {
   height: 364rpx;
   margin: 0 39rpx 0 41rpx;
   padding: 0 25rpx;
-  background: #FFFFFF;
-border-radius: 7rpx;
+  background: #fff;
+  border-radius: 7rpx;
 }
 
-
-.result-container .container-header{
+.result-container .container-header {
   opacity: 0.7;
-font-size: 24rpx;
-color: #5B6369;
-display: flex;
-height: 57rpx;
-border-bottom: 2rpx dashed #D2D9E1;
+  font-size: 24rpx;
+  color: #5b6369;
+  display: flex;
+  height: 57rpx;
+  border-bottom: 2rpx dashed #d2d9e1;
 }
-.result-container .container-header view{
+
+.result-container .container-header view {
   width: 20%;
   text-align: center;
   margin-top: 20rpx;
 }
-.result-container .container-info{
+
+.result-container .container-info {
   height: 61rpx;
   line-height: 61rpx;
-  font-size:28rpx;
+  font-size: 28rpx;
   color: #252628;
   display: flex;
 }
-.result-container .container-info .info-year{
-  
+
+.result-container .container-info .info-year {
   opacity: 0.7;
-font-size: 24rpx;
-color: #5B6369;
+  font-size: 24rpx;
+  color: #5b6369;
 }
-.result-container .container-info view{
+
+.result-container .container-info view {
   width: 20%;
   text-align: center;
 }
+
 /* 筛选 */
+
 .mask {
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: none;
@@ -123,4 +130,92 @@ color: #5B6369;
 
 .mask.open {
   display: block;
+}
+
+.filter-dialog {
+  background: #fff;
+  width: 670rpx;
+  height: calc(100% - 16rpx);
+  margin-left: 80rpx;
+  padding-top: 16rpx;
+  position: relative;
+}
+
+.filter-dialog input {
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  background: #f4f4f4;
+  border-radius: 98rpx;
+  width: 580rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 30rpx;
+}
+
+.subject-type {
+  margin-top: 50rpx;
+  padding: 0 20rpx 0 30rpx;
+}
+
+.filter-title {
+  font-size: 28rpx;
+  color: #c1c5d5;
+  letter-spacing: 0;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-options view {
+  background: #f4f4f4;
+  border-radius: 5px;
+  height: 80rpx;
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #252628;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+  margin-right: 40rpx;
+}
+
+.filter-options view.on {
+  background: #fff082;
+}
+
+.filter-options view:nth-child(3n) {
+  margin-right: 0;
+}
+
+.recruit-batch {
+  margin-top: 50rpx;
+  padding: 0 20rpx 0 30rpx;
+}
+
+.filter-btns {
+  width: 670rpx;
+  height: 98rpx;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  font-size: 28rpx;
+  color: #252628;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 98rpx;
+}
+
+.filter-btns view {
+  flex: 1;
+}
+
+.filter-btns .reset-btn {
+  background: rgba(255, 240, 130, 0.5);
+}
+
+.filter-btns .search-btn {
+  background: #f7ce2c;
 }
