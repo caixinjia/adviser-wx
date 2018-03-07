@@ -1,0 +1,218 @@
+/* pages/subjectInfo/subjectInfo.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.search-bar {
+  background: #f7ce2c;
+  height: 90rpx;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 0;
+}
+
+.search-bar input {
+  background: #fff;
+  border-radius: 98rpx;
+  width: 520rpx;
+  height: 60rpx;
+  margin: 16rpx 20rpx 14rpx 20rpx;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+}
+
+.search-bar .filter-btn {
+  font-size: 28rpx;
+  color: #fff;
+  flex: 1;
+  margin-top: 26rpx;
+  padding-left: 62rpx;
+  border-left: 2rpx solid #fff;
+  height: 40rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/shaixuan@3x.png") no-repeat left 26rpx center;
+  background-size: 32rpx;
+}
+
+.result-list {
+  position: relative;
+  z-index: -1;
+  margin-top: 110rpx;
+}
+
+.result-item {
+  background: #fff;
+  border-radius: 7rpx;
+  height: 250rpx;
+  width: 700rpx;
+  margin: 0 24rpx 30rpx 26rpx;
+}
+
+.result-item .result-title {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #252628;
+  padding: 0 20rpx 0 15rpx;
+  display: flex;
+  border-bottom: 1rpx dashed #d2d9e1;
+}
+
+.result-item .result-title view text:first-child {
+  color: #5b6369;
+  opacity: 0.7;
+  margin-right: 11rpx;
+}
+
+.result-item .result-title .subject-no {
+  flex: 1;
+}
+
+.result-item .result-title .subject-class {
+  flex: 1;
+  text-align: right;
+}
+
+.result-type {
+  text-align: center;
+  margin-top: 20rpx;
+  opacity: 0.7;
+  font-size: 24rpx;
+  color: #5b6369;
+  height: 34rpx;
+  line-height: 34rpx;
+}
+
+.result-name {
+  text-align: center;
+  font-size: 50rpx;
+  color: #252628;
+  letter-spacing: 0;
+  height: 72rpx;
+  line-height: 72rpx;
+  padding: 0 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.school-name {
+  margin-top: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #252628;
+  letter-spacing: 0;
+  background-image: linear-gradient(-180deg, #fff9b8 0%, #fff082 100%);
+    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 筛选 */
+
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 10000；;
+}
+
+.mask.open {
+  display: block;
+}
+
+.filter-dialog {
+  background: #fff;
+  width: 670rpx;
+  height: calc(100% - 16rpx);
+  margin-left: 80rpx;
+  padding-top: 16rpx;
+  position: relative;
+}
+
+.filter-dialog input {
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  background: #f4f4f4;
+  border-radius: 98rpx;
+  width: 580rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 30rpx;
+}
+
+.subject-type {
+  margin-top: 50rpx;
+  padding: 0 20rpx 0 30rpx;
+}
+
+.filter-title {
+  font-size: 28rpx;
+  color: #c1c5d5;
+  letter-spacing: 0;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-options view {
+  background: #f4f4f4;
+  border-radius: 5px;
+  height: 80rpx;
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #252628;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+  margin-right: 40rpx;
+}
+
+.filter-options view.on {
+  background: #fff082;
+}
+
+.filter-options view:nth-child(3n) {
+  margin-right: 0;
+}
+
+.recruit-batch {
+  margin-top: 50rpx;
+  padding: 0 20rpx 0 30rpx;
+}
+
+.filter-btns {
+  width: 670rpx;
+  height: 98rpx;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  font-size: 28rpx;
+  color: #252628;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 98rpx;
+}
+
+.filter-btns view {
+  flex: 1;
+}
+
+.filter-btns .reset-btn {
+  background: rgba(255, 240, 130, 0.5);
+}
+
+.filter-btns .search-btn {
+  background: #f7ce2c;
+}

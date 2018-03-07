@@ -1,9 +1,13 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const util = require('../../utils/util.js')
 Page({
   data: {
+    userInfo: '',
+    isLogin: false,
+    loginPhone:'',
+    loginPwd:'',
     mainSwiper: {
       imgUrls: [
         app.globalData.imgUrl + "/swiper/banner@3x.png",
@@ -24,11 +28,12 @@ Page({
       {
         name: "专业信息",
         imgUrl: app.globalData.imgUrl + "/icon/zhuanye@3x.png",
-        isOpen: false
+        url: '/pages/subjectInfo/subjectInfo',
+        isOpen: true
       },
       {
         name: "历届录取信息",
-        imgUrl: app.globalData.imgUrl + "/icon/luquxinxi@3x.png", 
+        imgUrl: app.globalData.imgUrl + "/icon/luquxinxi@3x.png",
         url: '/pages/MatriculateHistory/MatriculateHistory',
         isOpen: true
       },
@@ -73,16 +78,67 @@ Page({
       duration: 2000
     })
   },
-  onLoad: function () {
+  changeInput: function (event){
+    switch (event.currentTarget.dataset.typeid) {
+      case "1":
+        this.setData({
+          loginPhone: event.detail.value
+        }); break;
+      case "2":
+        this.setData({
+          loginPwd: event.detail.value
+        }); break;
+    }
+  },
+  login:function(){
+    let that =this;
     wx.request({
-      url: app.globalData.api + '/loadBmInfo',
+      url: app.globalData.api + '/login',
       data: {
-        bmGroupName:'SUBJECT_TYPE'
+        mobileNum: that.data.loginPhone,
+        passwd: util.md5(that.data.loginPhone),
+        verifiedType: '0'
       },
       success: function (res) {
         console.log(res)
+        if (res.data.RESULTS == "SUCCESS"){
+          wx.showToast({
+            title: '登录成功',
+            icon: 'success',
+            duration: 2000
+          })
+          that.setData({
+            isLogin: true
+          })
+          that.getUser(res)
+       
+        }
       }
     })
+  },
+  getUser:function(info){
+    wx.request({
+      url: app.globalData.api + '/showUserInfo',
+      data: {
+        userId: info.USER_ID
+      },
+      success: function (res) {
+        console.log(info)
+        wx.setStorageSync('user', {
+          role: info.data.ROLE,
+          id: info.data.USER_ID,
+          info: res.data
+        })
+        console.log(wx.getStorageSync('user'))
+      }
+    })
+  },
+  onLoad: function () {
+    if (wx.getStorageSync('user')) {
+      this.setData({
+        isLogin: true
+      })
+    }
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -111,7 +167,6 @@ Page({
     }
   },
   getUserInfo: function (e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

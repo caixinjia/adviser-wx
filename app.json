@@ -8,7 +8,8 @@
     "pages/wishDesign/wishDesign",
     "pages/test/test",
     "pages/schoolSubject/schoolSubject",
-    "pages/MatriculateHistory/MatriculateHistory"
+    "pages/MatriculateHistory/MatriculateHistory",
+    "pages/subjectInfo/subjectInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

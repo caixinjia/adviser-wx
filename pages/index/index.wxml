@@ -33,5 +33,15 @@
       </block>
     </swiper>
   </view>
-
+  <!-- 登录页面 -->
+  <view class="{{isLogin?'mask':'mask on'}}">
+    <view class='login-dialog'>
+      <view class='user-img'>
+        <image src='{{userInfo.avatarUrl}}'></image>
+      </view>
+      <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='1'></input>
+      <input class='pwd-input' password='true' placeholder='请输入密码' type='text' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='2'></input>
+      <view class='login-btn' bindtap='login'>登录</view>
+    </view>
+  </view>
 </view>

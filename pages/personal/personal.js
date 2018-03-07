@@ -10,7 +10,6 @@ Page({
     vipImg: app.globalData.imgUrl + "/icon/vip@3x.png",
     remindImg: app.globalData.imgUrl + "/icon/xitongxiaoxi@3x.png",
     userName:'游客',
-    userPhone:'188-888-8888',
     expiringDate:'2018年09月01日',
     userInfo:'',
     addressImg: app.globalData.imgUrl + "/icon/address@3x.png",
@@ -43,9 +42,9 @@ Page({
   onLoad: function (options) {
     this.setData({
       userInfo: app.globalData.userInfo,
-      userName: app.globalData.userInfo.nickName
+      userName: app.globalData.userInfo.nickName,
+      user:wx.getStorageSync('user')
     })
-    console.log(app.globalData.userInfo)
   },
 
   /**
