@@ -9,6 +9,7 @@ Page({
     searchSchoolName: '',
     searchSubjectName: '',
     subjectType: '',
+    subjectClass:'',
     recruitBatch: '',
     result: [],
     filterIsOpen: false
@@ -18,7 +19,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    // 获取专业列表
+    wx.request({
+      url: app.globalData.api + '/loadBmInfo',
+      data: {
+        bmGroupName: 'SUBJECT_CLASS',
+      },
+      success: function (res) {
+        that.setData({
+          subjectList: res.data
+        })
+      }
+    })
   },
   // 搜索
   search() {
@@ -31,6 +44,7 @@ Page({
       url: app.globalData.api + '/loadSubjectList',
       data: {
         subjectType: that.data.subjectType,
+        subjectClass: that.data.subjectClass,
         recruitBatch: that.data.recruitBatch,
         recruitName: that.data.searchSchoolName,
         subjectName: that.data.searchSubjectName,
@@ -74,6 +88,10 @@ Page({
       case "4":
         this.setData({
           recruitBatch: event.currentTarget.dataset.id
+        }); break;
+      case "5":
+        this.setData({
+          subjectClass: event.currentTarget.dataset.id
         }); break;
     }
   },

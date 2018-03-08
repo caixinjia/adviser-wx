@@ -5,7 +5,7 @@
     <view class='filter-btn' bindtap='showFilter'>筛选</view>
   </view>
   <view class='result-list'>
-    <view class='result-item' wx:for='{{result}}' wx:key='{{key}}' data-id='{{item.SUBJECT_ID}}'>
+    <view class='result-item' wx:for='{{result}}' wx:key='{{index}}' data-id='{{item.SUBJECT_ID}}'>
       <view class='result-title'>
         <view class='subject-no'>
           <text>专业编码</text>
@@ -29,7 +29,7 @@
   </view>
   <!-- 筛选 -->
   <view class="mask {{filterIsOpen?'open':''}}" bindtap='hideFilter'>
-    <view class='filter-dialog' catchtap='noBubble'>
+    <scroll-view class='filter-dialog' catchtap='noBubble' scroll-y>
       <input placeholder-style="color:#B5B5B5" confirm-type="done" placeholder="请输入院校名称" data-typeId='1' value='{{searchSchoolName}}' bindinput='changeSearch' />
       <view class='subject-type'>
         <view class='filter-title'>文理分类</view>
@@ -48,10 +48,20 @@
           <view class="{{recruitBatch=='103'?'on':''}}" data-typeId='4' data-id='103' bindtap='changeSearch'>本二批</view>
         </view>
       </view>
+      <view class='subject-class-filter'>
+        <view class='filter-title'>专业大类</view>
+        <view class='filter-options'>
+        <view class="{{subjectClass==''?'on':''}}" data-typeId='5' data-id='' bindtap='changeSearch'>不限</view>
+          <block wx:for='{{subjectList}}' wx:key='{{index}}'>
+            <view class="{{subjectClass==index?'on':''}}" data-typeId='5' data-id='{{index}}' bindtap='changeSearch'>{{item}}</view>
+          </block>
+
+        </view>
+      </view>
       <view class='filter-btns'>
         <view class='reset-btn' bindtap='resetFilter'>重置</view>
         <view class='search-btn' bindtap='search'>完成</view>
       </view>
-    </view>
+    </scroll-view>
   </view>
 </view>
