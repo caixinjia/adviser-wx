@@ -26,7 +26,13 @@
         <text class='data-title'>高考成绩</text>
         <view>
           <view class='score-detail'>
-            <view class='score-number'>666</view>
+            <view class='cancel-btn' wx:if="{{user.info.SCORE==''&&scoreEdit}}" bindtap='cancelScore'></view>
+            <view class='score-number' wx:if="{{user.info.SCORE!=''}}">{{user.info.SCORE}}</view>
+            <view class='score-number no-data' wx:else bindtap='openScore'>
+              <input type='number' wx:if='{{scoreEdit}}' bindinput='changeInput' data-id='1'></input>
+            </view>
+            <view class='submit-btn' wx:if="{{user.info.SCORE==''&&scoreEdit}}" bindtap='changeScore'></view>
+            <text class='warn' wx:if="{{user.info.SCORE==''&&scoreEdit}}">填写后不可修改</text>
           </view>
         </view>
       </view>
@@ -46,12 +52,12 @@
         <view>福建省厦门市湖里区</view>
         <image class='right-img' src='{{rightImg}}'></image>
       </view>
-            <view>
+      <view>
         <image src='{{schoolImg}}'></image>
         <view>厦门双十中学</view>
         <image class='right-img' src='{{rightImg}}'></image>
       </view>
-            <view>
+      <view>
         <image src='{{wenliImg}}'></image>
         <view>理科</view>
         <image class='right-img' src='{{rightImg}}'></image>
@@ -60,7 +66,7 @@
   </view>
   <!-- 入口 -->
   <view class='entrance'>
-      <block wx:for='{{entrances}}' wx:key='{{entranceList.name}}'>
+    <block wx:for='{{entrances}}' wx:key='{{entranceList.name}}'>
       <navigator class='entrance-tiem'>
         <image src='{{item.img}}' />
         <view class='entrance-name'>{{item.name}}</view>
