@@ -63,6 +63,12 @@
 					"name": "专业信息",
 					"pathName": "pages/subjectInfo/subjectInfo",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "院校列表",
+					"pathName": "pages/schoolList/schoolList",
+					"query": ""
 				}
 			]
 		}

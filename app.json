@@ -9,7 +9,8 @@
     "pages/test/test",
     "pages/schoolSubject/schoolSubject",
     "pages/MatriculateHistory/MatriculateHistory",
-    "pages/subjectInfo/subjectInfo"
+    "pages/subjectInfo/subjectInfo",
+    "pages/schoolList/schoolList"
   ],
   "window": {
     "backgroundTextStyle": "light",

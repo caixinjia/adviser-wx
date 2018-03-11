@@ -43,7 +43,7 @@ Page({
       url: app.globalData.api + '/login',
       data: {
         mobileNum: '15280094430',
-        passwd: util.md5(123456),
+        passwd: util.md5('123456'),
         verifiedType:'0'
       },
       success: function (res) {
@@ -64,8 +64,8 @@ Page({
       url: app.globalData.api + '/resetPwd',
       data: {
         mobileNum: '15280094430',
-        passwd: util.md5(123456),
-        verifiedCode: '934316'
+        passwd: util.md5('123456'),
+        verifiedCode: '370868'
       },
       success: function (res) {
    
@@ -73,6 +73,14 @@ Page({
     })
   },
   onLoad(){
-    console.log(util.md5('123456'))
+    wx.request({
+      url: app.globalData.api + '/modifyScore',
+      data: {
+        userId: 'e4f22bb7-21fd-11e8-ac6a-00163f00d45f',
+        score: '',
+      },
+      success: function (res) {
+      }
+    })
   }
 })
