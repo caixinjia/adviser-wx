@@ -233,11 +233,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userInfo: app.globalData.userInfo,
-      userName: app.globalData.userInfo.nickName,
-      user: wx.getStorageSync('userInfo')
-    })
+
     // 获取地址列表
     wx.request({
       url: app.globalData.api + '/loadAreaList',
@@ -261,7 +257,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.isLogin();
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      userName: app.globalData.userInfo.nickName,
+      user: wx.getStorageSync('userInfo')
+    })
   },
 
   /**

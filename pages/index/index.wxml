@@ -35,13 +35,29 @@
   </view>
   <!-- 登录页面 -->
   <view class="{{isLogin?'mask':'mask on'}}">
-    <view class='login-dialog'>
+    <!-- 登录 -->
+    <view class='login-dialog' wx:if='{{!registerShow}}'>
       <view class='user-img'>
         <image src='{{userInfo.avatarUrl}}'></image>
       </view>
       <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='1'></input>
       <input class='pwd-input' password='true' placeholder='请输入密码' type='text' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='2'></input>
       <view class='login-btn' bindtap='login'>登录</view>
+      <view class='to-register' bindtap='toRegister'>没有账号，注册一个！</view>
+    </view>
+    <!-- 注册 -->
+    <view class='register-dialog' wx:else>
+      <view class='user-img'>
+        <image src='{{userInfo.avatarUrl}}'></image>
+      </view>
+      <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='3'></input>
+      <view class='code-div'>
+        <input class='code-input' placeholder='请输入验证码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='4'></input>
+        <view class="{{codeFlag?'send-btn':'send-btn last-time'}}" bindtap='getVerifiedCode'>{{codeFlag?'获取验证码':lastTime+'s'}}</view>
+      </view>
+      <input class='pwd-input' password='true' placeholder='请输入密码' type='text' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='5'></input>
+      <view class='login-btn' bindtap='register'>注册</view>
+      <view class='to-register' bindtap='toLogin'>已有账号，去登录~</view>
     </view>
   </view>
 </view>

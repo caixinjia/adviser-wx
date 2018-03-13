@@ -42,9 +42,21 @@ App({
         userId: id
       },
       success: function (res) {
-        wx.setStorageSync('userInfo',res.data)
+        wx.setStorageSync('userInfo', res.data)
       }
     })
+  },
+  // 判断是否登录
+  isLogin: function () {
+    if (!wx.getStorageSync('userInfo')) {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+    }
   },
   globalData: {
     AppID: 'wx8e5b52999b5be030',
