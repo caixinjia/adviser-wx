@@ -60,12 +60,15 @@ page {
 }
 
 .result-item .result-title .school-name {
-  width: 30%;
+  width: 40%;
   margin-left: 34rpx;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .result-item .result-title .subject-name {
-  width: 70%;
+  width: 60%;
   margin-right: 38rpx;
   text-align: right;
   overflow: hidden;

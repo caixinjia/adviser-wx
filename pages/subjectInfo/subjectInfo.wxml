@@ -5,27 +5,30 @@
     <view class='filter-btn' bindtap='showFilter'>筛选</view>
   </view>
   <view class='result-list'>
-    <view class='result-item' wx:for='{{result}}' wx:key='{{index}}' data-id='{{item.SUBJECT_ID}}'>
-      <view class='result-title'>
-        <view class='subject-no'>
-          <text>专业编码</text>
-          <text>{{item.SUBJECT_ID}}</text>
+    <block  wx:for='{{result}}' wx:key='{{index}}'>
+      <view class='result-item' data-id='{{item.SUBJECT_ID}}' bindtap='toSubjectDetail'>
+        <view class='result-title'>
+          <view class='subject-no'>
+            <text>专业编码</text>
+            <text>{{item.SUBJECT_ID}}</text>
+          </view>
+          <view class='subject-class'>
+            <text>专业大类</text>
+            <text>{{item.SUBJECT_CLASS_TEXT}}</text>
+          </view>
         </view>
-        <view class='subject-class'>
-          <text>专业大类</text>
-          <text>{{item.SUBJECT_CLASS_TEXT}}</text>
+        <view class='result-type'>
+          {{item.SUBJECT_TYPE_TEXT}}
+        </view>
+        <view class='result-name'>
+          {{item.SUBJECT_NAME}}
+        </view>
+        <view class='school-name'>
+          {{item.RECRUIT_NAME}}
         </view>
       </view>
-      <view class='result-type'>
-        {{item.SUBJECT_TYPE_TEXT}}
-      </view>
-      <view class='result-name'>
-        {{item.SUBJECT_NAME}}
-      </view>
-      <view class='school-name'>
-        {{item.RECRUIT_NAME}}
-      </view>
-    </view>
+    </block>
+
   </view>
   <!-- 筛选 -->
   <view class="mask {{filterIsOpen?'open':''}}" bindtap='hideFilter'>
@@ -51,7 +54,7 @@
       <view class='subject-class-filter'>
         <view class='filter-title'>专业大类</view>
         <view class='filter-options'>
-        <view class="{{subjectClass==''?'on':''}}" data-typeId='5' data-id='' bindtap='changeSearch'>不限</view>
+          <view class="{{subjectClass==''?'on':''}}" data-typeId='5' data-id='' bindtap='changeSearch'>不限</view>
           <block wx:for='{{subjectList}}' wx:key='{{index}}'>
             <view class="{{subjectClass==index?'on':''}}" data-typeId='5' data-id='{{index}}' bindtap='changeSearch'>{{item}}</view>
           </block>

@@ -69,6 +69,18 @@
 					"name": "院校列表",
 					"pathName": "pages/schoolList/schoolList",
 					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "专业详情",
+					"pathName": "pages/subjectDetail/subjectDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "志愿设计列表",
+					"pathName": "pages/wishDesignList/wishDesignList",
+					"query": ""
 				}
 			]
 		}

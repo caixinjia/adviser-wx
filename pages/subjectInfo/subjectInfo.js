@@ -116,7 +116,12 @@ Page({
       recruitBatch: '',
     })
   },
-
+  // 跳转到所选专业详情
+  toSubjectDetail: function (event) {
+    wx.navigateTo({
+      url: '/pages/subjectDetail/subjectDetail?subjectId=' + event.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

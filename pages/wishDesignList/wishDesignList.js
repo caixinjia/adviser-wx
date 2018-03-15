@@ -30,8 +30,34 @@ Page({
       },
     ],
     vipImg: app.globalData.imgUrl + "/icon/zhiyuanshejiVIP@3x.png",
+    isComplete: app.isInfoComplete(),
+    isVip:app.isVip()
   },
-
+  toWishDesign:function(event){
+    if (!this.data.isComplete) {
+      wx.showToast({
+        title: '请填写完整信息',
+        icon: 'none'
+      })
+    }else{
+      if(event.currentTarget.dataset.vip){
+        if(this.data.isVip){
+          wx.navigateTo({
+            url: event.currentTarget.dataset.url,
+          })
+        }else{
+          wx.showToast({
+            title: '请开通会员',
+            icon: 'none'
+          })
+        }
+      }else{
+        wx.navigateTo({
+          url: event.currentTarget.dataset.url,
+        })
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

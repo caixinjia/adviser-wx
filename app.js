@@ -46,6 +46,24 @@ App({
       }
     })
   },
+  // 是否填完信息
+  isInfoComplete:function(){
+    let info = wx.getStorageSync('userInfo');
+    if (info.RANKING == '' || info.SCORE==''||info.SUBJECT_TYPE==''){
+      return false;
+    }else{
+      return true;
+    }
+  },
+  // 是否是VIP
+  isVip:function(){
+    let info = wx.getStorageSync('userRole');
+    if (info == 'ROLE_VIP'){
+      return true;
+    }else{
+      return false;
+    }
+  },
   globalData: {
     AppID: 'wx8e5b52999b5be030',
     AppSecret: 'a9fedfba71feea3b1d56dc2cf48f2c48',

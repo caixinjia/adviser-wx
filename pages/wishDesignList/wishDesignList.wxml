@@ -1,9 +1,9 @@
 <!--pages/wishDesignList/wishDesignList.wxml-->
 <view class='entrance'>
-  <block wx:for='{{functions}}' wx:key='{{functions.link}}'>
-    <navigator class='entrance-item' url='{{item.link}}'>
+  <block wx:for='{{functions}}' wx:key='{{index}}'>
+    <view class='entrance-item' data-url='{{item.link}}' data-vip='{{item.vipFlag}}' bindtap='toWishDesign'>
       <image src='{{item.imgUrl}}' />
       <image src='{{vipImg}}' class='vipImg' wx:if="{{item.vipFlag}}"/>
-    </navigator>
+    </view>
   </block>
 </view>

@@ -39,15 +39,15 @@ Page({
         isOpen: true
       },
       {
-        name: "心理测试",
-        imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
-        isOpen: false
-      },
-      {
         name: "志愿设计",
         imgUrl: app.globalData.imgUrl + "/icon/zhiyuansheji@3x.png",
         url: '/pages/wishDesignList/wishDesignList',
         isOpen: true
+      },
+      {
+        name: "就业倾向测试",
+        imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
+        isOpen: false
       },
       {
         name: "专家咨询",

@@ -1,0 +1,58 @@
+<!--pages/subjectDetail/subjectDetail.wxml-->
+<view class='container'>
+  <!-- 专业信息 -->
+  <view class='subject-info'>
+    <view class='subject-title'>
+      <view>
+        <view>专业编码</view>
+        <view>{{result.SUBJECT_ID}}</view>
+      </view>
+      <view>
+        <view>专业大类</view>
+        <view>{{result.SUBJECT_CLASS_TEXT}}</view>
+      </view>
+    </view>
+
+    <view class='subject-name'>
+      <view>{{result.SUBJECT_TYPE_TEXT}}</view>
+      <view>{{result.SUBJECT_NAME}}</view>
+    </view>
+
+    <view class='school-info'>
+      <view class='school-name'>
+        <view>院校名称</view>
+        <view>{{result.RECRUIT_NAME}}</view>
+      </view>
+      <view class='school-id'>
+        <view>院校编码</view>
+        <view>{{result.RECRUIT_ID}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 跳转 -->
+  <view class='links'>
+    <view>
+      <image src='{{img[0]}}'></image>
+      <view>院校信息</view>
+    </view>
+    <view bindtap='toSchoolHistory'>
+      <image src='{{img[1]}}'></image>
+      <view>历届录取信息</view>
+    </view>
+    <view>
+      <image src='{{img[2]}}'></image>
+      <view>专家咨询</view>
+    </view>
+  </view>
+
+  <!-- 介绍 -->
+  <view class='introduce'>
+    <view class='introduce-title'>
+    - 专业简介 -
+    </view>
+    <view class='introduce-text'>
+    {{result.SUBJECT_INTRODUCE}}
+    </view>
+  </view>
+</view>

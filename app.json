@@ -10,7 +10,8 @@
     "pages/schoolSubject/schoolSubject",
     "pages/MatriculateHistory/MatriculateHistory",
     "pages/subjectInfo/subjectInfo",
-    "pages/schoolList/schoolList"
+    "pages/schoolList/schoolList",
+    "pages/subjectDetail/subjectDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

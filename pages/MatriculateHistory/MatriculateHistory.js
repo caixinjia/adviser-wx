@@ -18,7 +18,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.data){
+      let queryData =  JSON.parse(options.data);
+      this.setData({
+        searchSchoolName: queryData.schoolName,
+        searchSubjectName: queryData.subjectName
+      })
+      this.search();
+    }
   },
   // 搜索
   search() {
