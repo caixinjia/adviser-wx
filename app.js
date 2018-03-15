@@ -46,7 +46,6 @@ App({
       }
     })
   },
-<<<<<<< HEAD
   // 是否填完信息
   isInfoComplete:function(){
     let info = wx.getStorageSync('userInfo');
@@ -58,12 +57,14 @@ App({
   },
   // 是否是VIP
   isVip:function(){
-    let info = wx.getStorageSync('userRole');
-    if (info == 'ROLE_VIP'){
-      return true;
-    }else{
-      return false;
-=======
+    return true
+    // let info = wx.getStorageSync('userRole');
+    // if (info == 'ROLE_VIP'){
+    //   return true;
+    // }else{
+    //   return false;
+    // }
+  },
   // 判断是否登录
   isLogin: function () {
     if (!wx.getStorageSync('userInfo')) {
@@ -74,7 +75,6 @@ App({
         title: '请先登录',
         icon: 'none'
       })
->>>>>>> a57194aa12e674c71b889140ad0d6cdedb7250b3
     }
   },
   globalData: {

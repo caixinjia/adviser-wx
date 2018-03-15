@@ -8,7 +8,7 @@
     <!-- 学校列表 -->
     <view>
       <block wx:for='{{result}}' wx:key='{{index}}'>
-        <view class='school-item'>
+        <view class='school-item' bindtap='toSchoolDetail' data-id='{{item.RECRUIT_ID}}'>
           <!-- 学校属性 -->
           <view class='school-title'>
             <view class='school-id'>

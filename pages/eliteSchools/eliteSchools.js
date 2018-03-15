@@ -9,6 +9,7 @@ Page({
     score: wx.getStorageSync('userInfo').SCORE,
     ranking: wx.getStorageSync('userInfo').RANKING,
     subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,//1文史类，2理工类
+    subjectName: wx.getStorageSync('userInfo').SUBJECT_TYPE_TEXT,
     schoolList: [],
     img985: app.globalData.imgUrl + '/icon/985@3x.png',
     img211: app.globalData.imgUrl + '/icon/211@3x.png',
@@ -24,6 +25,7 @@ Page({
     wx.request({
       url: app.globalData.api + '/loadMySchool',
       data: {
+        // userId: wx.getStorageSync('userId'),
         subjectType: that.data.subjectType,
         ranking: that.data.ranking,
         recruitBatch: '',

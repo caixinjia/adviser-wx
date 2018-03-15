@@ -11,7 +11,8 @@
     "pages/MatriculateHistory/MatriculateHistory",
     "pages/subjectInfo/subjectInfo",
     "pages/schoolList/schoolList",
-    "pages/subjectDetail/subjectDetail"
+    "pages/subjectDetail/subjectDetail",
+    "pages/schoolDetail/schoolDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

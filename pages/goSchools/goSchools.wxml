@@ -8,7 +8,7 @@
       <image src='https://fjgz360.cn/chuxian/webPage/images/background/zhiyuansheji_xia@3x.png'></image>
     </view>
     <!-- 个人信息 -->
-    <view class='wenli' wx:if="{{!editFlag}}">理工类</view>
+    <view class='wenli' wx:if="{{!editFlag}}">{{subjectName}}</view>
     <view class='wenli-list' wx:else>
       <view class="wenli-item {{subjectType==2?'on':''}}" data-id="2" bindtap='changeWenli'>理工类</view>
       <view class="wenli-item {{subjectType==1?'on':''}}" data-id="1" bindtap='changeWenli'>文史类</view>
@@ -46,7 +46,7 @@
     </view>
   </view>
   <!-- 学校列表 -->
-<view>
+  <view>
     <block wx:for='{{schoolList}}' wx:key='{{item.RECRUIT_ID}}'>
       <view class='school-item'>
         <!-- 学校属性 -->
@@ -58,9 +58,12 @@
             <image wx:if='{{item.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
           </view>
           <view class='area'>
-            <view class='province'>{{item.PROVINCE}}</view>|
-            <view class='city'>{{item.CITY}}</view>
+            <block wx:if='{{item.SCHOOL_PROVINCE_TEXT!=""}}'>
+              <view class='province'>{{item.SCHOOL_PROVINCE_TEXT}}</view>|
+              <view class='city'>{{item.SCHOOL_CITY_TEXT}}</view>
+            </block>
           </view>
+
         </view>
         <!-- 学校名称 -->
         <view class='school-name'>

@@ -152,7 +152,12 @@ Page({
       recruitBatch: '',
     })
   },
-
+  // 跳转到所选专业详情
+  toSchoolDetail: function (event) {
+    wx.navigateTo({
+      url: '/pages/schoolDetail/schoolDetail?recruitId=' + event.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

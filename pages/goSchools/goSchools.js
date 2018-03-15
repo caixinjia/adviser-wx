@@ -6,15 +6,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    score: '',
-    ranking: 1230,
-    subjectType:2,//1文史类，2理工类
+    score: wx.getStorageSync('userInfo').SCORE,
+    ranking: wx.getStorageSync('userInfo').RANKING,
+    subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,//1文史类，2理工类
+    subjectName: wx.getStorageSync('userInfo').SUBJECT_TYPE_TEXT,
     batch: '101', //101:提前批102:本一批103:本二批104：高职(专科)批
     schoolList: [],
     img985: app.globalData.imgUrl + '/icon/985@3x.png',
     img211: app.globalData.imgUrl + '/icon/211@3x.png',
     imgdouble: app.globalData.imgUrl + '/icon/shuangyiliu@3x.png',
-    editFlag: true
+    editFlag: false
   },
   search: function () {
     wx.showLoading({
@@ -25,6 +26,7 @@ Page({
     wx.request({
       url: app.globalData.api + '/loadMySchool',
       data: {
+         // userId: wx.getStorageSync('userId'),
         subjectType: that.data.subjectType,
         ranking: that.data.ranking,
         recruitBatch: that.data.batch,

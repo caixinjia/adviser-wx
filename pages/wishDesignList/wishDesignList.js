@@ -24,7 +24,7 @@ Page({
         vipFlag: true
       },
       {
-        link: '/pages/wishDesign/wishDesign',
+        link: '/pages/wishDesign/wishDesign?type=junior',
         imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/4@3x.png",
         vipFlag: true
       },

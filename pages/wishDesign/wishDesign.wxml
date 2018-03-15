@@ -8,7 +8,7 @@
       <image src='https://fjgz360.cn/chuxian/webPage/images/background/zhiyuansheji_xia@3x.png'></image>
     </view>
     <!-- 个人信息 -->
-    <view class='wenli' wx:if="{{!editFlag}}">理工类</view>
+    <view class='wenli' wx:if="{{!editFlag}}">{{subjectName}}</view>
     <view class='wenli-list' wx:else>
       <view class="wenli-item {{subjectType==2?'on':''}}" data-id="2" bindtap='changeWenli'>理工类</view>
       <view class="wenli-item {{subjectType==1?'on':''}}" data-id="1" bindtap='changeWenli'>文史类</view>
@@ -37,9 +37,13 @@
     <!-- 录取批次 -->
     <view class='batch-list'>
       <view class='batch-title'>录取批次</view>
-      <view class="batch-item {{batch==101?'on':''}}" data-id="101" bindtap="changeBatch">提前批</view>
+      <block wx:if='{{wishType==1}}'>
+       <view class="batch-item {{batch==101?'on':''}}" data-id="101" bindtap="changeBatch">提前批</view>
       <view class="batch-item {{batch==102?'on':''}}" data-id="102" bindtap="changeBatch">本一批</view>
       <view class="batch-item {{batch==103?'on':''}}" data-id="103" bindtap="changeBatch">本二批</view>
+      </block>
+      <view class="batch-item {{batch==104?'on':''}}" data-id="104" bindtap="changeBatch" wx:else>专科批</view>
+     
     </view>
     <!-- 意向城市 -->
           <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">

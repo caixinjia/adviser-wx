@@ -6,16 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    score: '',
-    ranking: 1230,
-    subjectType: 2,//1文史类，2理工类
+    score: wx.getStorageSync('userInfo').SCORE,
+    ranking: wx.getStorageSync('userInfo').RANKING,
+    subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,//1文史类，2理工类
+    subjectName: wx.getStorageSync('userInfo').SUBJECT_TYPE_TEXT,
     batch: '101', //101:提前批102:本一批103:本二批104：高职(专科)批
     priority: 0,//0-学校优先；1-专业优先
     schoolList: [],
     img985: app.globalData.imgUrl + '/icon/985@3x.png',
     img211: app.globalData.imgUrl + '/icon/211@3x.png',
     imgdouble: app.globalData.imgUrl + '/icon/shuangyiliu@3x.png',
-    editFlag: true,
+    editFlag: false,
     imgchongji: app.globalData.imgUrl + '/icon/icon-chongji@3x.png',
     imgbaodi: app.globalData.imgUrl + '/icon/icon-baodi@3x.png',
     imgqiuwen: app.globalData.imgUrl + '/icon/icon-qiuwen@3x.png',
@@ -26,7 +27,9 @@ Page({
     region: [],
     customItem: '全部',
     province: '',
-    city: ''
+    city: '',
+    wishType:1//本科专科
+    
   },
   search: function () {
     wx.showLoading({
@@ -78,6 +81,7 @@ Page({
     wx.request({
       url: app.globalData.api + '/volunteerDesign',
       data: {
+        // userId: wx.getStorageSync('userId'),
         subjectType: that.data.subjectType,
         ranking: that.data.ranking,
         recruitBatch: that.data.batch,
@@ -207,6 +211,12 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+    if (options.type && options.type == 'junior'){
+      that.setData({
+        batch:104,
+        wishType:2
+      })
+    }
     // 获取专业列表
     wx.request({
       url: app.globalData.api + '/loadBmInfo',

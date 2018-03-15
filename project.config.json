@@ -26,7 +26,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -81,6 +81,12 @@
 					"name": "志愿设计列表",
 					"pathName": "pages/wishDesignList/wishDesignList",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "院校详情",
+					"pathName": "pages/schoolDetail/schoolDetail",
+					"query": "recruitId=23"
 				}
 			]
 		}
