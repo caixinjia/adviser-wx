@@ -6,8 +6,14 @@ Page({
   data: {
     userInfo: '',
     isLogin: false,
+    registerShow: false,
     loginPhone: '',
     loginPwd: '',
+    registerPhone: '',
+    registerPwd:'',
+    verifiedCode:'',
+    codeFlag: true,
+    lastTime: 60,
     mainSwiper: {
       imgUrls: [
         app.globalData.imgUrl + "/swiper/banner@3x.png",
@@ -89,8 +95,24 @@ Page({
         this.setData({
           loginPwd: event.detail.value
         }); break;
+      case "3":
+        this.setData({
+          registerPhone: event.detail.value
+        }); break;
+      case "4":
+        this.setData({
+          verifiedCode: event.detail.value
+        }); break;
+      case "5":
+        this.setData({
+          registerPwd: event.detail.value
+        }); break;
     }
   },
+  toLogin: function () {
+    this.setData({ registerShow: false });
+  },
+  // 登录
   login: function () {
     let that = this;
     wx.request({
@@ -101,7 +123,6 @@ Page({
         verifiedType: '0'
       },
       success: function (res) {
-        console.log(res)
         if (res.data.RESULTS == "SUCCESS") {
           wx.showToast({
             title: '登录成功',
@@ -113,7 +134,6 @@ Page({
           wx.setStorageSync('userId', res.data.USER_ID)
           wx.setStorageSync('userRole', res.data.ROLE)
           app.getUser(res.data.USER_ID)
-
         } else {
           wx.showToast({
             title: res.data.MSG,
@@ -123,7 +143,85 @@ Page({
       }
     })
   },
-
+  // 获取验证码
+  getVerifiedCode: function () {
+    let that = this;
+    if (that.data.codeFlag) {
+      wx.request({
+        url: app.globalData.api + '/sendMobileVerifide',
+        data: {
+          mobileNum: that.data.registerPhone,
+          verifideType: 'Register'
+        },
+        success: function (res) {
+          if (res.data.RESULTS == "SUCCESS") {
+            that.codeTime();
+            wx.showToast({
+              title: '获取验证码成功',
+              icon: 'success'
+            })
+          } else {
+            wx.showToast({
+              title: res.data.MSG,
+              icon: 'none'
+            })
+          }
+        }
+      })
+    }
+  },
+  // 验证码倒计时
+  codeTime: function () {
+    let that = this;
+    let time = that.data.lastTime;
+    this.setData({
+      codeFlag: false
+    })
+    let interval = setInterval(function () {
+      if (time == 0) {
+        clearInterval(interval)
+        that.setData({
+          lastTime: 60,
+          codeFlag: true
+        })
+      } else {
+        time = time - 1;
+        that.setData({
+          lastTime: time
+        })
+      }
+    }, 1000)
+  },
+  toRegister: function () {
+    this.setData({ registerShow: true });
+  },
+  register: function () {
+    let that = this;
+    wx.request({
+      url: app.globalData.api + '/register',
+      data: {
+        mobileNum: that.data.registerPhone,
+        passwd: that.data.registerPwd,
+        verifiedCode: that.data.verifiedCode,
+      },
+      success: function (res) {
+        if (res.data.RESULTS == "SUCCESS") {
+          wx.showToast({
+            title: '注册成功',
+            icon: 'success'
+          })
+          that.setData({
+            registerShow: false
+          })
+        } else {
+          wx.showToast({
+            title: res.data.MSG,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
   onLoad: function () {
     if (wx.getStorageSync('userId')) {
       this.setData({

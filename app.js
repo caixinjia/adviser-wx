@@ -42,10 +42,11 @@ App({
         userId: id
       },
       success: function (res) {
-        wx.setStorageSync('userInfo',res.data)
+        wx.setStorageSync('userInfo', res.data)
       }
     })
   },
+<<<<<<< HEAD
   // 是否填完信息
   isInfoComplete:function(){
     let info = wx.getStorageSync('userInfo');
@@ -62,6 +63,18 @@ App({
       return true;
     }else{
       return false;
+=======
+  // 判断是否登录
+  isLogin: function () {
+    if (!wx.getStorageSync('userInfo')) {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+>>>>>>> a57194aa12e674c71b889140ad0d6cdedb7250b3
     }
   },
   globalData: {
