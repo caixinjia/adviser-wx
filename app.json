@@ -1,12 +1,23 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/wishDesignList/wishDesignList",
+    "pages/eliteSchools/eliteSchools",
+    "pages/goSchools/goSchools",
+    "pages/wishDesign/wishDesign",
+    "pages/test/test",
+    "pages/schoolSubject/schoolSubject",
+    "pages/MatriculateHistory/MatriculateHistory",
+    "pages/subjectInfo/subjectInfo",
+    "pages/schoolList/schoolList",
+    "pages/subjectDetail/subjectDetail",
+    "pages/schoolDetail/schoolDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F7CE2C",
-    "navigationBarTitleText": "高招智愿",
+    "navigationBarTitleText": "高招360",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

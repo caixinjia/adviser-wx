@@ -1,0 +1,283 @@
+/* pages/goSchools/goSchools.wxss */
+
+page {
+  min-height: 100%;
+  background: #f4f4f4;
+}
+
+.container {
+}
+
+.select-form {
+  width: 750rpx;
+  position: relative;
+}
+
+.select-form .background>image:nth-child(1) {
+  width: 750rpx;
+  height: 110rpx;
+  display: block;
+}
+
+.select-form .background>image:nth-child(2) {
+  width: 750rpx;
+  height: 226rpx;
+  display: block;
+}
+
+.select-form .background>image:nth-child(3) {
+  width: 750rpx;
+  height: 110rpx;
+  display: block;
+}
+
+.wenli {
+  position: absolute;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/ceshi_title@3x.png") no-repeat center;
+  background-size: 276rpx;
+  width: 276rpx;
+  height: 56rpx;
+  top: 36rpx;
+  right: 236rpx;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 56rpx;
+  color: #f7ce2c;
+  letter-spacing: 0;
+}
+
+.user-data {
+  position: absolute;
+  top: 107rpx;
+  display: flex;
+  width: 750rpx;
+}
+
+.user-data>view {
+  flex: 1;
+  text-align: center;
+}
+
+.user-data>view>view {
+  margin-top: 8rpx;
+  height: 80rpx;
+}
+
+.user-data .data-title {
+  font-size: 20rpx;
+  color: #6a7088;
+  height: 28rpx;
+  line-height: 1;
+}
+
+.score-detail .score-number {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 150rpx;
+  font-size: 40rpx;
+  color: #252628;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/gaokaochengji@3x.png") no-repeat center;
+  background-size: 150rpx;
+  margin: 0 auto;
+}
+
+.ranking-detail  .ranking-number {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 150rpx;
+  font-size: 40rpx;
+  color: #252628;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/quanshengpaiming@3x.png") no-repeat center;
+  background-size: 150rpx;
+  margin: 0 auto;
+}
+
+.search-btn {
+  position: absolute;
+  bottom: 40rpx;
+  right: 226rpx;
+  height: 60rpx;
+  width: 290rpx;
+  font-size: 28rpx;
+  color: #252628;
+  background: #f7ce2c;
+  border-radius: 200rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+.school-item {
+  background: #fff;
+  height: 250rpx;
+  width: 700rpx;
+  margin: 0 25rpx 30rpx 25rpx;
+}
+
+.school-item .school-title {
+  display: flex;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 2rpx dashed #f4f4f4;
+}
+
+.school-item .school-title .grade {
+  width: 242rpx;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 24rpx;
+  color: #5b6369;
+}
+
+.school-item .school-title .type {
+  flex: 1;
+}
+
+.school-item .school-title .type image {
+  height: 28rpx;
+  margin-top: 12rpx;
+  margin-right: 20rpx;
+}
+
+.school-item .school-title .type .img985 {
+  width: 48rpx;
+}
+
+.school-item .school-title .type .img211 {
+  width: 48rpx;
+}
+
+.school-item .school-title .type .imgdouble {
+  width: 80rpx;
+}
+
+.area {
+  display: flex;
+  width: 204rpx;
+  opacity: 0.7;
+  font-size: 24rpx;
+  color: #5b6369;
+}
+
+.area .province {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 10rpx;
+  width: 72rpx;
+}
+
+.area .city {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 10rpx;
+  width: 72rpx;
+}
+
+.school-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 50rpx;
+  color: #252628;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin: 54rpx 20rpx 0 20rpx;
+  text-align: center;
+}
+
+.school-info {
+  background-image: linear-gradient(-180deg, #fff9b8 0%, #fff082 100%);
+  height: 60rpx;
+  display: flex;
+  font-size: 28rpx;
+  color: #252628;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+}
+
+.school-info .school-ranking {
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.school-info .school-rate {
+  margin-right: 20rpx;
+  flex: 1;
+  display: flex;
+}
+
+.school-info text:first-child {
+  margin-right: 20rpx;
+}
+.school-rate text:first-child{
+  width: 224rpx;
+}
+.school-rate text:last-child{
+  flex: 1;
+}
+
+.batch-list {
+  position: absolute;
+  top: 280rpx;
+  left: 100rpx;
+  display: flex;
+}
+
+.batch-title {
+  font-size: 20rpx;
+  color: #6a7088;
+  line-height: 40rpx;
+}
+
+.batch-item {
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 110rpx;
+  color: #f7ce2c;
+  text-align: center;
+}
+
+.batch-item.on {
+  background: rgba(247, 206, 44, 0.10);
+  border: 2rpx solid #f7ce2c;
+  border-radius: 61rpx;
+}
+
+.rank-input input {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 40rpx;
+  text-align: center;
+  color: #252628;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/quanshengpaiming@3x.png") no-repeat center;
+  background-size: 150rpx;
+}
+
+.wenli-list {
+  position: absolute;
+  top: 36rpx;
+  left: 234rpx;
+  display: flex;
+  font-size: 28rpx;
+  color: #f7ce2c;
+}
+
+.wenli-list .wenli-item {
+  border: 2rpx solid #f7ce2c;
+  border-radius: 61rpx;
+  width: 136rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.wenli-list .wenli-item:last-child {
+  margin-left: 18rpx;
+}
+
+.wenli-list .wenli-item.on {
+  color: #fff;
+  background: #f7ce2c;
+}

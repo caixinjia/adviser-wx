@@ -1,0 +1,88 @@
+<!--pages/schoolList/schoolList.wxml-->
+<view class='container'>
+  <view class='search-bar'>
+    <input placeholder-style="color:#D2D9E1" confirm-type="search" placeholder="请输入院校名称，支持模糊搜索" data-typeId='1' value='{{searchSchoolName}}' bindinput='changeSearch' bindconfirm='search' />
+    <view class='filter-btn' bindtap='showFilter'>筛选</view>
+  </view>
+  <view class='result-list'>
+    <!-- 学校列表 -->
+    <view>
+      <block wx:for='{{result}}' wx:key='{{index}}'>
+        <view class='school-item' bindtap='toSchoolDetail' data-id='{{item.RECRUIT_ID}}'>
+          <!-- 学校属性 -->
+          <view class='school-title'>
+            <view class='school-id'>
+              <view>院校编码</view>
+              <view>{{item.RECRUIT_ID}} </view>
+            </view>
+            <view class='type'>
+              <image wx:if='{{item.IS_985==1}}' src='{{img985}}' class='img985'></image>
+              <image wx:if='{{item.IS_211==1}}' src='{{img211}}' class='img211'></image>
+              <image wx:if='{{item.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
+            </view>
+            <view class='school-ranking'>
+              <view>院校排名</view>
+              <view>{{item.SCHOOL_RANKING}} </view>
+            </view>
+          </view>
+          <!-- 学校名称 -->
+          <view class='school-name'>
+            {{item.RECRUIT_NAME}}
+          </view>
+          <!-- 地区 -->
+          <view class='school-info'>
+            <view class='school-grade'></view>
+            <view class='area'>
+              <view class='province'>{{item.SCHOOL_PROVINCE_TEXT}}</view>|
+              <view class='city'>{{item.SCHOOL_CITY_TEXT}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 筛选 -->
+  <view class="mask {{filterIsOpen?'open':''}}" bindtap='hideFilter'>
+    <view class='filter-dialog' catchtap='noBubble'>
+      <view class='subject-type' style='margin-top:0'>
+        <view class='filter-title'>地区</view>
+        <picker mode="region" bindchange="changeSearch" data-typeId='2' custom-item="不限" style='display:flex;flex-wrap:wrap;'>
+          <view class='filter-options'>
+            <view class="{{region[0]!='不限'?'on':''}}">{{region[0]}}</view>
+            <view class="{{region[1]!='不限'?'on':''}}">{{region[1]}}</view>
+          </view>
+        </picker>
+      </view>
+      <view class='subject-type'>
+        <view class='filter-title'>办学层次</view>
+        <view class='filter-options'>
+          <view class="{{schoolGrade==''?'on':''}}" data-typeId='3' data-id='' bindtap='changeSearch'>不限</view>
+          <view class="{{schoolGrade=='本科'?'on':''}}" data-typeId='3' data-id='本科' bindtap='changeSearch'>本科</view>
+          <view class="{{schoolGrade=='专科'?'on':''}}" data-typeId='3' data-id='专科' bindtap='changeSearch'>专科</view>
+        </view>
+      </view>
+      <view class='recruit-batch'>
+        <view class='filter-title'>学校层次</view>
+        <view class='filter-options'>
+          <view class="{{schoolLevel==''?'on':''}}" data-typeId='4' data-id='' bindtap='changeSearch'>不限</view>
+          <view class="{{schoolLevel=='双一流'?'on':''}}" data-typeId='4' data-id='双一流' bindtap='changeSearch'>双一流</view>
+          <view class="{{schoolLevel=='985'?'on':''}}" data-typeId='4' data-id='985' bindtap='changeSearch'>985</view>
+          <view class="{{schoolLevel=='211'?'on':''}}" data-typeId='4' data-id='211' bindtap='changeSearch'>211</view>
+        </view>
+      </view>
+      <view class='recruit-batch'>
+        <view class='filter-title'>办学性质</view>
+        <view class='filter-options'>
+          <view class="{{schoolNature==''?'on':''}}" data-typeId='5' data-id='' bindtap='changeSearch'>不限</view>
+          <view class="{{schoolNature=='公办'?'on':''}}" data-typeId='5' data-id='公办' bindtap='changeSearch'>公办</view>
+          <view class="{{schoolNature=='私立'?'on':''}}" data-typeId='5' data-id='私立' bindtap='changeSearch'>私立</view>
+          <view class="{{schoolNature=='独立'?'on':''}}" data-typeId='5' data-id='独立' bindtap='changeSearch'>独立</view>
+        </view>
+      </view>
+      <view class='filter-btns'>
+        <view class='reset-btn' bindtap='resetFilter'>重置</view>
+        <view class='search-btn' bindtap='search'>完成</view>
+      </view>
+    </view>
+  </view>
+</view>

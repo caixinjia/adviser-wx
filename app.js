@@ -19,7 +19,7 @@ App({
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
-            withCredentials:true,
+            withCredentials: true,
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
@@ -34,11 +34,55 @@ App({
       }
     })
   },
+  getUser: function (id) {
+    let that = this;
+    wx.request({
+      url: that.globalData.api + '/showUserInfo',
+      data: {
+        userId: id
+      },
+      success: function (res) {
+        wx.setStorageSync('userInfo', res.data)
+      }
+    })
+  },
+  // 是否填完信息
+  isInfoComplete:function(){
+    let info = wx.getStorageSync('userInfo');
+    if (info.RANKING == '' || info.SCORE==''||info.SUBJECT_TYPE==''){
+      return false;
+    }else{
+      return true;
+    }
+  },
+  // 是否是VIP
+  isVip:function(){
+    return true
+    // let info = wx.getStorageSync('userRole');
+    // if (info == 'ROLE_VIP'){
+    //   return true;
+    // }else{
+    //   return false;
+    // }
+  },
+  // 判断是否登录
+  isLogin: function () {
+    if (!wx.getStorageSync('userInfo')) {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none'
+      })
+    }
+  },
   globalData: {
-    AppID:'wx8e5b52999b5be030',
+    AppID: 'wx8e5b52999b5be030',
     AppSecret: 'a9fedfba71feea3b1d56dc2cf48f2c48',
     userInfo: null,
-    imgUrl:"https://fjgz360.cn/chuxian/webPage/images",
-    api:'https://fjgz360.cn/chuxian'
+    imgUrl: "https://fjgz360.cn/chuxian/webPage/images",
+    api: 'https://fjgz360.cn/chuxian',
+    areaList: []
   }
 })

@@ -26,13 +26,67 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
 					"name": "个人中心",
 					"pathName": "pages/personal/personal",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "本科志愿设计",
+					"pathName": "pages/wishDesign/wishDesign",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "学校专业",
+					"pathName": "pages/schoolSubject/schoolSubject",
+					"query": "data={\"recruitId\":\"47\",\"subjectType\":2,\"ranking\":1230,\"recruitBatch\":\"101\",\"priority\":0}"
+				},
+				{
+					"id": -1,
+					"name": "历届录取信息",
+					"pathName": "pages/MatriculateHistory/MatriculateHistory",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "专业信息",
+					"pathName": "pages/subjectInfo/subjectInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "院校列表",
+					"pathName": "pages/schoolList/schoolList",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "专业详情",
+					"pathName": "pages/subjectDetail/subjectDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "志愿设计列表",
+					"pathName": "pages/wishDesignList/wishDesignList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "院校详情",
+					"pathName": "pages/schoolDetail/schoolDetail",
+					"query": "recruitId=23"
 				}
 			]
 		}

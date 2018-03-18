@@ -1,0 +1,7 @@
+<!--pages/test/test.wxml-->
+<view class="section">
+<view bindtap='sendMobileVerifide'>获取验证码</view>
+<view bindtap='zhuce'>注册</view>
+<view bindtap='login'>登录</view>
+<view bindtap='resetPwd'>重置密码</view>
+</view>

@@ -4,7 +4,7 @@
   position: relative;
   margin: 20rpx 20rpx;
   height: 788rpx;
-  background: url("http://47.98.40.188/chuxian/webPage/images/background/gerenzhongxin@3x.png");
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/gerenzhongxin@3x.png");
   background-size: 100%;
 }
 
@@ -26,16 +26,19 @@
   width: 104rpx;
   margin-top: 14rpx;
 }
-.user-img{
+
+.user-img {
   position: absolute;
   top: 0;
   left: 266rpx;
 }
-.user-img image{
+
+.user-img image {
   width: 180rpx;
   height: 180rpx;
   border-radius: 50%;
 }
+
 .user-info {
   margin-top: 122rpx;
 }
@@ -53,4 +56,159 @@
   opacity: 0.5;
   font-size: 28rpx;
   color: #6a7088;
+}
+
+.user-data {
+  display: flex;
+  margin: 0 50rpx;
+}
+
+.user-data>view {
+  flex: 1;
+  text-align: center;
+}
+
+.user-data>view>view {
+  margin-top: 8rpx;
+  height: 80rpx;
+}
+
+.user-data .data-title {
+  font-size: 20rpx;
+  color: #6a7088;
+  height: 28rpx;
+}
+
+.score-detail {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.score-detail .score-number {
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 150rpx;
+  font-size: 40rpx;
+  color: #252628;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/gaokaochengji@3x.png") no-repeat center;
+  background-size: 150rpx;
+  margin: 0 auto;
+}
+
+.score-detail .score-number.no-data {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/weitian@3x.png") no-repeat center;
+  background-size: 150rpx;
+}
+
+.score-detail .score-number input {
+  height: 60rpx;
+  width: 150rpx;
+  background: #fff;
+}
+.ranking-detail {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.ranking-detail  .ranking-number {
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 150rpx;
+  font-size: 40rpx;
+  color: #252628;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/quanshengpaiming@3x.png") no-repeat center;
+  background-size: 150rpx;
+  margin: 0 auto;
+}
+.ranking-detail  .ranking-number.no-data {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/weitian@3x.png") no-repeat center;
+  background-size: 150rpx;
+}
+
+.ranking-detail  .ranking-number input {
+  height: 60rpx;
+  width: 150rpx;
+  background: #fff;
+}
+.cancel-btn {
+  width: 48rpx;
+  height: 48rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/cancel-btn@3x.png") no-repeat center;
+  background-size: 48rpx;
+}
+
+.submit-btn {
+  width: 48rpx;
+  height: 48rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/submit-btn@3x.png") no-repeat center;
+  background-size: 48rpx;
+}
+
+.warn {
+  position: absolute;
+  left: 84rpx;
+  bottom: -28rpx;
+  font-size: 20rpx;
+  color: #ff6767;
+  line-height: 28rpx;
+}
+
+.userInfo {
+  margin: 51rpx 80rpx 0 80rpx;
+}
+
+.userInfo>view {
+  display: flex;
+  font-size: 32rpx;
+  color: #6a7088;
+  letter-spacing: 0;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.userInfo>view>view {
+  margin-left: 30rpx;
+  flex: 1;
+}
+
+.userInfo image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.userInfo .right-img {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.entrance {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10rpx 50rpx 0 50rpx;
+}
+
+.entrance .entrance-tiem {
+  display: flex;
+  align-items: center;
+  width: 300rpx;
+  height: 100rpx;
+  font-size: 32rpx;
+  color: #252628;
+  letter-spacing: 0;
+  background: #fff;
+  box-shadow: 0 0 12rpx 0 rgba(0, 0, 0, 0.15);
+  border-radius: 8rpx;
+  margin-right: 50rpx;
+  margin-bottom: 40rpx;
+}
+
+.entrance .entrance-tiem:nth-child(2n) {
+  margin-right: 0;
+}
+
+.entrance .entrance-tiem image {
+  margin: 0 10rpx 0 50rpx;
+  width: 64rpx;
+  height: 64rpx;
 }

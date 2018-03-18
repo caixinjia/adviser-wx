@@ -1,0 +1,24 @@
+/* pages/wishDesignList/wishDesignList.wxss */
+
+.entrance {
+  margin-top: 40rpx;
+}
+
+.entrance .entrance-item {
+  margin: 0 25rpx 42rpx 25rpx;
+  position: relative
+}
+
+.entrance .entrance-item image {
+  height: 250rpx;
+  width: 700rpx;
+  margin: 0 auto;
+  display: block;
+}
+.entrance .entrance-item .vipImg{
+  height: 72rpx;
+  width: 72rpx;
+  position: absolute;
+  top: 0;
+  right: 19rpx;
+}

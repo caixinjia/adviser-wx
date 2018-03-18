@@ -1,0 +1,151 @@
+/* pages/subjectDetail/subjectDetail.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.container {
+  margin: 24rpx 26rpx;
+  background: #fff;
+}
+
+.subject-info {
+  background-image: linear-gradient(-180deg, #fff9b8 0%, #fff082 100%);
+}
+
+.subject-title {
+  height: 46rpx;
+  display: flex;
+  border-bottom: 1px dashed #f7b22c;
+}
+
+.subject-title>view:first-child {
+  width: 40%;
+  display: flex;
+  margin-left: 15rpx;
+}
+
+.subject-title>view:last-child {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15rpx;
+}
+
+.subject-title>view view:first-child {
+  opacity: 0.7;
+  line-height: 46rpx;
+  font-size: 24rpx;
+  color: #5b6369;
+  margin-right: 11rpx;
+}
+
+.subject-title>view view:last-child {
+  line-height: 46rpx;
+  font-size: 28rpx;
+  color: #252628;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subject-name {
+  height: 146rpx;
+  text-align: center;
+  border-bottom: 1px dashed #f7b22c;
+}
+
+.subject-name view:first-child {
+  margin-top: 20rpx;
+  opacity: 0.7;
+  font-size: 24rpx;
+  color: #5b6369;
+}
+
+.subject-name view:last-child {
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 50rpx;
+  color: #252628;
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 20rpx;
+}
+
+.school-info {
+  padding: 20rpx 0;
+}
+
+.school-info>view {
+  display: flex;
+}
+
+.school-info>view view:first-child {
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 186rpx;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #5b6369;
+}
+
+.school-info>view view:last-child {
+  height: 40rpx;
+  line-height: 40rpx;
+  flex: 1;
+  font-size: 28rpx;
+  color: #252628;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.school-name {
+  margin-bottom: 24rpx;
+}
+
+.links {
+  height: 186rpx;
+  border-bottom: 1px dashed #d2d9e1;
+  display: flex;
+}
+
+.links>view {
+  width: 33%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.links>view image {
+  width: 112rpx;
+  height: 96rpx;
+}
+
+.links>view view {
+  font-size: 28rpx;
+  color: #252628;
+}
+
+.introduce {
+  min-height: 300rpx;
+  padding: 0 36rpx 40rpx 34rpx;
+}
+
+.introduce-title {
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #5b6369;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.introduce-text {
+  margin-top: 20rpx;
+  opacity: 0.7;
+  font-size: 32rpx;
+  color: #252628;
+  line-height: 46rpx;
+}

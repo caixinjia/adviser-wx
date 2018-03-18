@@ -1,38 +1,177 @@
 /**index.wxss**/
+
 .main-swiper {
   height: 280rpx;
 }
-.main-swiper .slide-image{
+
+.main-swiper .slide-image {
   width: 100%;
   height: 280rpx;
 }
-.entrance{
+
+.entrance {
   display: flex;
   flex-wrap: wrap;
   padding: 30rpx 0;
 }
-.entrance-tiem{
+
+.entrance-item {
   text-align: center;
   width: 33.3%;
   padding: 30rpx 0;
 }
-.entrance-tiem image{
+
+.entrance-item image {
   width: 112rpx;
   height: 96rpx;
 }
-.entrance-name{
+
+.entrance-name {
   font-size: 28rpx;
 }
-.footer{
+
+.footer {
   height: 360rpx;
   background: url("https://fjgz360.cn/chuxian/webPage/images/swiper/remenyuanxiao@3x.png") no-repeat center top;
   background-size: 544rpx;
 }
-.school-swiper{
+
+.school-swiper {
   padding-top: 60rpx;
   height: 300rpx;
 }
-.school-swiper .slide-image{
+
+.school-swiper .slide-image {
   width: 620rpx;
   height: 300rpx;
+}
+
+/* 登录注册弹窗 */
+
+.mask {
+  background: rgba(255, 255, 255, 0);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 10000；;
+}
+
+.mask.on {
+  display: block;
+}
+
+.login-dialog {
+  background: #fff;
+  box-shadow: 0 18rpx 60rpx 0 rgba(72, 136, 166, 0.18);
+  border-radius: 20rpx;
+  width: 558rpx;
+  height: 740rpx;
+  position: absolute;
+  top: 200rpx;
+  left: 96rpx;
+}
+
+.register-dialog {
+  background: #fff;
+  box-shadow: 0 18rpx 60rpx 0 rgba(72, 136, 166, 0.18);
+  border-radius: 20rpx;
+  width: 558rpx;
+  height: 848rpx;
+  position: absolute;
+  top: 146rpx;
+  left: 96rpx;
+}
+
+.user-img {
+  margin-top: 60rpx;
+}
+
+.user-img image {
+  margin-left: 190rpx;
+  width: 180rpx;
+  height: 180rpx;
+  box-shadow: 0 4px 14px 0 rgba(138, 127, 56, 0.25);
+  border-radius: 50%;
+}
+
+.phone-input {
+  border: 2rpx solid #e9ebee;
+  border-radius: 200rpx;
+  width: 376rpx;
+  height: 90rpx;
+  margin: 50rpx 70rpx 0 72rpx;
+  font-size: 28rpx;
+  color: #252628;
+  padding-left: 40rpx;
+}
+
+.code-input {
+  border: 2rpx solid #e9ebee;
+  border-radius: 200rpx;
+  width: 376rpx;
+  height: 90rpx;
+  margin: 20rpx 70rpx 0 72rpx;
+  font-size: 28rpx;
+  color: #252628;
+  padding-left: 40rpx;
+}
+
+.pwd-input {
+  border: 2rpx solid #e9ebee;
+  border-radius: 200rpx;
+  width: 376rpx;
+  height: 90rpx;
+  margin: 20rpx 70rpx 0 72rpx;
+  font-size: 28rpx;
+  color: #252628;
+  padding-left: 40rpx;
+}
+
+.login-btn {
+  background: #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+  font-size: 36rpx;
+  color: #252628;
+  letter-spacing: 1rpx;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 50rpx 70rpx 0 72rpx;
+}
+
+.to-register {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #6a7088;
+  letter-spacing: 0.8rpx;
+  text-align: center;
+}
+
+.code-div {
+  position: relative;
+}
+
+.code-div .send-btn {
+  position: absolute;
+  right: 76rpx;
+  top: 8rpx;
+  background: #f7ce2c;
+  border-radius: 100rpx;
+  width: 180rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 28rpx;
+  color: #252628;
+  letter-spacing: 1rpx;
+  text-align: center;
+  z-index: 100;
+}
+.code-div .send-btn.last-time{
+   background: #c8c9cc;
+   color: #fff;
 }
