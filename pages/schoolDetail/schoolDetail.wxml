@@ -48,7 +48,7 @@
 
   <!-- 跳转 -->
   <view class='links'>
-    <view>
+    <view bindtap='toSubjectList'>
       <image src='{{img[0]}}'></image>
       <view>专业信息</view>
     </view>

@@ -14,15 +14,20 @@ Page({
       app.globalData.imgUrl + "/icon/zhuanjia@3x.png"
     ]
   },
-  // 跳转到所选学校专业列表
+  // 跳转到所选学校历届录取信息
   toSchoolHistory() {
     let data = {
       schoolName: this.data.result.RECRUIT_NAME,
       subjectName: this.data.result.SUBJECT_NAME
     }
-    console.log(data)
     wx.navigateTo({
       url: '/pages/MatriculateHistory/MatriculateHistory?data=' + JSON.stringify(data)
+    })
+  },
+  // 跳转到所选学校历届录取信息
+  toSchoolDetail() {
+    wx.navigateTo({
+      url: '/pages/schoolDetail/schoolDetail?recruitId=' + this.data.result.RECRUIT_ID
     })
   },
   /**

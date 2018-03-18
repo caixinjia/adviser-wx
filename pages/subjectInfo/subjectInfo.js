@@ -20,6 +20,13 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+    if (options.data) {
+      let queryData = JSON.parse(options.data);
+      this.setData({
+        searchSchoolName: queryData.schoolName,
+      })
+      this.search();
+    }
     // 获取专业列表
     wx.request({
       url: app.globalData.api + '/loadBmInfo',

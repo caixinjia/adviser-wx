@@ -17,7 +17,7 @@ Page({
     img211: app.globalData.imgUrl + '/icon/211@3x.png',
     imgdouble: app.globalData.imgUrl + '/icon/shuangyiliu@3x.png',
   },
-  // 跳转到所选学校专业列表
+  // 跳转到所选学校历届录取信息
   toSchoolHistory() {
     let data = {
       schoolName: this.data.result.RECRUIT_NAME,
@@ -26,6 +26,15 @@ Page({
     console.log(data)
     wx.navigateTo({
       url: '/pages/MatriculateHistory/MatriculateHistory?data=' + JSON.stringify(data)
+    })
+  },
+  // 跳转到所选学校专业信息
+  toSubjectList() {
+    let data = {
+      schoolName: this.data.result.RECRUIT_NAME
+    }
+    wx.navigateTo({
+      url: '/pages/subjectInfo/subjectInfo?data=' + JSON.stringify(data)
     })
   },
   /**
