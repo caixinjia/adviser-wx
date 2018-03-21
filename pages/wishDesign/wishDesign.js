@@ -81,9 +81,9 @@ Page({
     wx.request({
       url: app.globalData.api + '/volunteerDesign',
       data: {
-        // userId: wx.getStorageSync('userId'),
+        userId: wx.getStorageSync('userId'),
         subjectType: that.data.subjectType,
-        ranking: that.data.ranking,
+        // ranking: that.data.ranking,
         recruitBatch: that.data.batch,
         intentionProvince: that.data.province,
         intentionCity: that.data.city,

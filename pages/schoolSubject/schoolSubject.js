@@ -27,9 +27,10 @@ Page({
     wx.request({
       url: app.globalData.api + '/subjectDesign',
       data: {
+        userId: wx.getStorageSync('userId'),
         recruitId: that.data.queryData.recruitId,
         subjectType: that.data.queryData.subjectType,
-        ranking: that.data.queryData.ranking,
+        // ranking: that.data.queryData.ranking,
         recruitBatch: that.data.queryData.recruitBatch,
         priority: that.data.queryData.priority,
         intentionSubject: that.data.queryData.intentionSubject.join(','),

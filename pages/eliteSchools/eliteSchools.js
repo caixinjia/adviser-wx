@@ -25,9 +25,9 @@ Page({
     wx.request({
       url: app.globalData.api + '/loadMySchool',
       data: {
-        // userId: wx.getStorageSync('userId'),
+        userId: wx.getStorageSync('userId'),
         subjectType: that.data.subjectType,
-        ranking: that.data.ranking,
+        // ranking: that.data.ranking,
         recruitBatch: '',
         endRow: 100 //默认显示100行
       },
