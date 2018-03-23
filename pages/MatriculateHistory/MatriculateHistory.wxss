@@ -44,33 +44,30 @@ page {
 
 .result-item {
   border-radius: 3.56px;
-  height: 444rpx;
+  height: 504rpx;
 }
 
 .result-item .result-title {
-  height: 60rpx;
+  height: 120rpx;
   line-height: 60rpx;
   font-size: 28rpx;
   color: #252628;
-  margin: 20rpx 22rpx 0 26rpx;
+  margin: 0 22rpx 0 26rpx;
   background-image: linear-gradient(-180deg, #fff9b8 0%, #fff082 100%);
   box-shadow: 0 -1rpx 3rpx 0 rgba(0, 0, 0, 0.15);
   border-radius: 3rpx 3rpx 10rpx 10rpx;
-  display: flex;
 }
 
 .result-item .result-title .school-name {
-  width: 40%;
-  margin-left: 34rpx;
-   overflow: hidden;
+  text-align: center;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: #f7ce2c;
 }
 
 .result-item .result-title .subject-name {
-  width: 60%;
-  margin-right: 38rpx;
-  text-align: right;
+  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -99,6 +96,12 @@ page {
   margin-top: 20rpx;
 }
 
+.result-container .container-header view:nth-child(3),.result-container .container-header view:nth-child(4) {
+  width: 30%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
 .result-container .container-info {
   height: 61rpx;
   line-height: 61rpx;
@@ -115,6 +118,11 @@ page {
 
 .result-container .container-info view {
   width: 20%;
+  text-align: center;
+}
+
+.result-container .container-info view:nth-child(3),.result-container .container-info view:nth-child(4) {
+  width: 30%;
   text-align: center;
 }
 

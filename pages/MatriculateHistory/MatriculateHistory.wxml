@@ -8,50 +8,44 @@
     <view class='result-item' wx:for='{{result}}' wx:key='{{index}}'>
       <view class='result-title'>
         <view class='school-name'>{{item.RECRUIT_NAME}}</view>
-        <view class='subject-name'>{{item.SUBJECT_NAME}}</view>
+        <view class='subject-name'>- {{item.SUBJECT_NAME}} -</view>
       </view>
       <view class='result-container'>
         <view class='container-header'>
           <view>年份</view>
           <view>招生数</view>
-          <view>平均分</view>
-          <view>最高分</view>
-          <view>最低分</view>
+          <view>平均分/排名</view>
+          <view>最低分/排名</view>
         </view>
         <view class='container-info'>
           <view class='info-year'>2017</view>
           <view>{{item.LAST_1_COUNT?item.LAST_1_COUNT:'-'}}</view>
-          <view>{{item.LAST_1_AVG?item.LAST_1_AVG:'-'}}</view>
-          <view>{{item.LAST_1_MAX?item.LAST_1_MAX:'-'}}</view>
-          <view>{{item.LAST_1_MIN?item.LAST_1_MIN:'-'}}</view>
+          <view>{{item.LAST_1_AVG?item.LAST_1_AVG/1:'-'}}/{{item.LAST_1_AVG_RANKING?item.LAST_1_AVG_RANKING:'-'}}</view>
+          <view>{{item.LAST_1_MIN?item.LAST_1_MIN/1:'-'}}/{{item.LAST_1_MIN_RANKING?item.LAST_1_MIN_RANKING:'-'}}</view>
         </view>
         <view class='container-info'>
           <view class='info-year'>2016</view>
           <view>{{item.LAST_2_COUNT?item.LAST_2_COUNT:'-'}}</view>
-          <view>{{item.LAST_2_AVG?item.LAST_2_AVG:'-'}}</view>
-          <view>{{item.LAST_2_MAX?item.LAST_2_MAX:'-'}}</view>
-          <view>{{item.LAST_2_MIN?item.LAST_2_MIN:'-'}}</view>
+          <view>{{item.LAST_2_AVG?item.LAST_2_AVG/1:'-'}}/{{item.LAST_2_AVG_RANKING?item.LAST_2_AVG_RANKING:'-'}}</view>
+          <view>{{item.LAST_2_MIN?item.LAST_2_MIN/1:'-'}}/{{item.LAST_2_MIN_RANKING?item.LAST_2_MIN_RANKING:'-'}}</view>
         </view>
         <view class='container-info'>
           <view class='info-year'>2015</view>
           <view>{{item.LAST_3_COUNT?item.LAST_3_COUNT:'-'}}</view>
-          <view>{{item.LAST_3_AVG?item.LAST_3_AVG:'-'}}</view>
-          <view>{{item.LAST_3_MAX?item.LAST_3_MAX:'-'}}</view>
-          <view>{{item.LAST_3_MIN?item.LAST_3_MIN:'-'}}</view>
+          <view>{{item.LAST_3_AVG?item.LAST_3_AVG/1:'-'}}/{{item.LAST_3_AVG_RANKING?item.LAST_3_AVG_RANKING:'-'}}</view>
+          <view>{{item.LAST_3_MIN?item.LAST_3_MIN/1:'-'}}/{{item.LAST_3_MIN_RANKING?item.LAST_3_MIN_RANKING:'-'}}</view>
         </view>
         <view class='container-info'>
           <view class='info-year'>2014</view>
           <view>{{item.LAST_4_COUNT?item.LAST_4_COUNT:'-'}}</view>
-          <view>{{item.LAST_4_AVG?item.LAST_4_AVG:'-'}}</view>
-          <view>{{item.LAST_4_MAX?item.LAST_4_MAX:'-'}}</view>
-          <view>{{item.LAST_4_MIN?item.LAST_4_MIN:'-'}}</view>
+          <view>{{item.LAST_4_AVG?item.LAST_4_AVG/1:'-'}}/{{item.LAST_4_AVG_RANKING?item.LAST_4_AVG_RANKING:'-'}}</view>
+          <view>{{item.LAST_4_MIN?item.LAST_4_MIN/1:'-'}}/{{item.LAST_4_MIN_RANKING?item.LAST_4_MIN_RANKING:'-'}}</view>
         </view>
         <view class='container-info'>
           <view class='info-year'>2013</view>
           <view>{{item.LAST_5_COUNT?item.LAST_5_COUNT:'-'}}</view>
-          <view>{{item.LAST_5_AVG?item.LAST_5_AVG:'-'}}</view>
-          <view>{{item.LAST_5_MAX?item.LAST_5_MAX:'-'}}</view>
-          <view>{{item.LAST_5_MIN?item.LAST_5_MIN:'-'}}</view>
+          <view>{{item.LAST_5_AVG?item.LAST_5_AVG/1:'-'}}/{{item.LAST_5_AVG_RANKING?item.LAST_5_AVG_RANKING:'-'}}</view>
+          <view>{{item.LAST_5_MIN?item.LAST_5_MIN/1:'-'}}/{{item.LAST_5_MIN_RANKING?item.LAST_5_MIN_RANKING:'-'}}</view>
         </view>
       </view>
     </view>
