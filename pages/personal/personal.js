@@ -286,7 +286,8 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo,
       userName: app.globalData.userInfo.nickName,
-      user: wx.getStorageSync('userInfo')
+      user: wx.getStorageSync('userInfo'),
+      userId: wx.getStorageSync('userId')
     })
   },
 
