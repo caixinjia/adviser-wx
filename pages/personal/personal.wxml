@@ -16,9 +16,11 @@
     </view>
     <!-- 个人中心详情 -->
     <view class='user-info'>
-      <text>{{userName}}</text>
-      <text>{{user.MOBILE_NUMBER}}</text>
-      <text class='expiring-date'>会员有效期至{{expiringDate}}</text>
+      <view>
+      < view>{{userName}}<view class='login-out' bindtap='loginOut'></view></view>
+      </view>
+      <view>{{user.MOBILE_NUMBER}}</view>
+      <view class='expiring-date'>会员有效期至{{expiringDate}}</view>
     </view>
     <!-- 个人中心成绩排名 -->
     <view class='user-data'>

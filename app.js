@@ -36,15 +36,19 @@ App({
   },
   getUser: function (id) {
     let that = this;
-    wx.request({
-      url: that.globalData.api + '/showUserInfo',
-      data: {
-        userId: id
-      },
-      success: function (res) {
-        wx.setStorageSync('userInfo', res.data)
-      }
+    return new Promise((resolve,reject)=>{
+      wx.request({
+        url: that.globalData.api + '/showUserInfo',
+        data: {
+          userId: id
+        },
+        success: function (res) {
+          wx.setStorageSync('userInfo', res.data)
+          resolve();
+        }
+      })
     })
+
   },
   // 是否填完信息
   isInfoComplete:function(){

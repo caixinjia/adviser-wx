@@ -172,6 +172,6 @@
   z-index: 100;
 }
 .code-div .send-btn.last-time{
-   background: #c8c9cc;
+   opacity: 0.5;
    color: #fff;
 }

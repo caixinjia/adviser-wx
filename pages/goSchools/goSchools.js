@@ -6,10 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    score: wx.getStorageSync('userInfo').SCORE,
-    ranking: wx.getStorageSync('userInfo').RANKING,
-    subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,//1文史类，2理工类
-    subjectName: wx.getStorageSync('userInfo').SUBJECT_TYPE_TEXT,
+    score: '',
+    ranking: '',
+    subjectType: '',//1文史类，2理工类
+    subjectName: '',
     batch: '101', //101:提前批102:本一批103:本二批104：高职(专科)批
     schoolList: [],
     img985: app.globalData.imgUrl + '/icon/985@3x.png',
@@ -84,7 +84,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      score: wx.getStorageSync('userInfo').SCORE,
+      ranking: wx.getStorageSync('userInfo').RANKING,
+      subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,//1文史类，2理工类
+      subjectName: wx.getStorageSync('userInfo').SUBJECT_TYPE_TEXT,
+    })
   },
 
   /**

@@ -51,7 +51,7 @@ Page({
         isOpen: true
       },
       {
-        name: "就业倾向测试",
+        name: "职业兴趣测试",
         imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
         isOpen: false
       },
@@ -201,7 +201,7 @@ Page({
       url: app.globalData.api + '/register',
       data: {
         mobileNum: that.data.registerPhone,
-        passwd: that.data.registerPwd,
+        passwd: util.md5(that.data.registerPwd),
         verifiedCode: that.data.verifiedCode,
       },
       success: function (res) {
@@ -222,10 +222,15 @@ Page({
       }
     })
   },
-  onLoad: function () {
+  onShow: function () {
     if (wx.getStorageSync('userId')) {
+      app.getUser(wx.getStorageSync('userId'));
       this.setData({
         isLogin: true
+      })
+    }else{
+      this.setData({
+        isLogin: false
       })
     }
     if (app.globalData.userInfo) {

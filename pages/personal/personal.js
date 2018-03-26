@@ -18,6 +18,7 @@ Page({
     rightImg: app.globalData.imgUrl + "/icon/right@3x.png",
     scoreEdit: false,
     rankEdit: false,
+    userId: wx.getStorageSync('userId'),
     subjectArray: ['文史类', '理工类'],
     entrances: [
       {
@@ -40,10 +41,12 @@ Page({
   },
   // 重新渲染用户数据
   freshData() {
-    app.getUser(wx.getStorageSync('userId'))
-    this.setData({
-      user: wx.getStorageSync('userInfo')
+    app.getUser(wx.getStorageSync('userId')).then((res)=>{
+      this.setData({
+        user: wx.getStorageSync('userInfo')
+      })
     })
+
   },
   // 改变input的值
   changeInput: function (event) {
@@ -96,7 +99,7 @@ Page({
       wx.request({
         url: app.globalData.api + '/modifyScore',
         data: {
-          userId: that.data.user.id,
+          userId: that.data.userId,
           score: that.data.scoreInput,
         },
         success: function (res) {
@@ -106,6 +109,9 @@ Page({
               icon: 'success'
             })
             that.freshData();
+            that.setData({
+              scoreEdit:false
+            })
           } else {
             wx.showToast({
               title: res.data.MSG,
@@ -125,7 +131,7 @@ Page({
       wx.request({
         url: app.globalData.api + '/modifyScore',
         data: {
-          userId: that.data.user.id,
+          userId: that.data.userId,
           ranking: that.data.rankInput,
         },
         success: function (res) {
@@ -160,7 +166,7 @@ Page({
     wx.request({
       url: app.globalData.api + '/modifyScore',
       data: {
-        userId: wx.getStorageSync('userId'),
+        userId: that.data.userId,
         city: city,
       },
       success: function (res) {
@@ -185,7 +191,7 @@ Page({
     wx.request({
       url: app.globalData.api + '/modifyScore',
       data: {
-        userId: wx.getStorageSync('userId'),
+        userId: that.data.userId,
         school: school,
       },
       success: function (res) {
@@ -210,7 +216,7 @@ Page({
     wx.request({
       url: app.globalData.api + '/modifyScore',
       data: {
-        userId: wx.getStorageSync('userId'),
+        userId: that.data.userId,
         subject: 2,
       },
       success: function (res) {
@@ -229,11 +235,30 @@ Page({
       }
     })
   },
+  // 注销
+  loginOut:function(){
+      new Promise((resolve,reject)=>{
+        wx.request({
+          url: app.globalData.api + '/logout',
+          success: function (res) {
+            wx.clearStorageSync();
+            wx.showToast({
+              title: '注销成功',
+              icon: 'none'
+            })
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
+            resolve();
+          }
+        })
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.freshData();
     // 获取地址列表
     wx.request({
       url: app.globalData.api + '/loadAreaList',
