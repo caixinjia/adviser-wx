@@ -55,3 +55,12 @@ page {
   left: -36rpx;
   top: 68rpx;
 }
+.mine{
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+.mine image{
+  width: 200rpx;
+  height: 80rpx;
+}

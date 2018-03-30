@@ -12,7 +12,9 @@
     "pages/subjectInfo/subjectInfo",
     "pages/schoolList/schoolList",
     "pages/subjectDetail/subjectDetail",
-    "pages/schoolDetail/schoolDetail"
+    "pages/schoolDetail/schoolDetail",
+    "pages/mySubject/mySubject",
+    "pages/mavinList/mavinList"
   ],
   "window": {
     "backgroundTextStyle": "light",
