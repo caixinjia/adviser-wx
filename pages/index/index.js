@@ -17,7 +17,7 @@ Page({
     mainSwiper: {
       imgUrls: [
         app.globalData.imgUrl + "/swiper/banner@3x.png",
-        app.globalData.imgUrl + "/swiper/banner@3x.png",
+        app.globalData.imgUrl + "/swiper/huiyuan.png",
       ],
       indicatorDots: true,
       autoplay: true,
@@ -53,12 +53,14 @@ Page({
       {
         name: "职业兴趣测试",
         imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
-        isOpen: false
+        url: '/pages/testQuestion/testQuestion',
+        isOpen: true
       },
       {
         name: "专家咨询",
         imgUrl: app.globalData.imgUrl + "/icon/zhuanjia@3x.png",
-        isOpen: false
+        url: '/pages/mavinList/mavinList',
+        isOpen: true
       },
     ],
     schoolSwiper: {

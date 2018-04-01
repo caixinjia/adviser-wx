@@ -14,15 +14,13 @@ page {
   background: #fff;
   box-shadow: inset -6rpx 0 0 0 #f7ce2c;
   border-radius: 10rpx;
-  margin-left: 56rpx;
-  height: 206rpx;
-  width: 674rpx;
+  margin-left: 30rpx;
+  width: 700rpx;
   padding-top: 16rpx;
   margin-bottom: 30rpx;
 }
 
 .subject-name {
-  
   font-size: 36rpx;
   color: #f7ce2c;
   text-align: center;
@@ -34,33 +32,85 @@ page {
   padding: 0 20rpx;
 }
 
-.subject-data {
-  margin-top: 20rpx;
-  margin-left: 60rpx;
-  display: flex;
-  flex-wrap: wrap;
+.rate {
+  margin-top: 8rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #252628;
+  letter-spacing: 0;
+  text-align: center;
 }
 
-.subject-data view {
-  width: 50%;
+.result-container {
+  margin-right: 8rpx;
+  padding: 0 25rpx 20rpx;
+  background: #fff;
+  border-radius: 7rpx;
+}
+
+.result-container .container-header {
   opacity: 0.7;
-  font-size: 28rpx;
+  font-size: 24rpx;
   color: #5b6369;
-  margin-bottom: 20rpx;
+  display: flex;
+  height: 57rpx;
+  border-bottom: 2rpx dashed #d2d9e1;
 }
-.selectSubject{
-  height: 70rpx;
-  width: 70rpx;
+
+.result-container .container-header view {
+  width: 20%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.result-container .container-header view:nth-child(3),
+.result-container .container-header view:nth-child(4) {
+  width: 30%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.result-container .container-info {
+  height: 61rpx;
+  line-height: 61rpx;
+  font-size: 28rpx;
+  color: #252628;
+  display: flex;
+}
+
+.result-container .container-info .info-year {
+  opacity: 0.7;
+  font-size: 24rpx;
+  color: #5b6369;
+}
+
+.result-container .container-info view {
+  width: 20%;
+  text-align: center;
+}
+
+.result-container .container-info view:nth-child(3),
+.result-container .container-info view:nth-child(4) {
+  width: 30%;
+  text-align: center;
+}
+
+.selectSubject {
+  height: 50rpx;
+  width: 50rpx;
   position: absolute;
-  left: -36rpx;
-  top: 68rpx;
+  left: -25rpx;
+  top: 6rpx;
 }
-.mine{
+
+.mine {
   position: fixed;
   bottom: 20rpx;
   right: 20rpx;
 }
-.mine image{
+
+.mine image {
   width: 200rpx;
   height: 80rpx;
 }

@@ -39,6 +39,7 @@ Page({
         })
       }
     })
+    this.search()
   },
   // 搜索
   search() {
@@ -121,6 +122,7 @@ Page({
       searchSubjectName: '',
       subjectType: '',
       recruitBatch: '',
+      subjectClass:''
     })
   },
   // 跳转到所选专业详情

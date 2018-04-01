@@ -61,13 +61,12 @@ App({
   },
   // 是否是VIP
   isVip:function(){
-    return true
-    // let info = wx.getStorageSync('userRole');
-    // if (info == 'ROLE_VIP'){
-    //   return true;
-    // }else{
-    //   return false;
-    // }
+    let info = wx.getStorageSync('userRole');
+    if (info == 'role_vip'){
+      return true;
+    }else{
+      return false;
+    }
   },
   // 判断是否登录
   isLogin: function () {

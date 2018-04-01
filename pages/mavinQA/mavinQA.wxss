@@ -1,0 +1,118 @@
+/* pages/mavinQA/mavinQA.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.question-list {
+  padding-bottom: 30rpx;
+}
+
+.question-item {
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 30rpx 20rpx 0 20rpx;
+  padding: 20rpx;
+}
+
+.question-detail {
+  font-size: 36rpx;
+  color: #252628;
+  letter-spacing: 0;
+  margin-bottom: 10rpx;
+  min-height: 50rpx;
+}
+
+.answer-detail {
+  background: #f4f4f4;
+  border-radius: 4rpx;
+  font-size: 36rpx;
+  color: #5b6369;
+  padding: 10rpx;
+  min-height: 100rpx;
+}
+
+.get-more {
+  background: #f7ce2c;
+  border: 2rpx solid #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 70rpx auto;
+  font-size: 36rpx;
+  color: #252628;
+  letter-spacing: 1rpx;
+}
+
+.vip-item {
+}
+
+.vip-question {
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 30rpx 20rpx 0 20rpx;
+  padding: 20rpx;
+  border-top: 10rpx solid #f7ce2c;
+}
+
+.vip-item .answer-detail {
+  background: rgba(255, 240, 130, 0.5);
+}
+
+.question-btn {
+  background: #f7ce2c;
+  border: 2rpx solid #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 30rpx auto 20rpx;
+  font-size: 36rpx;
+  color: #252628;
+  letter-spacing: 1rpx;
+}
+
+.question-btn-tip {
+  opacity: 0.5;
+  font-size: 32rpx;
+  color: #6a7088;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.ask-item textarea{
+  background: #FFFFFF;
+  border-radius: 5px;
+  height: 540rpx;
+  width: 670rpx;
+  margin: 30rpx 20rpx 0;
+  border-top: 10rpx solid #F7CE2C;
+  font-size: 36rpx;
+  color: #252628;
+  letter-spacing: 0;
+  padding: 20rpx;
+}
+
+.ask-item .ask-btn{
+  background: #F7CE2C;
+  border: 2rpx solid #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 70rpx auto;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  letter-spacing: 1rpx;
+  opacity: 0.5;
+}
+.ask-item .ask-btn.on{
+  color: #252628;
+  opacity: 1;
+}

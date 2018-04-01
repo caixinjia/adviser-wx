@@ -1,0 +1,36 @@
+<!--pages/testQuestion/testQuestion.wxml-->
+<view class='container' wx:if='{{!isComplete}}'>
+  <view class='test-num'>{{result[num].ORDER_NUM}}</view>
+  <view class='test-question'>
+    <view>
+      {{result[num].QUESTIONS}}
+    </view>
+  </view>
+  <view class='answer-1' data-id='{{result[num].RESULT1}}' bindtap='answer'>
+    {{result[num].OPTION1}}
+  </view>
+  <view class='answer-2' data-id='{{result[num].RESULT2}}' bindtap='answer'>
+    {{result[num].OPTION2}}
+  </view>
+
+</view>
+<view wx:else>
+  <view class='result-title'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+  </view>
+  <view class='result-detail'>
+    <view class='username'>{{userInfo.nickName}}</view>
+    <view class='radar'>
+      <canvas canvas-id="radarCanvas" class="canvas"></canvas>
+    </view>
+    <view class='item-title'>专业推荐</view>
+    <view class='item-detail'>
+      {{testResult.REFER_TO_SUBJECT}}
+    </view>
+    <view class='item-title'>测试结论</view>
+    <view class='item-detail'>
+      {{testResult.TEST_SCORE_EXPLAIN}}{{testResult.TEST_RESULT_EXPLAIN}}
+    </view>
+  </view>
+  <view class='result-footer'></view>
+</view>

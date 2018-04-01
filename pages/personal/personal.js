@@ -37,11 +37,12 @@ Page({
         img: app.globalData.imgUrl + "/icon/wodeceshi@3x.png",
         name: '我的测试'
       }
-    ]
+    ],
+    isVip:false
   },
   // 重新渲染用户数据
   freshData() {
-    app.getUser(wx.getStorageSync('userId')).then((res)=>{
+    app.getUser(wx.getStorageSync('userId')).then((res) => {
       this.setData({
         user: wx.getStorageSync('userInfo')
       })
@@ -96,30 +97,41 @@ Page({
     if (that.data.scoreInput == '') {
       return false;
     } else {
-      wx.request({
-        url: app.globalData.api + '/modifyScore',
-        data: {
-          userId: that.data.userId,
-          score: that.data.scoreInput,
-        },
+      wx.showModal({
+        title: '提示',
+        content: '是否确认修改分数',
         success: function (res) {
-          if (res.data.RESULTS == "SUCCESS") {
-            wx.showToast({
-              title: '填写成绩成功',
-              icon: 'success'
+          if (res.confirm) {
+            wx.request({
+              url: app.globalData.api + '/modifyScore',
+              data: {
+                userId: that.data.userId,
+                score: that.data.scoreInput,
+              },
+              success: function (res) {
+                if (res.data.RESULTS == "SUCCESS") {
+                  wx.showToast({
+                    title: '填写成绩成功',
+                    icon: 'success'
+                  })
+                  that.freshData();
+                  that.setData({
+                    scoreEdit: false
+                  })
+                } else {
+                  wx.showToast({
+                    title: res.data.MSG,
+                    icon: 'none'
+                  })
+                }
+              }
             })
-            that.freshData();
-            that.setData({
-              scoreEdit:false
-            })
-          } else {
-            wx.showToast({
-              title: res.data.MSG,
-              icon: 'none'
-            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
           }
         }
       })
+
     }
   },
   // 确认修改排名
@@ -128,27 +140,38 @@ Page({
     if (that.data.rankInput == '') {
       return false;
     } else {
-      wx.request({
-        url: app.globalData.api + '/modifyScore',
-        data: {
-          userId: that.data.userId,
-          ranking: that.data.rankInput,
-        },
+      wx.showModal({
+        title: '提示',
+        content: '是否确认修改排名',
         success: function (res) {
-          if (res.data.RESULTS == "SUCCESS") {
-            wx.showToast({
-              title: '填写排名成功',
-              icon: 'success'
+          if (res.confirm) {
+            wx.request({
+              url: app.globalData.api + '/modifyScore',
+              data: {
+                userId: that.data.userId,
+                ranking: that.data.rankInput,
+              },
+              success: function (res) {
+                if (res.data.RESULTS == "SUCCESS") {
+                  wx.showToast({
+                    title: '填写排名成功',
+                    icon: 'success'
+                  })
+                  that.freshData();
+                } else {
+                  wx.showToast({
+                    title: res.data.MSG,
+                    icon: 'none'
+                  })
+                }
+              }
             })
-            that.freshData();
-          } else {
-            wx.showToast({
-              title: res.data.MSG,
-              icon: 'none'
-            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
           }
         }
       })
+
     }
   },
   // 修改城市
@@ -236,23 +259,23 @@ Page({
     })
   },
   // 注销
-  loginOut:function(){
-      new Promise((resolve,reject)=>{
-        wx.request({
-          url: app.globalData.api + '/logout',
-          success: function (res) {
-            wx.clearStorageSync();
-            wx.showToast({
-              title: '注销成功',
-              icon: 'none'
-            })
-            wx.switchTab({
-              url: '/pages/index/index'
-            })
-            resolve();
-          }
-        })
+  loginOut: function () {
+    new Promise((resolve, reject) => {
+      wx.request({
+        url: app.globalData.api + '/logout',
+        success: function (res) {
+          wx.clearStorageSync();
+          wx.showToast({
+            title: '注销成功',
+            icon: 'none'
+          })
+          wx.switchTab({
+            url: '/pages/index/index'
+          })
+          resolve();
+        }
       })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -287,7 +310,8 @@ Page({
       userInfo: app.globalData.userInfo,
       userName: app.globalData.userInfo.nickName,
       user: wx.getStorageSync('userInfo'),
-      userId: wx.getStorageSync('userId')
+      userId: wx.getStorageSync('userId'),
+      isVip: app.isVip()
     })
   },
 

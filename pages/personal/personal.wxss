@@ -206,6 +206,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 10rpx 50rpx 0 50rpx;
+  position: relative;
 }
 
 .entrance .entrance-tiem {
@@ -231,4 +232,20 @@
   margin: 0 10rpx 0 50rpx;
   width: 64rpx;
   height: 64rpx;
+}
+.entrance .entrance-mask{
+  background: rgba(255,255,255,0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 650rpx;
+  height: 280rpx;
+}
+.entrance .entrance-mask .open-btn{
+  width: 416rpx;
+  height: 100rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/lijijiesuo@3x.png") no-repeat center;
+  background-size: 416rpx;
+  margin: 90rpx auto;
+
 }

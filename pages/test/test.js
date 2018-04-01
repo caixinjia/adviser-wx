@@ -74,10 +74,9 @@ Page({
   },
   onLoad(){
     wx.request({
-      url: app.globalData.api + '/modifyScore',
+      url: app.globalData.api + '/loadTestQuestions',
       data: {
-        userId: 'e4f22bb7-21fd-11e8-ac6a-00163f00d45f',
-        score: '',
+        testGroupId:'1001'
       },
       success: function (res) {
       }

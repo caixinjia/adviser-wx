@@ -1,2 +1,50 @@
 <!--pages/mavinList/mavinList.wxml-->
-<text>pages/mavinList/mavinList.wxml</text>
+<view class='container'>
+  <view class='search-bar'>
+    <input placeholder-style="color:#D2D9E1" confirm-type="search" placeholder="请输入专家姓名" data-typeId='1' value='{{mavinName}}' bindinput='changeSearch' bindconfirm='search' />
+    <view class='filter-btn' bindtap='showFilter'>专家类别</view>
+  </view>
+  <view class='result-list'>
+    <!-- 学校列表 -->
+    <view>
+      <block wx:for='{{result}}' wx:key='{{index}}'>
+        <view class='result-item'>
+          <view class='mavin-data'>
+            <image src='https://fjgz360.cn/chuxian{{item.MAVIN_PHOTO_FILENAME}}'></image>
+            <view>
+              <view class='mavin-name'>{{item.MAVIN_NAME}}<view>({{item.MAVIN_TITLE}})</view></view>
+              <view class='mavin-category'>{{item.MAVIN_CATEGORY_TEXT}}</view>
+              <view class='mavin-btns'>
+                <view class='mavin-zixun' bindtap='toMavinQA'>留言咨询</view>
+                <view class='mavin-yuyue'>线下咨询</view>
+              </view>
+            </view>
+          </view>
+
+          <view class='mavin-explain'>
+          {{item.MAVIN_EXPLAIN}}
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 筛选 -->
+  <view class="mask {{filterIsOpen?'open':''}}" bindtap='hideFilter'>
+    <view class='filter-dialog' catchtap='noBubble'>
+      <view class='recruit-batch' style='margin-top:0'>
+        <view class='filter-title'>专家类别</view>
+        <view class='filter-options'>
+          <view class="{{mavinCategory==''?'on':''}}" data-typeId='2' data-id='' bindtap='changeSearch'>不限</view>
+          <view class="{{mavinCategory=='01'?'on':''}}" data-typeId='2' data-id='01' bindtap='changeSearch'>高校教授</view>
+          <view class="{{mavinCategory=='02'?'on':''}}" data-typeId='2' data-id='02' bindtap='changeSearch'>高招咨询专家</view>
+          <view class="{{mavinCategory=='03'?'on':''}}" data-typeId='2' data-id='03' bindtap='changeSearch'>职业规划专家</view>
+          <view class="{{mavinCategory=='99'?'on':''}}" data-typeId='2' data-id='99' bindtap='changeSearch'>其他领域专家</view>
+        </view>
+      </view>
+      <view class='filter-btns'>
+        <view class='reset-btn' bindtap='resetFilter'>重置</view>
+        <view class='search-btn' bindtap='search'>完成</view>
+      </view>
+    </view>
+  </view>
+</view>

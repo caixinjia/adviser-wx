@@ -14,7 +14,9 @@
     "pages/subjectDetail/subjectDetail",
     "pages/schoolDetail/schoolDetail",
     "pages/mySubject/mySubject",
-    "pages/mavinList/mavinList"
+    "pages/mavinList/mavinList",
+    "pages/mavinQA/mavinQA",
+    "pages/testQuestion/testQuestion"
   ],
   "window": {
     "backgroundTextStyle": "light",

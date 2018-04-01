@@ -146,10 +146,13 @@ Page({
   },
   resetFilter() {
     this.setData({
-      searchSchoolName: '',
-      searchSubjectName: '',
-      subjectType: '',
-      recruitBatch: '',
+      schoolName: '',
+      schoolLevel: '',
+      schoolGrade: '',
+      schoolNature: '',
+      province: '',
+      city: '',
+      region: ['不限', '不限'],
     })
   },
   // 跳转到所选专业详情
@@ -169,7 +172,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.search()
   },
 
   /**

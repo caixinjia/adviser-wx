@@ -85,6 +85,24 @@
 					"name": "我的志愿清单",
 					"pathName": "pages/mySubject/mySubject",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "专家列表",
+					"pathName": "pages/mavinList/mavinList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "问答列表",
+					"pathName": "pages/mavinQA/mavinQA",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/testQuestion/testQuestion",
+					"query": ""
 				}
 			]
 		}

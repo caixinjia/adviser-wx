@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    result:[]
   },
 
   /**
@@ -35,7 +35,9 @@ Page({
         userId: wx.getStorageSync('userId'),
       },
       success: function (res) {
-
+        that.setData({
+          result:res.data
+        })
       }
     })
   },

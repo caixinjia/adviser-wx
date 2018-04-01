@@ -4,7 +4,7 @@
     <!-- 个人中心头部 -->
     <view class='personal-title'>
       <view>
-        <image class='vip-img' src='{{vipImg}}'></image>
+        <image class='vip-img' src='{{vipImg}}' wx:if='{{isVip}}'></image>
       </view>
       <view>
         <image class='remind-img' src='{{remindImg}}'></image>
@@ -20,7 +20,8 @@
       < view>{{userName}}<view class='login-out' bindtap='loginOut'></view></view>
       </view>
       <view>{{user.MOBILE_NUMBER}}</view>
-      <view class='expiring-date'>会员有效期至{{expiringDate}}</view>
+      <view class='expiring-date' wx:if='{{isVip}}'>会员有效期至{{expiringDate}}</view>
+      <view class='expiring-date' wx:else>成为会员，解锁以下更多功能</view>
     </view>
     <!-- 个人中心成绩排名 -->
     <view class='user-data'>
@@ -28,13 +29,13 @@
         <text class='data-title'>高考成绩</text>
         <view>
           <view class='score-detail'>
-            <view class='cancel-btn' wx:if="{{user.SCORE==''&&scoreEdit}}" bindtap='cancelScore'></view>
-            <view class='score-number' wx:if="{{user.SCORE!=''}}">{{user.SCORE}}</view>
+            <view class='cancel-btn' wx:if="{{scoreEdit}}" bindtap='cancelScore'></view>
+            <view class='score-number' wx:if="{{user.SCORE!=''&&!scoreEdit}}" bindtap='openScore'>{{user.SCORE}}</view>
             <view class='score-number no-data' wx:else bindtap='openScore'>
               <input type='number' wx:if='{{scoreEdit}}' bindinput='changeInput' data-id='1'></input>
             </view>
-            <view class='submit-btn' wx:if="{{user.SCORE==''&&scoreEdit}}" bindtap='changeScore'></view>
-            <text class='warn' wx:if="{{user.SCORE==''&&scoreEdit}}">填写后不可修改</text>
+            <view class='submit-btn' wx:if="{{scoreEdit}}" bindtap='changeScore'></view>
+            <text class='warn' wx:if="{{scoreEdit}}">填写后不可修改</text>
           </view>
         </view>
       </view>
@@ -42,13 +43,13 @@
         <text class='data-title'>全省排名</text>
         <view>
           <view class='ranking-detail'>
-            <view class='cancel-btn' wx:if="{{user.RANKING==''&&rankEdit}}" bindtap='cancelRank'></view>
-            <view class='ranking-number' wx:if="{{user.RANKING!=''}}">{{user.RANKING}}</view>
+            <view class='cancel-btn' wx:if="{{rankEdit}}" bindtap='cancelRank'></view>
+            <view class='ranking-number' wx:if="{{user.RANKING!=''&&!rankEdit}}" bindtap='openRank'>{{user.RANKING}}</view>
             <view class='ranking-number no-data' wx:else bindtap='openRank'>
               <input type='number' wx:if='{{rankEdit}}' bindinput='changeInput' data-id='2'></input>
             </view>
-            <view class='submit-btn' wx:if="{{user.RANKING==''&&rankEdit}}" bindtap='changeRank'></view>
-            <text class='warn' wx:if="{{user.RANKING==''&&rankEdit}}">填写后不可修改</text>
+            <view class='submit-btn' wx:if="{{rankEdit}}" bindtap='changeRank'></view>
+            <text class='warn' wx:if="{{rankEdit}}">填写后不可修改</text>
           </view>
         </view>
       </view>
@@ -97,5 +98,8 @@
         <view class='entrance-name'>{{item.name}}</view>
       </navigator>
     </block>
+    <view class='entrance-mask' wx:if='{{!isVip}}'>
+      <view class='open-btn'></view>
+    </view>
   </view>
 </view>

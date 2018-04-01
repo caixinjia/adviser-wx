@@ -1,7 +1,7 @@
 <!--pages/schoolList/schoolList.wxml-->
 <view class='container'>
   <view class='search-bar'>
-    <input placeholder-style="color:#D2D9E1" confirm-type="search" placeholder="请输入院校名称，支持模糊搜索" data-typeId='1' value='{{searchSchoolName}}' bindinput='changeSearch' bindconfirm='search' />
+    <input placeholder-style="color:#D2D9E1" confirm-type="search" placeholder="请输入院校名称，支持模糊搜索" data-typeId='1' value='{{schoolName}}' bindinput='changeSearch' bindconfirm='search' />
     <view class='filter-btn' bindtap='showFilter'>筛选</view>
   </view>
   <view class='result-list'>

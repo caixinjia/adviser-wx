@@ -1,0 +1,48 @@
+<!--pages/mavinQA/mavinQA.wxml-->
+<view class='container'>
+  <view wx:if='{{!isAddQuestionFlag}}'>
+    <view class='vip-item' wx:if='{{isVip}}'>
+      <!-- 已提问 -->
+      <view class='vip-question' wx:if='{{vipQuestion!=""}}'>
+        <view class='question-detail'>
+          {{vipQuestion.QA_QUESTION}}
+        </view>
+        <view class='answer-detail' wx:if='{{vipQuestion.IS_ANSWER==1}}'>
+          {{vipQuestion.QA_ANSWER}}
+        </view>
+        <view class='answer-detail' wx:else style='min-height:50rpx;text-align:center'>
+          暂未得到专家回复
+        </view>
+      </view>
+      <!-- 未提问 -->
+      <view wx:else>
+        <view class='question-btn'>
+          马上提问
+        </view>
+        <view class='question-btn-tip'>请珍惜会员仅有一次的提问机会噢~</view>
+      </view>
+    </view>
+    <view class='question-list'>
+      <view class='question-item' wx:for='{{result}}' wx:key='{{index}}'>
+        <view class='question-detail'>
+          {{item.QA_QUESTION}}
+        </view>
+        <view class='answer-detail' wx:if='{{item.IS_ANSWER==1}}'>
+          {{item.QA_ANSWER}}
+        </view>
+        <view class='answer-detail' wx:else style='min-height:50rpx;text-align:center'>
+          暂未得到专家回复
+        </view>
+      </view>
+    </view>
+
+    <view class='get-more' wx:if='{{!isVip}}'>
+      查看更多问答
+    </view>
+  </view>
+  <!-- 提问 -->
+  <view class='ask-item' wx:else>
+    <textarea placeholder='请输入详细问题内容' placeholder-style='color: #D2D9E1;' bindinput='changeQuestion'></textarea>
+    <view class="ask-btn {{isFocus?'on':''}}" bindtap='submitQuestion'>确认提问</view>
+  </view>
+</view>
