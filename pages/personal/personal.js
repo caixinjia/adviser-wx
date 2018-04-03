@@ -27,7 +27,8 @@ Page({
       },
       {
         img: app.globalData.imgUrl + "/icon/wodetiwen@3x.png",
-        name: '我的提问'
+        name: '我的提问',
+        url:'/pages/myQuestion/myQuestion'
       },
       {
         img: app.globalData.imgUrl + "/icon/wodezhiyuan@3x.png",
@@ -35,7 +36,8 @@ Page({
       },
       {
         img: app.globalData.imgUrl + "/icon/wodeceshi@3x.png",
-        name: '我的测试'
+        name: '我的测试',
+        url: '/pages/myTest/myTest'
       }
     ],
     isVip:false

@@ -7,9 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    result:[]
+    result_0: [],
+    result_1: [],
+    result_2: []
   },
-
+  towishDesign() {
+    wx.navigateTo({
+      url: '/pages/wishDesignList/wishDesignList',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -35,8 +41,23 @@ Page({
         userId: wx.getStorageSync('userId'),
       },
       success: function (res) {
+        let temp0 = [];
+          let temp1 = [];
+          let temp2 = [];
+        for (let item of res.data) {
+          if (item.RECOMMEND_TYPE=='0'){
+            temp0.push(item)
+          } else if (item.RECOMMEND_TYPE == '1'){
+            temp1.push(item)
+          } else if (item.RECOMMEND_TYPE == '2') {
+            temp2.push(item)
+          }
+        }
         that.setData({
-          result:res.data
+          result:res.data,
+          result_0: temp0,
+          result_1: temp1,
+          result_2: temp2
         })
       }
     })

@@ -93,7 +93,7 @@
   <!-- 入口 -->
   <view class='entrance'>
     <block wx:for='{{entrances}}' wx:key='{{entranceList.name}}'>
-      <navigator class='entrance-tiem'>
+      <navigator class='entrance-tiem' url='{{item.url}}'>
         <image src='{{item.img}}' />
         <view class='entrance-name'>{{item.name}}</view>
       </navigator>

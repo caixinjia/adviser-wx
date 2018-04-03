@@ -1,1 +1,79 @@
 /* pages/mySubject/mySubject.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.chongji {
+  height: 80rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/line-chongji@3x.png") no-repeat center;
+  background-size: 312rpx;
+}
+
+.qiuwen {
+  height: 80rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/line-qiuwen@3x.png") no-repeat center;
+  background-size: 312rpx;
+}
+
+.baodi {
+  height: 80rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/line-baodi@3x.png") no-repeat center;
+  background-size: 312rpx;
+}
+
+.subject-item {
+  margin: 0 20rpx 20rpx 20rpx;
+  padding: 20rpx 0;
+  background: #fff;
+  box-shadow: inset -6rpx 0 0 0 #f7ce2c;
+  border-radius: 10rpx;
+}
+
+.subject-school {
+  font-size: 36rpx;
+  color: #f7ce2c;
+  letter-spacing: 0;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.subject {
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #5b6369;
+  text-align: left;
+  height: 40rpx;
+  line-height: 40rpx;
+  display: flex;
+  padding-left: 40rpx;
+  margin-top: 20rpx;
+}
+
+.subject view {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-subject {
+  height: 840rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/no-subject@3x.png") no-repeat center;
+  background-size: 320rpx;
+}
+
+.no-subject view {
+  position: absolute;
+  top: 870rpx;
+  left: 166rpx;
+  text-align: center;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #f7ce2c;
+  border: 2rpx solid #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+}

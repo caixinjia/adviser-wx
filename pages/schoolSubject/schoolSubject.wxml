@@ -3,7 +3,7 @@
   <block wx:for='{{result}}' wx:key='{{index}}'>
 
     <view class='subject-item'>
-      <image class='selectSubject' src='{{item.isSelect?imgYes:imgNo}}' bindtap='addSubject' data-index='{{index}}'></image>
+      <image class='selectSubject' src='{{item.IS_IN_VOLUNTEER==1?imgYes:imgNo}}' bindtap='addSubject' data-index='{{index}}'></image>
       <view class='subject-name'>
         {{item.SUBJECT_NAME}}
       </view>
@@ -48,7 +48,7 @@
       </view>
     </view>
   </block>
-  <view class='mine' bindtap='toMineSubject'>
+  <view class='mine' bindtap='saveSubject'>
     <image src='{{mineImg}}'></image>
   </view>
 </view>

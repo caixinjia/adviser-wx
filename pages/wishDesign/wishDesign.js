@@ -200,6 +200,7 @@ Page({
       recruitBatch: this.data.batch,
       priority: this.data.priority,
       intentionSubject: this.data.selectedSubjectArray,
+      recommend_type: event.currentTarget.dataset.type,
     }
     console.log(data)
     wx.navigateTo({

@@ -1,0 +1,84 @@
+/* pages/myTest/myTest.wxss */
+.container {
+  background-color: #f7ce2c;
+}
+
+.result-title {
+  height: 150rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/ceshijieguo1@3x.png") no-repeat;
+  background-size: 750rpx;
+}
+
+.result-title image {
+  height: 112rpx;
+  width: 112rpx;
+  margin-top: 30rpx;
+  margin-left: 320rpx;
+  border-radius: 50%;
+}
+
+.result-detail {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/ceshijieguo2@3x.png");
+  background-size: 750rpx;
+}
+
+.username {
+  text-align: center;
+  font-size: 40rpx;
+  color: #252628;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+
+.radar {
+  margin-top: 20rpx;
+}
+
+.canvas {
+  margin: 0 auto;
+  width: 320px;
+  height: 175px;
+  text-align: center;
+}
+
+.item-title {
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 36rpx;
+  color: #252628;
+  text-align: center;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/ceshi_title@3x.png") no-repeat center;
+  background-size: 276rpx;
+  margin-top: 60rpx;
+}
+.item-detail{
+  padding: 22rpx 100rpx 0 100rpx; 
+  opacity: 0.7;
+font-size: 32rpx;
+color: #252628;
+line-height: 46rpx;
+}
+.result-footer{
+    height: 90rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/ceshijieguo3@3x.png") no-repeat;
+  background-size: 750rpx;
+}
+.no-test {
+  height: 840rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/no-ceshi@3x.png") no-repeat center;
+  background-size: 320rpx;
+}
+
+.no-test view {
+  position: absolute;
+  top: 870rpx;
+  left: 166rpx;
+  text-align: center;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #f7ce2c;
+  border: 2rpx solid #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+}

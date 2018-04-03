@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -102,6 +102,18 @@
 					"id": -1,
 					"name": "测试",
 					"pathName": "pages/testQuestion/testQuestion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的问题",
+					"pathName": "pages/myQuestion/myQuestion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的测试",
+					"pathName": "pages/myTest/myTest",
 					"query": ""
 				}
 			]

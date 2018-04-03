@@ -11,35 +11,44 @@ Page({
     imgNo: app.globalData.imgUrl + '/icon/zhiyuan-no@3x.png',
     imgYes: app.globalData.imgUrl + '/icon/zhiyuan-yes@3x.png',
     mineImg: app.globalData.imgUrl + '/icon/Group 4@3x.png',
+    recommend_type:0,
+
   },
   addSubject: function (event) {
     let index = event.currentTarget.dataset.index;
-    let subject = this.data.result[index]
-    let subjectId = subject.SUBJECT_ID;
-    let volunteerObject = {
-      "SUBJECT_ID": subjectId
+    let temp = this.data.result
+    if (temp[index].IS_IN_VOLUNTEER==0){
+      temp[index].IS_IN_VOLUNTEER = 1 
+    }else{
+      temp[index].IS_IN_VOLUNTEER = 0 
     }
+    this.setData({
+      result:temp
+    })
+    
+  },
+  saveSubject(){
     let volunteerList = [];
-    volunteerList.push(volunteerObject)
+    for (let item of this.data.result){
+      if (item.IS_IN_VOLUNTEER == 1){
+        volunteerList.push(item.SUBJECT_ID)
+      }
+    }
     let that = this;
     wx.request({
-      url: app.globalData.api + '/saveVolunteerList',
+      url: app.globalData.api + '/addToVolunteerList',
       data: {
         userId: wx.getStorageSync('userId'),
-        volunteerList: volunteerList
+        recommendType: that.data.recommend_type,
+        subjectList: volunteerList.join(',')
       },
       success: function (res) {
-        if(res.data.RESULTS == 'SUCCESS') {
+        if (res.data.RESULTS == 'SUCCESS') {
           wx.showToast({
             title: '添加志愿成功',
             icon: 'success'
           })
-          let result = that.data.result;
-          result[index].isSelect = true;
-          that.setData({
-            result: result
-          })
-        }else{
+        } else {
           wx.showToast({
             title: res.data.MSG,
             icon: 'none'
@@ -78,11 +87,9 @@ Page({
         intentionSubject: that.data.queryData.intentionSubject.join(','),
       },
       success: function (res) {
-        for (let item of res.data) {
-          item.isSelect = false;
-        }
         that.setData({
-          result: res.data
+          result: res.data,
+          recommend_type: that.data.queryData.recommend_type
         })
       }
     })

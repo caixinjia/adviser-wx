@@ -72,7 +72,7 @@
   <!-- 学校列表 -->
   <view>
     <block wx:for='{{schoolList}}' wx:key='{{item.RECRUIT_ID}}'>
-      <view class='school-item' data-id='{{item.RECRUIT_ID}}' bindtap='toSchoolSubject'>
+      <view class='school-item' data-id='{{item.RECRUIT_ID}}' data-type='{{item.RECOMMEND_TYPE}}' bindtap='toSchoolSubject'>
         <!-- 学校属性 -->
         <view class='school-title'>
           <view class='grade' wx:if="{{item.SCHOOL_GRADE}}">{{item.SCHOOL_GRADE}} | {{item.SCHOOL_NATURE}}</view>

@@ -1,2 +1,138 @@
 <!--pages/mySubject/mySubject.wxml-->
-<text>pages/mySubject/mySubject.wxml</text>
+<view class='container' wx:if='{{result.length>0}}'>
+  <view class='chongji' wx:if='{{result_0.length>0}}'></view>
+  <view wx:for='{{result_0}}' class='subject-item'>
+    <view class='subject-school'>{{item.SCHOOL_NAME}}</view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID1!=""}}'>
+      <view>{{item.SUBJECT_NAME1}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID2!=""}}'>
+      <view>{{item.SUBJECT_NAME2}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID3!=""}}'>
+      <view>{{item.SUBJECT_NAME3}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID4!=""}}'>
+      <view>{{item.SUBJECT_NAME4}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID5!=""}}'>
+      <view>{{item.SUBJECT_NAME5}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID6!=""}}'>
+      <view>{{item.SUBJECT_NAME6}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID7!=""}}'>
+      <view>{{item.SUBJECT_NAME7}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID8!=""}}'>
+      <view>{{item.SUBJECT_NAME8}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID9!=""}}'>
+      <view>{{item.SUBJECT_NAME9}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID10!=""}}'>
+      <view>{{item.SUBJECT_NAME10}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+  </view>
+  <view class='qiuwen' wx:if='{{result_1.length>0}}'></view>
+    <view wx:for='{{result_1}}' class='subject-item'>
+    <view class='subject-school'>{{item.SCHOOL_NAME}}</view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID1!=""}}'>
+      <view>{{item.SUBJECT_NAME1}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID2!=""}}'>
+      <view>{{item.SUBJECT_NAME2}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID3!=""}}'>
+      <view>{{item.SUBJECT_NAME3}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID4!=""}}'>
+      <view>{{item.SUBJECT_NAME4}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID5!=""}}'>
+      <view>{{item.SUBJECT_NAME5}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID6!=""}}'>
+      <view>{{item.SUBJECT_NAME6}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID7!=""}}'>
+      <view>{{item.SUBJECT_NAME7}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID8!=""}}'>
+      <view>{{item.SUBJECT_NAME8}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID9!=""}}'>
+      <view>{{item.SUBJECT_NAME9}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID10!=""}}'>
+      <view>{{item.SUBJECT_NAME10}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+  </view>
+  <view class='baodi' wx:if='{{result_2.length>0}}'></view>
+    <view wx:for='{{result_2}}' class='subject-item'>
+    <view class='subject-school'>{{item.SCHOOL_NAME}}</view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID1!=""}}'>
+      <view>{{item.SUBJECT_NAME1}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID2!=""}}'>
+      <view>{{item.SUBJECT_NAME2}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID3!=""}}'>
+      <view>{{item.SUBJECT_NAME3}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID4!=""}}'>
+      <view>{{item.SUBJECT_NAME4}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID5!=""}}'>
+      <view>{{item.SUBJECT_NAME5}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID6!=""}}'>
+      <view>{{item.SUBJECT_NAME6}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID7!=""}}'>
+      <view>{{item.SUBJECT_NAME7}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID8!=""}}'>
+      <view>{{item.SUBJECT_NAME8}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID9!=""}}'>
+      <view>{{item.SUBJECT_NAME9}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID10!=""}}'>
+      <view>{{item.SUBJECT_NAME10}}</view>
+      <view>同排名录取率：%</view>
+    </view>
+  </view>
+</view>
+<view class='no-subject' wx:else>
+  <view bindtap='towishDesign'>火速设计志愿清单</view>
+</view>

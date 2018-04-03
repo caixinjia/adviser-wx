@@ -1,0 +1,24 @@
+<!--pages/myTest/myTest.wxml-->
+<view class='container' wx:if='{{isHas}}'>
+  <view class='result-title'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+  </view>
+  <view class='result-detail'>
+    <view class='username'>{{userInfo.nickName}}</view>
+    <view class='radar'>
+      <canvas canvas-id="radarCanvas" class="canvas"></canvas>
+    </view>
+    <view class='item-title'>专业推荐</view>
+    <view class='item-detail'>
+      {{testResult.REFER_TO_SUBJECT}}
+    </view>
+    <view class='item-title'>测试结论</view>
+    <view class='item-detail'>
+      {{testResult.TEST_SCORE_EXPLAIN}}{{testResult.TEST_RESULT_EXPLAIN}}
+    </view>
+  </view>
+  <view class='result-footer'></view>
+</view>
+<view class='no-test' wx:else>
+  <view bindtap='toTest'>快去发起测试</view>
+</view>

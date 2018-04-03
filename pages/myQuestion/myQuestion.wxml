@@ -1,0 +1,27 @@
+<!--pages/myQuestion/myQuestion.wxml-->
+<view class='container' wx:if='{{result.length>0}}'>
+  <view class='question'>
+    <view class='question-title'>
+      <view>我的提问</view>
+      <view>{{qTime}}</view>
+    </view>
+    <view class='question-detail'>
+    {{result[0].QA_QUESTION}}
+    </view>
+  </view>
+  <view class='answer'>
+    <view class='answer-title'>
+      <view>专家回答</view>
+      <view>{{aTime}}</view>
+    </view>
+    <view class='answer-detail' wx:if='{{result[0].IS_ANSWER==1}}'>
+    {{result[0].QA_ANSWER}}
+    </view>
+    <view class='answer-detail' wx:else style='text-align:center'>
+    暂未得到专家回复，请耐心等待！
+    </view>
+  </view>
+</view>
+<view class='no-question' wx:else>
+  <view bindtap='toMavinList'>火速向专家提问</view>
+</view>
