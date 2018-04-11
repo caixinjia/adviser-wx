@@ -72,6 +72,9 @@ Page({
       }
     })
   },
+  pay(){
+
+  },
   onLoad(){
     wx.request({
       url: app.globalData.api + '/loadTestQuestions',

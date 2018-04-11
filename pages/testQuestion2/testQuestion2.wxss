@@ -41,7 +41,7 @@ page {
 }
 
 .answer-1 {
-  font-size: 40rpx;
+  font-size: 32rpx;
   color: #252628;
   width: 470rpx;
   padding-left: 80rpx;
@@ -54,12 +54,12 @@ page {
 }
 
 .answer-2 {
-  font-size: 40rpx;
+  font-size: 32rpx;
   color: #252628;
   width: 470rpx;
   padding-left: 80rpx;
   position: absolute;
-  top: 660rpx;
+  top: 760rpx;
   left: 100rpx;
   line-height: 60rpx;
   background: url("https://fjgz360.cn/chuxian/webPage/images/icon/ceshi-B@3x.png") no-repeat left top;

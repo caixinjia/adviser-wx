@@ -10,7 +10,7 @@ Page({
     result: '',
     imgNo: app.globalData.imgUrl + '/icon/zhiyuan-no@3x.png',
     imgYes: app.globalData.imgUrl + '/icon/zhiyuan-yes@3x.png',
-    mineImg: app.globalData.imgUrl + '/icon/Group 4@3x.png',
+    mineImg: app.globalData.imgUrl + '/icon/Group 5@3x.png',
     recommend_type:0,
 
   },

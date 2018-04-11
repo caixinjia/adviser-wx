@@ -4,4 +4,5 @@
 <view bindtap='zhuce'>注册</view>
 <view bindtap='login'>登录</view>
 <view bindtap='resetPwd'>重置密码</view>
+<view bindtap='pay'>微信支付</view>
 </view>

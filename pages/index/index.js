@@ -53,7 +53,7 @@ Page({
       {
         name: "职业兴趣测试",
         imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
-        url: '/pages/testQuestion/testQuestion',
+        url: '/pages/testQuestionList/testQuestionList',
         isOpen: true
       },
       {

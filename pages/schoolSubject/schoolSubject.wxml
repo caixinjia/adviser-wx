@@ -48,7 +48,9 @@
       </view>
     </view>
   </block>
-  <view class='mine' bindtap='saveSubject'>
+  <view class='mine' >
     <image src='{{mineImg}}'></image>
+    <view bindtap='toMineSubject' ></view>
+    <view bindtap='saveSubject'></view>
   </view>
 </view>

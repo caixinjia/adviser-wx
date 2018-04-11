@@ -1,0 +1,44 @@
+/* pages/testQuestionList/testQuestionList.wxss */
+
+page {
+  background-color: #f7ce2c;
+}
+
+.container {
+  height: 1200rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/Artboard@3x.png") no-repeat center;
+  background-size: 750rpx;
+  background-color: #f7ce2c;
+  position: relative;
+}
+
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+  margin: 40rpx;
+  padding: 40rpx;
+  border-radius: 20rpx;
+}
+
+.title {
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 50rpx;
+  color: #f7ce2c;
+  letter-spacing: 0;
+  text-align: center;
+}
+.question1{
+  margin-top: 34rpx;
+  width: 590rpx;
+  height: 450rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/A@3x.png") no-repeat center;
+  background-size: 590rpx;
+}
+.question2{
+  margin-top: 40rpx;
+  width: 590rpx;
+  height: 450rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/B@3x.png") no-repeat center;
+  background-size: 590rpx;
+  border-radius: 40rpx;
+}

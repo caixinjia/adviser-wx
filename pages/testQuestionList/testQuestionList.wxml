@@ -1,0 +1,15 @@
+<!--pages/testQuestionList/testQuestionList.wxml-->
+<view class='container'>
+  <view class='mask'>
+    <view class='title'>请选择测试类型</view>
+    <navigator url='/pages/testQuestion2/testQuestion2'>
+      <view class='question1'></view>
+    </navigator>
+    <navigator url='/pages/testQuestion/testQuestion'>
+      <view class='question2'></view>
+    </navigator>
+
+
+  </view>
+
+</view>

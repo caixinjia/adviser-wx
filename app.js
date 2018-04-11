@@ -5,7 +5,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var that = this; 
     // 登录
     wx.login({
       success: res => {
@@ -61,12 +61,13 @@ App({
   },
   // 是否是VIP
   isVip:function(){
-    let info = wx.getStorageSync('userRole');
-    if (info == 'role_vip'){
-      return true;
-    }else{
-      return false;
-    }
+    return true;
+    // let info = wx.getStorageSync('userRole');
+    // if (info == 'role_vip'){
+    //   return true;
+    // }else{
+    //   return false;
+    // }
   },
   // 判断是否登录
   isLogin: function () {
@@ -83,6 +84,7 @@ App({
   globalData: {
     AppID: 'wx8e5b52999b5be030',
     AppSecret: 'a9fedfba71feea3b1d56dc2cf48f2c48',
+    openId:'',
     userInfo: null,
     imgUrl: "https://fjgz360.cn/chuxian/webPage/images",
     api: 'https://fjgz360.cn/chuxian',

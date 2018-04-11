@@ -32,7 +32,8 @@ Page({
       },
       {
         img: app.globalData.imgUrl + "/icon/wodezhiyuan@3x.png",
-        name: '我的志愿'
+        name: '我的志愿',
+        url: '/pages/mySubject/mySubject'
       },
       {
         img: app.globalData.imgUrl + "/icon/wodeceshi@3x.png",

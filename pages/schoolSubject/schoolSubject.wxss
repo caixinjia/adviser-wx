@@ -109,7 +109,20 @@ page {
   bottom: 20rpx;
   right: 20rpx;
 }
-
+.mine view:nth-child(2){
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 80rpx;
+  width: 80rpx;
+}
+.mine view:nth-child(3){
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 80rpx;
+  width: 80rpx;
+}
 .mine image {
   width: 200rpx;
   height: 80rpx;

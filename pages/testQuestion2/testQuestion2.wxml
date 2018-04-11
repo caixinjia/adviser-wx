@@ -23,10 +23,6 @@
     <view class='radar'>
       <canvas canvas-id="radarCanvas" class="canvas"></canvas>
     </view>
-    <view class='item-title'>专业推荐</view>
-    <view class='item-detail'>
-      {{testResult.REFER_TO_SUBJECT}}
-    </view>
     <view class='item-title'>测试结论</view>
     <view class='item-detail'>
       {{testResult.TEST_SCORE_EXPLAIN}}{{testResult.TEST_RESULT_EXPLAIN}}
