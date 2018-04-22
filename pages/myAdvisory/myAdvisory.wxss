@@ -1,1 +1,110 @@
 /* pages/myAdvisory/myAdvisory.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.mavin-item {
+  background: #fff;
+  padding: 20rpx;
+  margin: 30rpx 20rpx;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.20);
+  border-radius: 5px;
+}
+
+.mavin-data {
+  display: flex;
+}
+
+.mavin-data>image {
+  width: 160rpx;
+  height: 160rpx;
+  border: 1px solid #c1c5d5;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.mavin-data>view {
+  width: 490rpx;
+}
+
+.mavin-data>view .mavin-name {
+  font-size: 36rpx;
+  color: #252628;
+  letter-spacing: 0;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mavin-data>view .mavin-name view {
+  font-size: 28rpx;
+  color: rgba(19, -2147483648, -2147483648, 0.70);
+  line-height: 50rpx;
+  margin-left: 10rpx;
+  display: inline-block;
+}
+
+.mavin-category {
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #252628;
+  line-height: 46rpx;
+  text-align: center;
+  height: 46rpx;
+  margin-top: 12rpx;
+}
+
+.mavin-price {
+  opacity: 0.7;
+  text-align: center;
+  color: #252628;
+  margin-top: 12rpx;
+  font-size: 28rpx;
+}
+
+.mavin-price text {
+  color: #f7ce2c;
+}
+
+.advisory-data {
+  background: #f4f4f4;
+  border-radius: 4rpx;
+  font-size: 36rpx;
+  color: #252628;
+  text-align: center;
+  margin: 20rpx 20rpx 10rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.footer{
+  text-align: center;
+  opacity: 0.4;
+  font-size: 24rpx;
+  color: #252628;
+}
+.no-advisory{
+
+}
+.no-advisory {
+  height: 840rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/no-advisory@3x.png") no-repeat center;
+  background-size: 320rpx;
+}
+
+.no-advisory view {
+  position: absolute;
+  top: 870rpx;
+  left: 166rpx;
+  text-align: center;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #f7ce2c;
+  border: 2rpx solid #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+}

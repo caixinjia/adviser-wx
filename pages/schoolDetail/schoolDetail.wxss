@@ -68,8 +68,7 @@ page {
   padding-top: 54rpx;
 }
 
-
-.subject-name>view{
+.subject-name>view {
   height: 72rpx;
   line-height: 72rpx;
   font-size: 50rpx;
@@ -156,4 +155,111 @@ page {
   font-size: 32rpx;
   color: #252628;
   line-height: 46rpx;
+}
+
+.life {
+  padding: 0 36rpx 0 34rpx;
+}
+
+.life-title {
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #5b6369;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.life-view {
+  margin-top: 20rpx;
+  background: rgba(255, 240, 130, 0.20);
+  border: 2rpx solid #f7ce2c;
+  border-radius: 4rpx;
+  display: flex;
+}
+
+.life-view>view {
+  flex: 1;
+  height: 194rpx;
+  font-size: 28rpx;
+  color: #252628;
+  text-align: center;
+}
+
+.life-view>view>.data {
+  margin-top: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-right: 2rpx solid #f7ce2c;
+}
+
+.data-title {
+  margin-top: 76rpx;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-size: 20rpx;
+  color: #7a838f;
+  text-align: center;
+}
+
+.life-view>view:nth-child(5)>.data {
+  border: none;
+}
+
+.BKSS {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/BKSS@2x.png") no-repeat;
+  background-position: center top 16rpx;
+  background-size: 60rpx;
+}
+
+.ZSF {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/ZSF@2x.png") no-repeat;
+  background-position: center top 16rpx;
+  background-size: 60rpx;
+}
+
+.SSKT {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/SSKT@2x.png") no-repeat;
+  background-position: center top 16rpx;
+  background-size: 60rpx;
+}
+
+.XSJ {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/XSJ@2x.png") no-repeat;
+  background-position: center top 16rpx;
+  background-size: 60rpx;
+}
+
+.NNBL {
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/NNBL@2x.png") no-repeat;
+  background-position: center top 16rpx;
+  background-size: 60rpx;
+}
+
+.study {
+  padding: 0 36rpx 0 34rpx;
+}
+
+.study-title {
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #5b6369;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.study-view {
+  margin-top: 20rpx;
+  border-radius: 4rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.study-view .study-item {
+  width: 50%;
+  opacity: 0.7;
+  font-size: 30rpx;
+  color: #252628;
+  height: 46rpx;
+  line-height: 46rpx;
+  margin-bottom: 20rpx;
 }

@@ -26,11 +26,11 @@
   <view class='footer'>
     <swiper class='school-swiper' indicator-dots='{{schoolSwiper.indicatorDots}}' autoplay='{{schoolSwiper.autoplay}}' interval='{{schoolSwiper.interval}}' duration='{{schoolSwiper.duration}}' circular='{{schoolSwiper.circular}}' indicator-color='rgba(255,255,255,0.4)'
       indicator-active-color='#fff' previous-margin='{{schoolSwiper.previousMargin}}' next-margin='{{schoolSwiper.nextMargin}}'>
-      <block wx:for='{{schoolSwiper.imgUrls}}' wx:key='{{schoolSwiper.imgUrls}}'>
+      <navigator wx:for='{{schoolSwiper.imgUrls}}' wx:key='{{index}}' url='{{item.url}}'>
         <swiper-item>
-          <image src='{{item}}' class='slide-image' />
+          <image src='{{item.img}}' class='slide-image' />
         </swiper-item>
-      </block>
+      </navigator>
     </swiper>
   </view>
   <!-- 登录页面 -->

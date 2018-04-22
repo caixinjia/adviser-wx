@@ -23,7 +23,8 @@ Page({
     entrances: [
       {
         img: app.globalData.imgUrl + "/icon/wodeyuyue@3x.png",
-        name: '我的预约'
+        name: '我的预约',
+        url: '/pages/myAdvisory/myAdvisory'
       },
       {
         img: app.globalData.imgUrl + "/icon/wodetiwen@3x.png",

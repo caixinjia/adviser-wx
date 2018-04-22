@@ -1,4 +1,24 @@
 <!--pages/myAdvisory/myAdvisory.wxml-->
-<view>
-  
+<view wx:if='{{result.length>0}}'>
+  <view class='mavin-item' wx:for='{{result}}'>
+    <view class='mavin-data'>
+      <image src='https://fjgz360.cn/chuxian{{item.MAVIN_PHOTO_FILENAME}}'></image>
+      <view>
+        <view class='mavin-name'>{{item.MAVIN_NAME}}
+          <view>({{item.MAVIN_TITLE}})</view>
+        </view>
+        <view class='mavin-category'>{{item.MAVIN_CATEGORY_TEXT}}</view>
+        <view class='mavin-price'>线下咨询价格：
+          <text>4000元</text>
+        </view>
+      </view>
+    </view>
+    <view class='advisory-data'>
+      <view>预约时间：{{item.date}} {{item.BESPEAK_TIME}}</view>
+    </view>
+    <view class='footer'>预约成功！请等待客服联系预约地点！</view>
+  </view>
+</view>
+<view class='no-advisory' wx:else>
+  <view bindtap='toAdvisory'>火速预约专家面谈</view>
 </view>

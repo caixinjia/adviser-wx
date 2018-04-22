@@ -31,7 +31,11 @@ Page({
     let volunteerList = [];
     for (let item of this.data.result){
       if (item.IS_IN_VOLUNTEER == 1){
-        volunteerList.push(item.SUBJECT_ID)
+        let temp = {
+          ID: item.SUBJECT_ID,
+          RATE: item.ACCEPTANCE_RATE
+        }
+        volunteerList.push(temp)
       }
     }
     let that = this;
@@ -40,7 +44,7 @@ Page({
       data: {
         userId: wx.getStorageSync('userId'),
         recommendType: that.data.recommend_type,
-        subjectList: volunteerList.join(',')
+        subjectList: volunteerList
       },
       success: function (res) {
         if (res.data.RESULTS == 'SUCCESS') {

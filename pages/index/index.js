@@ -65,10 +65,22 @@ Page({
     ],
     schoolSwiper: {
       imgUrls: [
-        app.globalData.imgUrl + "/swiper/xiada@3x.png",
-        app.globalData.imgUrl + "/swiper/fuda@3x.png",
-        app.globalData.imgUrl + "/swiper/shida@3x.png",
-        app.globalData.imgUrl + "/swiper/nongda@3x.png",
+        {
+          img: app.globalData.imgUrl + "/swiper/xiada@3x.png",
+          url:'/pages/schoolDetail/schoolDetail?recruitId=199'
+        },
+        {
+          img: app.globalData.imgUrl + "/swiper/fuda@3x.png",
+          url: '/pages/schoolDetail/schoolDetail?recruitId=190'
+        },
+        {
+          img: app.globalData.imgUrl + "/swiper/shida@3x.png",
+          url: '/pages/schoolDetail/schoolDetail?recruitId=1'
+        },
+        {
+          img: app.globalData.imgUrl + "/swiper/nongda@3x.png",
+          url: '/pages/schoolDetail/schoolDetail?recruitId=183'
+        }
       ],
       indicatorDots: false,
       autoplay: false,

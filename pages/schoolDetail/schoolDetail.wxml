@@ -8,9 +8,9 @@
         <view>{{result.RECRUIT_ID}}</view>
       </view>
       <view class='type'>
-            <image wx:if='{{result.IS_985==1}}' src='{{img985}}' class='img985'></image>
-            <image wx:if='{{result.IS_211==1}}' src='{{img211}}' class='img211'></image>
-            <image wx:if='{{result.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
+        <image wx:if='{{result.IS_985==1}}' src='{{img985}}' class='img985'></image>
+        <image wx:if='{{result.IS_211==1}}' src='{{img211}}' class='img211'></image>
+        <image wx:if='{{result.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
       </view>
       <view>
         <view>院校排名</view>
@@ -31,15 +31,15 @@
         <view>办学性质</view>
         <view>{{result.SCHOOL_NATURE}}大学</view>
       </view>
-       <view>
+      <view>
         <view>办学层次</view>
         <view>{{result.SCHOOL_GRADE}}</view>
       </view>
-       <view>
+      <view>
         <view>录取批次</view>
         <view></view>
       </view>
-       <view>
+      <view>
         <view>所在省市</view>
         <view>{{result.SCHOOL_PROVINCE_TEXT}}{{result.SCHOOL_CITY_TEXT}}</view>
       </view>
@@ -61,14 +61,56 @@
       <view>专家咨询</view>
     </view>
   </view>
-
+  <!--住宿与生活-->
+  <view class='life'>
+    <view class='life-title'>
+      - 住宿与生活 -
+    </view>
+    <view class='life-view'>
+      <view class='BKSS'>
+        <view class='data-title'>宿舍标准</view>
+        <view class='data'>{{result.BKSS}}</view>
+      </view>
+      <view class='ZSF'>
+      <view class='data-title'>住宿费</view>
+        <view class='data'>{{result.ZSF}}</view>
+      </view>
+      <view class='SSKT'>
+      <view class='data-title'>空调</view>
+        <view class='data'>{{result.SSKT}}</view>
+      </view>
+      <view class='XSJ'>
+      <view class='data-title'>独卫</view>
+        <view class='data'>{{result.XSJ}}</view>
+      </view>
+      <view class='NNBL'>
+      <view class='data-title'>男女比例</view>
+        <view class='data'>{{result.NNBL}}</view>
+      </view>
+    </view>
+  </view>
+<!-- 学习与就业 -->
+  <view class='study'>
+    <view class='study-title'>
+    - 学习与就业 -
+    </view>
+    <view class='study-view'>
+      <view class='study-item'>硕士点：{{result.SSD}}</view>
+      <view class='study-item'>博士点：{{result.BSD}}</view>
+      <view class='study-item'>重点专业：{{result.ZDZY}}</view>
+      <view class='study-item'>重点实验室：{{result.ZDSYS}}</view>
+      <view class='study-item'>读研比例：{{result.DYBL}}</view>
+      <view class='study-item'>出国比例：{{result.CGBL}}</view>
+      <view class='study-item'>就业率：{{result.JYL}}</view>
+    </view>
+  </view>
   <!-- 介绍 -->
   <view class='introduce'>
     <view class='introduce-title'>
-    - 专业简介 -
+      - 院校简介 -
     </view>
     <view class='introduce-text'>
-    {{result.SCHOOL_EXPLAIN}}
+      {{result.SCHOOL_EXPLAIN}}
     </view>
   </view>
 </view>

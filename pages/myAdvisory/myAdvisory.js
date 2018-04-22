@@ -8,6 +8,15 @@ Page({
   data: {
   
   },
+  formatTitle(time) {
+    if (time != '') {
+      let m = time.substr(4, 2);
+      let d = time.substr(6, 2);
+      return m + '月' + d + '日';
+    } else {
+      return ''
+    }
+  },
   getData(){
     let that = this;
     wx.request({
@@ -17,6 +26,9 @@ Page({
       },
       success: function (res) {
         if (res.data != '\r\n') {
+          for(let item of res.data){
+            item.date = that.formatTitle(item.BESPEAK_DATE)
+          }
           that.setData({
             result: res.data,
           })
@@ -24,6 +36,11 @@ Page({
           that.setData({ result: [], })
         }
       }
+    })
+  },
+  toAdvisory(){
+    wx.navigateTo({
+      url: '/pages/mavinList/mavinList',
     })
   },
   /**
