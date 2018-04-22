@@ -28,6 +28,7 @@ page {
   background: #fff;
   box-shadow: inset -6rpx 0 0 0 #f7ce2c;
   border-radius: 10rpx;
+  position: relative;
 }
 
 .subject-school {
@@ -47,8 +48,9 @@ page {
   height: 40rpx;
   line-height: 40rpx;
   display: flex;
-  padding-left: 40rpx;
+  padding-left: 50rpx;
   margin-top: 20rpx;
+  position: relative;
 }
 
 .subject view {
@@ -76,4 +78,40 @@ page {
   border: 2rpx solid #f7ce2c;
   box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
   border-radius: 200rpx;
+}
+.edit-btn{
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/zy-edit@3x.png") no-repeat center;
+  background-size: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.save-btn{
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/zy-save@3x.png") no-repeat center;
+  background-size: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.del-school{
+  position: absolute;
+  height: 32rpx;
+  width: 32rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/zy-delschool@3x.png") no-repeat center;
+  background-size: 32rpx;
+  right: 0;
+  top: 0;
+}
+.del-subject{
+  position: absolute;
+  height: 20rpx;
+  width: 20rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/zy-del@3x.png") no-repeat center;
+  background-size: 20rpx;
+  left: 20rpx;
+  top: 10rpx;
 }

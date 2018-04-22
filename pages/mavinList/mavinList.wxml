@@ -16,7 +16,7 @@
               <view class='mavin-category'>{{item.MAVIN_CATEGORY_TEXT}}</view>
               <view class='mavin-btns'>
                 <view class='mavin-zixun' bindtap='toMavinQA'>留言咨询</view>
-                <view class='mavin-yuyue'>线下咨询</view>
+                <view class='mavin-yuyue' bindtap='toAdvisory' data-id='{{item.MAVIN_ID}}'>线下咨询</view>
               </view>
             </view>
           </view>

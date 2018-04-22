@@ -3,7 +3,7 @@ const app = getApp()
 const util = require('../../utils/util.js')
 Page({
   data: {
-
+    wxconfig:''
   },
   sendMobileVerifide() {
     wx.request({
@@ -73,7 +73,38 @@ Page({
     })
   },
   pay(){
-
+    let that = this;
+    new Promise((resolve,reject)=>{
+      wx.request({
+        url: app.globalData.api + '/wxPayUnifiedOrder',
+        data: {
+          openId: app.globalData.openId,
+          tradeName: '测试',
+          payMoney: 1
+        },
+        success: function (res) {
+          wx.requestPayment({
+            'timeStamp': res.data.timeStamp,
+            'nonceStr': res.data.nonceStr,
+            'package': res.data.package,
+            'signType': 'MD5',
+            'paySign': res.data.paySign,
+            'success': function (res) {
+              wx.showToast({
+                title: '支付成功',
+                icon: 'success'
+              })
+            },
+            'fail': function (res) {
+              wx.showToast({
+                title: '支付失败',
+                icon: 'none'
+              })
+            }
+          })
+        }
+      })
+    })
   },
   onLoad(){
     wx.request({

@@ -20,7 +20,10 @@
     "pages/testQuestion2/testQuestion2",
     "pages/myQuestion/myQuestion",
     "pages/myTest/myTest",
-    "pages/testQuestionList/testQuestionList"
+    "pages/testQuestionList/testQuestionList",
+    "pages/mavinAdvisory/mavinAdvisory",
+    "pages/applyVIP/applyVIP",
+    "pages/myAdvisory/myAdvisory"
   ],
   "window": {
     "backgroundTextStyle": "light",

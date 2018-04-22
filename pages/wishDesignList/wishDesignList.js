@@ -50,6 +50,9 @@ Page({
             title: '请开通会员',
             icon: 'none'
           })
+          wx.navigateTo({
+            url: '/pages/applyVIP/applyVIP',
+          })
         }
       }else{
         wx.navigateTo({

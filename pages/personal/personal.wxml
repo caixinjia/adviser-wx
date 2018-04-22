@@ -21,7 +21,7 @@
       </view>
       <view>{{user.MOBILE_NUMBER}}</view>
       <view class='expiring-date' wx:if='{{isVip}}'>会员有效期至{{expiringDate}}</view>
-      <view class='expiring-date' wx:else>成为会员，解锁以下更多功能</view>
+      <view class='expiring-date' wx:else bindtap='applyvip' style='text-decoration:underline'>成为会员，解锁以下更多功能</view>
     </view>
     <!-- 个人中心成绩排名 -->
     <view class='user-data'>
@@ -98,7 +98,7 @@
         <view class='entrance-name'>{{item.name}}</view>
       </navigator>
     </block>
-    <view class='entrance-mask' wx:if='{{!isVip}}'>
+    <view class='entrance-mask' wx:if='{{!isVip}}' bindtap='applyvip'>
       <view class='open-btn'></view>
     </view>
   </view>

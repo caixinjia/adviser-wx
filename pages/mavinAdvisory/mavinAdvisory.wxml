@@ -1,0 +1,54 @@
+<!--pages/mavinAdvisory/mavinAdvisory.wxml-->
+<view>
+  <view class='mavin-data'>
+    <image src='https://fjgz360.cn/chuxian{{mavinDetail.MAVIN_PHOTO_FILENAME}}'></image>
+    <view>
+      <view class='mavin-name'>{{mavinDetail.MAVIN_NAME}}
+        <view>({{mavinDetail.MAVIN_TITLE}})</view>
+      </view>
+      <view class='mavin-category'>{{mavinDetail.MAVIN_CATEGORY_TEXT}}</view>
+      <view class='mavin-price'>线下咨询价格：
+        <text>4000元</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='advisory-view'>
+    <view class='advisory-title' wx:if='{{selectedTitle==""}}'>请选择预约时间段</view>
+    <view class='advisory-title on' wx:else>{{selectedTitle}}</view>
+    <view class='advisory-list'>
+      <view class='advisory-day'>
+        <view class='advisory-date'>{{day1}}</view>
+        <view class='advisory-item {{item.BESPEAK_ID==""?" ":"disabled"}} {{item.BESPEAK_DATE==selectedDay&&item.SCHEDULING_ID==selectedTime?"selected":""}}' wx:for='{{advisoryDetail1}}' wx:key='{{index}}' data-item='{{item}}' bindtap='select'>{{item.SCHEDULING_TITLE}}</view>
+      </view>
+      <view class='advisory-day'>
+        <view class='advisory-date'>{{day2}}</view>
+        <view class='advisory-item {{item.BESPEAK_ID==""?" ":"disabled"}} {{item.BESPEAK_DATE==selectedDay&&item.SCHEDULING_ID==selectedTime?"selected":""}}' wx:for='{{advisoryDetail2}}' wx:key='{{index}}' data-item='{{item}}' bindtap='select'>{{item.SCHEDULING_TITLE}}</view>
+      </view>
+      <view class='advisory-day'>
+        <view class='advisory-date'>{{day3}}</view>
+        <view class='advisory-item {{item.BESPEAK_ID==""?" ":"disabled"}} {{item.BESPEAK_DATE==selectedDay&&item.SCHEDULING_ID==selectedTime?"selected":""}}' wx:for='{{advisoryDetail3}}' wx:key='{{index}}' data-item='{{item}}' bindtap='select'>{{item.SCHEDULING_TITLE}}</view>
+      </view>
+      <view class='advisory-day'>
+        <view class='advisory-date'>{{day4}}</view>
+        <view class='advisory-item {{item.BESPEAK_ID==""?" ":"disabled"}} {{item.BESPEAK_DATE==selectedDay&&item.SCHEDULING_ID==selectedTime?"selected":""}}' wx:for='{{advisoryDetail4}}' wx:key='{{index}}' data-item='{{item}}' bindtap='select'>{{item.SCHEDULING_TITLE}}</view>
+      </view>
+      <view class='advisory-day'>
+        <view class='advisory-date'>{{day5}}</view>
+        <view class='advisory-item {{item.BESPEAK_ID==""?" ":"disabled"}} {{item.BESPEAK_DATE==selectedDay&&item.SCHEDULING_ID==selectedTime?"selected":""}}' wx:for='{{advisoryDetail5}}' wx:key='{{index}}' data-item='{{item}}' bindtap='select'>{{item.SCHEDULING_TITLE}}</view>
+      </view>
+      <view class='advisory-day'>
+        <view class='advisory-date'>{{day6}}</view>
+        <view class='advisory-item {{item.BESPEAK_ID==""?" ":"disabled"}} {{item.BESPEAK_DATE==selectedDay&&item.SCHEDULING_ID==selectedTime?"selected":""}}' wx:for='{{advisoryDetail6}}' wx:key='{{index}}' data-item='{{item}}' bindtap='select'>{{item.SCHEDULING_TITLE}}</view>
+      </view>
+      <view class='advisory-day'>
+        <view class='advisory-date'>{{day7}}</view>
+        <view class='advisory-item {{item.BESPEAK_ID==""?" ":"disabled"}} {{item.BESPEAK_DATE==selectedDay&&item.SCHEDULING_ID==selectedTime?"selected":""}}' wx:for='{{advisoryDetail7}}' wx:key='{{index}}' data-item='{{item}}' bindtap='select'>{{item.SCHEDULING_TITLE}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='advisory-btn {{selectedTime==""?" ":"on"}}' bindtap='submitAdvisory'>
+    确认预约
+  </view>
+</view>

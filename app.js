@@ -11,6 +11,15 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log(res)
+        wx.request({
+          url: that.globalData.api + '/getWxUserOpenId',
+          data: {
+            jsCode: res.code
+          },
+          success: function (res) {
+            that.globalData.openId=res.data.OPENID
+          }
+        })
       }
     })
     // 获取用户信息

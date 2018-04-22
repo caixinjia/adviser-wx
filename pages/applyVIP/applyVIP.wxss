@@ -1,0 +1,74 @@
+/* pages/applyVIP/applyVIP.wxss */
+
+.container {
+  height: 1250rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/vipbg-1@3x.png") center;
+  background-size: 750rpx;
+  padding-bottom: 40rpx;
+}
+
+.title {
+  height: 464rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/vipbg@3x.png") center;
+  background-size: 750rpx;
+}
+
+.title image {
+  position: absolute;
+  top: 80rpx;
+  left: 160rpx;
+  width: 430rpx;
+  height: 184rpx;
+}
+
+.apply-btn {
+  position: absolute;
+  top: 390rpx;
+  left: 134rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  width: 482rpx;
+  opacity: 0.8;
+  font-size: 50rpx;
+  color: #fff;
+  text-align: center;
+  /* background: #957b58; */
+  background-image: linear-gradient(-133deg, #e9d6ac 0%, #88674c 50%, #f0e0bc 100%);
+  box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.36);
+  border-radius: 114rpx;
+}
+
+.content-title {
+  margin: 90rpx 0 30rpx 0;
+  text-align: center;
+  font-size: 40rpx;
+  color: #dbc8a5;
+}
+
+.content-item {
+  font-size: 28rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+  padding-left: 120rpx;
+  position: relative;
+}
+.content .content-item:nth-last-child(1){
+  margin-bottom: 30rpx;
+}
+.content-item::before{
+  content: '';
+  position: absolute;
+  width:10rpx;
+  height: 0;
+  left: 80rpx;
+  top: 4rpx;
+  border: 18rpx solid red;
+  border-color: transparent transparent transparent rgba(149,123,88,0.70);
+}
+.footer{
+  padding-top: 20rpx;
+  opacity: 0.5;
+font-size: 24rpx;
+color: #FFFFFF;
+text-align: center;
+}

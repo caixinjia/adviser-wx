@@ -1,0 +1,135 @@
+/* pages/mavinAdvisory/mavinAdvisory.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.mavin-data {
+  background: #fff;
+  display: flex;
+  padding: 20rpx;
+}
+
+.mavin-data>image {
+  width: 160rpx;
+  height: 160rpx;
+  border: 1px solid #c1c5d5;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.mavin-data>view {
+  width: 530rpx;
+}
+
+.mavin-data>view .mavin-name {
+  font-size: 36rpx;
+  color: #252628;
+  letter-spacing: 0;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mavin-data>view .mavin-name view {
+  font-size: 28rpx;
+  color: rgba(19, -2147483648, -2147483648, 0.70);
+  line-height: 50rpx;
+  margin-left: 10rpx;
+  display: inline-block;
+}
+
+.mavin-category {
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #252628;
+  line-height: 46rpx;
+  text-align: center;
+  height: 46rpx;
+  margin-top: 12rpx;
+}
+
+.mavin-price {
+  opacity: 0.7;
+  text-align: center;
+  color: #252628;
+  margin-top: 12rpx;
+  font-size: 28rpx;
+}
+
+.mavin-price text {
+  color: #f7ce2c;
+}
+
+.advisory-view {
+  background: #fff;
+  margin-top: 30rpx;
+  padding: 20rpx 30rpx;
+}
+
+.advisory-view .advisory-title {
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #d2d9e1;
+  margin-bottom: 20rpx;
+}
+.advisory-view .advisory-title.on{
+  color: #F7CE2C;
+}
+.advisory-list {
+  display: flex;
+  padding-bottom: 20rpx;
+}
+
+.advisory-day {
+  flex: 1;
+  font-size: 24rpx;
+  color: #6a7088;
+  text-align: center;
+}
+
+.advisory-item {
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  font-size: 20rpx;
+  line-height: 1.5;
+  height: 78rpx;
+  margin: 14rpx;
+  border-radius: 50%;
+}
+
+.advisory-item.disabled {
+  opacity: 0.5;
+  background: #f4f4f4;
+  color: #6a7088;
+}
+
+.advisory-item.selected {
+  background: #f7ce2c;
+  box-shadow: 0 0 7px 0 rgba(247, 206, 44, 0.51);
+  color: #fff;
+}
+
+.advisory-btn {
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #d2d9e1;
+  border-radius: 100rpx;
+  text-align: center;
+  margin: 40rpx auto;
+  font-size: 36rpx;
+  color: #fff;
+  letter-spacing: 1rpx;
+}
+
+.advisory-btn.on {
+  background: #f7ce2c;
+  color: #252628;
+}

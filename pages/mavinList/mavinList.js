@@ -83,6 +83,11 @@ Page({
       url: '/pages/mavinQA/mavinQA'
     })
   },
+  toAdvisory:function(event){
+    wx.navigateTo({
+      url: '/pages/mavinAdvisory/mavinAdvisory?mavinId=' + event.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

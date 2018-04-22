@@ -15,6 +15,7 @@ Page({
       url: app.globalData.api + '/mentalityTestsResults',
       data: {
         userId: wx.getStorageSync('userId'),
+        testGroupId: '1001'
       },
       success: function (res) {
         if (res.data !='\r\n') {

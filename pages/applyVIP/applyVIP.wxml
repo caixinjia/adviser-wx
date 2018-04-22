@@ -1,0 +1,21 @@
+<!--pages/applyVIP/applyVIP.wxml-->
+<view class='container'>
+  <view class='title'>
+    <image src='{{titleImg}}'></image>
+    <view class='apply-btn' bindtap='pay'>马上成为会员</view>
+  </view>
+  <view class='content'>
+    <view class='content-title'>VIP特权</view>
+    <view class='content-item'>预约厦门大学教授专家团队，线下面对面咨询</view>
+    <view class='content-item'>在线咨询专家，志愿诊断</view>
+    <view class='content-item'>本科/专科志愿设计</view>
+    <view class='content-item'>我能上的专业</view>
+    <view class='content-item'>我要上名校</view>
+    <view class='content-item'>我能上的学校</view>
+    <view class='content-item'>专业选择心理测试</view>
+    <view class='content-item'>查询指定学校近五年录取信息</view>
+    <view class='content-item'>查询专业信息</view>
+    <view class='content-item'>查询院校信息</view>
+    <view class='footer'>· 最终解释权归高招智愿所有 ·</view>
+  </view>
+</view>

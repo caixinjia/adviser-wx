@@ -94,6 +94,11 @@ Page({
       rankEdit: true
     })
   },
+  applyvip(){
+    wx.navigateTo({
+      url: '/pages/applyVIP/applyVIP',
+    })
+  },
   // 确认修改分数
   changeScore: function () {
     let that = this;
