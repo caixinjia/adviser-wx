@@ -8,7 +8,7 @@
       </view>
       <view class='mavin-category'>{{mavinDetail.MAVIN_CATEGORY_TEXT}}</view>
       <view class='mavin-price'>线下咨询价格：
-        <text>4000元</text>
+        <text>{{mavinDetail.MAVIN_PRICE}}元</text>
       </view>
     </view>
   </view>

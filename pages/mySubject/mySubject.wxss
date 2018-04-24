@@ -115,3 +115,12 @@ page {
   left: 20rpx;
   top: 10rpx;
 }
+.sort-btn{
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/sort-btn.png") no-repeat center;
+  background-size: 130rpx;
+  width: 130rpx;
+  height: 40rpx;
+  position: fixed;
+  right: 20rpx;
+  top: 20rpx;
+}

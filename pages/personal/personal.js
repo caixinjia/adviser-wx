@@ -10,7 +10,7 @@ Page({
     vipImg: app.globalData.imgUrl + "/icon/vip@3x.png",
     remindImg: app.globalData.imgUrl + "/icon/xitongxiaoxi@3x.png",
     userName: '游客',
-    expiringDate: '2018年09月01日',
+    expiringDate: '2019年06月01日',
     userInfo: '',
     addressImg: app.globalData.imgUrl + "/icon/address@3x.png",
     schoolImg: app.globalData.imgUrl + "/icon/school@3x.png",

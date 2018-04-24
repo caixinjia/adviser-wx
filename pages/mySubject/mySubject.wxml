@@ -170,6 +170,7 @@
   </view>
   <view class='edit-btn' wx:if='{{!editFlag}}' bindtap='edit'></view>
   <view class='save-btn' wx:if='{{editFlag}}' bindtap='save'></view>
+  <view class='sort-btn' bindtap='sort'></view>
 </view>
 <view class='no-subject' wx:else>
   <view bindtap='towishDesign'>火速设计志愿清单</view>
