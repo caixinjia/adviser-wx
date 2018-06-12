@@ -3,7 +3,11 @@
 page {
   background: #f4f4f4;
 }
-
+.tiqianpi{
+  height: 80rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/line-tiqianpi@3x.png") no-repeat center;
+  background-size: 312rpx;
+}
 .chongji {
   height: 80rpx;
   background: url("https://fjgz360.cn/chuxian/webPage/images/background/line-chongji@3x.png") no-repeat center;

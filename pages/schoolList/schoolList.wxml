@@ -11,17 +11,17 @@
         <view class='school-item' bindtap='toSchoolDetail' data-id='{{item.RECRUIT_ID}}'>
           <!-- 学校属性 -->
           <view class='school-title'>
-            <view class='school-id'>
+            <!-- <view class='school-id'>
               <view>院校编码</view>
               <view>{{item.RECRUIT_ID}} </view>
-            </view>
+            </view> -->
             <view class='type'>
               <image wx:if='{{item.IS_985==1}}' src='{{img985}}' class='img985'></image>
               <image wx:if='{{item.IS_211==1}}' src='{{img211}}' class='img211'></image>
               <image wx:if='{{item.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
             </view>
             <view class='school-ranking'>
-              <view>院校排名</view>
+              <view>ARWU2018大学排名</view>
               <view>{{item.SCHOOL_RANKING}} </view>
             </view>
           </view>

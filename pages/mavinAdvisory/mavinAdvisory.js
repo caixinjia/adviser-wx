@@ -148,7 +148,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.isLogin();
   },
 
   /**
@@ -182,7 +182,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

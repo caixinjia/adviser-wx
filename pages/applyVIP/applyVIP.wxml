@@ -3,19 +3,23 @@
   <view class='title'>
     <image src='{{titleImg}}'></image>
     <view class='apply-btn' bindtap='pay'>马上成为会员</view>
+    <view class='temporary-btn' bindtap='temporary'>体验一下</view>
   </view>
   <view class='content'>
     <view class='content-title'>VIP特权</view>
-    <view class='content-item'>预约厦门大学教授专家团队，线下面对面咨询</view>
-    <view class='content-item'>在线咨询专家，志愿诊断</view>
-    <view class='content-item'>本科/专科志愿设计</view>
-    <view class='content-item'>我能上的专业</view>
-    <view class='content-item'>我要上名校</view>
-    <view class='content-item'>我能上的学校</view>
-    <view class='content-item'>专业选择心理测试</view>
-    <view class='content-item'>查询指定学校近五年录取信息</view>
-    <view class='content-item'>查询专业信息</view>
-    <view class='content-item'>查询院校信息</view>
-    <view class='footer'>· 最终解释权归高招智愿所有 ·</view>
+    <view class='content-item'>独家提供丰富的院校、专业信息查询</view>
+    <view class='content-item'>独家提供近五年所有高校与专业的录取排名信息</view>
+    <view class='content-item'>科学的职业心理测试，精准测出与考生性格相匹配的专业</view>
+    <view class='content-item'>提供每所大学的五年同排名录取率</view>
+    <view class='content-item'>一键查询所有能上的211以上名校</view>
+    <view class='content-item'>一键查询所有能上的大学</view>
+    <view class='content-item'>结合意向城市、专业兴趣等提供志愿服务</view>
+    <view class='content-item'>提供学校优先、专业优先两个报考策略</view>
+    <view class='content-item'>给出冲击、求稳、保底等三个层次高校供选择</view>
+    <view class='content-item'>大数据结合人工智能提供志愿设计服务</view>
+    <view class='content-item'>提供志愿定制功能，根据推荐定制志愿清单</view>
+    <view class='content-item'>提供专家在线咨询服务</view>
+    <view class='content-item'>可以预约专家线下咨询服务</view>
+    <view class='footer'>· 功能可能会根据实际情况微调，最终解释权归高招360所有 ·</view>
   </view>
 </view>

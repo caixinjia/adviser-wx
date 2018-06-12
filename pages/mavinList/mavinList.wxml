@@ -1,5 +1,5 @@
 <!--pages/mavinList/mavinList.wxml-->
-<view class='container'>
+<view class='container' bindtap='hideDialog'>
   <view class='search-bar'>
     <input placeholder-style="color:#D2D9E1" confirm-type="search" placeholder="请输入专家姓名" data-typeId='1' value='{{mavinName}}' bindinput='changeSearch' bindconfirm='search' />
     <view class='filter-btn' bindtap='showFilter'>专家类别</view>

@@ -5,7 +5,7 @@
     <view class='subject-title'>
       <view>
         <view>专业编码</view>
-        <view>{{result.SUBJECT_ID}}</view>
+        <view>{{result.SUBJECT_CODE}}</view>
       </view>
       <view>
         <view>专业大类</view>
@@ -25,7 +25,11 @@
       </view>
       <view class='school-id'>
         <view>院校编码</view>
-        <view>{{result.RECRUIT_ID}}</view>
+        <view>{{result.SCHOOL_CODE}}</view>
+      </view>
+      <view class='subject-grade'>
+        <view>教育部第四轮学科评估</view>
+        <view>{{result.SUBJECT_GRADE?result.SUBJECT_GRADE:'未参与'}}</view>
       </view>
     </view>
   </view>

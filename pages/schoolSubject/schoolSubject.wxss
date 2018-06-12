@@ -42,6 +42,15 @@ page {
   text-align: center;
 }
 
+.red{
+  color:#FF6767;
+}
+.yellow{
+  color:#F7CE2C;
+}
+.gray{
+  color: #D2D2D2;
+}
 .result-container {
   margin-right: 8rpx;
   padding: 0 25rpx 20rpx;
@@ -126,4 +135,31 @@ page {
 .mine image {
   width: 200rpx;
   height: 80rpx;
+}
+.subject-grade{
+  margin-top:8rpx;
+  line-height:40rpx;
+  font-size:28rpx;
+  color:#252628;
+  letter-spacing:0;
+  text-align:center;
+}
+.subject-grade view{
+  display: inline-block;
+}
+.grade{
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.grade view{
+  width: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #C1C5D5;
+}
+.grade view.active{
+  color: #FFFFFF;
+  background: #F7CE2C;
+  box-shadow: 0 2px 4px 0 rgba(247,206,44,0.50);
+  border-radius: 25rpx;
 }

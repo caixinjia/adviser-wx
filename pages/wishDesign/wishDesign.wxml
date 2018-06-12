@@ -66,7 +66,7 @@
     <view class="priority-item priority-subject {{priority==1?'on':''}}" data-id="1" bindtap="changePriority">专业优先</view>
     <!-- 按钮 -->
     <view class='search-btn' bindtap="search">
-      生成我的志愿清单
+      {{searchNum==0?'生成我的志愿清单':'换一批高校'}}
     </view>
   </view>
   <!-- 学校列表 -->
@@ -96,9 +96,9 @@
         </view>
         <!-- 推荐分类 -->
         <view class='recommend-type'>
-          <image wx:if='{{item.RECOMMEND_TYPE==0}}' src='{{imgchongji}}'></image>
-          <image wx:elif='{{item.RECOMMEND_TYPE==1}}' src='{{imgqiuwen}}'></image>
-          <image wx:elif='{{item.RECOMMEND_TYPE==2}}' src='{{imgbaodi}}'></image>
+          <image wx:if='{{item.RECOMMEND_TYPE==="0"}}' src='{{imgchongji}}'></image>
+          <image wx:elif='{{item.RECOMMEND_TYPE==="1"}}' src='{{imgqiuwen}}'></image>
+          <image wx:elif='{{item.RECOMMEND_TYPE==="2"}}' src='{{imgbaodi}}'></image>
         </view>
         <!-- 排名 -->
         <view class='school-info'>

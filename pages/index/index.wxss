@@ -19,11 +19,19 @@
   text-align: center;
   width: 33.3%;
   padding: 30rpx 0;
+  position: relative;
 }
 
-.entrance-item image {
+.entrance-item .main-icon {
   width: 112rpx;
   height: 96rpx;
+}
+.entrance-item .tag-icon{
+  position: absolute;
+  top: 0;
+  right: 60rpx;
+  width: 40rpx;
+  height: 24rpx;
 }
 
 .entrance-name {
@@ -32,7 +40,7 @@
 
 .footer {
   height: 360rpx;
-  background: url("https://fjgz360.cn/chuxian/webPage/images/swiper/remenyuanxiao@3x.png") no-repeat center top;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/swiper/remenyuanxiao1@3x.png") no-repeat center top;
   background-size: 544rpx;
 }
 
@@ -68,7 +76,7 @@
   box-shadow: 0 18rpx 60rpx 0 rgba(72, 136, 166, 0.18);
   border-radius: 20rpx;
   width: 558rpx;
-  height: 740rpx;
+  height: 760rpx;
   position: absolute;
   top: 200rpx;
   left: 96rpx;
@@ -141,9 +149,21 @@
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
+  margin: 10rpx 70rpx 0 72rpx;
+}
+.register-btn {
+  background: #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+  font-size: 36rpx;
+  color: #252628;
+  letter-spacing: 1rpx;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
   margin: 50rpx 70rpx 0 72rpx;
 }
-
 .to-register {
   margin-top: 20rpx;
   font-size: 28rpx;
@@ -151,7 +171,14 @@
   letter-spacing: 0.8rpx;
   text-align: center;
 }
-
+.to-forget{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #6a7088;
+  letter-spacing: 0.8rpx;
+  text-align: right;
+  margin-right: 70rpx;
+}
 .code-div {
   position: relative;
 }

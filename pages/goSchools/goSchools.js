@@ -15,7 +15,9 @@ Page({
     img985: app.globalData.imgUrl + '/icon/985@3x.png',
     img211: app.globalData.imgUrl + '/icon/211@3x.png',
     imgdouble: app.globalData.imgUrl + '/icon/shuangyiliu@3x.png',
-    editFlag: false
+    editFlag: false,
+    pageIndex:1,
+    searchNum:0
   },
   search: function () {
     wx.showLoading({
@@ -30,11 +32,14 @@ Page({
         subjectType: that.data.subjectType,
         // ranking: that.data.ranking,
         recruitBatch: that.data.batch,
-        endRow:100 //默认显示100行
+        // endRow:100 //默认显示100行
       },
       success: function (res) {
         if (res.data != '\r\n') {
-          that.setData({ schoolList: res.data })
+          that.setData({ 
+            schoolList: res.data,
+            searchNum: that.data.searchNum+1
+             })
         } else {
           wx.showToast({
             title: '暂无数据',
@@ -79,6 +84,22 @@ Page({
     setTimeout(function () {
       wx.hideLoading()
     }, 500)
+  },
+  // 跳转到所选学校专业列表
+  toSchoolSubject(event) {
+    let data = {
+      recruitId: event.currentTarget.dataset.id,
+      userId: wx.getStorageSync('userId'),
+      recruitBatch: this.data.batch,
+      priority: 0,
+      intentionSubject: [],
+      recommend_type: '',
+      isDesign: false
+    }
+    console.log(data)
+    wx.navigateTo({
+      url: '/pages/schoolSubject/schoolSubject?data=' + JSON.stringify(data)
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -137,7 +158,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

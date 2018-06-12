@@ -42,13 +42,13 @@
     </view>
     <!-- 按钮 -->
     <view class='search-btn' bindtap="search">
-      生成我的高校清单
+      {{searchNum==0?'生成我的高校清单':'换一批高校'}}
     </view>
   </view>
   <!-- 学校列表 -->
   <view>
     <block wx:for='{{schoolList}}' wx:key='{{item.RECRUIT_ID}}'>
-      <view class='school-item'>
+      <view class='school-item'  data-id='{{item.RECRUIT_ID}}'  bindtap='toSchoolSubject'>
         <!-- 学校属性 -->
         <view class='school-title'>
           <view class='grade'>{{item.SCHOOL_GRADE}}</view>

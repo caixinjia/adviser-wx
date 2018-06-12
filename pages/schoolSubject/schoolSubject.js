@@ -84,7 +84,7 @@ Page({
       data: {
         userId: wx.getStorageSync('userId'),
         recruitId: that.data.queryData.recruitId,
-        subjectType: that.data.queryData.subjectType,
+        // subjectType: that.data.queryData.subjectType,
         // ranking: that.data.queryData.ranking,
         recruitBatch: that.data.queryData.recruitBatch,
         priority: that.data.queryData.priority,
@@ -145,7 +145,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

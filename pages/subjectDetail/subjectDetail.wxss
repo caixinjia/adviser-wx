@@ -107,6 +107,14 @@ page {
   margin-bottom: 24rpx;
 }
 
+.school-info>view.subject-grade {
+  margin-top: 24rpx;
+}
+
+.subject-grade view {
+  flex: 1;
+}
+
 .links {
   height: 186rpx;
   border-bottom: 1px dashed #d2d9e1;

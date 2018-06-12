@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    titleImg: app.globalData.imgUrl + "/background/viphy@3x.png",
+    titleImg: app.globalData.imgUrl + "/background/viphy2@3x.png",
   },
   pay() {
     let that = this;
@@ -46,6 +46,28 @@ Page({
         }
       })
     })
+  },
+  // 体验
+  temporary(){
+    const that = this;
+    wx.request({
+      url: app.globalData.api + '/setExperience',
+      data: {
+        userId: wx.getStorageSync('userId'),
+      },
+      success: function (res) {
+        wx.showToast({
+          title: res.data.MSG,
+          icon: 'none'
+        })
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/index/index',
+          })
+        }, 1500)
+      }
+    })
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -99,7 +121,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

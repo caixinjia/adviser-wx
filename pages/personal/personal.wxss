@@ -167,7 +167,7 @@
 
 .warn {
   position: absolute;
-  left: 84rpx;
+  left: 74rpx;
   bottom: -28rpx;
   font-size: 20rpx;
   color: #ff6767;

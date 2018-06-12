@@ -1,25 +1,28 @@
 <!--首页-->
-<view class='container'>
+<view class='container' bindtap='hideDialog'>
   <!-- 首页顶部轮播 -->
   <swiper class='main-swiper' indicator-dots='{{mainSwiper.indicatorDots}}' autoplay='{{mainSwiper.autoplay}}' interval='{{mainSwiper.interval}}' duration='{{mainSwiper.duration}}' circular='{{mainSwiper.circular}}' indicator-color='rgba(255,255,255,0.4)'
     indicator-active-color='#fff'>
     <block wx:for='{{mainSwiper.imgUrls}}' wx:key='{{mainSwiper.imgUrls}}'>
       <swiper-item>
-        <image src='{{item}}' class='slide-image' />
+      <navigator url='{{item.url}}'>
+        <image src='{{item.src}}' class='slide-image' />
+      </navigator>
+        
       </swiper-item>
     </block>
   </swiper>
   <!-- 首页入口 -->
   <view class='entrance'>
     <block wx:for='{{entranceList}}' wx:key='{{entranceList.name}}'>
-      <navigator class='entrance-item' url='{{item.url}}' wx:if="{{item.isOpen}}">
-        <image src='{{item.imgUrl}}' />
+      <view class='entrance-item' data-url='{{item.url}}' bindtap='toEntrance'>
+        <view style='position:relative'>
+          <image class='main-icon' src='{{item.imgUrl}}' />
+          <image class='tag-icon' wx:if="{{!item.isvip}}" src='{{mianfeiUrl}}'></image>
+          <image class='tag-icon' wx:if="{{item.isvip}}" src='{{vipUrl}}'></image>
+        </view>
         <view class='entrance-name'>{{item.name}}</view>
-      </navigator>
-      <navigator class='entrance-item' wx:else bindtap="noOpen">
-        <image src='{{item.imgUrl}}' />
-        <view class='entrance-name'>{{item.name}}</view>
-      </navigator>
+      </view>
     </block>
   </view>
   <!-- 首页学校轮播 -->
@@ -34,29 +37,44 @@
     </swiper>
   </view>
   <!-- 登录页面 -->
-  <view class="{{isLogin?'mask':'mask on'}}">
+  <view class="{{isLogin||isHideDialog?'mask':'mask on'}}">
     <!-- 登录 -->
-    <view class='login-dialog' wx:if='{{!registerShow}}'>
+    <view class='login-dialog' wx:if='{{!registerShow&&!forgetShow}}'  catchtap='noBubble'> 
       <view class='user-img'>
         <image src='{{userInfo.avatarUrl}}'></image>
       </view>
       <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='1'></input>
       <input class='pwd-input' password='true' placeholder='请输入密码' type='text' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='2'></input>
-      <view class='login-btn' bindtap='login'>登录</view>
+      <view class='to-forget' bindtap='toForget'>忘记密码？</view>
+      <button class='login-btn' bindtap='login' open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
       <view class='to-register' bindtap='toRegister'>没有账号，注册一个！</view>
     </view>
     <!-- 注册 -->
-    <view class='register-dialog' wx:else>
+    <view class='register-dialog' wx:if='{{registerShow&&!forgetShow}}'  catchtap='noBubble'>
       <view class='user-img'>
         <image src='{{userInfo.avatarUrl}}'></image>
       </view>
       <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='3'></input>
       <view class='code-div'>
         <input class='code-input' placeholder='请输入验证码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='4'></input>
-        <view class="{{codeFlag?'send-btn':'send-btn last-time'}}" bindtap='getVerifiedCode'>{{codeFlag?'获取验证码':lastTime+'s'}}</view>
+        <view class="{{codeFlag?'send-btn':'send-btn last-time'}}" data-type="1" bindtap='getVerifiedCode'>{{codeFlag?'获取验证码':lastTime+'s'}}</view>
       </view>
       <input class='pwd-input' password='true' placeholder='请输入密码' type='text' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='5'></input>
-      <view class='login-btn' bindtap='register'>注册</view>
+      <view class='register-btn' bindtap='register'>注册</view>
+      <view class='to-register' bindtap='toLogin'>已有账号，去登录~</view>
+    </view>
+    <!-- 忘记密码-->
+    <view class='register-dialog' wx:if="{{forgetShow}}"  catchtap='noBubble'>
+      <view class='user-img'>
+        <image src='{{userInfo.avatarUrl}}'></image>
+      </view>
+      <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='3'></input>
+      <view class='code-div'>
+        <input class='code-input' placeholder='请输入验证码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='4'></input>
+        <view class="{{codeFlag?'send-btn':'send-btn last-time'}}" data-type="2" bindtap='getVerifiedCode'>{{codeFlag?'获取验证码':lastTime+'s'}}</view>
+      </view>
+      <input class='pwd-input' password='true' placeholder='请输入密码' type='text' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='5'></input>
+      <view class='register-btn' bindtap='reset'>重置密码</view>
       <view class='to-register' bindtap='toLogin'>已有账号，去登录~</view>
     </view>
   </view>

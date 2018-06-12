@@ -20,7 +20,7 @@ page {
 }
 
 .subject-title>view {
-  width: 33%;
+  width: 50%;
   display: flex;
 }
 
@@ -28,18 +28,18 @@ page {
   margin-left: 15rpx;
 }
 
-.subject-title>view:nth-child(2) image {
+.subject-title>view:nth-child(1) image {
   height: 28rpx;
   width: 48rpx;
   margin-top: 8rpx;
   margin-right: 20rpx;
 }
 
-.subject-title>view:nth-child(2) .imgdouble {
+.subject-title>view:nth-child(1) .imgdouble {
   width: 80rpx;
 }
 
-.subject-title>view:nth-child(3) {
+.subject-title>view:nth-child(2) {
   justify-content: flex-end;
   margin-right: 15rpx;
 }
@@ -190,6 +190,9 @@ page {
   height: 40rpx;
   line-height: 40rpx;
   border-right: 2rpx solid #f7ce2c;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .data-title {
@@ -262,4 +265,39 @@ page {
   height: 46rpx;
   line-height: 46rpx;
   margin-bottom: 20rpx;
+}
+
+.line {
+  padding: 0 36rpx 0 34rpx;
+}
+
+.line-title {
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #5b6369;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.canvas {
+  margin: 20rpx auto;
+  width: 280px;
+}
+
+.tabs {
+  display: flex;
+  margin: 20rpx 100rpx 0;
+}
+
+.tabs>view {
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #5b6369;
+}
+
+.tabs>view.on {
+  border: 2rpx solid #f7ce2c;
+  border-bottom: none;
+  border-radius: 10rpx 10rpx 0 0;
 }

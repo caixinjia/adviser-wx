@@ -28,7 +28,8 @@ Page({
     customItem: '全部',
     province: '',
     city: '',
-    wishType:1//本科专科
+    wishType:1,//本科专科
+    searchNum: 0
     
   },
   search: function () {
@@ -92,7 +93,7 @@ Page({
       },
       success: function (res) {
         if (res.data != '\r\n') {
-          that.setData({ schoolList: res.data, selectedSubjectArray: selectedList})
+          that.setData({ schoolList: res.data, selectedSubjectArray: selectedList, searchNum: that.data.searchNum + 1})
         } else {
           wx.showToast({
             title: '暂无数据',
@@ -201,6 +202,7 @@ Page({
       priority: this.data.priority,
       intentionSubject: this.data.selectedSubjectArray,
       recommend_type: event.currentTarget.dataset.type,
+      isDesign:true
     }
     console.log(data)
     wx.navigateTo({
@@ -304,7 +306,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

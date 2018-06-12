@@ -10,7 +10,8 @@ Page({
     editFlag: false,
     result_0: [],
     result_1: [],
-    result_2: []
+    result_2: [],
+    result_3: []
   },
   towishDesign() {
     wx.navigateTo({
@@ -29,13 +30,16 @@ Page({
           let temp0 = [];
           let temp1 = [];
           let temp2 = [];
+          let temp3 = [];
           for (let item of res.data) {
-            if (item.RECOMMEND_TYPE == '0') {
+            if (item.RECOMMEND_TYPE === '0') {
               temp0.push(item)
-            } else if (item.RECOMMEND_TYPE == '1') {
+            } else if (item.RECOMMEND_TYPE === '1') {
               temp1.push(item)
-            } else if (item.RECOMMEND_TYPE == '2') {
+            } else if (item.RECOMMEND_TYPE === '2') {
               temp2.push(item)
+            } else if (item.RECOMMEND_TYPE === '') {
+              temp43.push(item)
             }
           }
           that.setData({
@@ -43,6 +47,7 @@ Page({
             result_0: temp0,
             result_1: temp1,
             result_2: temp2,
+            result_3: temp3,
             editFlag: false
           })
         } else {
@@ -66,13 +71,16 @@ Page({
           let temp0 = [];
           let temp1 = [];
           let temp2 = [];
+          let temp3 = [];
           for (let item of res.data) {
-            if (item.RECOMMEND_TYPE == '0') {
+            if (item.RECOMMEND_TYPE === '0') {
               temp0.push(item)
-            } else if (item.RECOMMEND_TYPE == '1') {
+            } else if (item.RECOMMEND_TYPE === '1') {
               temp1.push(item)
-            } else if (item.RECOMMEND_TYPE == '2') {
+            } else if (item.RECOMMEND_TYPE === '2') {
               temp2.push(item)
+            } else if (item.RECOMMEND_TYPE === '') {
+              temp3.push(item)
             }
           }
           that.setData({
@@ -80,6 +88,7 @@ Page({
             result_0: temp0,
             result_1: temp1,
             result_2: temp2,
+            result_3: temp3,
             editFlag: false
           })
         }else{
@@ -105,6 +114,9 @@ Page({
       temp.push(item)
     }
     for (let item of this.data.result_2) {
+      temp.push(item)
+    }
+    for (let item of this.data.result_3) {
       temp.push(item)
     }
     let that = this;
@@ -157,6 +169,16 @@ Page({
       if (temp2[i].SCHOOL_ID == id) {
         temp2.splice(i, 1)
         this.setData({ result_2: temp2 })
+      }
+    }
+  },
+  deleteSchool3(event) {
+    let id = event.currentTarget.dataset.id;
+    let temp3 = this.data.result_3;
+    for (let i in temp3) {
+      if (temp3[i].SCHOOL_ID == id) {
+        temp3.splice(i, 1)
+        this.setData({ result_3: temp3 })
       }
     }
   },
@@ -229,6 +251,29 @@ Page({
       }
     }
   },
+  deleteSubject3(event) {
+    let sid = event.currentTarget.dataset.sid;
+    let id = event.currentTarget.dataset.id;
+    let index = event.currentTarget.dataset.index;
+    let temp3 = this.data.result_3;
+    for (let i in temp3) {
+      if (temp3[i].SCHOOL_ID == sid) {
+        switch (index) {
+          case "1": temp3[i].SUBJECT_ID1 = ''; break;
+          case "2": temp3[i].SUBJECT_ID2 = ''; break;
+          case "3": temp3[i].SUBJECT_ID3 = ''; break;
+          case "4": temp3[i].SUBJECT_ID4 = ''; break;
+          case "5": temp3[i].SUBJECT_ID5 = ''; break;
+          case "6": temp3[i].SUBJECT_ID6 = ''; break;
+          case "7": temp3[i].SUBJECT_ID7 = ''; break;
+          case "8": temp3[i].SUBJECT_ID8 = ''; break;
+          case "9": temp3[i].SUBJECT_ID9 = ''; break;
+          case "10": temp3[i].SUBJECT_ID10 = ''; break;
+        }
+        this.setData({ result_3: temp3 })
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -281,7 +326,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

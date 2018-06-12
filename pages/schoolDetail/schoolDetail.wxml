@@ -3,17 +3,17 @@
   <!-- 院校信息 -->
   <view class='subject-info'>
     <view class='subject-title'>
-      <view>
+      <!-- <view>
         <view>院校编码</view>
-        <view>{{result.RECRUIT_ID}}</view>
-      </view>
-      <view class='type'>
+        <view>{{result.SCHOOL_CODE}}</view>
+      </view> -->
+       <view class='type'>
         <image wx:if='{{result.IS_985==1}}' src='{{img985}}' class='img985'></image>
         <image wx:if='{{result.IS_211==1}}' src='{{img211}}' class='img211'></image>
         <image wx:if='{{result.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
-      </view>
+      </view> 
       <view>
-        <view>院校排名</view>
+        <view>ARWU2018大学排名</view>
         <view>{{result.SCHOOL_RANKING}}</view>
       </view>
     </view>
@@ -61,6 +61,25 @@
       <view>专家咨询</view>
     </view>
   </view>
+  <!-- 折线图 -->
+  <view class='line'>
+    <view class='line-title'>
+      - 历年最低录取排名走势图 -
+    </view>
+    <view>
+      <view class='tabs'>
+        <view class='{{isLCanvas?"on":""}}' bindtap='changeTab' data-tab="1">理工类</view>
+        <view class='{{isLCanvas?"":"on"}}' bindtap='changeTab' data-tab="2">文史类</view>
+      </view>
+      <view hidden="{{!isLCanvas}}">
+        <canvas canvas-id="liCanvas" class="canvas"></canvas>
+      </view>
+      <view hidden="{{isLCanvas}}">
+        <canvas canvas-id="wenCanvas" class="canvas"></canvas>
+      </view>
+    </view>
+
+  </view>
   <!--住宿与生活-->
   <view class='life'>
     <view class='life-title'>
@@ -72,27 +91,27 @@
         <view class='data'>{{result.BKSS}}</view>
       </view>
       <view class='ZSF'>
-      <view class='data-title'>住宿费</view>
+        <view class='data-title'>住宿费</view>
         <view class='data'>{{result.ZSF}}</view>
       </view>
       <view class='SSKT'>
-      <view class='data-title'>空调</view>
+        <view class='data-title'>空调</view>
         <view class='data'>{{result.SSKT}}</view>
       </view>
       <view class='XSJ'>
-      <view class='data-title'>独卫</view>
+        <view class='data-title'>独卫</view>
         <view class='data'>{{result.XSJ}}</view>
       </view>
       <view class='NNBL'>
-      <view class='data-title'>男女比例</view>
+        <view class='data-title'>男女比例</view>
         <view class='data'>{{result.NNBL}}</view>
       </view>
     </view>
   </view>
-<!-- 学习与就业 -->
+  <!-- 学习与就业 -->
   <view class='study'>
     <view class='study-title'>
-    - 学习与就业 -
+      - 学习与就业 -
     </view>
     <view class='study-view'>
       <view class='study-item'>硕士点：{{result.SSD}}</view>

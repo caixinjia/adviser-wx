@@ -2,6 +2,7 @@
 const app = getApp()
 Page({
 
+
   /**
    * 页面的初始数据
    */
@@ -79,9 +80,13 @@ Page({
   },
   // 跳转到咨询问题列表
   toMavinQA: function () {
-    wx.navigateTo({
-      url: '/pages/mavinQA/mavinQA'
-    })
+    if (app.toApplyVip()) {
+    } else {
+      wx.navigateTo({
+        url: '/pages/mavinQA/mavinQA'
+      })
+    }
+
   },
   toAdvisory:function(event){
     wx.navigateTo({
@@ -140,7 +145,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

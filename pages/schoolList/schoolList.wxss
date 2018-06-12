@@ -236,6 +236,7 @@ page {
 
 .school-item .school-title .type {
   flex: 1;
+  margin-left: 15rpx;
 }
 
 .school-item .school-title .type image {
@@ -339,25 +340,28 @@ page {
   color: #252628;
 }
 .school-ranking {
-  width: 220rpx;
+  /* width: 220rpx; */
   font-size: 24rpx;
   color: #5b6369;
   display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 15rpx;
 }
 
 .school-ranking view {
-  flex: 1;
+  /* flex: 1; */
 }
 
 .school-ranking view:nth-child(1) {
   opacity: 0.7;
-  margin: 0 15rpx;
 }
 
 .school-ranking view:nth-child(2) {
   font-size: 28rpx;
   color: #252628;
   text-align: center;
+  margin-left: 15rpx;
 }
 .school-grade{
   flex: 1;

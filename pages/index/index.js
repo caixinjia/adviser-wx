@@ -16,8 +16,15 @@ Page({
     lastTime: 60,
     mainSwiper: {
       imgUrls: [
-        app.globalData.imgUrl + "/swiper/banner@3x.png",
-        app.globalData.imgUrl + "/swiper/huiyuan.png",
+        {
+          src: app.globalData.imgUrl + "/swiper/198copy1@3x.png",
+          url: '/pages/applyVIP/applyVIP'
+        },
+        {
+          src: app.globalData.imgUrl + "/swiper/2017fenshu@3x.png",
+          url: ''
+        }
+        
       ],
       indicatorDots: true,
       autoplay: true,
@@ -30,44 +37,50 @@ Page({
         name: "院校信息",
         imgUrl: app.globalData.imgUrl + "/icon/yuanxiao@3x.png",
         url: '/pages/schoolList/schoolList',
-        isOpen: true
+        isOpen: true,
+        isvip:false
       },
       {
         name: "专业信息",
         imgUrl: app.globalData.imgUrl + "/icon/zhuanye@3x.png",
         url: '/pages/subjectInfo/subjectInfo',
-        isOpen: true
+        isOpen: true,
+        isvip: false
       },
       {
         name: "历届录取信息",
         imgUrl: app.globalData.imgUrl + "/icon/luquxinxi@3x.png",
         url: '/pages/MatriculateHistory/MatriculateHistory',
-        isOpen: true
+        isOpen: true,
+        isvip: false
       },
       {
         name: "志愿设计",
         imgUrl: app.globalData.imgUrl + "/icon/zhiyuansheji@3x.png",
         url: '/pages/wishDesignList/wishDesignList',
-        isOpen: true
+        isOpen: true,
+        isvip: true
       },
       {
         name: "职业兴趣测试",
         imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
         url: '/pages/testQuestionList/testQuestionList',
-        isOpen: true
+        isOpen: true,
+        isvip: true
       },
       {
         name: "专家咨询",
         imgUrl: app.globalData.imgUrl + "/icon/zhuanjia@3x.png",
         url: '/pages/mavinList/mavinList',
-        isOpen: true
+        isOpen: true,
+        isvip: true
       },
     ],
     schoolSwiper: {
       imgUrls: [
         {
           img: app.globalData.imgUrl + "/swiper/xiada@3x.png",
-          url:'/pages/schoolDetail/schoolDetail?recruitId=199'
+          url:'/pages/schoolDetail/schoolDetail?recruitId=1'
         },
         {
           img: app.globalData.imgUrl + "/swiper/fuda@3x.png",
@@ -75,7 +88,7 @@ Page({
         },
         {
           img: app.globalData.imgUrl + "/swiper/shida@3x.png",
-          url: '/pages/schoolDetail/schoolDetail?recruitId=1'
+          url: '/pages/schoolDetail/schoolDetail?recruitId=199'
         },
         {
           img: app.globalData.imgUrl + "/swiper/nongda@3x.png",
@@ -88,16 +101,26 @@ Page({
       duration: 1000,
       circular: true,
       previousMargin: '65rpx',
-      nextMargin: '65rpx'
+      nextMargin: '65rpx',
     },
+    forgetShow: false,
+    isHideDialog: true,
+    firstFlag:true,
+    mianfeiUrl: app.globalData.imgUrl + "/icon/mianfei-icon1@3x.png",
+    vipUrl: app.globalData.imgUrl + "/icon/VIP-icon1@3x.png",
   },
   // 未开放功能
-  noOpen: function () {
-    wx.showToast({
-      title: '功能暂未开放',
-      icon: 'none',
-      duration: 2000
-    })
+  toEntrance: function (event) {
+    if (!app.isInfoComplete()) {
+      wx.showToast({
+        title: '请填写个人信息',
+        icon: 'none'
+      })
+    } else {
+      wx.navigateTo({
+        url: event.currentTarget.dataset.url,
+      })
+    }
   },
   changeInput: function (event) {
     switch (event.currentTarget.dataset.typeid) {
@@ -124,7 +147,16 @@ Page({
     }
   },
   toLogin: function () {
-    this.setData({ registerShow: false });
+    this.setData({ registerShow: false, forgetShow: false });
+  },
+  toForget(){
+    this.setData({ forgetShow: true });
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
   },
   // 登录
   login: function () {
@@ -158,14 +190,21 @@ Page({
     })
   },
   // 获取验证码
-  getVerifiedCode: function () {
+  getVerifiedCode: function (event) {
+    let type = event.currentTarget.dataset.type;
+    let vType = "";
+    if(type== 1){
+      vType = 'Register';
+    } else if (type == 2){
+      vType = 'ResetPwd';
+    }
     let that = this;
     if (that.data.codeFlag) {
       wx.request({
         url: app.globalData.api + '/sendMobileVerifide',
         data: {
           mobileNum: that.data.registerPhone,
-          verifideType: 'Register'
+          verifideType: vType
         },
         success: function (res) {
           if (res.data.RESULTS == "SUCCESS") {
@@ -236,15 +275,60 @@ Page({
       }
     })
   },
+  reset(){
+    let that = this;
+    wx.request({
+      url: app.globalData.api + '/resetPwd',
+      data: {
+        mobileNum: that.data.registerPhone,
+        passwd: util.md5(that.data.registerPwd),
+        verifiedCode: that.data.verifiedCode,
+      },
+      success: function (res) {
+        if (res.data.RESULTS == "SUCCESS") {
+          wx.showToast({
+            title: '密码重置成功',
+            icon: 'success'
+          })
+          that.setData({
+            forgetShow: false
+          })
+        } else {
+          wx.showToast({
+            title: res.data.MSG,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+  hideDialog(){
+    this.setData({
+      isHideDialog:true
+    })
+  },
+  noBubble() {
+    console.log('阻止冒泡')
+  },
   onShow: function () {
+    if(!this.data.firstFlag){
+      this.setData({
+        isHideDialog: false
+      })
+    }else{
+      this.setData({
+        firstFlag: false
+      })
+    }
     if (wx.getStorageSync('userId')) {
       app.getUser(wx.getStorageSync('userId'));
+      app.getTemporary(wx.getStorageSync('userId'))
       this.setData({
         isLogin: true
       })
     }else{
       this.setData({
-        isLogin: false
+        isLogin: false,
       })
     }
     if (app.globalData.userInfo) {

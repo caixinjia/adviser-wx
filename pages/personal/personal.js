@@ -42,7 +42,11 @@ Page({
         url: '/pages/myTest/myTest'
       }
     ],
-    isVip:false
+    isVip:false,
+    istemporaryVip:false,
+    region:["福建省", "福州市", "鼓楼区"],
+    otherSchool:false
+
   },
   // 重新渲染用户数据
   freshData() {
@@ -72,6 +76,9 @@ Page({
         break;
       case "5":
         this.changeType(event.detail.value);
+        break;
+      case "6":
+        this.changeOtherSchool(event.detail.value);
         break;
     }
   },
@@ -188,10 +195,13 @@ Page({
     console.log(region)
     let that = this;
     let areaList = app.globalData.areaList;
-    let city = '';
+    let area = '';
     for (let i in areaList) {
-      if (areaList[i].NAME == region[1] && areaList[i].LEVEL == '2') {
-        city = areaList[i].CODE;
+      if (areaList[i].NAME == region[2] && areaList[i].LEVEL == '3') {
+        if (areaList[i].NAME == '鼓楼区' && areaList[i].PROVINCE!='35'){
+          continue;
+        }
+        area = areaList[i].CODE;
         break;
       }
     }
@@ -199,12 +209,47 @@ Page({
       url: app.globalData.api + '/modifyScore',
       data: {
         userId: that.data.userId,
-        city: city,
+        area: area,
       },
       success: function (res) {
         if (res.data.RESULTS == "SUCCESS") {
           wx.showToast({
-            title: '填写城市成功',
+            title: '填写地区成功',
+            icon: 'success'
+          })
+          that.getSchoolList(area)
+          that.freshData();
+        } else {
+          wx.showToast({
+            title: res.data.MSG,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+  // 选择学校
+  changeSchool: function (index) {
+    
+    let that = this;
+    console.log(that.data.schoolList[index].SCHOOL_ID)
+    if (that.data.schoolList[index].SCHOOL_ID == 0 && that.data.otherSchool==false){
+      that.setData({
+        otherSchool:true
+      })
+      return
+    }
+    wx.request({
+      url: app.globalData.api + '/modifyScore',
+      data: {
+        userId: that.data.userId,
+        SchoolId: that.data.schoolList[index].SCHOOL_ID,
+        school: that.data.schoolList[index].SCHOOL_NAME,
+      },
+      success: function (res) {
+        if (res.data.RESULTS == "SUCCESS") {
+          wx.showToast({
+            title: '填写中学名成功',
             icon: 'success'
           })
           that.freshData();
@@ -217,14 +262,15 @@ Page({
       }
     })
   },
-  // 修改学校
-  changeSchool: function (school) {
+  // 自填学校
+  changeOtherSchool: function (value) {
     let that = this;
     wx.request({
       url: app.globalData.api + '/modifyScore',
       data: {
         userId: that.data.userId,
-        school: school,
+        SchoolId: 0,
+        school: value,
       },
       success: function (res) {
         if (res.data.RESULTS == "SUCCESS") {
@@ -245,11 +291,12 @@ Page({
   // 修改学科
   changeType: function (typeId) {
     let that = this;
+    typeId = parseInt(typeId)+1
     wx.request({
       url: app.globalData.api + '/modifyScore',
       data: {
         userId: that.data.userId,
-        subject: 2,
+        subject: typeId,
       },
       success: function (res) {
         if (res.data.RESULTS == "SUCCESS") {
@@ -286,6 +333,24 @@ Page({
       })
     })
   },
+  getSchoolList(area){
+    let that = this;
+    wx.request({
+      url: app.globalData.api + '/loadHighSchoolList',
+      data: {
+        areaId:area
+      },
+      success: function (res) {
+        res.data.push({
+          SCHOOL_ID:0,
+          SCHOOL_NAME:'其他'
+        })
+        that.setData({
+          schoolList:res.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -320,8 +385,12 @@ Page({
       userName: app.globalData.userInfo.nickName,
       user: wx.getStorageSync('userInfo'),
       userId: wx.getStorageSync('userId'),
-      isVip: app.isVip()
+      isVip: app.isVip(),
+      istemporaryVip: app.istemporaryVip()
     })
+    if (this.data.user.GRADUATE_AREA!=''){
+      this.getSchoolList(this.data.user.GRADUATE_AREA)
+    }
   },
 
   /**
@@ -355,7 +424,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

@@ -3,11 +3,24 @@
   <block wx:for='{{result}}' wx:key='{{index}}'>
 
     <view class='subject-item'>
-      <image class='selectSubject' src='{{item.IS_IN_VOLUNTEER==1?imgYes:imgNo}}' bindtap='addSubject' data-index='{{index}}'></image>
+      <image wx:if="{{queryData.isDesign}}" class='selectSubject' src='{{item.IS_IN_VOLUNTEER==1?imgYes:imgNo}}' bindtap='addSubject' data-index='{{index}}'></image>
       <view class='subject-name'>
         {{item.SUBJECT_NAME}}
       </view>
-      <view class='rate'>录取率：{{item.ACCEPTANCE_RATE}}%</view>
+      <view class='rate'>同排名往年录取率：{{item.ACCEPTANCE_RATE}}%</view>
+      <view class='subject-grade'>学科评级：
+        <view class='grade'>
+          <view class='{{item.SUBJECT_GRADE=="C-"?"active":""}}'>C-</view>
+          <view class='{{item.SUBJECT_GRADE=="C"?"active":""}}'>C</view>
+          <view class='{{item.SUBJECT_GRADE=="C+"?"active":""}}'>C+</view>
+          <view class='{{item.SUBJECT_GRADE=="B-"?"active":""}}'>B-</view>
+          <view class='{{item.SUBJECT_GRADE=="B"?"active":""}}'>B</view>
+          <view class='{{item.SUBJECT_GRADE=="B+"?"active":""}}'>B+</view>
+          <view class='{{item.SUBJECT_GRADE=="A-"?"active":""}}'>A-</view>
+          <view class='{{item.SUBJECT_GRADE=="A"?"active":""}}'>A</view>
+          <view class='{{item.SUBJECT_GRADE=="A+"?"active":""}}'>A+</view>
+        </view>
+      </view>
       <view class='result-container'>
         <view class='container-header'>
           <view>年份</view>
@@ -48,7 +61,7 @@
       </view>
     </view>
   </block>
-  <view class='mine' >
+  <view class='mine'  wx:if="{{queryData.isDesign}}" >
     <image src='{{mineImg}}'></image>
     <view bindtap='toMineSubject' ></view>
     <view bindtap='saveSubject'></view>

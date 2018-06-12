@@ -11,12 +11,12 @@ Page({
       {
         link: '/pages/eliteSchools/eliteSchools',
         imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/1@3x.png",
-        vipFlag: false
+        vipFlag: true
       },
       {
         link: '/pages/goSchools/goSchools',
         imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/2@3x.png",
-        vipFlag: false
+        vipFlag: true
       },
       {
         link: '/pages/wishDesign/wishDesign',
@@ -79,8 +79,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    app.isLogin();
       this.setData({
         isComplete: app.isInfoComplete(),
+        isVip: app.isVip()
       })
   },
 
@@ -115,7 +117,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.shareTitle,
+      path: '/pages/index/index'
+    }
+  },
 })

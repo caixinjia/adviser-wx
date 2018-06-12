@@ -1,5 +1,61 @@
 <!--pages/mySubject/mySubject.wxml-->
 <view class='container' wx:if='{{result.length>0}}'>
+<!-- 提前批 -->
+  <view class='tiqianpi' wx:if='{{result_3.length>0}}'></view>
+  <view wx:for='{{result_3}}' class='subject-item'>
+    <view class='del-school' wx:if='{{editFlag}}' data-id='{{item.SCHOOL_ID}}' bindtap='deleteSchool3'></view>
+    <view class='subject-school'>{{item.SCHOOL_NAME}}</view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID1!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID1}}' data-index='1' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME1}}</view>
+      <view>同排名录取率：{{item.RATE1}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID2!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID2}}' data-index='2' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME2}}</view>
+      <view>同排名录取率：{{item.RATE2}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID3!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID3}}' data-index='3' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME3}}</view>
+      <view>同排名录取率：{{item.RATE3}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID4!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID4}}' data-index='4' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME4}}</view>
+      <view>同排名录取率：{{item.RATE4}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID5!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID5}}' data-index='5' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME5}}</view>
+      <view>同排名录取率：{{item.RATE5}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID6!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID6}}' data-index='6' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME6}}</view>
+      <view>同排名录取率：{{item.RATE6}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID7!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID7}}' data-index='7' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME7}}</view>
+      <view>同排名录取率：{{item.RATE7}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID8!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID8}}' data-index='8' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME8}}</view>
+      <view>同排名录取率：{{item.RATE8}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID9!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID9}}' data-index='9' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME9}}</view>
+      <view>同排名录取率：{{item.RATE9}}%</view>
+    </view>
+    <view class='subject' wx:if='{{item.SUBJECT_ID10!=""}}'>
+      <view class='del-subject' wx:if='{{editFlag}}' data-id='{{item.SUBJECT_ID10}}' data-index='10' data-sid='{{item.SCHOOL_ID}}' bindtap='deleteSubject3'></view>
+      <view>{{item.SUBJECT_NAME10}}</view>
+      <view>同排名录取率：{{item.RATE10}}%</view>
+    </view>
+  </view>
 <!-- 冲击 -->
   <view class='chongji' wx:if='{{result_0.length>0}}'></view>
   <view wx:for='{{result_0}}' class='subject-item'>

@@ -1,7 +1,7 @@
 /* pages/applyVIP/applyVIP.wxss */
 
 .container {
-  height: 1250rpx;
+  height: 1650rpx;
   background: url("https://fjgz360.cn/chuxian/webPage/images/background/vipbg-1@3x.png") center;
   background-size: 750rpx;
   padding-bottom: 40rpx;
@@ -24,12 +24,12 @@
 .apply-btn {
   position: absolute;
   top: 390rpx;
-  left: 134rpx;
-  height: 120rpx;
-  line-height: 120rpx;
-  width: 482rpx;
+  left: 185rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 380rpx;
   opacity: 0.8;
-  font-size: 50rpx;
+  font-size: 40rpx;
   color: #fff;
   text-align: center;
   /* background: #957b58; */
@@ -37,9 +37,22 @@
   box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.36);
   border-radius: 114rpx;
 }
-
+.temporary-btn{
+  position:absolute;
+  top:520rpx;
+  left: 185rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  width: 380rpx;
+  opacity:0.8;
+  font-size:40rpx;
+  color:#dbc8a5;
+  text-align:center;
+  border-radius:114rpx;
+  border: 2rpx solid #dbc8a5;
+}
 .content-title {
-  margin: 90rpx 0 30rpx 0;
+  margin: 240rpx 0 30rpx 0;
   text-align: center;
   font-size: 40rpx;
   color: #dbc8a5;
