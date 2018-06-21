@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.1",
+	"libVersion": "2.1.0",
 	"appid": "wx8e5b52999b5be030",
 	"projectname": "adviser-wx",
 	"isGameTourist": false,
@@ -75,10 +75,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 7,
 					"name": "院校详情",
 					"pathName": "pages/schoolDetail/schoolDetail",
-					"query": "recruitId=23"
+					"query": "recruitId=307"
 				},
 				{
 					"id": -1,

@@ -3,7 +3,7 @@
   <view class='title'>
     <image src='{{titleImg}}'></image>
     <view class='apply-btn' bindtap='pay'>马上成为会员</view>
-    <view class='temporary-btn' bindtap='temporary'>体验一下</view>
+    <!-- <view class='temporary-btn' bindtap='temporary'>体验一下</view> -->
   </view>
   <view class='content'>
     <view class='content-title'>VIP特权</view>

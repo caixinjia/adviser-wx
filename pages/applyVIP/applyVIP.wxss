@@ -1,7 +1,7 @@
 /* pages/applyVIP/applyVIP.wxss */
 
 .container {
-  height: 1650rpx;
+  height: 1510rpx;
   background: url("https://fjgz360.cn/chuxian/webPage/images/background/vipbg-1@3x.png") center;
   background-size: 750rpx;
   padding-bottom: 40rpx;
@@ -52,7 +52,7 @@
   border: 2rpx solid #dbc8a5;
 }
 .content-title {
-  margin: 240rpx 0 30rpx 0;
+  margin: 100rpx 0 30rpx 0;
   text-align: center;
   font-size: 40rpx;
   color: #dbc8a5;

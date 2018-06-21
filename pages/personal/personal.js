@@ -45,7 +45,9 @@ Page({
     isVip:false,
     istemporaryVip:false,
     region:["福建省", "福州市", "鼓楼区"],
-    otherSchool:false
+    otherSchool:false,
+    area:'',
+    areaName:''
 
   },
   // 重新渲染用户数据
@@ -174,6 +176,9 @@ Page({
                     icon: 'success'
                   })
                   that.freshData();
+                  that.setData({
+                    rankEdit: false
+                  })
                 } else {
                   wx.showToast({
                     title: res.data.MSG,
@@ -205,11 +210,43 @@ Page({
         break;
       }
     }
+    this.setData({
+      area: area,
+      areaName: region
+    })
+    this.getSchoolList(area)
+    // wx.request({
+    //   url: app.globalData.api + '/modifyScore',
+    //   data: {
+    //     userId: that.data.userId,
+    //     area: area,
+    //   },
+    //   success: function (res) {
+    //     if (res.data.RESULTS == "SUCCESS") {
+    //       wx.showToast({
+    //         title: '填写地区成功',
+    //         icon: 'success'
+    //       })
+    //       that.getSchoolList(area)
+    //       that.freshData();
+    //     } else {
+    //       wx.showToast({
+    //         title: res.data.MSG,
+    //         icon: 'none'
+    //       })
+    //     }
+    //   }
+    // })
+  },
+  // 选择学校
+  changeSchool: function (index) {
+    
+    let that = this;
     wx.request({
       url: app.globalData.api + '/modifyScore',
       data: {
         userId: that.data.userId,
-        area: area,
+        area: that.data.area,
       },
       success: function (res) {
         if (res.data.RESULTS == "SUCCESS") {
@@ -217,8 +254,7 @@ Page({
             title: '填写地区成功',
             icon: 'success'
           })
-          that.getSchoolList(area)
-          that.freshData();
+          
         } else {
           wx.showToast({
             title: res.data.MSG,
@@ -227,12 +263,6 @@ Page({
         }
       }
     })
-  },
-  // 选择学校
-  changeSchool: function (index) {
-    
-    let that = this;
-    console.log(that.data.schoolList[index].SCHOOL_ID)
     if (that.data.schoolList[index].SCHOOL_ID == 0 && that.data.otherSchool==false){
       that.setData({
         otherSchool:true
@@ -261,6 +291,7 @@ Page({
         }
       }
     })
+
   },
   // 自填学校
   changeOtherSchool: function (value) {

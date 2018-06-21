@@ -30,7 +30,7 @@
         <view>
           <view class='score-detail'>
             <view class='cancel-btn' wx:if="{{scoreEdit}}" bindtap='cancelScore'></view>
-            <view class='score-number' wx:if="{{user.SCORE!=''&&!scoreEdit}}" bindtap='openScore'>{{user.SCORE}}</view>
+            <view class='score-number' wx:if="{{user.SCORE!=''&&!scoreEdit}}">{{user.SCORE}}</view>
             <view class='score-number no-data' wx:else bindtap='openScore'>
               <input type='number' wx:if='{{scoreEdit}}' bindinput='changeInput' data-id='1'></input>
             </view>
@@ -44,7 +44,7 @@
         <view>
           <view class='ranking-detail'>
             <view class='cancel-btn' wx:if="{{rankEdit}}" bindtap='cancelRank'></view>
-            <view class='ranking-number' wx:if="{{user.RANKING!=''&&!rankEdit}}" bindtap='openRank'>{{user.RANKING}}</view>
+            <view class='ranking-number' wx:if="{{user.RANKING!=''&&!rankEdit}}" >{{user.RANKING}}</view>
             <view class='ranking-number no-data' wx:else bindtap='openRank'>
               <input type='number' wx:if='{{rankEdit}}' bindinput='changeInput' data-id='2'></input>
             </view>
@@ -60,7 +60,8 @@
         <image src='{{addressImg}}'></image>
         <block>
           <view wx:if="{{user.CITY_TEXT!=''}}">{{user.PROVINCE_TEXT}} {{user.CITY_TEXT}} {{user.AREA_TEXT}}</view>
-          <view style='color: #6A7088;opacity: 0.5;' wx:else>
+          <view wx:elif="{{areaName!=''}}" style='position:absolute;left:40rpx;'>{{areaName[0]}} {{areaName[1]}} {{areaName[2]}}</view>
+          <view style='color: #6A7088;opacity: 0.5;' class="{{user.CITY_TEXT==''&&areaName!=''?'hidden':''}}" wx:if="{{user.CITY_TEXT==''}}">
             <picker mode="region" bindchange="changeInput" value='{{region}}' data-id='3'>
               请选择您的城市
             </picker>

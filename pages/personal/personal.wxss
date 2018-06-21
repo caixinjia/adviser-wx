@@ -185,13 +185,16 @@
   letter-spacing: 0;
   align-items: center;
   margin-bottom: 24rpx;
+  position: relative
 }
 
 .userInfo>view>view {
   margin-left: 30rpx;
   flex: 1;
 }
-
+.hidden{
+  opacity: 0 !important;
+}
 .userInfo image {
   width: 40rpx;
   height: 40rpx;

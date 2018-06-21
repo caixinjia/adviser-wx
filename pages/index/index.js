@@ -17,16 +17,12 @@ Page({
     mainSwiper: {
       imgUrls: [
         {
-          src: app.globalData.imgUrl + "/swiper/198copy1@3x.png",
+          src: app.globalData.imgUrl + "/swiper/298 copy@3x.png",
           url: '/pages/applyVIP/applyVIP'
-        },
-        {
-          src: app.globalData.imgUrl + "/swiper/2017fenshu@3x.png",
-          url: ''
         }
         
       ],
-      indicatorDots: true,
+      indicatorDots: false,
       autoplay: true,
       interval: 5000,
       duration: 1000,
@@ -112,8 +108,12 @@ Page({
   // 未开放功能
   toEntrance: function (event) {
     if (!app.isInfoComplete()) {
+      
+      wx.switchTab({
+        url: '/pages/personal/personal',
+      })
       wx.showToast({
-        title: '请填写个人信息',
+        title: '请先填写成绩，排名，学校，文理科等信息',
         icon: 'none'
       })
     } else {

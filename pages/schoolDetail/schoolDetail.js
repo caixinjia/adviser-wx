@@ -73,6 +73,7 @@ Page({
           recruitId: that.data.recruitId,
         },
         success: function (res) {
+          console.log(res.data)
           that.setData({
             result: res.data
           })

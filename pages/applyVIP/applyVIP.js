@@ -7,10 +7,16 @@ Page({
    */
   data: {
     titleImg: app.globalData.imgUrl + "/background/viphy2@3x.png",
+    isLoading:false
   },
   pay() {
+    if (this.data.isLoading==true)return;
+    console.log(1)
     let that = this;
     new Promise((resolve, reject) => {
+      that.setData({
+        isLoading: true
+      })
       wx.request({
         url: app.globalData.api + '/buyVIP',
         data: {
@@ -29,6 +35,9 @@ Page({
                 title: '支付成功',
                 icon: 'success'
               })
+              that.setData({
+                isLoading: false
+              })
               setTimeout(()=>{
                 wx.clearStorageSync()
                 wx.switchTab({
@@ -40,6 +49,9 @@ Page({
               wx.showToast({
                 title: '支付失败',
                 icon: 'none'
+              })
+              that.setData({
+                isLoading: false
               })
             }
           })
@@ -87,7 +99,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    app.isLogin()
   },
 
   /**
