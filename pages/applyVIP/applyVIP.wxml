@@ -4,6 +4,9 @@
     <image src='{{titleImg}}'></image>
     <view class='apply-btn' bindtap='pay'>马上成为会员</view>
     <!-- <view class='temporary-btn' bindtap='temporary'>体验一下</view> -->
+    <view class='warn1'>iphone不支持小程序支付,请用安卓手机开通vip</view>
+    <view class='warn2'>iphone可正常使用其它功能。</view>
+    <view class='warn3'>微信客服:gz360xzs</view>
   </view>
   <view class='content'>
     <view class='content-title'>VIP特权</view>

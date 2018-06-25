@@ -30,7 +30,7 @@ Page({
     city: '',
     wishType:1,//本科专科
     searchNum: 0
-    
+
   },
   search: function () {
     wx.showLoading({
@@ -93,6 +93,13 @@ Page({
       },
       success: function (res) {
         if (res.data != '\r\n') {
+          if(res.data.RESULTS == 'FAILED'){
+            wx.showToast({
+              title: res.data.MSG,
+              icon: 'none',
+              duration: 2000
+            })
+          }
           that.setData({ schoolList: res.data, selectedSubjectArray: selectedList, searchNum: that.data.searchNum + 1})
         } else {
           wx.showToast({

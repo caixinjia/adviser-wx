@@ -108,24 +108,27 @@ Page({
   save() {
     let temp = [];
     for (let item of this.data.result_0) {
-      temp.push(item)
+      temp.push(JSON.stringify(item))
     }
     for (let item of this.data.result_1) {
-      temp.push(item)
+      temp.push(JSON.stringify(item))
     }
     for (let item of this.data.result_2) {
-      temp.push(item)
+      temp.push(JSON.stringify(item))
     }
     for (let item of this.data.result_3) {
-      temp.push(item)
+      temp.push(JSON.stringify(item))
     }
     let that = this;
+    console.log(temp)
     wx.request({
+      method:'POST',
       url: app.globalData.api + '/saveVolunteerList',
       data: {
         userId: wx.getStorageSync('userId'),
-        volunteerList: temp
+        volunteerList: '['+temp+']'
       },
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function (res) {
         if (res.data.RESULTS == 'SUCCESS') {
           wx.showToast({

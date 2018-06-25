@@ -47,8 +47,9 @@ Page({
             },
             'fail': function (res) {
               wx.showToast({
-                title: '支付失败',
-                icon: 'none'
+                title: 'iphone不支持小程序微信支付，请用安卓手机支付',
+                icon: 'none',
+                duration:3000
               })
               that.setData({
                 isLoading: false

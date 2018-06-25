@@ -17,7 +17,7 @@ Page({
     mainSwiper: {
       imgUrls: [
         {
-          src: app.globalData.imgUrl + "/swiper/298 copy@3x.png",
+          src: app.globalData.imgUrl + "/swiper/298 copy 2@3x.png",
           url: '/pages/applyVIP/applyVIP'
         }
         
