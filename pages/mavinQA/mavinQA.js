@@ -67,6 +67,11 @@ Page({
       myQuestion: e.detail.value
     })
   },
+  beginAsk(){
+    this.setData({
+      isAddQuestionFlag: true
+    })
+  },
   submitQuestion() {
     let that = this;
     if (that.data.myQuestion != '') {

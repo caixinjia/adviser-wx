@@ -16,7 +16,7 @@
       </view>
       <!-- 未提问 -->
       <view wx:else>
-        <view class='question-btn'>
+        <view class='question-btn' bindtap='beginAsk'>
           马上提问
         </view>
         <view class='question-btn-tip'>请珍惜会员仅有一次的提问机会噢~</view>
