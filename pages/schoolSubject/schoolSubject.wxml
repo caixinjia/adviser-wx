@@ -21,44 +21,52 @@
           <view class='{{item.SUBJECT_GRADE=="A+"?"active":""}}'>A+</view>
         </view>
       </view>
+      <view class='subject-data' wx:if="{{item.SCHOOL_ENROLL_CODE}}"><view class='data-title'>学校报考代码:</view>{{item.SCHOOL_ENROLL_CODE}}</view>
+      <view class='subject-data' wx:if="{{item.SUBJECT_ENROLL_CODE}}"><view class='data-title'>专业报考代码:</view>{{item.SUBJECT_ENROLL_CODE}}</view>
+      <view class='subject-data' wx:if="{{item.RECRUIT_COUNT}}"><view class='data-title'>计划招生数:</view>{{item.RECRUIT_COUNT}}</view>
+      <view class='subject-data' wx:if="{{item.LENGTH_OF_SCHOOLING}}"><view class='data-title'>学制:</view>{{item.LENGTH_OF_SCHOOLING}}</view>
+      <view class='subject-data' wx:if="{{item.TUITION}}"><view class='data-title'>学费:</view>{{item.TUITION}}</view>
+      <view class='subject-data' wx:if="{{item.PLACE}}"><view class='data-title'>办学地点:</view>{{item.PLACE}}</view>
+      <view class='subject-data' wx:if="{{item.REMARK}}"><view class='data-title'>备注:</view>{{item.REMARK}}</view>
       <view class='result-container'>
-        <view class='container-header'>
+        <view class='container-header' wx:if="{{item.LAST_1_COUNT||item.LAST_2_COUNT||item.LAST_3_COUNT||item.LAST_4_COUNT||item.LAST_5_COUNT}}">
           <view>年份</view>
           <view>招生数</view>
           <view>平均分/排名</view>
           <view>最低分/排名</view>
         </view>
-        <view class='container-info'>
+        <view class='container-info' wx:if="{{item.LAST_1_COUNT}}">
           <view class='info-year'>2017</view>
           <view>{{item.LAST_1_COUNT?item.LAST_1_COUNT:'-'}}</view>
           <view>{{item.LAST_1_AVG?item.LAST_1_AVG/1:'-'}}/{{item.LAST_1_AVG_RANKING?item.LAST_1_AVG_RANKING:'-'}}</view>
           <view>{{item.LAST_1_MIN?item.LAST_1_MIN/1:'-'}}/{{item.LAST_1_MIN_RANKING?item.LAST_1_MIN_RANKING:'-'}}</view>
         </view>
-        <view class='container-info'>
+        <view class='container-info' wx:if="{{item.LAST_2_COUNT}}">
           <view class='info-year'>2016</view>
           <view>{{item.LAST_2_COUNT?item.LAST_2_COUNT:'-'}}</view>
           <view>{{item.LAST_2_AVG?item.LAST_2_AVG/1:'-'}}/{{item.LAST_2_AVG_RANKING?item.LAST_2_AVG_RANKING:'-'}}</view>
           <view>{{item.LAST_2_MIN?item.LAST_2_MIN/1:'-'}}/{{item.LAST_2_MIN_RANKING?item.LAST_2_MIN_RANKING:'-'}}</view>
         </view>
-        <view class='container-info'>
+        <view class='container-info' wx:if="{{item.LAST_3_COUNT}}">
           <view class='info-year'>2015</view>
           <view>{{item.LAST_3_COUNT?item.LAST_3_COUNT:'-'}}</view>
           <view>{{item.LAST_3_AVG?item.LAST_3_AVG/1:'-'}}/{{item.LAST_3_AVG_RANKING?item.LAST_3_AVG_RANKING:'-'}}</view>
           <view>{{item.LAST_3_MIN?item.LAST_3_MIN/1:'-'}}/{{item.LAST_3_MIN_RANKING?item.LAST_3_MIN_RANKING:'-'}}</view>
         </view>
-        <view class='container-info'>
+        <view class='container-info' wx:if="{{item.LAST_4_COUNT}}">
           <view class='info-year'>2014</view>
           <view>{{item.LAST_4_COUNT?item.LAST_4_COUNT:'-'}}</view>
           <view>{{item.LAST_4_AVG?item.LAST_4_AVG/1:'-'}}/{{item.LAST_4_AVG_RANKING?item.LAST_4_AVG_RANKING:'-'}}</view>
           <view>{{item.LAST_4_MIN?item.LAST_4_MIN/1:'-'}}/{{item.LAST_4_MIN_RANKING?item.LAST_4_MIN_RANKING:'-'}}</view>
         </view>
-        <view class='container-info'>
+        <view class='container-info' wx:if="{{item.LAST_5_COUNT}}">
           <view class='info-year'>2013</view>
           <view>{{item.LAST_5_COUNT?item.LAST_5_COUNT:'-'}}</view>
           <view>{{item.LAST_5_AVG?item.LAST_5_AVG/1:'-'}}/{{item.LAST_5_AVG_RANKING?item.LAST_5_AVG_RANKING:'-'}}</view>
           <view>{{item.LAST_5_MIN?item.LAST_5_MIN/1:'-'}}/{{item.LAST_5_MIN_RANKING?item.LAST_5_MIN_RANKING:'-'}}</view>
         </view>
       </view>
+
     </view>
   </block>
   <view class='mine'  wx:if="{{queryData.isDesign}}" >

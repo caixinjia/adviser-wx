@@ -224,7 +224,8 @@ Page({
     if (options.type && options.type == 'junior'){
       that.setData({
         batch:104,
-        wishType:2
+        wishType:2,
+        priority:1
       })
     }
     that.setData({

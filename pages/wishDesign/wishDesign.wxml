@@ -62,8 +62,8 @@
       </block>
     </view>
     <!-- 优先级 -->
-    <view class="priority-item priority-school {{priority==0?'on':''}}" data-id="0" bindtap="changePriority">学校优先</view>
-    <view class="priority-item priority-subject {{priority==1?'on':''}}" data-id="1" bindtap="changePriority">专业优先</view>
+    <view wx:if="{{wishType==1}}" class="priority-item priority-school {{priority==0?'on':''}}" data-id="0" bindtap="changePriority">学校优先</view>
+    <view wx:if="{{wishType==1}}" class="priority-item priority-subject {{priority==1?'on':''}}" data-id="1" bindtap="changePriority">专业优先</view>
     <!-- 按钮 -->
     <view class='search-btn' bindtap="search">
       {{searchNum==0?'生成我的志愿清单':'换一批高校'}}

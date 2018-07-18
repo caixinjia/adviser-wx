@@ -163,3 +163,16 @@ page {
   box-shadow: 0 2px 4px 0 rgba(247,206,44,0.50);
   border-radius: 25rpx;
 }
+.subject-data{
+  margin-top:8rpx;
+  line-height:40rpx;
+  font-size:28rpx;
+  color:#252628;
+  letter-spacing:0;
+  padding: 0 50rpx;
+}
+.subject-data .data-title{
+  display: inline-block;
+  margin-right:20rpx;
+  opacity: 0.7;
+}
