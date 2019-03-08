@@ -29,17 +29,18 @@ page {
   color: #fff;
   flex: 1;
   margin-top: 26rpx;
-  padding-left: 62rpx;
+  /* padding-left: 62rpx; */
+  text-align: center;
   border-left: 2rpx solid #fff;
   height: 40rpx;
-  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/shaixuan@3x.png") no-repeat left 26rpx center;
-  background-size: 32rpx;
+  /* background: url("https://fjgz360.cn/chuxian/webPage/images/icon/shaixuan@3x.png") no-repeat left 26rpx center; */
+  /* background-size: 32rpx; */
 }
 
 .result-list {
   position: relative;
   z-index: -1;
-  margin-top: 110rpx;
+  margin-top: 200rpx;
 }
 
 .result-item {
@@ -175,31 +176,31 @@ page {
 }
 
 .filter-options {
+  background: #fff;
   display: flex;
-  flex-wrap: wrap;
+  position:fixed;
+  width:100%;
+  top:90rpx;
+  z-index:0;
+
 }
 
 .filter-options view {
-  background: #f4f4f4;
-  border-radius: 5px;
+  background: #fff;
   height: 80rpx;
-  width: 180rpx;
+  flex: 1;
   font-size: 28rpx;
   color: #252628;
   letter-spacing: 0;
   text-align: center;
   line-height: 80rpx;
-  margin-top: 20rpx;
-  margin-right: 40rpx;
 }
 
 .filter-options view.on {
-  background: #fff082;
+  background: #f7ce2c;
+  color: #fff;
 }
 
-.filter-options view:nth-child(3n) {
-  margin-right: 0;
-}
 
 .recruit-batch {
   margin-top: 50rpx;

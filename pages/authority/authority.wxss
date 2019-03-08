@@ -1,0 +1,13 @@
+/* pages/authority/authority.wxss */
+page {
+  min-height: 100%;
+  background: #f4f4f4;
+}
+page .authority button{
+  width: 550rpx;
+  margin-top:500rpx;
+  background: #F7CE2C;
+  color: #252628;
+  font-weight: bold;
+  border: none;
+}

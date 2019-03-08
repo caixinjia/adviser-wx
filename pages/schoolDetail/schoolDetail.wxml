@@ -67,10 +67,10 @@
       - 历年最低录取排名走势图 -
     </view>
     <view>
-      <view class='tabs'>
+      <!-- <view class='tabs'>
         <view class='{{isLCanvas?"on":""}}' bindtap='changeTab' data-tab="1">理工类</view>
         <view class='{{isLCanvas?"":"on"}}' bindtap='changeTab' data-tab="2">文史类</view>
-      </view>
+      </view> -->
       <view hidden="{{!isLCanvas}}">
         <canvas canvas-id="liCanvas" class="canvas"></canvas>
       </view>

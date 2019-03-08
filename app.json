@@ -23,7 +23,8 @@
     "pages/testQuestionList/testQuestionList",
     "pages/mavinAdvisory/mavinAdvisory",
     "pages/applyVIP/applyVIP",
-    "pages/myAdvisory/myAdvisory"
+    "pages/myAdvisory/myAdvisory",
+    "pages/authority/authority"
   ],
   "window": {
     "backgroundTextStyle": "light",

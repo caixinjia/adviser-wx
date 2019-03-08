@@ -62,7 +62,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userInfo: app.globalData.userInfo,
+      userInfo: wx.getStorageSync('wxUserInfo'),
     })
     this.submit()
   },

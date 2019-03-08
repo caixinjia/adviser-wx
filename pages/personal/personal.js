@@ -412,8 +412,8 @@ Page({
   onShow: function () {
     app.isLogin();
     this.setData({
-      userInfo: app.globalData.userInfo,
-      userName: app.globalData.userInfo.nickName,
+      userInfo: wx.getStorageSync('wxUserInfo'),
+      userName: wx.getStorageSync('wxUserInfo').nickName,
       user: wx.getStorageSync('userInfo'),
       userId: wx.getStorageSync('userId'),
       isVip: app.isVip(),

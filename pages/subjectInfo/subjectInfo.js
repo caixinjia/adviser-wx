@@ -27,6 +27,9 @@ Page({
       })
       this.search();
     }
+    this.setData({
+      subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,
+    })
     // 获取专业列表
     wx.request({
       url: app.globalData.api + '/loadBmInfo',
@@ -89,10 +92,10 @@ Page({
         this.setData({
           searchSubjectName: event.detail.value
         }); break;
-      case "3":
-        this.setData({
-          subjectType: event.currentTarget.dataset.id
-        }); break;
+      // case "3":
+      //   this.setData({
+      //     subjectType: event.currentTarget.dataset.id
+      //   }); break;
       case "4":
         this.setData({
           recruitBatch: event.currentTarget.dataset.id
@@ -120,7 +123,6 @@ Page({
     this.setData({
       searchSchoolName: '',
       searchSubjectName: '',
-      subjectType: '',
       recruitBatch: '',
       subjectClass:''
     })

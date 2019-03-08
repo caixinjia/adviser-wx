@@ -18,8 +18,8 @@
       <view class='entrance-item' data-url='{{item.url}}' bindtap='toEntrance'>
         <view style='position:relative'>
           <image class='main-icon' src='{{item.imgUrl}}' />
-          <image class='tag-icon' wx:if="{{!item.isvip}}" src='{{mianfeiUrl}}'></image>
-          <image class='tag-icon' wx:if="{{item.isvip}}" src='{{vipUrl}}'></image>
+          <!-- <image class='tag-icon' wx:if="{{!item.isvip}}" src='{{mianfeiUrl}}'></image>
+          <image class='tag-icon' wx:if="{{item.isvip}}" src='{{vipUrl}}'></image> -->
         </view>
         <view class='entrance-name'>{{item.name}}</view>
       </view>

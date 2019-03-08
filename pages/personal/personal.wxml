@@ -20,7 +20,7 @@
       < view>{{userName}}<view class='login-out' bindtap='loginOut'></view></view>
       </view>
       <view>{{user.MOBILE_NUMBER}}</view>
-      <view class='expiring-date' wx:if='{{isVip&&!istemporaryVip}}'>会员有效期至{{expiringDate}}</view>
+      <view class='expiring-date' wx:if='{{isVip}}'>会员有效期至{{expiringDate}}</view>
       <view class='expiring-date' wx:else bindtap='applyvip' style='text-decoration:underline'>成为会员，解锁以下更多功能</view>
     </view>
     <!-- 个人中心成绩排名 -->

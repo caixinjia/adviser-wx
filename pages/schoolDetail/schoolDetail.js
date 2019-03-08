@@ -39,9 +39,25 @@ Page({
       url: '/pages/subjectInfo/subjectInfo?data=' + JSON.stringify(data)
     })
   },
-  changeTab(event){
-    let tab = event.currentTarget.dataset.tab
-    if(tab==1){
+  // changeTab(event){
+  //   let tab = event.currentTarget.dataset.tab
+  //   if(tab==1){
+  //     this.setData({
+  //       isLCanvas: true
+  //     })
+  //   }else{
+  //     this.setData({
+  //       isLCanvas: false
+  //     })
+  //   }
+    
+  // },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log(options)
+    if (wx.getStorageSync('userInfo').SUBJECT_TYPE == 2){
       this.setData({
         isLCanvas: true
       })
@@ -50,13 +66,6 @@ Page({
         isLCanvas: false
       })
     }
-    
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    console.log(options)
     wx.showLoading({
       title: '加载中',
       mask: true

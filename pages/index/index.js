@@ -17,8 +17,8 @@ Page({
     mainSwiper: {
       imgUrls: [
         {
-          src: app.globalData.imgUrl + "/swiper/298 copy 2@3x.png",
-          url: '/pages/applyVIP/applyVIP'
+          src: app.globalData.imgUrl + "/swiper/banner@3x.png",
+          url: ''
         }
         
       ],
@@ -178,7 +178,7 @@ Page({
             isLogin: true
           })
           wx.setStorageSync('userId', res.data.USER_ID)
-          wx.setStorageSync('userRole', res.data.ROLE)
+          // wx.setStorageSync('userRole', res.data.ROLE)
           app.getUser(res.data.USER_ID)
         } else {
           wx.showToast({
@@ -331,30 +331,15 @@ Page({
         isLogin: false,
       })
     }
-    if (app.globalData.userInfo) {
+    
+    if (wx.getStorageSync('wxUserInfo')) {
       this.setData({
-        userInfo: app.globalData.userInfo,
+        userInfo: wx.getStorageSync('wxUserInfo'),
         hasUserInfo: true
       })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
     } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+      wx.navigateTo({
+        url: '/pages/authority/authority'
       })
     }
   },

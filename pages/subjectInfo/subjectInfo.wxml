@@ -34,14 +34,14 @@
   <view class="mask {{filterIsOpen?'open':''}}" bindtap='hideFilter'>
     <scroll-view class='filter-dialog' catchtap='noBubble' scroll-y>
       <input placeholder-style="color:#B5B5B5" confirm-type="done" placeholder="请输入院校名称" data-typeId='1' value='{{searchSchoolName}}' bindinput='changeSearch' />
-      <view class='subject-type'>
+      <!-- <view class='subject-type'>
         <view class='filter-title'>文理分类</view>
         <view class='filter-options'>
           <view class="{{subjectType==''?'on':''}}" data-typeId='3' data-id='' bindtap='changeSearch'>不限</view>
           <view class="{{subjectType=='1'?'on':''}}" data-typeId='3' data-id='1' bindtap='changeSearch'>文史类</view>
           <view class="{{subjectType=='2'?'on':''}}" data-typeId='3' data-id='2' bindtap='changeSearch'>理工类</view>
         </view>
-      </view>
+      </view> -->
       <view class='recruit-batch'>
         <view class='filter-title'>录取批次</view>
         <view class='filter-options'>

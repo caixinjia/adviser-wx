@@ -8,16 +8,16 @@ Page({
    */
   data: {
     functions: [
-      {
-        link: '/pages/eliteSchools/eliteSchools',
-        imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/1@3x.png",
-        vipFlag: true
-      },
-      {
-        link: '/pages/goSchools/goSchools',
-        imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/2@3x.png",
-        vipFlag: true
-      },
+      // {
+      //   link: '/pages/eliteSchools/eliteSchools',
+      //   imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/1@3x.png",
+      //   vipFlag: false
+      // },
+      // {
+      //   link: '/pages/goSchools/goSchools',
+      //   imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/2@3x.png",
+      //   vipFlag: false
+      // },
       {
         link: '/pages/wishDesign/wishDesign',
         imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/3@3x.png",
