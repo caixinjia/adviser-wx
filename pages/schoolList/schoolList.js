@@ -86,10 +86,6 @@ Page({
         city: that.data.city,
         endRow: 100
       },
-      header: {
-        'Content-Type': 'application-json;charset=ISO-8859-1'
-      },
-      method: 'POST',
       success: function (res) {
         if (res.data != '\r\n') {
           that.setData({ result: res.data })

@@ -2,6 +2,10 @@
 <view class='container'>
   <view class='title'>
     <image src='{{titleImg}}'></image>
+    <view class="activationCodeVip">
+      <input placeholder="请输入激活码" bindinput='changeCode'/>
+      <view class='activationCodeVip-btn' bindtap='activationCodeVip'>激活</view>
+    </view>
     <view class='apply-btn' bindtap='pay'>马上成为会员</view>
     <view class='warn1'>iphone不支持小程序支付,请用安卓手机开通vip</view>
     <view class='warn2'>iphone可正常使用其它功能。</view>

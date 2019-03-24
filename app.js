@@ -95,21 +95,6 @@ App({
       return false;
     }
   },
-  // 必须是正式会员
-  toApplyVip2: function () {
-    if (this.istemporaryVip()) {
-      wx.showToast({
-        title: '请开通正式会员',
-        icon: 'none'
-      })
-      wx.navigateTo({
-        url: '/pages/applyVIP/applyVIP',
-      })
-      return true;
-    } else {
-      return false;
-    }
-  },
   // 是否是临时
   istemporaryVip: function () {
     let info = wx.getStorageSync('userRole');
@@ -152,6 +137,20 @@ App({
       })
     })
 
+  },
+  // 获取功能收费情况
+  loadVipEnable(){
+    let that = this;
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: that.globalData.api + '/loadVipEnable',
+        data: {
+        },
+        success: function (res) {
+          resolve(res);
+        }
+      })
+    })
   },
   checkUpdate(){
     // 获取小程序更新机制兼容

@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 19,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -78,7 +78,8 @@
 					"id": 7,
 					"name": "院校详情",
 					"pathName": "pages/schoolDetail/schoolDetail",
-					"query": "recruitId=307"
+					"query": "recruitId=280",
+					"scene": null
 				},
 				{
 					"id": -1,
@@ -151,6 +152,7 @@
 					"id": -1,
 					"name": "历届录取",
 					"pathName": "pages/MatriculateHistory/MatriculateHistory",
+					"query": "",
 					"scene": null
 				}
 			]

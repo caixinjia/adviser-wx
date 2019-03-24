@@ -15,7 +15,7 @@
   <!-- 首页入口 -->
   <view class='entrance'>
     <block wx:for='{{entranceList}}' wx:key='{{entranceList.name}}'>
-      <view class='entrance-item' data-url='{{item.url}}' bindtap='toEntrance'>
+      <view class='entrance-item' data-url='{{item.url}}' data-index="{{index}}" bindtap='toEntrance'>
         <view style='position:relative'>
           <image class='main-icon' src='{{item.imgUrl}}' />
           <!-- <image class='tag-icon' wx:if="{{!item.isvip}}" src='{{mianfeiUrl}}'></image>

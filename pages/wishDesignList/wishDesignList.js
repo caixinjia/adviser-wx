@@ -40,25 +40,9 @@ Page({
         icon: 'none'
       })
     }else{
-      if(event.currentTarget.dataset.vip){
-        if(this.data.isVip){
-          wx.navigateTo({
-            url: event.currentTarget.dataset.url,
-          })
-        }else{
-          wx.showToast({
-            title: '请开通会员',
-            icon: 'none'
-          })
-          wx.navigateTo({
-            url: '/pages/applyVIP/applyVIP',
-          })
-        }
-      }else{
-        wx.navigateTo({
-          url: event.currentTarget.dataset.url,
-        })
-      }
+      wx.navigateTo({
+        url: event.currentTarget.dataset.url,
+      })
     }
   },
   /**

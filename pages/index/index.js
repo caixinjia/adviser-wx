@@ -10,17 +10,16 @@ Page({
     loginPhone: '',
     loginPwd: '',
     registerPhone: '',
-    registerPwd:'',
-    verifiedCode:'',
+    registerPwd: '',
+    verifiedCode: '',
     codeFlag: true,
     lastTime: 60,
     mainSwiper: {
-      imgUrls: [
-        {
+      imgUrls: [{
           src: app.globalData.imgUrl + "/swiper/banner@3x.png",
           url: ''
         }
-        
+
       ],
       indicatorDots: false,
       autoplay: true,
@@ -28,13 +27,12 @@ Page({
       duration: 1000,
       circular: true,
     },
-    entranceList: [
-      {
+    entranceList: [{
         name: "院校信息",
         imgUrl: app.globalData.imgUrl + "/icon/yuanxiao@3x.png",
         url: '/pages/schoolList/schoolList',
         isOpen: true,
-        isvip:false
+        isvip: false,
       },
       {
         name: "专业信息",
@@ -73,10 +71,9 @@ Page({
       },
     ],
     schoolSwiper: {
-      imgUrls: [
-        {
+      imgUrls: [{
           img: app.globalData.imgUrl + "/swiper/xiada@3x.png",
-          url:'/pages/schoolDetail/schoolDetail?recruitId=1'
+          url: '/pages/schoolDetail/schoolDetail?recruitId=1'
         },
         {
           img: app.globalData.imgUrl + "/swiper/fuda@3x.png",
@@ -101,14 +98,15 @@ Page({
     },
     forgetShow: false,
     isHideDialog: true,
-    firstFlag:true,
+    firstFlag: true,
     mianfeiUrl: app.globalData.imgUrl + "/icon/mianfei-icon1@3x.png",
     vipUrl: app.globalData.imgUrl + "/icon/VIP-icon1@3x.png",
+    isVipEnable: []
   },
   // 未开放功能
-  toEntrance: function (event) {
+  toEntrance: function(event) {
     if (!app.isInfoComplete()) {
-      
+
       wx.switchTab({
         url: '/pages/personal/personal',
       })
@@ -117,49 +115,70 @@ Page({
         icon: 'none'
       })
     } else {
-      wx.navigateTo({
-        url: event.currentTarget.dataset.url,
-      })
+      // 是否限制vip
+      if (this.data.isVipEnable[event.currentTarget.dataset.index] == 1 && !app.isVip()) {
+        wx.showToast({
+          title: '请开通会员',
+          icon: 'none'
+        })
+        wx.navigateTo({
+          url: '/pages/applyVIP/applyVIP',
+        })
+      } else {
+        wx.navigateTo({
+          url: event.currentTarget.dataset.url,
+        })
+      }
     }
   },
-  changeInput: function (event) {
+  changeInput: function(event) {
     switch (event.currentTarget.dataset.typeid) {
       case "1":
         this.setData({
           loginPhone: event.detail.value
-        }); break;
+        });
+        break;
       case "2":
         this.setData({
           loginPwd: event.detail.value
-        }); break;
+        });
+        break;
       case "3":
         this.setData({
           registerPhone: event.detail.value
-        }); break;
+        });
+        break;
       case "4":
         this.setData({
           verifiedCode: event.detail.value
-        }); break;
+        });
+        break;
       case "5":
         this.setData({
           registerPwd: event.detail.value
-        }); break;
+        });
+        break;
     }
   },
-  toLogin: function () {
-    this.setData({ registerShow: false, forgetShow: false });
+  toLogin: function() {
+    this.setData({
+      registerShow: false,
+      forgetShow: false
+    });
   },
-  toForget(){
-    this.setData({ forgetShow: true });
+  toForget() {
+    this.setData({
+      forgetShow: true
+    });
   },
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function(res) {
     return {
       title: app.globalData.shareTitle,
       path: '/pages/index/index'
     }
   },
   // 登录
-  login: function () {
+  login: function() {
     let that = this;
     wx.request({
       url: app.globalData.api + '/login',
@@ -168,7 +187,7 @@ Page({
         passwd: util.md5(that.data.loginPwd),
         verifiedType: '0'
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.RESULTS == "SUCCESS") {
           wx.showToast({
             title: '登录成功',
@@ -190,12 +209,12 @@ Page({
     })
   },
   // 获取验证码
-  getVerifiedCode: function (event) {
+  getVerifiedCode: function(event) {
     let type = event.currentTarget.dataset.type;
     let vType = "";
-    if(type== 1){
+    if (type == 1) {
       vType = 'Register';
-    } else if (type == 2){
+    } else if (type == 2) {
       vType = 'ResetPwd';
     }
     let that = this;
@@ -206,7 +225,7 @@ Page({
           mobileNum: that.data.registerPhone,
           verifideType: vType
         },
-        success: function (res) {
+        success: function(res) {
           if (res.data.RESULTS == "SUCCESS") {
             that.codeTime();
             wx.showToast({
@@ -224,13 +243,13 @@ Page({
     }
   },
   // 验证码倒计时
-  codeTime: function () {
+  codeTime: function() {
     let that = this;
     let time = that.data.lastTime;
     this.setData({
       codeFlag: false
     })
-    let interval = setInterval(function () {
+    let interval = setInterval(function() {
       if (time == 0) {
         clearInterval(interval)
         that.setData({
@@ -245,10 +264,12 @@ Page({
       }
     }, 1000)
   },
-  toRegister: function () {
-    this.setData({ registerShow: true });
+  toRegister: function() {
+    this.setData({
+      registerShow: true
+    });
   },
-  register: function () {
+  register: function() {
     let that = this;
     wx.request({
       url: app.globalData.api + '/register',
@@ -257,7 +278,7 @@ Page({
         passwd: util.md5(that.data.registerPwd),
         verifiedCode: that.data.verifiedCode,
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.RESULTS == "SUCCESS") {
           wx.showToast({
             title: '注册成功',
@@ -275,7 +296,7 @@ Page({
       }
     })
   },
-  reset(){
+  reset() {
     let that = this;
     wx.request({
       url: app.globalData.api + '/resetPwd',
@@ -284,7 +305,7 @@ Page({
         passwd: util.md5(that.data.registerPwd),
         verifiedCode: that.data.verifiedCode,
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.RESULTS == "SUCCESS") {
           wx.showToast({
             title: '密码重置成功',
@@ -302,20 +323,20 @@ Page({
       }
     })
   },
-  hideDialog(){
+  hideDialog() {
     this.setData({
-      isHideDialog:true
+      isHideDialog: true
     })
   },
   noBubble() {
     console.log('阻止冒泡')
   },
-  onShow: function () {
-    if(!this.data.firstFlag){
+  onShow: function() {
+    if (!this.data.firstFlag) {
       this.setData({
         isHideDialog: false
       })
-    }else{
+    } else {
       this.setData({
         firstFlag: false
       })
@@ -326,12 +347,12 @@ Page({
       this.setData({
         isLogin: true
       })
-    }else{
+    } else {
       this.setData({
         isLogin: false,
       })
     }
-    
+    // 获取授权
     if (wx.getStorageSync('wxUserInfo')) {
       this.setData({
         userInfo: wx.getStorageSync('wxUserInfo'),
@@ -342,8 +363,21 @@ Page({
         url: '/pages/authority/authority'
       })
     }
+    app.loadVipEnable().then(res => {
+      let temp = [
+        res.data.ENABLE_VIP_SCHOOL,
+        res.data.ENABLE_VIP_SUBJICE,
+        res.data.ENABLE_VIP_HISTORY,
+        res.data.ENABLE_VIP_VOLUNTEER,
+        res.data.ENABLE_VIP_TEST,
+        res.data.ENABLE_VIP_MAVIN,
+      ]
+      this.setData({
+        isVipEnable: temp
+      })
+    })
   },
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

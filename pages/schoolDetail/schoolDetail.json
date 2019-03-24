@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "院校详细信息"
+  "navigationBarTitleText": "院校详细信息",
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  }
 }

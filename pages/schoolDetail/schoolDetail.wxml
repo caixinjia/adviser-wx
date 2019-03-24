@@ -1,17 +1,19 @@
 <!--pages/schoolDetail/schoolDetail.wxml-->
 <view class='container'>
+
   <!-- 院校信息 -->
   <view class='subject-info'>
+
     <view class='subject-title'>
       <!-- <view>
         <view>院校编码</view>
         <view>{{result.SCHOOL_CODE}}</view>
       </view> -->
-       <view class='type'>
+      <view class='type'>
         <image wx:if='{{result.IS_985==1}}' src='{{img985}}' class='img985'></image>
         <image wx:if='{{result.IS_211==1}}' src='{{img211}}' class='img211'></image>
         <image wx:if='{{result.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
-      </view> 
+      </view>
       <view>
         <view>ARWU2018大学排名</view>
         <view>{{result.SCHOOL_RANKING}}</view>
@@ -66,19 +68,25 @@
     <view class='line-title'>
       - 历年最低录取排名走势图 -
     </view>
-    <view>
-      <!-- <view class='tabs'>
-        <view class='{{isLCanvas?"on":""}}' bindtap='changeTab' data-tab="1">理工类</view>
-        <view class='{{isLCanvas?"":"on"}}' bindtap='changeTab' data-tab="2">文史类</view>
-      </view> -->
-      <view hidden="{{!isLCanvas}}">
-        <canvas canvas-id="liCanvas" class="canvas"></canvas>
-      </view>
-      <view hidden="{{isLCanvas}}">
-        <canvas canvas-id="wenCanvas" class="canvas"></canvas>
-      </view>
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view class='line'>
+    <view class='line-title' style='top:0'>
+      - 院校录取排名（近五年) -
     </view>
-
+    <view class='tabs'>
+      <view wx:for="{{hisTitle}}" wx:key="{{index}}" data-index="{{index}}" class="{{hisTitleIndex==index?'on':''}}" bindtap='changeHis'>{{item.name}}</view>
+    </view>
+    <ec-canvas id="mychart-dom-line2" canvas-id="mychart-line2" ec="{{ ec2 }}"></ec-canvas>
+  </view>
+  <view class='line-bar' style="{{'height:'+ barheight +'rpx'}}">
+    <view class='line-title' style='top:0'>
+      - 上一年度专业录取信息 -
+    </view>
+    <view class='tabs'>
+      <view wx:for="{{subTitle}}" wx:key="{{index}}" data-index="{{index}}" class="{{subTitleIndex==index?'on':''}}" bindtap='changeSub'>{{item.name}}</view>
+    </view>
+    <ec-canvas id="mychart-dom-line3" canvas-id="mychart-line3" ec="{{ ec3 }}"></ec-canvas>
   </view>
   <!--住宿与生活-->
   <view class='life'>

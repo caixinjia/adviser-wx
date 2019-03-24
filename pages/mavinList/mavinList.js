@@ -80,13 +80,9 @@ Page({
   },
   // 跳转到咨询问题列表
   toMavinQA: function () {
-    if (app.toApplyVip()) {
-    } else {
       wx.navigateTo({
         url: '/pages/mavinQA/mavinQA'
       })
-    }
-
   },
   toAdvisory:function(event){
     wx.navigateTo({
