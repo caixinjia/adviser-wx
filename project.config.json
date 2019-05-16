@@ -12,6 +12,8 @@
 	"appid": "wx8e5b52999b5be030",
 	"projectname": "adviser-wx",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

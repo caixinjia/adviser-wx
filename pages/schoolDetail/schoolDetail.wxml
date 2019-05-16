@@ -38,6 +38,10 @@
         <view>{{result.SCHOOL_GRADE}}</view>
       </view>
       <view>
+        <view>报考建议</view>
+        <view>{{result.SUGGEST}}</view>
+      </view>
+      <view>
         <view>录取批次</view>
         <view></view>
       </view>

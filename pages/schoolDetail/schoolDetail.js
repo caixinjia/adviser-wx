@@ -187,6 +187,7 @@ Page({
         url: app.globalData.api + '/loadSchoolInfo',
         data: {
           recruitId: that.data.recruitId,
+          userId: wx.getStorageSync('userId')
         },
         success: function(res) {
           that.setData({

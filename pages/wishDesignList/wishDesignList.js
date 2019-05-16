@@ -20,7 +20,7 @@ Page({
       // },
       {
         link: '/pages/wishDesign/wishDesign',
-        imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/3@3x.png",
+        imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/design.jpg",
         vipFlag: true
       },
       {

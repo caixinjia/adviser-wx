@@ -49,5 +49,6 @@
         "selectedIconPath": "images/icon/tabbar_user-selected@3x.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
