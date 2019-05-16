@@ -13,7 +13,7 @@ function setOption(chart, that) {
     },
     yAxis: {
       type: 'value',
-      inverse: true,
+      // inverse: true,
       scale: true
     },
     series: [{
@@ -92,7 +92,7 @@ function setOption3(chart, that) {
         color: '#333',
         position:'insideLeft',
         formatter :function(param){
-          return that.data.subRankingX[param.dataIndex]
+          return that.data.subRankingY[param.dataIndex] + '/' + that.data.subRankingX[param.dataIndex]
         }
       },
       lineStyle: {

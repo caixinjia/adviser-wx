@@ -28,7 +28,7 @@ Page({
       },
       {
         img: app.globalData.imgUrl + "/icon/wodetiwen@3x.png",
-        name: '我的提问',
+        name: '我要提问',
         url:'/pages/myQuestion/myQuestion'
       },
       {

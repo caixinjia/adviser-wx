@@ -15,8 +15,8 @@
               <view class='mavin-name'>{{item.MAVIN_NAME}}<view>({{item.MAVIN_TITLE}})</view></view>
               <view class='mavin-category'>{{item.MAVIN_CATEGORY_TEXT}}</view>
               <view class='mavin-btns'>
-                <view class='mavin-zixun' bindtap='toMavinQA'>留言咨询</view>
-                <view class='mavin-yuyue' bindtap='toAdvisory' data-id='{{item.MAVIN_ID}}'>线下咨询</view>
+                <view class='mavin-zixun' bindtap='showCodeImg'>留言咨询</view>
+                <view class='mavin-yuyue' bindtap='showCodeImg' data-id='{{item.MAVIN_ID}}'>线下咨询</view>
               </view>
             </view>
           </view>
@@ -45,6 +45,13 @@
         <view class='reset-btn' bindtap='resetFilter'>重置</view>
         <view class='search-btn' bindtap='search'>完成</view>
       </view>
+    </view>
+  </view>
+  <view class="mask qrcode {{codeIsOpen?'open':''}}" bindtap='hideCodeImg'>
+    <view>
+      <image src='https://fjgz360.cn/chuxian/img_code.jpg' data-src="https://fjgz360.cn/chuxian/img_code.jpg" 
+    bindtap="previewImage"></image>
+      <view class='text'>请点击图片并长按保存后扫描</view>
     </view>
   </view>
 </view>

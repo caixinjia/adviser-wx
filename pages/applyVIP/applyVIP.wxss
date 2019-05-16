@@ -66,6 +66,7 @@
   margin-bottom: 20rpx;
   padding-left: 120rpx;
   position: relative;
+  padding-right:18rpx;
 }
 
 .content .content-item:nth-last-child(1) {
@@ -123,7 +124,7 @@
 
 .activationCodeVip {
   position: absolute;
-  top: 300rpx;
+  top: 420rpx;
   margin: auto;
   width: 600rpx;
   left: 0;

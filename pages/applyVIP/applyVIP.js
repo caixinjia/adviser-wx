@@ -10,57 +10,57 @@ Page({
     isLoading: false,
     code: ''
   },
-  pay() {
-    if (this.data.isLoading == true) return;
-    console.log(1)
-    let that = this;
-    new Promise((resolve, reject) => {
-      that.setData({
-        isLoading: true
-      })
-      wx.request({
-        url: app.globalData.api + '/buyVIP',
-        data: {
-          openId: app.globalData.openId,
-          userId: wx.getStorageSync('userId')
-        },
-        success: function(res) {
-          wx.requestPayment({
-            'timeStamp': res.data.timeStamp,
-            'nonceStr': res.data.nonceStr,
-            'package': res.data.package,
-            'signType': 'MD5',
-            'paySign': res.data.paySign,
-            'success': function(res) {
-              wx.showToast({
-                title: '支付成功',
-                icon: 'success'
-              })
-              that.setData({
-                isLoading: false
-              })
-              setTimeout(() => {
-                wx.clearStorageSync()
-                wx.switchTab({
-                  url: '/pages/index/index',
-                })
-              }, 1000)
-            },
-            'fail': function(res) {
-              wx.showToast({
-                title: 'iphone不支持小程序微信支付，请用安卓手机支付',
-                icon: 'none',
-                duration: 3000
-              })
-              that.setData({
-                isLoading: false
-              })
-            }
-          })
-        }
-      })
-    })
-  },
+  // pay() {
+  //   if (this.data.isLoading == true) return;
+  //   console.log(1)
+  //   let that = this;
+  //   new Promise((resolve, reject) => {
+  //     that.setData({
+  //       isLoading: true
+  //     })
+  //     wx.request({
+  //       url: app.globalData.api + '/buyVIP',
+  //       data: {
+  //         openId: app.globalData.openId,
+  //         userId: wx.getStorageSync('userId')
+  //       },
+  //       success: function(res) {
+  //         wx.requestPayment({
+  //           'timeStamp': res.data.timeStamp,
+  //           'nonceStr': res.data.nonceStr,
+  //           'package': res.data.package,
+  //           'signType': 'MD5',
+  //           'paySign': res.data.paySign,
+  //           'success': function(res) {
+  //             wx.showToast({
+  //               title: '支付成功',
+  //               icon: 'success'
+  //             })
+  //             that.setData({
+  //               isLoading: false
+  //             })
+  //             setTimeout(() => {
+  //               wx.clearStorageSync()
+  //               wx.switchTab({
+  //                 url: '/pages/index/index',
+  //               })
+  //             }, 1000)
+  //           },
+  //           'fail': function(res) {
+  //             wx.showToast({
+  //               title: 'iphone不支持小程序微信支付，请用安卓手机支付',
+  //               icon: 'none',
+  //               duration: 3000
+  //             })
+  //             that.setData({
+  //               isLoading: false
+  //             })
+  //           }
+  //         })
+  //       }
+  //     })
+  //   })
+  // },
   // 体验
   temporary() {
     const that = this;

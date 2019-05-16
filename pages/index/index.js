@@ -28,7 +28,7 @@ Page({
       circular: true,
     },
     entranceList: [{
-        name: "院校信息",
+        name: "院校报考助手",
         imgUrl: app.globalData.imgUrl + "/icon/yuanxiao@3x.png",
         url: '/pages/schoolList/schoolList',
         isOpen: true,
@@ -56,7 +56,7 @@ Page({
         isvip: true
       },
       {
-        name: "职业兴趣测试",
+        name: "高考生专业测试",
         imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
         url: '/pages/testQuestionList/testQuestionList',
         isOpen: true,

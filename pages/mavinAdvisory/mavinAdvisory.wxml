@@ -7,7 +7,7 @@
         <view>({{mavinDetail.MAVIN_TITLE}})</view>
       </view>
       <view class='mavin-category'>{{mavinDetail.MAVIN_CATEGORY_TEXT}}</view>
-      <view class='mavin-price'>线下咨询价格：
+      <view class='mavin-price'>一对一咨询定金：
         <text>{{mavinDetail.MAVIN_PRICE}}元</text>
       </view>
     </view>

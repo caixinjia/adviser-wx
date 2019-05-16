@@ -54,28 +54,28 @@ Page({
           openId: app.globalData.openId,
         },
         success: function (res) {
-          wx.requestPayment({
-            'timeStamp': res.data.timeStamp,
-            'nonceStr': res.data.nonceStr,
-            'package': res.data.package,
-            'signType': 'MD5',
-            'paySign': res.data.paySign,
-            'success': function (res) {
-              wx.showToast({
-                title: '支付成功',
-                icon: 'success'
-              })
-              setTimeout(res => {
-                that.getData()
-              }, 1000)
-            },
-            'fail': function (res) {
-              wx.showToast({
-                title: '支付失败',
-                icon: 'none'
-              })
-            }
-          })
+          // wx.requestPayment({
+          //   'timeStamp': res.data.timeStamp,
+          //   'nonceStr': res.data.nonceStr,
+          //   'package': res.data.package,
+          //   'signType': 'MD5',
+          //   'paySign': res.data.paySign,
+          //   'success': function (res) {
+          //     wx.showToast({
+          //       title: '支付成功',
+          //       icon: 'success'
+          //     })
+          //     setTimeout(res => {
+          //       that.getData()
+          //     }, 1000)
+          //   },
+          //   'fail': function (res) {
+          //     wx.showToast({
+          //       title: '支付失败',
+          //       icon: 'none'
+          //     })
+          //   }
+          // })
 
         }
       })

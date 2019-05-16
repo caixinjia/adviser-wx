@@ -6,26 +6,26 @@
       <input placeholder="请输入激活码" bindinput='changeCode'/>
       <view class='activationCodeVip-btn' bindtap='activationCodeVip'>激活</view>
     </view>
-    <view class='apply-btn' bindtap='pay'>马上成为会员</view>
-    <view class='warn1'>iphone不支持小程序支付,请用安卓手机开通vip</view>
-    <view class='warn2'>iphone可正常使用其它功能。</view>
-    <view class='warn3'>微信客服:gz360xzs</view>
+    <!-- <view class='apply-btn' bindtap='pay'>马上成为会员</view> -->
+    <!-- <view class='warn1'>iphone不支持小程序支付,请用安卓手机开通vip</view>
+    <view class='warn2'>iphone可正常使用其它功能。</view> -->
+    <view class='warn3'>需要激活码联系微信客服：gz360xzs</view>
   </view>
   <view class='content'>
     <view class='content-title'>VIP特权</view>
+    <view class='content-item'>特色1：院校报考助手，为每所学校给出报考建议（冲击、稳妥、保底、不建议）；给出五年录取折线图和上一年专业柱状图;</view>
+    <view class='content-item'>特色2：志愿设计-本科志愿人工筛选，可将在考生视野之外的好学校好专业找回来;</view>
+    <view class='content-item'>特色3：高考生专业测试，定制的专门针对高考生的霍兰德心理测试，精准测算与考生性格匹配的专业;</view>
+    <view class='content-item'>其它功能：</view>
     <view class='content-item'>独家提供丰富的院校、专业信息查询</view>
     <view class='content-item'>独家提供近五年所有高校与专业的录取排名信息</view>
-    <view class='content-item'>科学的职业心理测试，精准测出与考生性格相匹配的专业</view>
     <view class='content-item'>提供每所大学的五年同排名录取率</view>
-    <view class='content-item'>一键查询所有能上的211以上名校</view>
-    <view class='content-item'>一键查询所有能上的大学</view>
     <view class='content-item'>结合意向城市、专业兴趣等提供志愿服务</view>
-    <view class='content-item'>提供学校优先、专业优先两个报考策略</view>
+    <view class='content-item'>提供学校优先、专业优先两种报考策略</view>
     <view class='content-item'>给出冲击、求稳、保底等三个层次高校供选择</view>
     <view class='content-item'>大数据结合人工智能提供志愿设计服务</view>
-    <view class='content-item'>提供志愿定制功能，根据推荐定制志愿清单</view>
-    <view class='content-item'>提供专家在线咨询服务</view>
-    <view class='content-item'>可以预约专家线下咨询服务</view>
+    <view class='content-item'>提供志愿定制功能，根据推荐订制志愿清单</view>
+    <view class='content-item'>预约专家线下咨询服务</view>
     <view class='footer'>· 功能可能会根据实际情况微调，最终解释权归高招360所有 ·</view>
   </view>
 </view>

@@ -63,7 +63,7 @@ page {
 }
 
 .mavin-data>view {
-  width:510rpx;
+  width: 510rpx;
 }
 
 .mavin-data>view .mavin-name {
@@ -125,9 +125,9 @@ page {
   border-radius: 2px;
   font-size: 24rpx;
   color: #5b6369;
-  height:205rpx;
+  height: 205rpx;
   padding: 10rpx 20rpx;
-  overflow:auto;
+  overflow: auto;
 }
 
 /* 筛选 */
@@ -233,4 +233,26 @@ page {
 
 .filter-btns .search-btn {
   background: #f7ce2c;
+}
+
+.qrcode>view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.qrcode image {
+  width: 430rpx;
+  height: 430rpx;
+}
+.qrcode .text{
+  color: #fff;
+  margin-top: 20rpx;
 }
