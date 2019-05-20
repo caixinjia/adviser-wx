@@ -47,7 +47,11 @@ Page({
     region:["福建省", "福州市", "鼓楼区"],
     otherSchool:false,
     area:'',
-    areaName:''
+    areaName:'',
+    canEditScore:false,
+    canEditRanking:false,
+    editScoreText:'',
+    editRankingText:'',
 
   },
   // 重新渲染用户数据
@@ -94,6 +98,13 @@ Page({
       scoreEdit: true
     })
   },
+  openScoreAgain: function () {
+    if(this.data.canEditScore){
+      this.setData({
+        scoreEdit: true
+      })
+    }
+  },
   cancelRank: function () {
     this.setData({
       rankEdit: false
@@ -103,6 +114,13 @@ Page({
     this.setData({
       rankEdit: true
     })
+  },
+  openRankAgain: function () {
+    if(this.data.canEditRanking){
+      this.setData({
+        rankEdit: true
+      })
+    }
   },
   applyvip(){
     wx.navigateTo({
@@ -240,7 +258,7 @@ Page({
   },
   // 选择学校
   changeSchool: function (index) {
-    
+
     let that = this;
     wx.request({
       url: app.globalData.api + '/modifyScore',
@@ -254,7 +272,7 @@ Page({
             title: '填写地区成功',
             icon: 'success'
           })
-          
+
         } else {
           wx.showToast({
             title: res.data.MSG,
@@ -382,6 +400,17 @@ Page({
       }
     })
   },
+  formatDate(time) {
+    if (time != '') {
+      let y = time.substr(0, 4);
+      let m = time.substr(4, 2);
+      let d = time.substr(6, 2);
+      return y + '年' + m + '月' + d + '日';
+    } else {
+      return ''
+    }
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -417,7 +446,12 @@ Page({
       user: wx.getStorageSync('userInfo'),
       userId: wx.getStorageSync('userId'),
       isVip: app.isVip(),
-      istemporaryVip: app.istemporaryVip()
+      istemporaryVip: app.istemporaryVip(),
+      canEditScore:wx.getStorageSync('userInfo').ENABLE_RESET_SCORE.ENABLE == 'TRUE' ? true : false,
+      canEditRanking:wx.getStorageSync('userInfo').ENABLE_RESET_RANKING.ENABLE == 'TRUE' ? true : false,
+      editScoreText:wx.getStorageSync('userInfo').ENABLE_RESET_SCORE.TIPS,
+      editRankingText:wx.getStorageSync('userInfo').ENABLE_RESET_RANKING.TIPS,
+      expiringDate: this.formatDate(wx.getStorageSync('userInfo').VALID_TILL)
     })
     if (this.data.user.GRADUATE_AREA!=''){
       this.getSchoolList(this.data.user.GRADUATE_AREA)
