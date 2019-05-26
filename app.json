@@ -24,7 +24,8 @@
     "pages/mavinAdvisory/mavinAdvisory",
     "pages/applyVIP/applyVIP",
     "pages/myAdvisory/myAdvisory",
-    "pages/authority/authority"
+    "pages/authority/authority",
+    "pages/personDesign/personDesign"
   ],
   "window": {
     "backgroundTextStyle": "light",

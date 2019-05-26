@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -154,6 +154,13 @@
 					"id": -1,
 					"name": "历届录取",
 					"pathName": "pages/MatriculateHistory/MatriculateHistory",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "人工志愿设计",
+					"pathName": "pages/personDesign/personDesign",
 					"query": "",
 					"scene": null
 				}

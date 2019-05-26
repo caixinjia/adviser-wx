@@ -14,7 +14,8 @@ function setOption(chart, that) {
     yAxis: {
       type: 'value',
       // inverse: true,
-      scale: true
+      scale: true,
+      offset: -10
     },
     series: [{
       data: [that.data.minRanking[0], that.data.minRanking[1], that.data.minRanking[2], that.data.minRanking[3], that.data.minRanking[4]],
@@ -46,7 +47,8 @@ function setOption2(chart, that) {
     yAxis: {
       type: 'value',
       inverse: true,
-      scale: true
+      scale: true,
+      offset: -10
     },
     series: [{
       data: [that.data.hisRanking[0], that.data.hisRanking[1], that.data.hisRanking[2], that.data.hisRanking[3], that.data.hisRanking[4]],

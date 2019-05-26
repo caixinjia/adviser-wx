@@ -24,6 +24,11 @@ Page({
         vipFlag: true
       },
       {
+        link: '/pages/personDesign/personDesign',
+        imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/design2.jpg",
+        vipFlag: true
+      },
+      {
         link: '/pages/wishDesign/wishDesign?type=junior',
         imgUrl: app.globalData.imgUrl + "/swiper/zhiyuan/4@3x.png",
         vipFlag: true
