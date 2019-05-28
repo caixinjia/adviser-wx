@@ -9,7 +9,7 @@ function setOption(chart, that) {
     },
     xAxis: {
       type: 'category',
-      data: ['2014', '2015', '2016', '2017', '2018']
+      data: [that.data.lastYear-4, that.data.lastYear-3, that.data.lastYear-2, that.data.lastYear-1, that.data.lastYear]
     },
     yAxis: {
       type: 'value',
@@ -42,7 +42,7 @@ function setOption2(chart, that) {
     },
     xAxis: {
       type: 'category',
-      data: ['2014', '2015', '2016', '2017', '2018']
+      data: [that.data.lastYear-4, that.data.lastYear-3, that.data.lastYear-2, that.data.lastYear-1, that.data.lastYear]
     },
     yAxis: {
       type: 'value',
@@ -145,7 +145,8 @@ Page({
     subRankingArray: [],
     subTitle: [],
     subTitleIndex: 0,
-    barheight:500
+    barheight:500,
+    lastYear: 2018
   },
   // 跳转到所选学校历届录取信息
   toSchoolHistory() {
@@ -156,6 +157,19 @@ Page({
     console.log(data)
     wx.navigateTo({
       url: '/pages/MatriculateHistory/MatriculateHistory?data=' + JSON.stringify(data)
+    })
+  },
+  getLastYearTitle(){
+    let that = this
+    wx.request({
+      url: app.globalData.api + '/getLastYearTitle',
+      data: {},
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          lastYear: Number(res.data.LAST_YEAR_TITLE)
+        })
+      }
     })
   },
   // 跳转到所选学校专业信息
@@ -178,6 +192,7 @@ Page({
     this.setData({
       recruitId: JSON.parse(options.recruitId)
     })
+    this.getLastYearTitle()
     let that = this;
     // 获取组件
     this.ecComponent1 = this.selectComponent('#mychart-dom-line');
@@ -221,7 +236,7 @@ Page({
       })
       wx.hideLoading()
     }).then(res => {
-      that.init1()
+      // that.init1()
     })
     // 院校录取排名（近五年)
     new Promise((resolve, reject) => {

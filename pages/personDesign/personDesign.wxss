@@ -134,9 +134,8 @@ page {
 
 .filter-dialog {
   background: #fff;
-  width: 670rpx;
-  height: calc(100% - 16rpx);
-  margin-left: 80rpx;
+  width: 750rpx;
+  height: calc(80% - 16rpx);
   padding-top: 16rpx;
   position: relative;
 }
@@ -146,14 +145,14 @@ page {
   font-size: 28rpx;
   background: #f4f4f4;
   border-radius: 98rpx;
-  width: 580rpx;
+  width: 660rpx;
   height: 60rpx;
   line-height: 60rpx;
-  margin: 0 30rpx;
+  margin: 10rpx 30rpx;
 }
 
 .subject-type {
-  margin-top: 30rpx;
+  margin-top: 20rpx;
   padding: 0 20rpx 0 30rpx;
 }
 
@@ -188,23 +187,23 @@ page {
   background: #f4f4f4;
   border-radius: 5px;
   height: 80rpx;
-  width: 180rpx;
+  width: 150rpx;
   font-size: 28rpx;
   color: #252628;
   letter-spacing: 0;
   text-align: center;
   line-height: 80rpx;
-  margin-top: 20rpx;
-  margin-right: 40rpx;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
 }
 
 .filter-options view.on {
   background: #fff082;
 }
 
-.filter-options view:nth-child(3n) {
+/* .filter-options view:nth-child(3n) {
   margin-right: 0;
-}
+} */
 
 .recruit-batch {
   margin-top: 30rpx;
@@ -212,7 +211,7 @@ page {
 }
 
 .filter-btns {
-  width: 670rpx;
+  width: 750rpx;
   height: 98rpx;
   position: absolute;
   bottom: 0;

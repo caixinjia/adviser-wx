@@ -68,13 +68,13 @@
     </view>
   </view>
   <!-- 折线图 -->
-  <view class='line'>
+  <!-- <view class='line'>
     <view class='line-title'>
       - 历年最低录取排名走势图 -
     </view>
     <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
-  </view>
-  <view class='line'>
+  </view> -->
+  <view class='line' style='margin-top:20rpx;'>
     <view class='line-title' style='top:0'>
       - 院校录取排名（近五年) -
     </view>

@@ -10,7 +10,7 @@ Page({
     recruitId:'',
     recruitName: '',
     subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,
-    recruitBatch: '101',
+    recruitBatch: '',
     schoolLevel: '',
     province: '',
     city: '',
@@ -19,7 +19,7 @@ Page({
     filterType:'1',
     result: [],
     myRanking:Number(wx.getStorageSync('userInfo').RANKING),
-    filterIsOpen: false,
+    filterIsOpen: true,
     region:['不限','不限'],
     recruitText:'最低分专业'
   },
@@ -78,6 +78,13 @@ Page({
         city: ''
       })
     }
+    if(this.data.recruitBatch == ''){
+      return wx.showToast({
+        title: '请选择录取批次',
+        icon: 'none',
+        duration: 2000
+      })
+    }
     if(this.data.filterType == 1) {
       this.getData()
       this.setData({
@@ -107,8 +114,8 @@ Page({
         schoolLevel: that.data.schoolLevel,
         province: that.data.province,
         city: that.data.city,
-        beginRanking: Number(wx.getStorageSync('userInfo').RANKING) - that.data.beginRanking,
-        endRanking: Number(wx.getStorageSync('userInfo').RANKING) + that.data.endRanking,
+        beginRanking: Number(wx.getStorageSync('userInfo').RANKING) - Number(that.data.beginRanking),
+        endRanking: Number(wx.getStorageSync('userInfo').RANKING) + Number(that.data.endRanking),
         userId:wx.getStorageSync('userId')
       },
       success: function (res) {
@@ -163,8 +170,8 @@ Page({
         schoolLevel: that.data.schoolLevel,
         province: that.data.province,
         city: that.data.city,
-        beginRanking: Number(wx.getStorageSync('userInfo').RANKING) - that.data.beginRanking,
-        endRanking: Number(wx.getStorageSync('userInfo').RANKING) + that.data.endRanking,
+        beginRanking: Number(wx.getStorageSync('userInfo').RANKING) - Number(that.data.beginRanking),
+        endRanking: Number(wx.getStorageSync('userInfo').RANKING) + Number(that.data.endRanking),
         userId:wx.getStorageSync('userId')
       },
       success: function (res) {

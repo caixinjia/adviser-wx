@@ -28,6 +28,7 @@
   <!-- 筛选 -->
   <view class="mask {{filterIsOpen?'open':''}}" bindtap='hideFilter'>
     <view class='filter-dialog' catchtap='noBubble'>
+      <input placeholder-style="color:#D2D9E1" confirm-type="search" placeholder="请输入院校或者专业名称" data-typeId='1' value='{{name}}' bindinput='changeSearch'/>
       <view class='subject-type' style='margin-top:0'>
         <view class='filter-title'>筛选类型</view>
         <view class='filter-options'>
