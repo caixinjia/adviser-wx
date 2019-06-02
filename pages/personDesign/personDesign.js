@@ -278,6 +278,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    app.getUser(wx.getStorageSync('userId')).then((res) => {
+      this.setData({
+        myRanking: Number(wx.getStorageSync('userInfo').RANKING)
+      })
+    })
   },
 
   /**
