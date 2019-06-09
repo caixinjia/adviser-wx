@@ -11,7 +11,8 @@ Page({
     subjectType: '',
     recruitBatch: '',
     result: [],
-    filterIsOpen: false
+    filterIsOpen: false,
+    lastYear: 2018
   },
 
   /**
@@ -32,6 +33,19 @@ Page({
       recruitBatch: ''
     })
     this.search()
+  },
+  getLastYearTitle(){
+    let that = this
+    wx.request({
+      url: app.globalData.api + '/getLastYearTitle',
+      data: {},
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          lastYear: Number(res.data.LAST_YEAR_TITLE)
+        })
+      }
+    })
   },
   // 搜索
   search() {
@@ -135,7 +149,9 @@ Page({
     this.setData({
       subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,
     })
+    this.getLastYearTitle()
     this.search();
+
   },
 
   /**

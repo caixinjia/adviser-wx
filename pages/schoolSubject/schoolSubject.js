@@ -12,20 +12,33 @@ Page({
     imgYes: app.globalData.imgUrl + '/icon/zhiyuan-yes@3x.png',
     mineImg: app.globalData.imgUrl + '/icon/Group 5@3x.png',
     recommend_type:0,
-
+    lastYear: 2018
   },
   addSubject: function (event) {
     let index = event.currentTarget.dataset.index;
     let temp = this.data.result
     if (temp[index].IS_IN_VOLUNTEER==0){
-      temp[index].IS_IN_VOLUNTEER = 1 
+      temp[index].IS_IN_VOLUNTEER = 1
     }else{
-      temp[index].IS_IN_VOLUNTEER = 0 
+      temp[index].IS_IN_VOLUNTEER = 0
     }
     this.setData({
       result:temp
     })
-    
+
+  },
+  getLastYearTitle(){
+    let that = this
+    wx.request({
+      url: app.globalData.api + '/getLastYearTitle',
+      data: {},
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          lastYear: Number(res.data.LAST_YEAR_TITLE)
+        })
+      }
+    })
   },
   saveSubject(){
     let volunteerList = [];
@@ -78,6 +91,7 @@ Page({
     this.setData({
       queryData: JSON.parse(options.data)
     })
+    this.getLastYearTitle()
     let that = this;
     wx.request({
       url: app.globalData.api + '/subjectDesign',
