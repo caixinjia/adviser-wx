@@ -9,7 +9,7 @@ function setOption(chart, that) {
     },
     xAxis: {
       type: 'category',
-      data: [that.data.lastYear-4, that.data.lastYear-3, that.data.lastYear-2, that.data.lastYear-1, that.data.lastYear]
+      data: [that.data.lastYear - 4, that.data.lastYear - 3, that.data.lastYear - 2, that.data.lastYear - 1, that.data.lastYear]
     },
     yAxis: {
       type: 'value',
@@ -42,7 +42,7 @@ function setOption2(chart, that) {
     },
     xAxis: {
       type: 'category',
-      data: [that.data.lastYear-4, that.data.lastYear-3, that.data.lastYear-2, that.data.lastYear-1, that.data.lastYear]
+      data: [that.data.lastYear - 4, that.data.lastYear - 3, that.data.lastYear - 2, that.data.lastYear - 1, that.data.lastYear]
     },
     yAxis: {
       type: 'value',
@@ -73,18 +73,18 @@ function setOption3(chart, that) {
     title: {
       show: false
     },
-    animation:false,
+    animation: false,
     xAxis: {
-          type : 'value',
-          boundaryGap : [0, 0.1],
-          scale: true
+      type: 'value',
+      boundaryGap: [0, 0.1],
+      scale: true
     },
     yAxis: {
-         type : 'category',
-         show:false,
-         data : that.data.subRankingX,
-         inverse: true,
-         scale: true
+      type: 'category',
+      show: false,
+      data: that.data.subRankingX,
+      inverse: true,
+      scale: true
     },
     series: [{
       data: that.data.subRankingY,
@@ -92,8 +92,8 @@ function setOption3(chart, that) {
       label: {
         show: true,
         color: '#333',
-        position:'insideLeft',
-        formatter :function(param){
+        position: 'insideLeft',
+        formatter: function(param) {
           return that.data.subRankingY[param.dataIndex] + '/' + that.data.subRankingX[param.dataIndex]
         }
       },
@@ -101,10 +101,10 @@ function setOption3(chart, that) {
         color: '#F7CE2C'
       },
       itemStyle: {
-        color: function(param){
-          return param.name == '我的排名'?'#FF5577':'#F7CE2C'
+        color: function(param) {
+          return param.name == '我的排名' ? '#FF5577' : '#F7CE2C'
         },
-        opacity:0.7
+        opacity: 0.7
       }
     }]
   };
@@ -145,7 +145,7 @@ Page({
     subRankingArray: [],
     subTitle: [],
     subTitleIndex: 0,
-    barheight:500,
+    barheight: 500,
     lastYear: 2018
   },
   // 跳转到所选学校历届录取信息
@@ -159,7 +159,7 @@ Page({
       url: '/pages/MatriculateHistory/MatriculateHistory?data=' + JSON.stringify(data)
     })
   },
-  getLastYearTitle(){
+  getLastYearTitle() {
     let that = this
     wx.request({
       url: app.globalData.api + '/getLastYearTitle',
@@ -297,29 +297,29 @@ Page({
             Y.push(item[i].LAST_1_MIN_RANKING)
           }
           // 插入自己的排名
-          let rank =  wx.getStorageSync('userInfo').RANKING
+          let rank = wx.getStorageSync('userInfo').RANKING
           let tempX = []
           let tempY = []
           let isInsert = false
-          for(let i in Y){
-            if(i == 0 && rank <= Number(Y[i]) && !isInsert){
+          for (let i in Y) {
+            if (i == 0 && rank - 0.5 <= Number(Y[i]) && !isInsert) {
               tempX.push('我的排名')
               tempY.push(rank)
               tempX.push(X[i])
               tempY.push(Y[i])
               isInsert = true
-            }else if( rank>Number(Y[i-1]) && rank< Number(Y[i]) && !isInsert){
+            } else if (rank - 0.5 > Number(Y[i - 1]) && rank - 0.5 < Number(Y[i]) && !isInsert) {
               tempX.push('我的排名')
               tempY.push(rank)
               tempX.push(X[i])
               tempY.push(Y[i])
               isInsert = true
-            }else {
+            } else {
               tempX.push(X[i])
               tempY.push(Y[i])
             }
           }
-          if(Y.length == tempY.length){
+          if (Y.length == tempY.length) {
             tempX.push('我的排名')
             tempY.push(rank)
           }
@@ -436,29 +436,29 @@ Page({
       Y.push(item[i].LAST_1_MIN_RANKING)
     }
     // 插入自己的排名
-    let rank =  wx.getStorageSync('userInfo').RANKING
+    let rank = wx.getStorageSync('userInfo').RANKING
     let tempX = []
     let tempY = []
     let isInsert = false
-    for(let i in Y){
-      if(i == 0 && rank <= Number(Y[i]) && !isInsert){
+    for (let i in Y) {
+      if (i == 0 && rank <= Number(Y[i]) && !isInsert) {
         tempX.push('我的排名')
         tempY.push(rank)
         tempX.push(X[i])
         tempY.push(Y[i])
         isInsert = true
-      }else if( rank>Number(Y[i-1]) && rank< Number(Y[i]) && !isInsert){
+      } else if (rank > Number(Y[i - 1]) && rank < Number(Y[i]) && !isInsert) {
         tempX.push('我的排名')
         tempY.push(rank)
         tempX.push(X[i])
         tempY.push(Y[i])
         isInsert = true
-      }else {
+      } else {
         tempX.push(X[i])
         tempY.push(Y[i])
       }
     }
-    if(Y.length == tempY.length){
+    if (Y.length == tempY.length) {
       tempX.push('我的排名')
       tempY.push(rank)
     }
