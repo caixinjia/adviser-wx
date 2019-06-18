@@ -61,7 +61,7 @@
         <block>
           <view wx:if="{{user.CITY_TEXT!=''}}">{{user.PROVINCE_TEXT}} {{user.CITY_TEXT}} {{user.AREA_TEXT}}</view>
           <view wx:elif="{{areaName!=''}}" style='position:absolute;left:40rpx;'>{{areaName[0]}} {{areaName[1]}} {{areaName[2]}}</view>
-          <view style='color: #6A7088;opacity: 0.5;' class="{{user.CITY_TEXT==''&&areaName!=''?'hidden':''}}" wx:if="{{user.CITY_TEXT==''}}">
+          <view style='color: #6A7088;opacity: 0.5;' class="{{user.CITY_TEXT!=''?'hidden':''}}">
             <picker mode="region" bindchange="changeInput" value='{{region}}' data-id='3'>
               请选择您的城市
             </picker>
@@ -73,7 +73,7 @@
         <image src='{{schoolImg}}'></image>
         <block>
           <view wx:if="{{user.GRADUATE_SCHOOL!=''}}">{{user.GRADUATE_SCHOOL}}</view>
-          <view style='color: #6A7088;opacity: 0.5;' wx:else>
+          <view style='color: #6A7088;opacity: 0.5;' class="{{user.GRADUATE_SCHOOL!=''?'hidden':''}}">
             <picker bindchange="changeInput" value="{{index}}" range-key="SCHOOL_NAME"  range="{{schoolList}}" data-id='4' >请选择您的中学</picker>
           </view>
         </block>
@@ -83,7 +83,7 @@
         <image src='{{schoolImg}}'></image>
         <block>
           <view wx:if="{{user.GRADUATE_SCHOOL!=''}}">{{user.GRADUATE_SCHOOL}}</view>
-          <view style='color: #6A7088;opacity: 0.5;' wx:else>
+          <view style='color: #6A7088;opacity: 0.5;' class="{{user.GRADUATE_SCHOOL!=''?'hidden':''}}">
              <input placeholder='请输入您的中学' placeholder-style="color:#6A7088;opacity: 0.5;" confirm-type="done"  data-id='6' bindblur='changeInput' bindconfirm='changeInput'></input>
           </view>
         </block>

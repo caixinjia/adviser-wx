@@ -2,7 +2,7 @@
 App({
   onLaunch: function () {
     this.checkUpdate();
-    var that = this; 
+    var that = this;
     // 登录
     wx.login({
       success: res => {
@@ -63,8 +63,8 @@ App({
   // 是否填完信息
   isInfoComplete:function(){
     let info = wx.getStorageSync('userInfo');
-    if (info.RANKING == '' || info.SCORE == '' || info.SUBJECT_TYPE == '' || info.GRADUATE_SCHOOL == ''){
-     
+    if (info.RANKING == '' || info.SCORE == '' || info.SUBJECT_TYPE == ''){
+
       return false;
     }else{
       return true;

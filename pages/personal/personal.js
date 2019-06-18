@@ -232,29 +232,29 @@ Page({
       area: area,
       areaName: region
     })
-    this.getSchoolList(area)
-    // wx.request({
-    //   url: app.globalData.api + '/modifyScore',
-    //   data: {
-    //     userId: that.data.userId,
-    //     area: area,
-    //   },
-    //   success: function (res) {
-    //     if (res.data.RESULTS == "SUCCESS") {
-    //       wx.showToast({
-    //         title: '填写地区成功',
-    //         icon: 'success'
-    //       })
-    //       that.getSchoolList(area)
-    //       that.freshData();
-    //     } else {
-    //       wx.showToast({
-    //         title: res.data.MSG,
-    //         icon: 'none'
-    //       })
-    //     }
-    //   }
-    // })
+    // this.getSchoolList(area)
+    wx.request({
+      url: app.globalData.api + '/modifyScore',
+      data: {
+        userId: that.data.userId,
+        area: area,
+      },
+      success: function (res) {
+        if (res.data.RESULTS == "SUCCESS") {
+          wx.showToast({
+            title: '填写地区成功',
+            icon: 'success'
+          })
+          that.getSchoolList(area)
+          that.freshData();
+        } else {
+          wx.showToast({
+            title: res.data.MSG,
+            icon: 'none'
+          })
+        }
+      }
+    })
   },
   // 选择学校
   changeSchool: function (index) {
