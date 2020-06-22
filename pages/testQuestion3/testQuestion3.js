@@ -36,7 +36,7 @@ Page({
       url: app.globalData.api + '/reckonTestResult',
       data: {
         userId:wx.getStorageSync('userId'),
-        testGroupId: '1001',
+        testGroupId: '1002',
         testResult:that.data.answers.join(',')
       },
       success: function (res) {
@@ -44,14 +44,14 @@ Page({
           testResult:res.data,
           isComplete:true
         })
-        let array = res.data.TEST_SCORE.split('；');
+        let array = res.data.TEST_SCORE.split(';');
         console.log(array)
         new wxCharts({
           canvasId: 'radarCanvas',
           type: 'radar',
-          categories: [array[0].split('（')[0], array[1].split('（')[0], array[2].split('（')[0], array[3].split('（')[0], array[4].split('（')[0], array[5].split('（')[0]],
+          categories: [array[0].split('：')[1], array[1].split('：')[1], array[2].split('：')[1], array[3].split('：')[1], array[4].split('：')[1], array[5].split('：')[1], array[6].split('：')[1], array[7].split('：')[1]],
           series: [{
-            data: [array[0].split('：')[2], array[1].split('：')[2], array[2].split('：')[2], array[3].split('：')[2], array[4].split('：')[2], array[5].split('：')[2]],
+            data: [array[0].split('：')[2], array[1].split('：')[2], array[2].split('：')[2], array[3].split('：')[2], array[4].split('：')[2], array[5].split('：')[2], array[6].split('：')[2], array[7].split('：')[2]],
             color: 'rgba(255,240,130,0.70)'
           }],
           width: 320,
@@ -159,7 +159,7 @@ Page({
     wx.request({
       url: app.globalData.api + '/loadTestQuestions',
       data: {
-        testGroupId: '1001'
+        testGroupId: '1002'
       },
       success: function (res) {
         if (res.data != '\r\n') {

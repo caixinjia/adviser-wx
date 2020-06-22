@@ -3,12 +3,16 @@
   <view class='title'>
     <image src='{{titleImg}}'></image>
     <view class="activationCodeVip">
+      <input placeholder="请输入优惠码" bindinput='changeDiscountCode'/>
+      <view class='activationCodeVip-btn' bindtap='useCodeVip'>使用</view>
+    </view>
+    <view class="activationCodeVip" style="top: 490rpx;">
       <input placeholder="请输入激活码" bindinput='changeCode'/>
       <view class='activationCodeVip-btn' bindtap='activationCodeVip'>激活</view>
     </view>
-    <!-- <view class='apply-btn' bindtap='pay'>马上成为会员</view> -->
-    <!-- <view class='warn1'>iphone不支持小程序支付,请用安卓手机开通vip</view>
-    <view class='warn2'>iphone可正常使用其它功能。</view> -->
+    <view class='apply-btn' bindtap='pay'>马上成为会员</view>
+    <view class='warn1'>iphone不支持小程序支付,请用安卓手机开通vip</view>
+    <view class='warn2'>iphone可正常使用其它功能。</view>
     <view class='warn3'>需要激活码联系微信客服：gz360xzs</view>
   </view>
   <view class='content'>

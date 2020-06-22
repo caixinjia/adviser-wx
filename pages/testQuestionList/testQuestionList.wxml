@@ -8,6 +8,9 @@
     <view data-url='/pages/testQuestion2/testQuestion2' bindtap='toQuestion'>
       <view class='question2'></view>
     </view>
+    <view data-url='/pages/testQuestion3/testQuestion3' bindtap='toQuestion'>
+      <view class='question3'></view>
+    </view>
 
 
   </view>

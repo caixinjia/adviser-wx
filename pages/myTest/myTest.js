@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isHas:false
+    isHas:false,
+    canSee: 0,
+    isLoading: false,
   },
   submit() {
     let that = this;
@@ -52,6 +54,70 @@ Page({
       }
     })
   },
+  isExplicitResult() {
+    wx.request({
+      url: app.globalData.api + '/isExplicitResult',
+      data: {
+        userId: wx.getStorageSync('userId'),
+      },
+      success: (res) => {
+        this.setData({
+          canSee: res.data.IS_EXPLICIT_RESULT,
+        })
+      },
+    })
+  },
+  applyvip() {
+    wx.navigateTo({
+      url: '/pages/applyVIP/applyVIP',
+    })
+  },
+  // 购买测试资格
+  buy() {
+    if (this.data.isLoading == true) return;
+    this.setData({
+      isLoading: true
+    })
+    wx.request({
+      url: app.globalData.api + '/buyExplicitResult',
+      data: {
+        openId: app.globalData.openId,
+        userId: wx.getStorageSync('userId')
+      },
+      success: (res) => {
+        wx.requestPayment({
+          'timeStamp': res.data.timeStamp,
+          'nonceStr': res.data.nonceStr,
+          'package': res.data.package,
+          'signType': 'MD5',
+          'paySign': res.data.paySign,
+          'success': (res1) => {
+            wx.showToast({
+              title: '支付成功',
+              icon: 'success'
+            })
+            this.setData({
+              isLoading: false
+            })
+            setTimeout(() => {
+              this.submit()
+              this.isExplicitResult();
+            }, 500)
+          },
+          'fail': (res2) => {
+            wx.showToast({
+              title: 'iphone不支持小程序微信支付，请用安卓手机支付',
+              icon: 'none',
+              duration: 3000
+            })
+            this.setData({
+              isLoading: false
+            })
+          }
+        })
+      },
+    })
+  },
   toTest(){
     wx.navigateTo({
       url: '/pages/testQuestion/testQuestion',
@@ -61,10 +127,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userInfo: wx.getStorageSync('wxUserInfo'),
-    })
-    this.submit()
+    
   },
 
   /**
@@ -78,7 +141,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo: wx.getStorageSync('wxUserInfo'),
+    })
+    this.submit()
+    this.isExplicitResult();
   },
 
   /**

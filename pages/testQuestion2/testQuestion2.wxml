@@ -23,10 +23,18 @@
     <view class='radar'>
       <canvas canvas-id="radarCanvas" class="canvas"></canvas>
     </view>
-    <view class='item-title'>测试结论</view>
-    <view class='item-detail'>
-      {{testResult.TEST_SCORE_EXPLAIN}}{{testResult.TEST_RESULT_EXPLAIN}}
-    </view>
+    <block wx:if='{{canSee == 1}}'>
+      <view class='item-title'>测试结论</view>
+      <view class='item-detail'>
+        <view>{{testResult.TEST_SCORE}}</view>
+        <view>{{testResult.TEST_RESULT_EXPLAIN}}</view>
+      </view>
+      <image class="buy-img3" src="https://fjgz360.cn/chuxian/webPage/images/icon/漳州用户@2x.png"></image>
+    </block>
+    <block wx:else>
+      <image class="buy-img" bindtap="buy" src="https://fjgz360.cn/chuxian/webPage/images/icon/心理测试@3x.png"></image>
+      <image class="buy-img2" bindtap="applyvip" src="https://fjgz360.cn/chuxian/webPage/images/icon/解锁会员@3x.png"></image>
+    </block>
   </view>
   <view class='result-footer'></view>
 </view>

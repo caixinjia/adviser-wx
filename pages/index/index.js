@@ -63,8 +63,8 @@ Page({
         isvip: true
       },
       {
-        name: "专家咨询",
-        imgUrl: app.globalData.imgUrl + "/icon/zhuanjia@3x.png",
+        name: "艺考志愿",
+        imgUrl: app.globalData.imgUrl + "/icon/04小程序／专家咨询@2x.png",
         url: '/pages/mavinList/mavinList',
         isOpen: true,
         isvip: true
@@ -264,10 +264,16 @@ Page({
       }
     }, 1000)
   },
-  toRegister: function() {
-    this.setData({
-      registerShow: true
-    });
+  toRegister: function(e) {
+    if (e.detail.userInfo) {
+      app.globalData.userInfo = e.detail.userInfo
+      wx.setStorageSync('wxUserInfo', e.detail.userInfo)
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true,
+        registerShow: true
+      })
+    }
   },
   register: function() {
     let that = this;
@@ -353,16 +359,16 @@ Page({
       })
     }
     // 获取授权
-    if (wx.getStorageSync('wxUserInfo')) {
-      this.setData({
-        userInfo: wx.getStorageSync('wxUserInfo'),
-        hasUserInfo: true
-      })
-    } else {
-      wx.navigateTo({
-        url: '/pages/authority/authority'
-      })
-    }
+    // if (wx.getStorageSync('wxUserInfo')) {
+    //   this.setData({
+    //     userInfo: wx.getStorageSync('wxUserInfo'),
+    //     hasUserInfo: true
+    //   })
+    // } else {
+    //   wx.navigateTo({
+    //     url: '/pages/authority/authority'
+    //   })
+    // }
     app.loadVipEnable().then(res => {
       let temp = [
         res.data.ENABLE_VIP_SCHOOL,
@@ -378,10 +384,41 @@ Page({
     })
   },
   getUserInfo: function(e) {
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    if (e.detail.userInfo) {
+      app.globalData.userInfo = e.detail.userInfo
+      wx.setStorageSync('wxUserInfo', e.detail.userInfo)
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+      let that = this;
+      wx.request({
+        url: app.globalData.api + '/login',
+        data: {
+          mobileNum: that.data.loginPhone,
+          passwd: util.md5(that.data.loginPwd),
+          verifiedType: '0'
+        },
+        success: function (res) {
+          if (res.data.RESULTS == "SUCCESS") {
+            wx.showToast({
+              title: '登录成功',
+              icon: 'success'
+            })
+            that.setData({
+              isLogin: true
+            })
+            wx.setStorageSync('userId', res.data.USER_ID)
+            // wx.setStorageSync('userRole', res.data.ROLE)
+            app.getUser(res.data.USER_ID)
+          } else {
+            wx.showToast({
+              title: res.data.MSG,
+              icon: 'none'
+            })
+          }
+        }
+      })
+    }
   }
 })

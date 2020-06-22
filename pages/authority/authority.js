@@ -15,7 +15,7 @@ Page({
       wx.setStorageSync('wxUserInfo', e.detail.userInfo)
       wx.switchTab({
         url: '/pages/index/index'
-      })
+      }) 
     }
 
   },

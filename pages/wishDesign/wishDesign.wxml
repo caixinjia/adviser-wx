@@ -39,8 +39,8 @@
       <view class='batch-title'>录取批次</view>
       <block wx:if='{{wishType==1}}'>
        <view class="batch-item {{batch==101?'on':''}}" data-id="101" bindtap="changeBatch">提前批</view>
-      <view class="batch-item {{batch==102?'on':''}}" data-id="102" bindtap="changeBatch">本一批</view>
-      <view class="batch-item {{batch==103?'on':''}}" data-id="103" bindtap="changeBatch">本二批</view>
+      <view class="batch-item {{batch==102?'on':''}}" data-id="102" bindtap="changeBatch">本科</view>
+      <!-- <view class="batch-item {{batch==103?'on':''}}" data-id="103" bindtap="changeBatch">本二批</view> -->
       </block>
       <view class="batch-item {{batch==104?'on':''}}" data-id="104" bindtap="changeBatch" wx:else>专科批</view>
      
@@ -92,7 +92,7 @@
         </view>
         <!-- 学校名称 -->
         <view class='school-name'>
-          {{item.RECRUIT_NAME}}
+          {{item.RECRUIT_NAME}}{{item.RECRUIT_BATCH == 102 ? '(本一)' : item.RECRUIT_BATCH == 103 ? '(本二)' : ''}}
         </view>
         <!-- 推荐分类 -->
         <view class='recommend-type'>

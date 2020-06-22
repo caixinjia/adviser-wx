@@ -40,6 +40,11 @@ Page({
         img: app.globalData.imgUrl + "/icon/wodeceshi@3x.png",
         name: '我的测试',
         url: '/pages/myTest/myTest'
+      },
+      {
+        img: app.globalData.imgUrl + "/icon/shiyongshuoming.png",
+        name: '使用说明',
+        url: ''
       }
     ],
     isVip:false,
@@ -215,7 +220,6 @@ Page({
   },
   // 修改城市
   changeCity: function (region) {
-    console.log(region)
     let that = this;
     let areaList = app.globalData.areaList;
     let area = '';
@@ -223,6 +227,10 @@ Page({
       if (areaList[i].NAME == region[2] && areaList[i].LEVEL == '3') {
         if (areaList[i].NAME == '鼓楼区' && areaList[i].PROVINCE!='35'){
           continue;
+        }
+        if (areaList[i].NAME == '永定区') {
+          if (areaList[i].PROVINCE == '35' && region[0] != '福建省')continue;
+          if (areaList[i].PROVINCE == '43' && region[0] != '湖南省')continue;
         }
         area = areaList[i].CODE;
         break;

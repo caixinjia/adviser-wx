@@ -126,3 +126,23 @@ line-height: 46rpx;
   background: url("https://fjgz360.cn/chuxian/webPage/images/background/ceshijieguo3@3x.png") no-repeat;
   background-size: 750rpx;
 }
+.buy-img{
+  width: 514rpx;
+  height: 254rpx;
+  margin: 60rpx auto 20rpx;
+  display: block;
+}
+.buy-img2{
+  width: 496rpx;
+  height: 238rpx;
+  margin: 0 auto;
+  padding-bottom: 30rpx;
+  display: block;
+}
+.buy-img3{
+  width: 578rpx;
+  height: 208rpx;
+  margin-left: 114rpx;
+  padding: 60rpx 0;
+  display: block;
+}

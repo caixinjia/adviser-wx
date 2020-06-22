@@ -41,6 +41,7 @@
 
 .user-info {
   margin-top: 122rpx;
+  position: relative;
 }
 
 .user-info>view {
@@ -57,17 +58,26 @@
   display: inline-block;
 }
 
-.user-info view .login-out {
-  display: inline-block;
-  width: 32rpx;
-  height: 32rpx;
-  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/yonghutuichu@3x.png") no-repeat center;
-  background-size: 32rpx;
-  right: -40rpx;
+.user-info .login-out {
+  width:144rpx;
+  height:44rpx;
+  background:rgba(255,255,255,0.8);
+  border-radius:10rpx;
   position: absolute;
-  top: 12rpx;
+  top: -114rpx;
+  right: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.login-out image{
+  width: 30rpx;
+  height: 28rpx;
+}
+.login-out view{
+  font-size:24rpx;
+  color:#252628;
+}
 .user-info view.expiring-date {
   opacity: 0.5;
   font-size: 28rpx;

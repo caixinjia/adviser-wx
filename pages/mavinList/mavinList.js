@@ -90,6 +90,41 @@ Page({
       url: '/pages/mavinAdvisory/mavinAdvisory?mavinId=' + event.currentTarget.dataset.id
     })
   },
+  submitAdvisory: function(event) {
+    let that = this;
+    let mavinId = event.currentTarget.dataset.id
+    wx.request({
+      url: app.globalData.api + '/setBespeakState',
+      data: {
+        mavinId: mavinId,
+        bespeakUser: wx.getStorageSync('userId'),
+        openId: app.globalData.openId,
+        openIdType: 1,
+      },
+      success: function (res) {
+        wx.requestPayment({
+          'timeStamp': res.data.timeStamp,
+          'nonceStr': res.data.nonceStr,
+          'package': res.data.package,
+          'signType': 'MD5',
+          'paySign': res.data.paySign,
+          'success': function (res) {
+            wx.showToast({
+              title: '支付成功',
+              icon: 'success'
+            })
+          },
+          'fail': function (res) {
+            wx.showToast({
+              title: '支付失败',
+              icon: 'none'
+            })
+          }
+        })
+
+      }
+    })
+  },
   showCodeImg(){
     this.setData({
       codeIsOpen: true
@@ -130,6 +165,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    app.isLogin();
     this.search();
   },
 

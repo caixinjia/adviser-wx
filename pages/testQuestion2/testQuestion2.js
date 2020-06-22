@@ -12,7 +12,9 @@ Page({
     answers: [],
     isComplete:false,
     userInfo:'',
-    testResult:{}
+    testResult:{},
+    canSee: 1,
+    isLoading: false,
   },
   answer(e) {
     let id = e.currentTarget.dataset.id;
@@ -34,7 +36,7 @@ Page({
       url: app.globalData.api + '/reckonTestResult',
       data: {
         userId:wx.getStorageSync('userId'),
-        testGroupId: '1002',
+        testGroupId: '1003',
         testResult:that.data.answers.join(',')
       },
       success: function (res) {
@@ -62,6 +64,70 @@ Page({
           }
         });
       }
+    })
+  },
+  isExplicitResult() {
+    wx.request({
+      url: app.globalData.api + '/isExplicitResult',
+      data: {
+        userId: wx.getStorageSync('userId'),
+      },
+      success: (res) => {
+        this.setData({
+          canSee: res.data.IS_EXPLICIT_RESULT,
+        })
+      },
+    })
+  },
+  applyvip() {
+    wx.navigateTo({
+      url: '/pages/applyVIP/applyVIP',
+    })
+  },
+  // 购买测试资格
+  buy() {
+    if (this.data.isLoading == true) return;
+    this.setData({
+      isLoading: true
+    })
+    wx.request({
+      url: app.globalData.api + '/buyExplicitResult',
+      data: {
+        openId: app.globalData.openId,
+        userId: wx.getStorageSync('userId')
+      },
+      success: (res) => {
+        wx.requestPayment({
+          'timeStamp': res.data.timeStamp,
+          'nonceStr': res.data.nonceStr,
+          'package': res.data.package,
+          'signType': 'MD5',
+          'paySign': res.data.paySign,
+          'success': (res1) => {
+            wx.showToast({
+              title: '支付成功',
+              icon: 'success'
+            })
+            this.setData({
+              isLoading: false
+            })
+            setTimeout(() => {
+              this.submit()
+              this.isExplicitResult();
+            }, 500)
+          },
+          'fail': (res2) => {
+            wx.showToast({
+              title: 'iphone不支持小程序微信支付，请用安卓手机支付',
+              icon: 'none',
+              duration: 3000
+            })
+            this.setData({
+              isLoading: false
+            })
+          }
+        })
+      },
     })
   },
   /**
@@ -93,7 +159,7 @@ Page({
     wx.request({
       url: app.globalData.api + '/loadTestQuestions',
       data: {
-        testGroupId: '1002'
+        testGroupId: '1003'
       },
       success: function (res) {
         if (res.data != '\r\n') {
@@ -110,6 +176,7 @@ Page({
       }
     })
     wx.hideLoading();
+    // this.isExplicitResult();
   },
 
   /**

@@ -18,6 +18,7 @@
     "pages/mavinQA/mavinQA",
     "pages/testQuestion/testQuestion",
     "pages/testQuestion2/testQuestion2",
+    "pages/testQuestion3/testQuestion3",
     "pages/myQuestion/myQuestion",
     "pages/myTest/myTest",
     "pages/testQuestionList/testQuestionList",
@@ -42,6 +43,12 @@
         "text": "首页",
         "iconPath": "images/icon/tabbar_home@3x.png",
         "selectedIconPath": "images/icon/tabbar_home-selected@3x.png"
+      },
+      {
+        "pagePath": "pages/mavinList/mavinList",
+        "text": "专家咨询",
+        "iconPath": "images/icon/tabbar_zhuanjia.png",
+        "selectedIconPath": "images/icon/tabbar_zhuanjia-selected.png"
       },
       {
         "pagePath": "pages/personal/personal",

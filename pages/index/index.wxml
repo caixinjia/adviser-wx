@@ -43,18 +43,18 @@
       <view class='user-img'>
         <image src='{{userInfo.avatarUrl}}'></image>
       </view>
-      <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='1'></input>
+      <input class='phone-input' placeholder='请输入手机号或账号' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='1'></input>
       <input class='pwd-input' password='true' placeholder='请输入密码' type='text' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='2'></input>
       <view class='to-forget' bindtap='toForget'>忘记密码？</view>
-      <button class='login-btn' bindtap='login' open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
-      <view class='to-register' bindtap='toRegister'>没有账号，注册一个！</view>
+      <button class='login-btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+      <button class='to-register'  open-type="getUserInfo" bindgetuserinfo='toRegister'>没有账号，注册一个！</button>
     </view>
     <!-- 注册 -->
     <view class='register-dialog' wx:if='{{registerShow&&!forgetShow}}'  catchtap='noBubble'>
       <view class='user-img'>
         <image src='{{userInfo.avatarUrl}}'></image>
       </view>
-      <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='3'></input>
+      <input class='phone-input' placeholder='请输入手机号或账号'  placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='3'></input>
       <view class='code-div'>
         <input class='code-input' placeholder='请输入验证码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='4'></input>
         <view class="{{codeFlag?'send-btn':'send-btn last-time'}}" data-type="1" bindtap='getVerifiedCode'>{{codeFlag?'获取验证码':lastTime+'s'}}</view>
@@ -68,7 +68,7 @@
       <view class='user-img'>
         <image src='{{userInfo.avatarUrl}}'></image>
       </view>
-      <input class='phone-input' placeholder='请输入电话号码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='3'></input>
+      <input class='phone-input' placeholder='请输入手机号或账号'  placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='3'></input>
       <view class='code-div'>
         <input class='code-input' placeholder='请输入验证码' type='number' placeholder-style="color:#D2D9E1" bindinput='changeInput' data-typeid='4'></input>
         <view class="{{codeFlag?'send-btn':'send-btn last-time'}}" data-type="2" bindtap='getVerifiedCode'>{{codeFlag?'获取验证码':lastTime+'s'}}</view>

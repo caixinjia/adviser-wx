@@ -16,8 +16,10 @@
     </view>
     <!-- 个人中心详情 -->
     <view class='user-info'>
-      <view>
-      < view>{{userName}}<view class='login-out' bindtap='loginOut'></view></view>
+      <view>{{userName}}</view>
+      <view class='login-out' bindtap='loginOut'>
+        <image src="https://fjgz360.cn/chuxian/webPage/images/icon/退出@3x.png"></image>
+        <view>退出登录</view>
       </view>
       <view>{{user.MOBILE_NUMBER}}</view>
       <view class='expiring-date' wx:if='{{isVip}}'>会员有效期至{{expiringDate}}</view>

@@ -82,3 +82,23 @@ line-height: 46rpx;
   box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
   border-radius: 200rpx;
 }
+.buy-img{
+  width: 514rpx;
+  height: 254rpx;
+  margin: 60rpx auto 20rpx;
+  display: block;
+}
+.buy-img2{
+  width: 496rpx;
+  height: 238rpx;
+  margin: 0 auto;
+  padding-bottom: 30rpx;
+  display: block;
+}
+.buy-img3{
+  width: 578rpx;
+  height: 208rpx;
+  margin-left: 114rpx;
+  padding-bottom: 60rpx;
+  display: block;
+}

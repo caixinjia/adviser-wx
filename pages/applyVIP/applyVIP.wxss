@@ -23,7 +23,7 @@
 
 .apply-btn {
   position: absolute;
-  top: 390rpx;
+  top: 290rpx;
   left: 185rpx;
   height: 100rpx;
   line-height: 100rpx;
@@ -54,7 +54,7 @@
 }
 
 .content-title {
-  margin: 240rpx 0 30rpx 0;
+  margin: 310rpx 0 30rpx 0;
   text-align: center;
   font-size: 40rpx;
   color: #dbc8a5;
@@ -96,7 +96,7 @@
   font-size: 28rpx;
   color: rgba(255, 255, 255, 0.7);
   position: absolute;
-  top: 520rpx;
+  top: 590rpx;
   left: 100rpx;
   width: 550rpx;
   /* text-align: center; */
@@ -106,7 +106,7 @@
   font-size: 28rpx;
   color: rgba(255, 255, 255, 0.7);
   position: absolute;
-  top: 560rpx;
+  top: 660rpx;
   left: 100rpx;
   width: 550rpx;
   /* text-align: center; */
@@ -116,7 +116,7 @@
   font-size: 28rpx;
   color: rgba(255, 255, 255, 0.7);
   position: absolute;
-  top: 600rpx;
+  top: 700rpx;
   left: 100rpx;
   width: 550rpx;
   /* text-align: center; */

@@ -170,7 +170,12 @@
   color: #6a7088;
   letter-spacing: 0.8rpx;
   text-align: center;
+  border: none;
+  background: #fff;
 }
+.to-register::after{
+  display: none;
+} 
 .to-forget{
   margin-top: 10rpx;
   font-size: 24rpx;
