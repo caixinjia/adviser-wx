@@ -1,0 +1,52 @@
+/* pages/manual/manualDetail.wxss */
+page{
+  background-color: #F7CE2C;
+}
+.main-container{
+  position: relative;
+}
+.image-list{
+  margin: 30rpx auto 0;
+  width: 700rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  z-index: 2;
+  padding: 100rpx 0 150rpx;
+}
+.image{
+  width: 700rpx;
+  height: 900rpx;
+  margin-bottom: 20rpx;
+}
+.tips{
+  text-align: center;
+  font-size: 28rpx;
+  color: #D2D2D2;
+  margin: 40rpx 0 20rpx;
+}
+
+.title{
+  margin: 0 auto;
+  width: 658rpx;
+  height: 78rpx;
+  position: absolute;
+  top: -10rpx;
+  left: 46rpx;
+}
+.title-text{
+  position: absolute;
+  width: 750rpx;
+  left: 0;
+  top: 14rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #252628;
+}
+.footer{
+  height: 150rpx;
+  width: 750rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}

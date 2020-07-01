@@ -106,13 +106,8 @@ Page({
   // 未开放功能
   toEntrance: function(event) {
     if (!app.isInfoComplete()) {
-
       wx.switchTab({
         url: '/pages/personal/personal',
-      })
-      wx.showToast({
-        title: '请先填写成绩，排名，学校，文理科等信息',
-        icon: 'none'
       })
     } else {
       // 是否限制vip

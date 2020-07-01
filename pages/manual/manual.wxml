@@ -1,0 +1,8 @@
+<!--pages/manual/manual.wxml-->
+<view>
+  <view class="manual-list">
+    <view wx:for="{{list}}" wx:key='{{index}}' class="manual-item" bindtap="toDetail" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</view>

@@ -26,7 +26,9 @@
     "pages/applyVIP/applyVIP",
     "pages/myAdvisory/myAdvisory",
     "pages/authority/authority",
-    "pages/personDesign/personDesign"
+    "pages/personDesign/personDesign",
+    "pages/manual/manual",
+    "pages/manual/manualDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

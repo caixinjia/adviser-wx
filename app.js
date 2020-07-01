@@ -73,9 +73,19 @@ App({
   // 是否是VIP
   isVip:function(){
     let info = wx.getStorageSync('userRole');
-    console.log(info)
+    let time = wx.getStorageSync('userInfo').VALID_TILL;
+    console.log(wx.getStorageSync('userInfo'))
+    let y = time.substr(0, 4);
+    let m = time.substr(4, 2);
+    let d = time.substr(6, 2);
+    let vipDate = new Date(y + '-' + m + '-' + d).getTime();
+    let today = new Date().getTime();
+    console.log(vipDate);
+    console.log(today);
+    // 是否已经到期
+    const isOutTime = vipDate < today;
     // let temporaryVip = wx.getStorageSync('temporaryVip');
-    if (info == 'role_vip' || info == 'ROLE_VIP'){
+    if ((info == 'role_vip' || info == 'ROLE_VIP') && !isOutTime){
       return true;
     }else{
       return false;

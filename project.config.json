@@ -5,7 +5,20 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.3",
@@ -29,6 +42,10 @@
 		},
 		"game": {
 			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
@@ -162,6 +179,20 @@
 					"name": "人工志愿设计",
 					"pathName": "pages/personDesign/personDesign",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "使用说明",
+					"pathName": "pages/manual/manual",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/manual/manualDetail",
+					"pathName": "pages/manual/manualDetail",
+					"query": "id=0",
 					"scene": null
 				}
 			]

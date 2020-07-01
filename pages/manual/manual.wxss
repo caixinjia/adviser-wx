@@ -1,0 +1,10 @@
+/* pages/manual/manual.wxss */
+.manual-list{
+  padding: 0 20rpx;
+}
+.manual-item{
+  color: #383838;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+}

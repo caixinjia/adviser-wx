@@ -44,7 +44,7 @@ Page({
       {
         img: app.globalData.imgUrl + "/icon/shiyongshuoming.png",
         name: '使用说明',
-        url: ''
+        url: '/pages/manual/manual'
       }
     ],
     isVip:false,
@@ -448,6 +448,13 @@ Page({
    */
   onShow: function () {
     app.isLogin();
+    if (!app.isInfoComplete()) {
+      wx.showToast({
+        title: '请输入您的个人信息，包括成绩排名（出分前可改），学校，文理科等，才能使用本软件其他功能',
+        icon: 'none',
+        duration: 5000,
+      })
+    }
     this.setData({
       userInfo: wx.getStorageSync('wxUserInfo'),
       userName: wx.getStorageSync('wxUserInfo').nickName,

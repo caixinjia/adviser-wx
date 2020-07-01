@@ -1,0 +1,13 @@
+<!--pages/manual/manualDetail.wxml-->
+<view class="container">
+  <view class="main-container">
+    <view class="image-list">
+      <image class="title" src="https://fjgz360.cn/chuxian/webPage/images/background/说明页标题@3x.png"></image>
+      <view class="title-text">{{title}}</view>
+      <image class="image"  wx:for="{{imgUrls}}" src="{{item}}" bindtap="previewImage"></image>
+      <view class="tips">点击图片看大图</view>
+    </view>
+    <image class="footer" src="https://fjgz360.cn/chuxian/webPage/images/background/说明页底图@3x.png"></image>
+  </view>
+  
+</view>

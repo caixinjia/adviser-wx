@@ -11,8 +11,9 @@
       <view class='activationCodeVip-btn' bindtap='activationCodeVip'>激活</view>
     </view>
     <view class='apply-btn' bindtap='pay'>马上成为会员</view>
-    <view class='warn1'>iphone不支持小程序支付,请用安卓手机开通vip</view>
-    <view class='warn2'>iphone可正常使用其它功能。</view>
+    <!-- <view class='warn1'>iphone不支持小程序支付,请用安卓手机开通vip</view>
+    <view class='warn2'>iphone可正常使用其它功能。</view> -->
+    <view class='warn2'>如果苹果手机付款失败请改用安卓手机付款</view>
     <view class='warn3'>需要激活码联系微信客服：gz360xzs</view>
   </view>
   <view class='content'>
