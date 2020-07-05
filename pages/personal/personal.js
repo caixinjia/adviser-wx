@@ -430,7 +430,6 @@ Page({
       data: {
       },
       success: function (res) {
-        console.log(res)
         app.globalData.areaList = res.data;
       }
     })

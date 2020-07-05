@@ -28,7 +28,7 @@ Page({
       this.search();
     }
     this.setData({
-      subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,
+      subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE || 1,
     })
     // 获取专业列表
     wx.request({
@@ -144,7 +144,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    app.isLogin();
+    // app.isLogin();
   },
 
   /**

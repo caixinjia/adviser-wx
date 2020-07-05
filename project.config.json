@@ -194,6 +194,19 @@
 					"pathName": "pages/manual/manualDetail",
 					"query": "id=0",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "艺考筛选",
+					"pathName": "pages/art/artForm",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/art/artResult",
+					"pathName": "pages/art/artResult",
+					"scene": null
 				}
 			]
 		}

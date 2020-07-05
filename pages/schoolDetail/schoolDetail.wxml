@@ -15,7 +15,7 @@
         <image wx:if='{{result.IS_FIRST_CLASS==1}}' src='{{imgdouble}}' class='imgdouble'></image>
       </view>
       <view>
-        <view>ARWU2018大学排名</view>
+        <view>ARWU2019大学排名</view>
         <view>{{result.SCHOOL_RANKING}}</view>
       </view>
     </view>

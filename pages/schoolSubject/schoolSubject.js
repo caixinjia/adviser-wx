@@ -12,7 +12,7 @@ Page({
     imgYes: app.globalData.imgUrl + '/icon/zhiyuan-yes@3x.png',
     mineImg: app.globalData.imgUrl + '/icon/Group 5@3x.png',
     recommend_type:0,
-    lastYear: 2018
+    lastYear: 2019
   },
   addSubject: function (event) {
     let index = event.currentTarget.dataset.index;

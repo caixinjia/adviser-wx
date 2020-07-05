@@ -146,7 +146,7 @@ Page({
     subTitle: [],
     subTitleIndex: 0,
     barheight: 500,
-    lastYear: 2018
+    lastYear: 2019
   },
   // 跳转到所选学校历届录取信息
   toSchoolHistory() {

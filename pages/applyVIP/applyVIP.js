@@ -95,7 +95,7 @@ Page({
         data: {
           openId: app.globalData.openId,
           userId: wx.getStorageSync('userId'),
-          discountCode: that.discountCode,
+          discountCode: that.data.discountCode,
         },
         success: function (res) {
           wx.requestPayment({

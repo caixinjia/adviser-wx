@@ -28,7 +28,9 @@
     "pages/authority/authority",
     "pages/personDesign/personDesign",
     "pages/manual/manual",
-    "pages/manual/manualDetail"
+    "pages/manual/manualDetail",
+    "pages/art/artForm",
+    "pages/art/artResult"
   ],
   "window": {
     "backgroundTextStyle": "light",

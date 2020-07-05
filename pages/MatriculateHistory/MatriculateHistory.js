@@ -12,7 +12,7 @@ Page({
     recruitBatch: '',
     result: [],
     filterIsOpen: false,
-    lastYear: 2018
+    lastYear: 2019
   },
 
   /**
@@ -146,9 +146,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    app.isLogin();
+    // app.isLogin();
     this.setData({
-      subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE,
+      subjectType: wx.getStorageSync('userInfo').SUBJECT_TYPE || 1,
     })
     this.getLastYearTitle()
     this.search();

@@ -1,0 +1,87 @@
+
+<!--pages/art/artForm.wxml-->
+<wxs module="fn">
+    module.exports = {
+        isInArray: function(arr,value){
+          return arr.indexOf(value) > -1;    
+        }
+    }
+</wxs>
+<view class="container">
+ <!-- 未填写信息 -->
+ <view class="art-form-container" wx:if="{{!hasInfo}}">
+  <image class="title-img" src="https://fjgz360.cn/chuxian/webPage/images/background/艺考志愿填报@3x.png"></image>
+  <view class="main-title">请填选您的艺考类别和分数排名</view>
+  <view class="sub-title">注：艺考成绩排名仅可填写一次，请确定无误后再提交</view>
+  <view class="list-title">艺考类别</view>
+  <view class="list-container">
+    <view class="selection" wx:for="{{artCategory}}" wx:key="{{index}}" bindtap="selectCategory" data-code='{{item.ARTS_CODE}}'>
+      <image class="select-btn" wx:if="{{selectedCategory == item.ARTS_CODE}}" src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-1@2x.png"></image>
+      <image class="select-btn" wx:else src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-2@2x.png"></image>
+      <view class="selection-name">{{item.ARTS_NAME}}</view>
+    </view>
+  </view>
+  <view class="list-title">成绩排名</view>
+  <view class="list-container">
+    <view class="li-item">
+      <view class="input-title">省考专业分</view>
+      <input placeholder="省考专业分" type='number' bindinput='changeInput' data-id='1'></input>
+    </view>
+    <view class="li-item">
+      <view class="input-title">文化分排名2</view>
+      <input placeholder="文化分排名2" type='number' bindinput='changeInput' data-id='2'></input>
+    </view>
+    <view class="li-item">
+      <view class="input-title">专业分排名(选填)</view>
+      <input placeholder="专业分排名" type='number' bindinput='changeInput' data-id='3'></input>
+    </view>
+  </view>
+  <view class="submit-btn" bindtap="toggleDialog">提交</view>
+  <view class="mask" wx:if="{{isShow}}">
+    <view class="dialog">
+      <image class="warn-image" src="https://fjgz360.cn/chuxian/webPage/images/icon/注意@3x.png"></image>
+      <view class="text">信息提交后不可修改，</view>
+      <view class="text">请确保您输入的信息无误！</view>
+       <view class="submit-btn" bindtap="saveUserArtsInfo">确认无误</view>
+      <view class="text" bindtap="toggleDialog">返回重新填写</view>
+    </view>
+  </view>
+ </view>
+ <!-- 已填写信息 -->
+ <view wx:else>
+    <view class="score-title">
+      <image src="https://fjgz360.cn/chuxian/webPage/images/background/艺考志愿填报卡片@3x.png"></image>
+      <view class="category">{{userArtInfo.ARTS_CATEGORY_NAME}}</view>
+      <view class="score">{{userArtInfo.ARTS_SCORE}}分</view>
+    </view>
+    <view class="list-title">艺考类别
+      <view bindtap="selectAllSubject">
+        <image wx:if="{{isAllSubject}}" src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-1@2x.png"></image>
+        <image wx:else src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-2@2x.png"></image>
+        <text>全选</text>
+      </view>
+    </view>
+    <view class="list-container">
+      <view class="selection" wx:for="{{artSubjectClass}}" wx:key="{{index}}" bindtap="selectSubJect" data-code='{{item.ARTS_CODE}}'>
+        <image class="select-btn" wx:if="{{fn.isInArray(selectedSubject,item.ARTS_CODE) || isAllSubject}}" src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-1@2x.png"></image>
+        <image class="select-btn" wx:else src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-2@2x.png"></image>
+        <view class="selection-name">{{item.ARTS_NAME}}</view>
+      </view>
+    </view>
+     <view class="list-title">报考意向省份
+        <view bindtap="selectAllProvince">
+          <image wx:if="{{isAllProvince}}" src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-1@2x.png"></image>
+          <image wx:else src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-2@2x.png"></image>
+          <text>全选</text>
+        </view>
+     </view>
+    <view class="list-container">
+      <view class="selection" wx:for="{{provinceList}}" wx:key="{{index}}" bindtap="selectProvince" data-code='{{item.code}}'>
+        <image class="select-btn" wx:if="{{fn.isInArray(selectedProvince,item.code) || isAllProvince}}" src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-1@2x.png"></image>
+        <image class="select-btn" wx:else src="https://fjgz360.cn/chuxian/webPage/images/icon/单选按钮-2@2x.png"></image>
+        <view class="selection-name">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="submit-btn" bindtap="toResult">查询</view>
+ </view>
+</view>

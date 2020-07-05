@@ -1,0 +1,34 @@
+<!--pages/art/artResult.wxml-->
+<view class="container">
+  <view class="list-container">
+    <view class="item-container" wx:for="{{list}}" wx:key="{{index}}">
+    <image class='selectSubject' src='{{item.IS_VOLUNTEER==1?imgYes:imgNo}}' bindtap='addSubject' data-index='{{index}}'></image>
+      <view class="title">
+        <view class="left"><text>{{item.SCHOOL_PROVINCE}}</text>|<text>{{item.SCHOOL_CITY}}</text></view>
+        <view class="right">{{item.RECRUIT_BATCH}}批</view>
+      </view>
+      <view class="school">{{item.SCHOOL_NAME}}</view>
+      <view class="subject">{{item.SUBJECT_NAME}}</view>
+      <view class="info-container">
+        <view class="left">2019年最低录取文化分</view>
+        <view class="right">{{item.GAOKAO_SCORE}}分</view>
+      </view>
+      <view class="info-container">
+        <view class="left">2019年最低录取专业分</view>
+        <view class="right">{{item.MAJOR_SCORE}}分</view>
+      </view>
+      <view class="info-container">
+        <view class="left">2019年最低录取综合分</view>
+        <view class="right">{{item.LAST_YEAR_SCORE}}分</view>
+      </view>
+      <view class="info-container">
+        <view class="left">您的成绩换算为2019综合分</view>
+        <view class="right">{{item.CONVERSION_SCORE}}分</view>
+      </view>
+      <view class="info-container">
+        <view class="left">2020年录取概率(百分比)</view>
+        <view class="right">{{item.PROBABILITY}}%</view>
+      </view>
+    </view>
+  </view>
+</view>

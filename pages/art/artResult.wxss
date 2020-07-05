@@ -1,0 +1,63 @@
+/* pages/art/artResult.wxss */
+page{
+  background-color: #f4f4f4;
+}
+.list-container{
+  padding: 30rpx 20rpx 30rpx 30rpx;
+}
+.item-container{
+  position: relative;
+  width: 700rpx;
+  height: 530rpx;
+  background-image: url('https://fjgz360.cn/chuxian/webPage/images/background/批次A@2x.png');
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: 700rpx;
+  margin-bottom: 30rpx;
+}
+.item-container .title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx 0 40rpx;
+  height: 50rpx;
+}
+.item-container .title .left{
+  font-size: 24rpx;
+  color: #252628;
+}
+.item-container .title .left text{
+  padding: 0 14rpx;
+}
+.item-container .title .right{
+  font-size: 24rpx;
+  color: #252628;
+}
+.school{
+  text-align: center;
+  font-size: 36rpx;
+  color: #252628;
+  padding: 20rpx 0 10rpx 0;
+}
+.subject{
+  text-align: center;
+  font-size: 32rpx;
+  color: #5B6369;
+  padding: 0rpx 0 48rpx 0;
+  opacity: 0.7;
+}
+.info-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12rpx 40rpx 12rpx 30rpx;
+  font-size: 28rpx;
+  color: #252628;
+}
+.selectSubject {
+  height: 50rpx;
+  width: 50rpx;
+  position: absolute;
+  left: -25rpx;
+  top: 0rpx;
+}

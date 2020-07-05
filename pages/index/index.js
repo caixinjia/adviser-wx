@@ -65,7 +65,7 @@ Page({
       {
         name: "艺考志愿",
         imgUrl: app.globalData.imgUrl + "/icon/04小程序／专家咨询@2x.png",
-        url: '/pages/mavinList/mavinList',
+        url: '/pages/art/artForm',
         isOpen: true,
         isvip: true
       },
