@@ -27,13 +27,15 @@ Page({
       duration: 1000,
       circular: true,
     },
-    entranceList: [{
-        name: "院校报考助手",
-        imgUrl: app.globalData.imgUrl + "/icon/yuanxiao@3x.png",
-        url: '/pages/schoolList/schoolList',
+    entranceList: [
+      {
+        name: "高考生专业测试",
+        imgUrl: app.globalData.imgUrl + "/icon/xinliceshi1@3x.png",
+        url: '/pages/testQuestionList/testQuestionList',
         isOpen: true,
-        isvip: false,
+        isvip: false
       },
+      
       {
         name: "专业信息",
         imgUrl: app.globalData.imgUrl + "/icon/zhuanye@3x.png",
@@ -49,16 +51,16 @@ Page({
         isvip: false
       },
       {
+        name: "院校报考助手",
+        imgUrl: app.globalData.imgUrl + "/icon/yuanxiao@3x.png",
+        url: '/pages/schoolList/schoolList',
+        isOpen: true,
+        isvip: true,
+      },
+      {
         name: "志愿设计",
         imgUrl: app.globalData.imgUrl + "/icon/zhiyuansheji@3x.png",
         url: '/pages/wishDesignList/wishDesignList',
-        isOpen: true,
-        isvip: true
-      },
-      {
-        name: "高考生专业测试",
-        imgUrl: app.globalData.imgUrl + "/icon/xinliceshi@3x.png",
-        url: '/pages/testQuestionList/testQuestionList',
         isOpen: true,
         isvip: true
       },
@@ -366,12 +368,12 @@ Page({
     // }
     app.loadVipEnable().then(res => {
       let temp = [
-        res.data.ENABLE_VIP_SCHOOL,
+        res.data.ENABLE_VIP_TEST,
         res.data.ENABLE_VIP_SUBJICE,
         res.data.ENABLE_VIP_HISTORY,
+        res.data.ENABLE_VIP_SCHOOL,
         res.data.ENABLE_VIP_VOLUNTEER,
-        res.data.ENABLE_VIP_TEST,
-        res.data.ENABLE_VIP_MAVIN,
+        res.data.ENABLE_VIP_ARTS,
       ]
       this.setData({
         isVipEnable: temp

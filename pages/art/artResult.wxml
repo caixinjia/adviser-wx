@@ -4,7 +4,7 @@
     <view class="item-container" wx:for="{{list}}" wx:key="{{index}}">
     <image class='selectSubject' src='{{item.IS_VOLUNTEER==1?imgYes:imgNo}}' bindtap='addSubject' data-index='{{index}}'></image>
       <view class="title">
-        <view class="left"><text>{{item.SCHOOL_PROVINCE}}</text>|<text>{{item.SCHOOL_CITY}}</text></view>
+        <view class="left"><text>{{item.SCHOOL_PROVINCE_TEXT}}</text>|<text>{{item.SCHOOL_CITY_TEXT}}</text></view>
         <view class="right">{{item.RECRUIT_BATCH}}批</view>
       </view>
       <view class="school">{{item.SCHOOL_NAME}}</view>
@@ -30,5 +30,10 @@
         <view class="right">{{item.PROBABILITY}}%</view>
       </view>
     </view>
+  </view>
+  <view class='mine'>
+    <image src='{{mineImg}}'></image>
+    <view bindtap='toMineSubject' ></view>
+    <view bindtap='saveSubject'></view>
   </view>
 </view>

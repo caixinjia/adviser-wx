@@ -30,7 +30,8 @@
     "pages/manual/manual",
     "pages/manual/manualDetail",
     "pages/art/artForm",
-    "pages/art/artResult"
+    "pages/art/artResult",
+    "pages/art/myArtSubject"
   ],
   "window": {
     "backgroundTextStyle": "light",

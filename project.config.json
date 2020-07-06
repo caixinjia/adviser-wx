@@ -206,6 +206,13 @@
 					"id": -1,
 					"name": "pages/art/artResult",
 					"pathName": "pages/art/artResult",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/art/myArtSubject",
+					"pathName": "pages/art/myArtSubject",
 					"scene": null
 				}
 			]

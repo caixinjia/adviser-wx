@@ -1,0 +1,109 @@
+/* pages/mySubject/mySubject.wxss */
+
+page {
+  background: #f4f4f4;
+  padding-top: 20rpx;
+}
+
+.subject-item {
+  margin: 0 20rpx 20rpx 20rpx;
+  padding: 20rpx 0;
+  background: #fff;
+  box-shadow: inset -6rpx 0 0 0 #f7ce2c;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.subject-school {
+  font-size: 36rpx;
+  color: #f7ce2c;
+  letter-spacing: 0;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.subject {
+  opacity: 0.7;
+  font-size: 28rpx;
+  color: #5b6369;
+  text-align: left;
+  height: 40rpx;
+  line-height: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.subject view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-subject {
+  height: 840rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/background/no-subject@3x.png") no-repeat center;
+  background-size: 320rpx;
+}
+
+.no-subject view {
+  position: absolute;
+  top: 870rpx;
+  left: 166rpx;
+  text-align: center;
+  width: 416rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #f7ce2c;
+  border: 2rpx solid #f7ce2c;
+  box-shadow: 0 8rpx 26rpx 0 rgba(138, 127, 56, 0.25);
+  border-radius: 200rpx;
+}
+.edit-btn{
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/zy-edit@3x.png") no-repeat center;
+  background-size: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.save-btn{
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/zy-save@3x.png") no-repeat center;
+  background-size: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.del-school{
+  position: absolute;
+  height: 32rpx;
+  width: 32rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/zy-delschool@3x.png") no-repeat center;
+  background-size: 32rpx;
+  right: 0;
+  top: 0;
+}
+.del-subject{
+  position: absolute;
+  height: 20rpx;
+  width: 20rpx;
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/zy-del@3x.png") no-repeat center;
+  background-size: 20rpx;
+  left: 20rpx;
+  top: 10rpx;
+}
+.sort-btn{
+  background: url("https://fjgz360.cn/chuxian/webPage/images/icon/sort-btn.png") no-repeat center;
+  background-size: 130rpx;
+  width: 130rpx;
+  height: 40rpx;
+  position: fixed;
+  right: 20rpx;
+  top: 20rpx;
+}

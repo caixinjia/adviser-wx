@@ -1,0 +1,17 @@
+<!--pages/mySubject/mySubject.wxml-->
+<view class='container' wx:if='{{result.length>0}}'>
+<!-- 提前批 -->
+  <view wx:for='{{result}}' class='subject-item'>
+    <view class='del-school' wx:if='{{editFlag}}' data-id='{{index}}' bindtap='deleteSubject'></view>
+    <view class='subject-school'>{{item.SCHOOL_NAME}}</view>
+    <view class='subject'>
+      <view>{{item.SUBJECT_NAME}}</view>
+      <view>录取率：{{item.RATE}}%</view>
+    </view>
+  </view>
+  <view class='edit-btn' wx:if='{{!editFlag}}' bindtap='edit'></view>
+  <view class='save-btn' wx:if='{{editFlag}}' bindtap='save'></view>
+</view>
+<view class='no-subject' wx:else>
+  <view bindtap='toArtForm'>火速设计志愿清单</view>
+</view>

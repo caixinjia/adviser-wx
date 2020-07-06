@@ -45,7 +45,12 @@ Page({
         img: app.globalData.imgUrl + "/icon/shiyongshuoming.png",
         name: '使用说明',
         url: '/pages/manual/manual'
-      }
+      },
+      {
+        img: app.globalData.imgUrl + "/icon/wodezhiyuan@3x.png",
+        name: '艺考志愿',
+        url: '/pages/art/myArtSubject'
+      },
     ],
     isVip:false,
     istemporaryVip:false,
