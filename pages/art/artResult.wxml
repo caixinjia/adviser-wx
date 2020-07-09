@@ -1,7 +1,7 @@
 <!--pages/art/artResult.wxml-->
 <view class="container">
   <view class="list-container">
-    <view class="item-container" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="{{item.RECRUIT_BATCH == 'B'?'item-container B-type':'item-container'}}" wx:for="{{list}}" wx:key="{{index}}">
     <image class='selectSubject' src='{{item.IS_VOLUNTEER==1?imgYes:imgNo}}' bindtap='addSubject' data-index='{{index}}'></image>
       <view class="title">
         <view class="left"><text>{{item.SCHOOL_PROVINCE_TEXT}}</text>|<text>{{item.SCHOOL_CITY_TEXT}}</text></view>

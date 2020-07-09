@@ -253,7 +253,7 @@
   top: 0;
   left: 0;
   width: 650rpx;
-  height: 280rpx;
+  height: 380rpx;
 }
 .entrance .entrance-mask .open-btn{
   width: 416rpx;
@@ -262,4 +262,20 @@
   background-size: 416rpx;
   margin: 90rpx auto;
 
+}
+.toast{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  width: 300rpx;
+  height: 130rpx;
+  padding: 20rpx 40rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }

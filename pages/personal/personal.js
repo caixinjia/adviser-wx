@@ -62,6 +62,7 @@ Page({
     canEditRanking:false,
     editScoreText:'',
     editRankingText:'',
+    showToast: false,
 
   },
   // 重新渲染用户数据
@@ -453,11 +454,14 @@ Page({
   onShow: function () {
     app.isLogin();
     if (!app.isInfoComplete()) {
-      wx.showToast({
-        title: '请输入您的个人信息，包括成绩排名（出分前可改），学校，文理科等，才能使用本软件其他功能',
-        icon: 'none',
-        duration: 5000,
+      this.setData({
+        showToast: true,
       })
+      setTimeout(res => {
+        this.setData({
+          showToast: false,
+        })
+      }, 5000)
     }
     this.setData({
       userInfo: wx.getStorageSync('wxUserInfo'),

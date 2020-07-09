@@ -111,8 +111,9 @@
         <view class='entrance-name'>{{item.name}}</view>
       </navigator>
     </block>
-    <view class='entrance-mask' wx:if='{{!isVip}}' bindtap='applyvip'>
-      <view class='open-btn'></view>
+    <view class='entrance-mask' wx:if='{{!isVip}}'>
+      <!-- <view class='open-btn'></view> -->
     </view>
   </view>
+  <view class="toast" wx:if="{{showToast}}">请输入您的个人信息，包括成绩排名（出分前可改），学校，文理科等，才能使用本软件其他功能</view>
 </view>

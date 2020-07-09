@@ -15,6 +15,9 @@ page{
   background-size: 700rpx;
   margin-bottom: 30rpx;
 }
+.item-container.B-type{
+  background-image: url('https://fjgz360.cn/chuxian/webPage/images/background/批次B@2x.png');
+}
 .item-container .title{
   display: flex;
   align-items: center;
