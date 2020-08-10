@@ -280,6 +280,7 @@ Page({
         mobileNum: that.data.registerPhone,
         passwd: util.md5(that.data.registerPwd),
         verifiedCode: that.data.verifiedCode,
+        references: wx.getStorageSync('references') || '',
       },
       success: function(res) {
         if (res.data.RESULTS == "SUCCESS") {
@@ -379,6 +380,11 @@ Page({
         isVipEnable: temp
       })
     })
+  },
+  onLoad: function(options) {
+    if (options.references) {
+      wx.setStorageSync('references', options.references);
+    }
   },
   getUserInfo: function(e) {
     if (e.detail.userInfo) {
